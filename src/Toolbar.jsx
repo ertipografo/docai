@@ -1,4 +1,6 @@
-const ToolbarItem = ({ children, cur }) => {
+import { features } from "./utils";
+
+const ToolbarItem = ({ children, cur, onClick }) => {
 	const chevron = (
 		<div
 			className={`w-2 h-2 border-b-2 border-r-2 ${
@@ -7,7 +9,10 @@ const ToolbarItem = ({ children, cur }) => {
 		></div>
 	);
 	return (
-		<button className="flex items-center font-semibold text-xs px-6 gap-2 border-r border-gray-200 hover:bg-gray-50">
+		<button
+			onClick={onClick}
+			className="flex items-center font-semibold text-xs px-6 gap-2 border-r border-gray-200 hover:bg-gray-50"
+		>
 			<div className="h-4 w-4 bg-gray-200 rounded-full" />
 			<span className={cur ? "" : "text-gray-400"}>{children}</span>
 			{chevron}
@@ -15,16 +20,22 @@ const ToolbarItem = ({ children, cur }) => {
 	);
 };
 
-export default function Toolbar() {
+export default function Toolbar({ feature, setFeature }) {
 	return (
-		<div className="bg-white sticky top-(--headerHeight) p-2">
-			<div className="h-14 border rounded-lg border-gray-200 flex">
-				<ToolbarItem>Riassunto</ToolbarItem>
-				<ToolbarItem cur={true}>Mappa Concettuale</ToolbarItem>
-				<ToolbarItem>Quiz</ToolbarItem>
-				<div className="bg-purple-100 text-purple-700 rounded flex items-center px-4 text-xs font-semibold ml-auto m-2">
-					Chatta col documento
-				</div>
+		<div className="h-full border rounded-lg border-gray-200 flex">
+			{Object.keys(features).map((r) => {
+				return (
+					<ToolbarItem
+						onClick={() => setFeature(r)}
+						cur={r === feature}
+					>
+						{features[r]}
+					</ToolbarItem>
+				);
+			})}
+
+			<div className="bg-purple-100 text-purple-700 rounded flex items-center px-4 text-xs font-semibold ml-auto m-1">
+				Chatta col documento
 			</div>
 		</div>
 	);

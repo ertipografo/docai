@@ -1,17 +1,40 @@
+import { useState } from "react";
+import Feature from "./Feature";
+import Title from "./Title";
 import Toolbar from "./Toolbar";
+import { features } from "./utils";
 
 export default function App() {
+	const [feature, setFeature] = useState(features.mappa);
 	return (
 		<div className="min-h-screen text-gray-700">
-			<div className="bg-gray-900 sticky top-0 h-(--headerHeight) flex items-center text-gray-500 justify-center">
+			<div className="bg-gray-900 sticky top-0 h-(--headerHeight) flex items-center text-gray-500 justify-center z-50">
 				Header
 			</div>
 			<div className="flex">
 				<div className="w-16 bg-gray-800 sticky h-(--sidebarHeight) top-(--headerHeight)"></div>
-				<div className="flex-1 flex flex-col">
+				<div className="flex-1">
+					<div className="customContainer">
+						<div className="left" />
+						<div className="main">
+							<Title />
+						</div>
+					</div>
+					<div className="customContainer">
+						<Feature feature={feature} setFeature={setFeature} />
+						{/* 	<div className="left">1</div>
+						<div className="main">
+							<Toolbar
+								feature={feature}
+								setFeature={setFeature}
+							/>
+						</div> */}
+					</div>
+				</div>
+				{/* 	<div className="flex-1">
 					<div className="customContainer border-b border-red-500">
-						<div>1</div>
-						<div>
+						<div className="left">1</div>
+						<div className="main">
 							<div className="flex flex-col gap-2 p-4 mt-2">
 								<h1 className="font-semibold text-2xl">
 									Storia dell'Oman, dalla fondazione ai giorni
@@ -26,26 +49,19 @@ export default function App() {
 									dolores dolor aliquam repellat beatae?
 								</p>
 							</div>
+							<Toolbar />
 						</div>
 					</div>
 					<div className="customContainer">
-						<div className="sticky h-(--sidebarHeight) top-(--headerHeight)">
-							{/* <div className="h-20 p-4 flex items-center justify-center border-b border-gray-200">
-							<button className="flex-1 h-12 flex items-center justify-center font-semibold text-sm rounded-lg bg-blue-600 text-white">
-								Carica nuovo
-							</button>
-						</div> */}
-						</div>
-						<div className="border-x border-gray-200 min-h-[2000px]">
-							<Toolbar />
-						</div>
+						<div className="left sticky h-(--sidebarHeight) top-(--headerHeight)"></div>
+						<div className="border-x border-gray-200  main">23</div>
 						<div className="2xl:col-span-2 col-span-8 col-start-3">
 							<div className="2xl:h-(--sidebarHeight) 2xl:sticky 2xl:top-(--headerHeight)">
 								3
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
