@@ -14,12 +14,12 @@ export default function Sidebar({ feature, setFeature }) {
 			</div>
 			<Title />
 			<SidebarFeatures setFeature={setFeature} feature={feature} />
-			<div className="flex-1 bg-teal-200 overflow-hidden relative">
+			<div className="flex-1 hidden xl:flex overflow-hidden relative">
 				<PerfectScrollbar>
 					<SuggestedDocs />
 				</PerfectScrollbar>
 			</div>
-			<div className="h-16 bg-white border-t border-gray-200 flex items-center justify-center text-xs">
+			<div className="h-16 bg-white border-t border-gray-200 hidden xl:flex items-center justify-center text-xs">
 				Spazio banner
 			</div>
 		</div>
