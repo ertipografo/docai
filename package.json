@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ofsajd/react-perfect-scrollbar": "^1.0.0",
     "@tailwindcss/vite": "^4.1.13",
+    "lucide-react": "^0.544.0",
     "node": "^24.9.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-perfect-scrollbar": "^1.5.8",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
