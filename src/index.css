@@ -7,6 +7,7 @@
 	--featureSidebarTop: calc(var(--headerHeight) + var(--toolbarHeight));
 	--sidebarHeight: calc(100vh - var(--headerHeight));
 	--featureSidebarHeight: calc(100vh - var(--featureSidebarTop));
+	--sidebarWidth: 420px;
 }
 
 body {

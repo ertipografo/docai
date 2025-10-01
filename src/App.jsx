@@ -8,6 +8,7 @@ import "react-perfect-scrollbar/dist/css/styles.css";
 import Sidebar from "./Sidebar";
 export default function App() {
 	const [feature, setFeature] = useState(features.mappa);
+	const [show, setShow] = useState(true);
 	const featureMaxW = feature === "mappa" ? "" : "mx-auto max-w-7xl";
 	return (
 		<div className=" text-gray-700 bg-white">
@@ -15,11 +16,15 @@ export default function App() {
 				Header
 			</div>
 			<div className="flex xl:h-(--sidebarHeight)">
-				<div className="w-16 bg-gray-800 sticky top-(--headerHeight) h-(--sidebarHeight) z-50">
-					<OutBar />
+				<div className="w-14 bg-gray-800 sticky top-(--headerHeight) h-(--sidebarHeight) z-50">
+					<OutBar show={show} setShow={setShow} />
 				</div>
 				<div className="flex flex-1 flex-col xl:flex-row">
-					<div className="w-full xl:w-md border-r border-gray-200">
+					<div
+						className={`w-full xl:w-(--sidebarWidth) transition-all border-r border-gray-200 ${
+							!show && "-ml-(--sidebarWidth)"
+						}`}
+					>
 						<Sidebar feature={feature} setFeature={setFeature} />
 					</div>
 					<div className="flex-1 bg-gray-50 h-full relative flex flex-col">
