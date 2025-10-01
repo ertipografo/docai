@@ -1,4 +1,5 @@
 import SidebarFeatures from "./SidebarFeatures";
+import SuggestedDocs from "./SuggestedDocs";
 import Title from "./Title";
 import { Menu } from "lucide-react";
 import PerfectScrollbar from "react-perfect-scrollbar";
@@ -15,10 +16,12 @@ export default function Sidebar({ feature, setFeature }) {
 			<SidebarFeatures setFeature={setFeature} feature={feature} />
 			<div className="flex-1 bg-teal-200 overflow-hidden relative">
 				<PerfectScrollbar>
-					<div className="bg-red-400 h-[9999px]">opapa</div>
+					<SuggestedDocs />
 				</PerfectScrollbar>
 			</div>
-			<div className="h-20 bg-teal-200">Pappa</div>
+			<div className="h-16 bg-white border-t border-gray-200 flex items-center justify-center text-xs">
+				Spazio banner
+			</div>
 		</div>
 	);
 }

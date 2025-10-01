@@ -4,12 +4,12 @@ import { features } from "./utils";
 export default function SidebarFeatures({ feature, setFeature }) {
 	return (
 		<div>
-			<div className="flex flex-col border-b border-gray-200 rounded divide-y divide-gray-200">
+			<div className="flex flex-col border-b border-gray-200 divide-y divide-gray-200">
 				{Object.keys(features).map((k) => {
 					return (
 						<div key={k}>
 							<div
-								className="hover:bg-gray-50 gap-2 h-12 flex text-xs items-center px-4 cursor-pointer"
+								className="hover:text-blue-500 gap-2 h-12 flex text-xs items-center px-4 cursor-pointer"
 								onClick={() =>
 									setFeature(feature === k ? null : k)
 								}
@@ -82,6 +82,36 @@ export default function SidebarFeatures({ feature, setFeature }) {
 																Non ce so le
 																montagne
 															</span>
+															<ul>
+																<li>
+																	<span>
+																		Bello il
+																		mare
+																	</span>
+																</li>
+																<li>
+																	<span>
+																		Non ce
+																		so le
+																		montagne
+																	</span>
+																</li>
+															</ul>
+															<ul>
+																<li>
+																	<span>
+																		Bello il
+																		mare
+																	</span>
+																</li>
+																<li>
+																	<span>
+																		Non ce
+																		so le
+																		montagne
+																	</span>
+																</li>
+															</ul>
 														</li>
 													</ul>
 												</li>
