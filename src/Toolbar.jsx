@@ -22,7 +22,7 @@ const ToolbarItem = ({ children, cur, onClick }) => {
 
 export default function Toolbar({ feature, setFeature }) {
 	return (
-		<div className="h-full border rounded-lg border-gray-200 flex">
+		<div className="bg-white h-full border rounded-lg border-gray-200 flex">
 			{Object.keys(features).map((r) => {
 				return (
 					<ToolbarItem

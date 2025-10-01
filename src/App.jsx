@@ -7,14 +7,14 @@ import { features } from "./utils";
 export default function App() {
 	const [feature, setFeature] = useState(features.mappa);
 	return (
-		<div className="min-h-screen text-gray-700">
+		<div className="min-h-screen text-gray-700 bg-white">
 			<div className="bg-gray-900 sticky top-0 h-(--headerHeight) flex items-center text-gray-500 justify-center z-50">
 				Header
 			</div>
 			<div className="flex">
 				<div className="w-16 bg-gray-800 sticky h-(--sidebarHeight) top-(--headerHeight)"></div>
 				<div className="flex-1">
-					<div className="customContainer">
+					<div className="customContainer bg-gray-50">
 						<div className="left" />
 						<div className="main">
 							<Title />

@@ -3,7 +3,7 @@
 
 @theme {
 	--headerHeight: 50px;
-	--toolbarHeight: 60px;
+	--toolbarHeight: 70px;
 	--featureSidebarTop: calc(var(--headerHeight) + var(--toolbarHeight));
 	--sidebarHeight: calc(100vh - var(--headerHeight));
 	--featureSidebarHeight: calc(100vh - var(--featureSidebarTop));

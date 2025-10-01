@@ -4,10 +4,10 @@ export default function Feature({ feature, setFeature }) {
 	return (
 		<>
 			<div className="feature flex flex-col">
-				<div className="sticky top-(--headerHeight) flex bg-white z-50">
+				<div className="sticky top-(--headerHeight) flex bg-gray-50 border-b border-gray-200 z-50">
 					<div className="left" />
 					<div className="main">
-						<div className="sticky py-1 top-(--featureSidebarTop) h-(--toolbarHeight)">
+						<div className="sticky py-2 top-(--featureSidebarTop) h-(--toolbarHeight)">
 							<Toolbar
 								feature={feature}
 								setFeature={setFeature}
