@@ -6,6 +6,7 @@ import OutBar from "./OutBar";
 import { features } from "./utils";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
+import SidebarFeatures from "./SidebarFeatures";
 
 export default function App() {
 	const [feature, setFeature] = useState(features.mappa);
@@ -20,6 +21,7 @@ export default function App() {
 				</div>
 				<div className="w-md bg-white border-r border-gray-200">
 					<Title />
+					<SidebarFeatures />
 				</div>
 				<div className="flex-1 bg-gray-50 h-full relative">
 					<PerfectScrollbar>

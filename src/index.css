@@ -12,16 +12,18 @@
 body {
 	font-family: "Work Sans", sans-serif;
 }
+.font-semibold {
+	font-weight: 600;
+}
+.font-bold {
+	font-weight: 900;
+}
 
-.customContainer {
-	@apply flex;
-	.left {
-		@apply w-1/6;
-	}
-	.main {
-		@apply flex-1 max-w-2/3;
-	}
-	.feature {
-		@apply flex-1;
+.tree {
+	li {
+		@apply pl-5 p-1 relative;
+		&:before {
+			@apply content-[""] absolute left-0 w-2 top-[14px] h-[2px] -mt-[1px] bg-gray-500;
+		}
 	}
 }
