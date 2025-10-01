@@ -1,15 +1,17 @@
 import { useState } from "react";
-import Feature from "./Feature";
-import Title from "./Title";
 import Toolbar from "./Toolbar";
 import OutBar from "./OutBar";
 import { features } from "./utils";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
-import SidebarFeatures from "./SidebarFeatures";
 
+import Sidebar from "./Sidebar";
 export default function App() {
 	const [feature, setFeature] = useState(features.mappa);
+	const featureMaxW =
+		feature === "mappa"
+			? ""
+			: "mx-auto mt-4 max-w-7xl rounded border border-gray-200";
 	return (
 		<div className="overflow-hidden h-screen text-gray-700 bg-white">
 			<div className="bg-gray-900 sticky top-0 h-(--headerHeight) flex items-center text-gray-500 justify-center z-50">
@@ -20,21 +22,17 @@ export default function App() {
 					<OutBar />
 				</div>
 				<div className="w-md bg-white border-r border-gray-200">
-					<Title />
-					<SidebarFeatures />
+					<Sidebar feature={feature} setFeature={setFeature} />
 				</div>
-				<div className="flex-1 bg-gray-50 h-full relative">
+				<div className="flex-1 bg-gray-50 h-full relative flex flex-col">
+					<div className="sticky top-0 h-14 bg-white border-b border-gray-200">
+						<Toolbar feature={feature} />
+					</div>
 					<PerfectScrollbar>
-						<div className="w-full flex flex-col gap-4">
-							<div className="sticky h-14 top-0">
-								<Toolbar
-									feature={feature}
-									setFeature={setFeature}
-								/>
-							</div>
-							<div className="bg-white max-w-7xl mx-auto w-full rounded border border-gray-200 h-[2200px]">
-								kk
-							</div>
+						<div
+							className={`${featureMaxW} mb-10 bg-white w-full h-[2200px] p-8`}
+						>
+							{feature}
 						</div>
 					</PerfectScrollbar>
 				</div>

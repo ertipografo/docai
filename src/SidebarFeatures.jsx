@@ -1,9 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { features } from "./utils";
-import { useState } from "react";
 
-export default function SidebarFeatures() {
-	const [openTab, setOpenTab] = useState(null);
+export default function SidebarFeatures({ feature, setFeature }) {
 	return (
 		<div>
 			<div className="flex flex-col border-b border-gray-200 rounded divide-y divide-gray-200">
@@ -13,7 +11,7 @@ export default function SidebarFeatures() {
 							<div
 								className="hover:bg-gray-50 gap-2 h-12 flex text-xs items-center px-4 cursor-pointer"
 								onClick={() =>
-									setOpenTab(openTab === k ? null : k)
+									setFeature(feature === k ? null : k)
 								}
 							>
 								<div className="h-5 w-5 bg-gray-200 rounded-full" />
@@ -22,7 +20,7 @@ export default function SidebarFeatures() {
 								</span>
 								<div
 									className={`scale-75 ml-auto ${
-										openTab !== k
+										feature !== k
 											? "text-gray-300"
 											: "-rotate-90"
 									}`}
@@ -30,50 +28,64 @@ export default function SidebarFeatures() {
 									<ChevronDown />
 								</div>
 							</div>
-							{openTab === k && (
+							{feature === k && (
 								<div className="p-4 border-t border-gray-200">
 									<ul className="tree text-sm">
 										<li>
 											<span>La situazione dell'Oman</span>
-											<li>
-												<span>Dal 1948 al 1970</span>
-											</li>
-											<li>
-												<span>Dal 1970 al 1980</span>
-											</li>
-											<li>
-												<span>Dal 1980 al 2000</span>
-											</li>
-										</li>
-										<li>
-											<span>Economia</span>
-
-											<li>
-												<span>
-													Esportazioni di petrolio
-												</span>
-											</li>
-											<li>
-												<span>
-													Esportazioni di diamanti
-												</span>
-											</li>
-											<li>
-												<span>
-													Settore manufatturiero
-												</span>
-											</li>
-											<li>
-												<span>Turismo</span>
+											<ul>
 												<li>
-													<span>Bello il mare</span>
+													<span>
+														Dal 1948 al 1970
+													</span>
 												</li>
 												<li>
 													<span>
-														Non ce so le montagne
+														Dal 1970 al 1980
 													</span>
 												</li>
-											</li>
+												<li>
+													<span>
+														Dal 1980 al 2000
+													</span>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<span>Economia</span>
+											<ul>
+												<li>
+													<span>
+														Esportazioni di petrolio
+													</span>
+												</li>
+												<li>
+													<span>
+														Esportazioni di diamanti
+													</span>
+												</li>
+												<li>
+													<span>
+														Settore manufatturiero
+													</span>
+												</li>
+												<li>
+													<span>Turismo</span>
+													<ul>
+														<li>
+															<span>
+																Bello il mare
+															</span>
+														</li>
+														<li>
+															<span>
+																Non ce so le
+																montagne
+															</span>
+														</li>
+													</ul>
+												</li>
+											</ul>
 										</li>
 									</ul>
 								</div>

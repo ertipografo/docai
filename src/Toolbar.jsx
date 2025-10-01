@@ -1,41 +1,25 @@
+import { ChevronDown } from "lucide-react";
 import { features } from "./utils";
 
-const ToolbarItem = ({ children, cur, onClick }) => {
-	const chevron = (
-		<div
-			className={`w-2 h-2 border-b-2 border-r-2 ${
-				cur ? "border-current" : "border-gray-400"
-			} rotate-45 relative -mt-[2px] ml-1`}
-		></div>
-	);
+export default function Toolbar({ feature }) {
 	return (
-		<button
-			onClick={onClick}
-			className="flex items-center font-semibold text-xs px-6 gap-2 border-r border-gray-200 hover:bg-gray-50"
-		>
-			<div className="h-4 w-4 bg-gray-200 rounded-full" />
-			<span className={cur ? "" : "text-gray-400"}>{children}</span>
-			{chevron}
-		</button>
-	);
-};
-
-export default function Toolbar({ feature, setFeature }) {
-	return (
-		<div className="bg-white h-full border-b border-gray-200 flex">
-			{Object.keys(features).map((r) => {
-				return (
-					<ToolbarItem
-						onClick={() => setFeature(r)}
-						cur={r === feature}
-					>
-						{features[r]}
-					</ToolbarItem>
-				);
-			})}
-
-			<div className="bg-purple-100 text-purple-700 rounded flex items-center px-4 text-xs font-semibold ml-auto m-1">
-				Chatta col documento
+		<div className="h-full flex pl-4 pr-2 items-center gap-2">
+			<div className="flex-1 flex items-center gap-2">
+				<div className="h-6 w-6 bg-gray-100 rounded-full" />
+				<span className="text-sm font-semibold">
+					{features[feature]}
+				</span>
+			</div>
+			<div className="flex-1 flex opacity-50 items-center text-xs font-semibold justify-center">
+				1 / 53
+			</div>
+			<div className="flex-1 flex items-center justify-end">
+				<button className="h-10 flex items-center justify-center px-8 rounded text-xs font-semibold border border-gray-200">
+					<span>Download</span>
+					<span className="scale-75 -mr-2">
+						<ChevronDown />
+					</span>
+				</button>
 			</div>
 		</div>
 	);

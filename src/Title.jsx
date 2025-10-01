@@ -2,7 +2,7 @@ import { ChevronDown } from "lucide-react";
 
 export default function Title() {
 	return (
-		<div className="flex flex-col gap-4 p-8 border-b border-gray-200">
+		<div className="flex flex-col gap-4 p-8 pt-0 border-b border-gray-200">
 			<h1 className="font-semibold text-xl leading-tight">
 				Storia dell'Oman, dalla fondazione ai giorni nostri
 			</h1>
