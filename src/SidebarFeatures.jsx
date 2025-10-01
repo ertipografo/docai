@@ -4,10 +4,10 @@ import { features } from "./utils";
 export default function SidebarFeatures({ feature, setFeature }) {
 	return (
 		<div>
-			<div className="flex xl:flex-col border-b border-gray-200 divide-x xl:divide-y divide-gray-200">
+			<div className="flex xl:flex-col border-b border-gray-200 divide-x xl:divide-x-0 xl:divide-y divide-gray-200">
 				{Object.keys(features).map((k) => {
 					return (
-						<div key={k}>
+						<div key={k} className="relative">
 							<div
 								className="hover:text-blue-500 gap-2 h-12 flex text-xs items-center px-4 cursor-pointer"
 								onClick={() =>
@@ -29,7 +29,7 @@ export default function SidebarFeatures({ feature, setFeature }) {
 								</div>
 							</div>
 							{feature === k && (
-								<div className="p-4 border-t border-gray-200">
+								<div className="p-4 border xl:border-0 xl:border-t border-gray-200 bg-white xl:relative absolute xl:top-auto top-full left-0 xl:w-full w-[300px]">
 									<ul className="tree text-sm">
 										<li>
 											<span>La situazione dell'Oman</span>
