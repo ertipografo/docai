@@ -22,13 +22,13 @@ export default function App() {
 				<div className="flex flex-1 flex-col xl:flex-row">
 					<div
 						className={`w-full xl:w-(--sidebarWidth) transition-all border-r border-gray-200 ${
-							!show && "-ml-(--sidebarWidth)"
+							!show && "xl:-ml-(--sidebarWidth)"
 						}`}
 					>
 						<Sidebar feature={feature} setFeature={setFeature} />
 					</div>
 					<div className="flex-1 bg-gray-50 h-full relative flex flex-col">
-						<div className="sticky top-0 h-14 bg-white border-b border-gray-200">
+						<div className="sticky top-0 min-h-14 bg-white border-b border-gray-200">
 							<Toolbar feature={feature} />
 						</div>
 						<PerfectScrollbar>

@@ -1,6 +1,24 @@
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+
+const Fonti = () => {
+	return (
+		<div className="flex flex-col text-sm gap-2">
+			<div className="py-1 px-2 bg-gray-100 rounded">
+				Primo Documento fonte per la nota
+			</div>
+			<div className="py-1 px-2 bg-gray-100 rounded">
+				Secondo Documento fonte per la nota
+			</div>
+			<div className="py-1 px-2 bg-gray-100 rounded">
+				Ultimo Documento fonte per la nota
+			</div>
+		</div>
+	);
+};
 
 export default function Title() {
+	const [show, setShow] = useState(false);
 	return (
 		<div className="flex flex-col gap-4 p-8 pt-0 border-b border-gray-200">
 			<h1 className="font-semibold text-xl leading-tight">
@@ -17,7 +35,10 @@ export default function Title() {
 					<span>Modificato:</span>
 					<span className="font-semibold">23.5.2025</span>
 				</div>
-				<div className="flex gap-2 items-center bg-gray-200 hover:bg-gray-300 cursor-pointer p-1 rounded-full pl-3">
+				<div
+					onClick={() => setShow((s) => !s)}
+					className="flex gap-2 items-center bg-gray-200 hover:bg-gray-300 cursor-pointer p-1 rounded-full pl-3"
+				>
 					<div className="scale-75 -mx-2">
 						<ChevronDown />
 					</div>
@@ -27,6 +48,7 @@ export default function Title() {
 					</span>
 				</div>
 			</div>
+			{show && <Fonti />}
 		</div>
 	);
 }
