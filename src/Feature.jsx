@@ -16,7 +16,7 @@ export default function Feature({ feature }) {
 						onClick={() => setOpen((o) => !o)}
 						className="absolute cursor-pointer top-2 left-2 bg-white rounded border borderColor h-10 min-w-10 px-2 flexer gap-2"
 					>
-						<TableOfContents />
+						<TableOfContents size={16} />
 						<span className="lg:flex font-semibold hidden text-xs">
 							Indice
 						</span>

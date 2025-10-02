@@ -4,7 +4,7 @@ import { documentTitle } from "./utils";
 
 const Fonti = () => {
 	return (
-		<div className="flex flex-col text-xs divide-gray-200 divide-y rounded-lg max-w-sm w-full ml-auto bg-gray-100">
+		<div className="flex flex-col text-xs divide-gray-200 divide-y rounded max-w-sm w-full ml-auto bg-gray-100">
 			<div className="flex items-center gap-1 p-2">
 				<FileText />
 				<span className="font-semibold">
@@ -52,13 +52,13 @@ export default function Title() {
 					</div>
 					<div
 						onClick={() => setShow((s) => !s)}
-						className="flex gap-2 items-center bg-gray-100 hover:bg-gray-300 cursor-pointer p-1 rounded-full pl-3"
+						className="flex gap-2 items-center bg-gray-100 cursor-pointer p-1 rounded pl-3"
 					>
 						<div className="scale-75 -mx-2">
 							<ChevronDown />
 						</div>
 						<span>Fonti</span>
-						<span className="h-5 flex items-center bg-gray-500 aspect-square justify-center text-white rounded-full">
+						<span className="h-5 flex items-center bg-gray-500 aspect-square justify-center text-white rounded-sm">
 							4
 						</span>
 					</div>
