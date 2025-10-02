@@ -4,7 +4,7 @@ export default function OutBar({ show, setShow }) {
 	const sections = [Star, FileText];
 
 	return (
-		<div className="flex flex-col">
+		<div className="flex flex-col relative">
 			<div
 				onClick={() => setShow((s) => !s)}
 				className={`${

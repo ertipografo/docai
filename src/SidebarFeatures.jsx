@@ -29,7 +29,7 @@ export default function SidebarFeatures({ feature, setFeature }) {
 								</div>
 							</div>
 							{feature === k && (
-								<div className="p-4 border xl:border-0 xl:border-t border-gray-200 bg-white xl:relative absolute xl:top-auto top-full left-0 xl:w-full w-[300px]">
+								<div className="p-4 border xl:border-0 xl:border-t borderColor bg-white xl:relative absolute xl:top-auto top-full left-0 xl:w-full w-[300px]">
 									<ul className="tree text-sm">
 										<li>
 											<span>La situazione dell'Oman</span>

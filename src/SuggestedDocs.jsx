@@ -2,7 +2,7 @@ import Doc from "./Doc";
 
 export default function SuggestedDocs() {
 	return (
-		<div className="bg-gray-50 flex flex-col p-4 border-b border-gray-200">
+		<div className="bg-gray-50 flex flex-col p-4 border-b borderColor">
 			<span className="text-xs font-semibold mb-4">
 				Ti potrebbero interessare
 			</span>

@@ -1,30 +1,24 @@
-import Toolbar from "./Toolbar";
-
-export default function Feature({ feature, setFeature }) {
+import Tree from "./Tree";
+export default function Feature({ feature }) {
+	const isMap = feature === "mappa";
 	return (
-		<>
-			<div className="feature flex flex-col">
-				<div className="sticky top-(--headerHeight) flex bg-gray-50 border-b border-gray-200 z-50">
-					<div className="left" />
-					<div className="main">
-						<div className="sticky py-2 top-(--featureSidebarTop) h-(--toolbarHeight)">
-							<Toolbar
-								feature={feature}
-								setFeature={setFeature}
-							/>
-						</div>
+		<div
+			className={`${
+				isMap ? "" : "max-w-7xl min-h-[2999px]"
+			} border bg-white flex-1 flex rounded-b-lg borderColor border-t-0 w-full`}
+		>
+			{isMap ? (
+				<>
+					<div className="w-(--mapSidebarWidth) p-3 text-xs">
+						<Tree />
 					</div>
-				</div>
-				<div className="flex">
-					<div className="border-r border-gray-200 left sticky top-(--featureSidebarTop) h-(--featureSidebarHeight)">
-						ss
+					<div className="border-l borderColor flex-1 flexer text-xs text-gray-300">
+						Mappa
 					</div>
-					<div className="h-[2000px] p-10">{feature}</div>
-				</div>
-			</div>
-			{/* <div className="main">
-				<div className="border-x bg-gray-50 border-gray-200 min-h-[2000px]"></div>
-			</div> */}
-		</>
+				</>
+			) : (
+				<div>ciao</div>
+			)}
+		</div>
 	);
 }

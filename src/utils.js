@@ -4,3 +4,6 @@ export const features = {
 	mappa: "Mappa Concettuale",
 	quiz: "Quiz",
 };
+
+export const documentTitle =
+	"Il Sultanato dell'Oman dagli anni 70 ai giorni nostri";
