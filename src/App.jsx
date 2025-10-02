@@ -37,7 +37,7 @@ export default function App() {
 									feature={feature}
 								/>
 							</div>
-							<div className="flex flex-col relative items-center bg-rose-200 flex-1">
+							<div className="flex flex-col relative items-center flex-1">
 								<div className="bg-gray-50 sticky top-24 xl:top-14 pt-2 w-full flex flex-col items-center">
 									<div
 										className={`${cl} bg-white border borderColor rounded-t-lg h-12 w-full`}
