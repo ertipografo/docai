@@ -20,6 +20,10 @@ body {
 	font-weight: 900;
 }
 
+.borderColor {
+	@apply border-gray-200;
+}
+
 .tree {
 	li {
 		@apply pl-5 p-1 relative;

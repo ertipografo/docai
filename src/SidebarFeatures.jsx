@@ -4,7 +4,7 @@ import { features } from "./utils";
 export default function SidebarFeatures({ feature, setFeature }) {
 	return (
 		<div>
-			<div className="flex xl:flex-col border-b border-gray-200 divide-x xl:divide-x-0 xl:divide-y divide-gray-200">
+			<div className="flex">
 				{Object.keys(features).map((k) => {
 					return (
 						<div key={k} className="relative">
