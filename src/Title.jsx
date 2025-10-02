@@ -32,7 +32,9 @@ export default function Title() {
 	return (
 		<div className="flex gap-4 flex-col p-4 border-b borderColor">
 			<div className="h-8">
-				<div className="h-full aspect-square bg-gray-200 rounded-lg" />
+				<div className="h-full aspect-square bg-gray-200 rounded-lg flexer text-2xl">
+					🇴🇲
+				</div>
 			</div>
 			<div className="flex flex-col gap-4">
 				<h1 className="font-semibold text-xl leading-tight">
