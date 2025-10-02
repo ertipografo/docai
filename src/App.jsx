@@ -31,14 +31,14 @@ export default function App() {
 									{documentTitle}
 								</div>
 							</div>
-							<div className="pt-2 h-14 bg-gray-50 sticky top-10 xl:top-0 z-30">
+							<div className="pt-2 h-14 bg-gray-50 sticky top-10 xl:top-0 z-40">
 								<FeaturesBar
 									setFeature={setFeature}
 									feature={feature}
 								/>
 							</div>
 							<div className="flex flex-col relative items-center flex-1">
-								<div className="bg-gray-50 sticky top-24 xl:top-14 pt-2 w-full flex flex-col items-center">
+								<div className="bg-gray-50 sticky top-24 xl:top-14 pt-2 w-full flex flex-col items-center z-30">
 									<div
 										className={`${cl} bg-white border borderColor rounded-t-lg h-12 w-full`}
 									>

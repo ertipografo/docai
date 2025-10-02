@@ -33,7 +33,9 @@ export default function Feature({ feature }) {
 					</div>
 				</>
 			) : (
-				<div>ciao</div>
+				<div className="w-full p-10 justify-center flex text-xs text-gray-300">
+					Documento
+				</div>
 			)}
 		</div>
 	);

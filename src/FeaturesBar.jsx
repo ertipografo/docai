@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MessageCircleQuestionMark } from "lucide-react";
 import { features } from "./utils";
 import { useState } from "react";
 
@@ -13,7 +13,7 @@ export default function FeaturesBar({ feature, setFeature }) {
 				Object.keys(features).map((k) => {
 					return (
 						<div
-							className="flex items-center flex-1 sm:flex-0 px-4 border-r borderColor cursor-pointer gap-1 relative"
+							className="flex items-center flex-1 md:flex-0 px-4 border-r borderColor cursor-pointer gap-1 relative"
 							key={k}
 						>
 							<div
@@ -23,7 +23,7 @@ export default function FeaturesBar({ feature, setFeature }) {
 								}
 							>
 								<div className="w-5 h-5 bg-gray-200 rounded-full" />
-								<span className="font-semibold hidden sm:flex whitespace-nowrap">
+								<span className="font-semibold hidden md:flex whitespace-nowrap">
 									{features[k]}
 								</span>
 							</div>
@@ -53,6 +53,10 @@ export default function FeaturesBar({ feature, setFeature }) {
 						</div>
 					);
 				})}
+			<div className="bg-violet-100 text-violet-700 ml-2 md:ml-auto m-1 rounded flexer px-4 font-semibold gap-2">
+				<span className="hidden xl:flex">Chiedi al documento</span>
+				<MessageCircleQuestionMark size={16} />
+			</div>
 		</div>
 	);
 }
