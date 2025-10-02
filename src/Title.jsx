@@ -1,18 +1,27 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Image, FileText, FileAudio } from "lucide-react";
 import { useState } from "react";
 import { documentTitle } from "./utils";
 
 const Fonti = () => {
 	return (
-		<div className="flex flex-col text-sm gap-2">
-			<div className="py-1 px-2 bg-gray-100 rounded">
-				Primo Documento fonte per la nota
+		<div className="flex flex-col text-xs divide-gray-200 divide-y rounded-lg max-w-sm w-full ml-auto bg-gray-100">
+			<div className="flex items-center gap-1 p-2">
+				<FileText />
+				<span className="font-semibold">
+					Primo Documento fonte per la nota
+				</span>
 			</div>
-			<div className="py-1 px-2 bg-gray-100 rounded">
-				Secondo Documento fonte per la nota
+			<div className="flex items-center gap-1 p-2">
+				<Image />
+				<span className="font-semibold">
+					Foto scattata il 23.5.2025
+				</span>
 			</div>
-			<div className="py-1 px-2 bg-gray-100 rounded">
-				Ultimo Documento fonte per la nota
+			<div className="flex items-center gap-1 p-2">
+				<FileAudio />
+				<span className="font-semibold">
+					Audio registrazione di maggio
+				</span>
 			</div>
 		</div>
 	);
@@ -41,7 +50,7 @@ export default function Title() {
 					</div>
 					<div
 						onClick={() => setShow((s) => !s)}
-						className="flex gap-2 items-center bg-gray-200 hover:bg-gray-300 cursor-pointer p-1 rounded-full pl-3"
+						className="flex gap-2 items-center bg-gray-100 hover:bg-gray-300 cursor-pointer p-1 rounded-full pl-3"
 					>
 						<div className="scale-75 -mx-2">
 							<ChevronDown />

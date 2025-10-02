@@ -3,7 +3,7 @@ import FeaturesBar from "./FeaturesBar";
 import Feature from "./Feature";
 import Toolbar from "./Toolbar";
 import { documentTitle } from "./utils";
-import Title from "./Title";
+import Sidebar from "./Sidebar";
 import OutBar from "./OutBar";
 export default function App() {
 	const [feature, setFeature] = useState(null);
@@ -22,13 +22,14 @@ export default function App() {
 							!show && "xl:-ml-(--sidebarWidth)"
 						} xl:w-(--sidebarWidth) transition-all bg-white xl:border-r borderColor relative z-40`}
 					>
-						<Title />
+						<Sidebar />
 					</div>
 					<div className="flex-1 overflow-visible xl:overflow-auto">
 						<div className="flex flex-col bg-gray-50 px-2 pb-2 relative min-h-full">
 							<div className="flex pl-2 pr-4 xl:hidden fixed z-30 top-14 left-14 right-0">
-								<div className="bg-gray-50 flex-1 h-12 px-2 items-center flex text-sm font-semibold">
-									{documentTitle}
+								<div className="bg-gray-50 flex-1 h-12 px-1 items-center flex gap-2 text-sm font-semibold">
+									<div className="h-8 w-8 bg-gray-200 rounded-lg" />
+									<span>{documentTitle}</span>
 								</div>
 							</div>
 							<div className="pt-2 h-14 bg-gray-50 sticky top-10 xl:top-0 z-40">

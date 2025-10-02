@@ -6,7 +6,7 @@ export default function Toolbar({ feature }) {
 		<div className="h-full flex pl-4 pr-1 items-center gap-2">
 			<div className="flex-1 flex items-center gap-2">
 				<div className="h-5 w-5 bg-gray-200 rounded-full" />
-				<span className="text-sm font-semibold">
+				<span className="text-xs whitespace-nowrap font-semibold">
 					{features[feature]}
 				</span>
 			</div>
