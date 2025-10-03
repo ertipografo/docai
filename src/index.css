@@ -22,7 +22,7 @@ body {
 }
 
 .borderColor {
-	@apply borderColor;
+	@apply border-gray-200;
 }
 
 .flexer {
