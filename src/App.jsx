@@ -1,29 +1,26 @@
 import { useState } from "react";
-import FeaturesBar from "./FeaturesBar";
 import Feature from "./Feature";
-import Toolbar from "./Toolbar";
-import { documentTitle } from "./utils";
+import { features } from "./utils";
 import Sidebar from "./Sidebar";
 import OutBar from "./OutBar";
-import BottomBar from "./BottomBar";
 export default function App() {
-	const [feature, setFeature] = useState(null);
-	const [show, setShow] = useState(null);
-	const cl = "";
+	const [feature, setFeature] = useState(features[0].value);
+	const [show, setShow] = useState(true);
+
 	return (
 		<div className="flex flex-col h-screen overflow-hidden text-base">
 			<div className="h-(--headerHeight) bg-gray-900 flexer text-gray-500">
 				Header
 			</div>
 			<div className="flex-1 flex overflow-hidden">
-				<div className="w-(--headerHeight) bg-gray-900 relative z-50">
+				<div className="w-(--headerHeight) hidden xl:block bg-gray-900 relative z-50">
 					<OutBar show={show} setShow={setShow} />
 				</div>
 				<div className="flex flex-col xl:flex-row flex-1 overflow-auto">
 					<div
 						className={`${
 							!show && "xl:-ml-(--sidebarWidth)"
-						} xl:w-(--sidebarWidth) transition-all border-r borderColor bgPrimary relative z-40`}
+						} xl:w-(--sidebarWidth) transition-all xl:border-r borderColor bgPrimary relative z-40`}
 					>
 						<Sidebar feature={feature} setFeature={setFeature} />
 					</div>

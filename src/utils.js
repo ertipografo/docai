@@ -1,9 +1,14 @@
 import { Network, FileText, Scissors, ShieldQuestionMark } from "lucide-react";
-
+import Tree from "./Tree";
 export const features = [
 	{ label: "Documento Originale", Icon: FileText, value: "originale" },
 	{ label: "Riassunto", Icon: Scissors, value: "riassunto" },
-	{ label: "Mappa Concettuale", Icon: Network, value: "mappa" },
+	{
+		label: "Mappa Concettuale",
+		Icon: Network,
+		value: "mappa",
+		hasComplementary: Tree,
+	},
 	{ label: "Quiz", Icon: ShieldQuestionMark, value: "quiz" },
 ];
 

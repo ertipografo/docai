@@ -30,11 +30,9 @@ const Fonti = () => {
 export default function Title() {
 	const [show, setShow] = useState(false);
 	return (
-		<div className="flex gap-4 flex-col pb-6">
-			<div className="h-8">
-				<div className="h-full aspect-square bg-gray-200 rounded-lg flexer text-2xl">
-					🇴🇲
-				</div>
+		<div className="flex flex-col pb-6">
+			<div className="h-(--headerHeight) flex items-center text-2xl">
+				🇴🇲
 			</div>
 			<div className="flex flex-col gap-4">
 				<h1 className="text-lg leading-snug textPrimary font-bold">
