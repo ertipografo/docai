@@ -13,7 +13,7 @@ export default function SidebarFeatures({ feature, setFeature }) {
 							value === feature
 								? "bg-gray-800 text-white"
 								: "hover:bg-gray-100"
-						} rounded-lg gap-3 font-semibold min-h-10 px-2 flex items-center cursor-pointer flex-1 xl:flex-0`}
+						} rounded-lg gap-3 font-semibold min-h-9 px-3 flex items-center cursor-pointer flex-1 xl:flex-0`}
 						onClick={() =>
 							setFeature(feature === value ? null : value)
 						}

@@ -8,71 +8,55 @@ export default function Feature({ feature }) {
 	const ComplementaryComponent = feature && currentFeature.hasComplementary;
 	const CurrentFeatureIcon = currentFeature.Icon;
 	return (
-		<div className="flex flex-col xl:flex-row relative">
-			{/* <div className="h-0 w-0 sticky top-0 overflow-visible z-20">
-				<div
-					className="h-12 w-12 inset-0 bgPrimary flexer"
-					onClick={() => setOpen((o) => !o)}
-				>
-					<Settings2 size={16} />
-				</div>
-			</div> */}
-
-			{!!ComplementaryComponent && (
-				<div
-					className={`${
-						open
-							? "xl:w-(--complementarySidebarWidth)"
-							: "xl:w-(--headerHeight)"
-					} sticky -top-px xl:top-0 h-auto xl:h-(--sidebarHeight) flex flex-col transition-all bgPrimary border-b xl:border-b-0 xl:border-r borderColor z-30 border-t xl:border-t-0`}
-				>
-					<div className="flex justify-start xl:justify-end items-center">
-						<div className="w-(--headerHeight)">
-							<div
-								onClick={() => setOpen((o) => !o)}
-								className="aspect-square flexer cursor-pointer"
-							>
-								{open ? (
-									<X size={16} />
-								) : (
-									<Settings2 size={18} />
-								)}
-							</div>
-						</div>
-						<div className="flex-1 flex justify-center xl:hidden gap-2">
-							<div className="h-full aspect-square flexer">
-								<CurrentFeatureIcon size={18} />
-							</div>
-							<span className="font-semibold">
-								{currentFeature.label}
-							</span>
-						</div>
-						<div className="w-(--headerHeight) flex items-center justify-center xl:hidden">
-							<Download size={18} />
-						</div>
-					</div>
-					<div
-						className={`${
-							open ? "flex" : "hidden"
-						} p-6 bg-yellow-200 w-[75vw] max-w-(--complementarySidebarWidth) xl:w-full h-(--complementarySidebarMaxHeight) overflow-hidden xl:relative absolute top-full xl:top-auto left-0`}
-					>
-						<ComplementaryComponent />
-					</div>
-				</div>
-			)}
-
+		<div className="flex flex-col lg:flex-row relative border-t borderColor xl:border-t-0">
 			<div className="bgSecondary flex-1 flex flex-col">
-				<div className="h-(--headerHeight) bgPrimary border-b borderColor hidden xl:flex items-center sticky top-0 justify-center">
-					<div className="flex items-center h-full">
-						<div className="h-full aspect-square flexer">
-							<CurrentFeatureIcon size={18} />
+				<div className="h-(--headerHeight) gap-2 px-2 bgPrimary border-b borderColor flex items-center sticky top-12 lg:top-0 justify-between">
+					{!!ComplementaryComponent && (
+						<div
+							onClick={() => setOpen((o) => !o)}
+							className={`${
+								open
+									? "bg-gray-100"
+									: "bg-gray-800 text-gray-200"
+							} h-8 w-8 rounded cursor-pointer  flexer`}
+						>
+							{open ? <X size={16} /> : <Settings2 size={16} />}
 						</div>
+					)}
+					<div className="flex items-center gap-2 flex-1 justify-center">
+						<CurrentFeatureIcon size={14} />
 						<span className="font-semibold">
 							{currentFeature.label}
 						</span>
 					</div>
+
+					<div className="h-8 w-8 rounded cursor-pointer border borderColor flexer">
+						<Download size={16} />
+					</div>
 				</div>
-				<div className="min-h-[3300px] bg-white p-5">{feature}</div>
+				<div className="flex-1 flex">
+					{!!ComplementaryComponent && (
+						<div
+							className={`${
+								open
+									? "w-(--complementarySidebarWidth) border-r "
+									: "w-0"
+							} sticky top-(--headerHeight) h-(--complementarySidebarMaxHeight) flex flex-col transition-all bgPrimary z-30 overflow-hidden borderColor p-4`}
+						>
+							<div className={`${open ? "block" : "hidden"}`}>
+								<ComplementaryComponent />
+							</div>
+						</div>
+					)}
+					{/* <div className="w-20 bg-orange-200 h-(--complementarySidebarMaxHeight) sticky top-(--headerHeight)">
+						123
+					</div> */}
+					<div className="bg-teal-300 flex-1">
+						<div className="min-h-[3300px] bg-white p-5">
+							{feature}
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

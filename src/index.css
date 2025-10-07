@@ -12,7 +12,7 @@
 	--featureSidebarHeight: calc(100vh - var(--featureSidebarTop));
 	--sidebarWidth: 340px;
 	--complementarySidebarWidth: 300px;
-	--text-base: 13px;
+	--text-base: 12px;
 }
 
 body {
