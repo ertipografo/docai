@@ -27,11 +27,11 @@ export default function Title() {
 					</div>
 					<div
 						onClick={() => setShow((s) => !s)}
-						className="flex gap-2 items-center border borderColor cursor-pointer p-1 rounded-full pl-2"
+						className="flex gap-2 items-center bg-gray-100 cursor-pointer p-2 rounded-md"
 					>
 						<ChevronDown size={16} className="-mr-1.5" />
 						<span>Fonti</span>
-						<span className="h-5 flex items-center bg-gray-500 aspect-square justify-center text-white rounded-full">
+						<span className="h-5 flex items-center bg-white aspect-square justify-center rounded">
 							4
 						</span>
 					</div>

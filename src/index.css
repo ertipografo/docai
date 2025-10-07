@@ -10,7 +10,7 @@
 		100vh - var(--headerHeight) - var(--headerHeight)
 	);
 	--featureSidebarHeight: calc(100vh - var(--featureSidebarTop));
-	--sidebarWidth: 400px;
+	--sidebarWidth: 360px;
 	--complementarySidebarWidth: 300px;
 	--text-base: 13px;
 }
