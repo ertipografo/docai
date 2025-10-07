@@ -2,16 +2,13 @@
 @import "tailwindcss";
 
 @theme {
-	--headerHeight: 50px;
-	--toolbarHeight: 70px;
-	--featureSidebarTop: calc(var(--headerHeight) + var(--toolbarHeight));
-	--sidebarHeight: calc(100vh - var(--headerHeight));
-	--complementarySidebarMaxHeight: calc(
+	--spacing-headerHeight: 50px;
+	--spacing-complementarySidebarMaxHeight: calc(
 		100vh - var(--headerHeight) - var(--headerHeight)
 	);
-	--featureSidebarHeight: calc(100vh - var(--featureSidebarTop));
-	--sidebarWidth: 360px;
-	--complementarySidebarWidth: 300px;
+
+	--spacing-sidebarWidth: 360px;
+	--spacing-complementarySidebarWidth: 300px;
 	--text-base: 13px;
 	--chatWidth: 360px;
 
@@ -35,16 +32,6 @@ body {
 
 .minititle {
 	@apply text-xs text-gray-400 font-semibold tracking-wide;
-}
-
-.textPrimary {
-	@apply text-gray-800;
-}
-.textSecondary {
-	@apply text-gray-400;
-}
-@utility text-secondary {
-	@apply text-teal-500;
 }
 
 .flexer {

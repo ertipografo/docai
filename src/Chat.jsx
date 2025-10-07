@@ -28,7 +28,7 @@ export default function Chat() {
 	const [cnt, setCnt] = useState("");
 	const [show, setShow] = useState(false);
 	return (
-		<div className="rounded-full 2xl:rounded-none bg-bg1 w-10 fixed bottom-6 right-6 2xl:right-0 2xl:relative 2xl:bottom-0 2xl:w-(--chatWidth) h-10 2xl:h-(--complementarySidebarMaxHeight) flex flex-col justify-between">
+		<div className="rounded-full 2xl:rounded-none bg-bg1 w-10 fixed bottom-6 right-6 2xl:right-0 2xl:relative 2xl:bottom-0 2xl:w-(--chatWidth) h-10 2xl:h-complementarySidebarMaxHeight flex flex-col justify-between">
 			<div
 				onClick={() => setShow((o) => !o)}
 				className="h-full 2xl:h-10 flex items-center justify-center gap-2 text-violet-300 px-2 cursor-pointer"

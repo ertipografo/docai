@@ -11,7 +11,7 @@ export default function Feature({ feature }) {
 	const CurrentFeatureIcon = currentFeature.Icon;
 	return (
 		<div className="flex flex-col relative border-t border-borderColor xl:border-t-0">
-			<div className="h-(--headerHeight) gap-2 px-2 bg-bg1 border-b border-borderColor flex items-center sticky top-0 lg:top-0 justify-between">
+			<div className="h-headerHeight gap-2 px-2 bg-bg1 border-b border-borderColor flex items-center sticky top-0 lg:top-0 justify-between">
 				{!!ComplementaryComponent && (
 					<div
 						onClick={() => setOpen((o) => !o)}
@@ -39,9 +39,9 @@ export default function Feature({ feature }) {
 					<div
 						className={`${
 							open
-								? "w-(--complementarySidebarWidth) border-r "
+								? "w-complementarySidebarWidth border-r "
 								: "w-0"
-						} sticky top-(--headerHeight) h-(--complementarySidebarMaxHeight) flex flex-col transition-all bg-bg1 z-30 overflow-hidden border-borderColor`}
+						} sticky top-headerHeight h-complementarySidebarMaxHeight flex flex-col transition-all bg-bg1 z-30 overflow-hidden border-borderColor`}
 					>
 						<div className={`${open ? "block" : "hidden"}`}>
 							<ComplementaryComponent />
