@@ -54,7 +54,7 @@ export default function Feature({ feature }) {
 					<div
 						className={`${
 							open ? "flex" : "hidden"
-						} p-6 bg-yellow-200`}
+						} p-6 bg-yellow-200 w-[75vw] max-w-(--complementarySidebarWidth) xl:w-full h-(--complementarySidebarMaxHeight) overflow-hidden xl:relative absolute top-full xl:top-auto left-0`}
 					>
 						<ComplementaryComponent />
 					</div>

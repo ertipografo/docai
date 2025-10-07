@@ -3,8 +3,8 @@ import { features } from "./utils";
 
 export default function SidebarFeatures({ feature, setFeature }) {
 	return (
-		<div className="flex flex-col py-6 gap-1">
-			<span className="minititle mb-2">Features:</span>
+		<div className="flex flex-row xl:flex-col xl:py-6 py-2 gap-1">
+			<span className="hidden xl:flex minititle mb-2">Features:</span>
 			{features.map(({ value, label, Icon }) => {
 				return (
 					<div
@@ -13,7 +13,7 @@ export default function SidebarFeatures({ feature, setFeature }) {
 							value === feature
 								? "bg-gray-800 text-white"
 								: "hover:bg-gray-100"
-						} rounded-lg gap-3 font-semibold h-10 px-2 flex items-center cursor-pointer`}
+						} rounded-lg gap-3 font-semibold min-h-10 px-2 flex items-center cursor-pointer flex-1 xl:flex-0`}
 						onClick={() =>
 							setFeature(feature === value ? null : value)
 						}
@@ -21,7 +21,7 @@ export default function SidebarFeatures({ feature, setFeature }) {
 						<div>
 							<Icon size={16} />
 						</div>
-						<span>{label}</span>
+						<span className="hidden xl:flex">{label}</span>
 						<div className="ml-auto">
 							<ChevronRight size={16} />
 						</div>

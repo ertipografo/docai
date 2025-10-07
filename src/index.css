@@ -6,6 +6,9 @@
 	--toolbarHeight: 70px;
 	--featureSidebarTop: calc(var(--headerHeight) + var(--toolbarHeight));
 	--sidebarHeight: calc(100vh - var(--headerHeight));
+	--complementarySidebarMaxHeight: calc(
+		100vh - var(--headerHeight) - var(--headerHeight)
+	);
 	--featureSidebarHeight: calc(100vh - var(--featureSidebarTop));
 	--sidebarWidth: 340px;
 	--complementarySidebarWidth: 300px;
