@@ -2,7 +2,7 @@ import { Image, FileText, FileAudio } from "lucide-react";
 
 export default function Fonti() {
 	return (
-		<div className="flex flex-col divide-gray-200 divide-y rounded max-w-sm w-full ml-auto bgSecondary">
+		<div className="flex flex-col rounded max-w-sm w-full ml-auto bg-bg2">
 			<div className="flex items-center gap-2 p-2">
 				<FileText size={18} />
 				<span className="font-semibold">

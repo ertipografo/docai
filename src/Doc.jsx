@@ -2,7 +2,7 @@ import { FileText } from "lucide-react";
 
 export default function Doc({
 	idx,
-	className = "bgPrimary border borderColor",
+	className = "bg-bg1 border border-borderColor",
 }) {
 	return (
 		<div
@@ -11,7 +11,7 @@ export default function Doc({
 			<FileText />
 			<div className="flex flex-col flex-1 gap-1">
 				<span className="font-semibold">{`Documento suggerito numero ${idx}`}</span>
-				<div className="text-gray-400 flex justify-between">
+				<div className="flex justify-between">
 					<span>18 Pagine</span>
 					<span>2024/25</span>
 				</div>

@@ -11,7 +11,7 @@ const categories = [
 export default function SuggestedDocs() {
 	const [cur, setCur] = useState("preferiti");
 	return (
-		<div className="flex flex-col pt-6 border-t borderColor gap-2">
+		<div className="flex flex-col pt-6 border-t border-borderColor gap-2">
 			<span className="minititle">{`Lista ${cur}`}</span>
 			<div className="flex flex-col -mx-6 pb-3">
 				{Array.from({ length: 5 }).map((_, index) => {
@@ -19,7 +19,7 @@ export default function SuggestedDocs() {
 					return (
 						<div
 							key={index}
-							className="ml-4 mr-6 mb-1 p-2 hover:bg-gray-100 rounded-md cursor-pointer group flex items-center"
+							className="ml-4 mr-6 mb-1 p-2 hover:bg-bg2 rounded-md cursor-pointer group flex items-center"
 						>
 							<div className="flex flex-col gap-1 flex-1">
 								<span className="font-semibold">
@@ -33,7 +33,7 @@ export default function SuggestedDocs() {
 												className={`p-[2px] ${
 													i <= randomAvailableFeatures
 														? "text-current"
-														: "text-gray-300"
+														: "hover:bg-tahiti"
 												}`}
 											>
 												<Icon size={14} />
@@ -49,16 +49,14 @@ export default function SuggestedDocs() {
 					);
 				})}
 			</div>
-			<div className="border-t borderColor flexer gap-4 -mx-6 h-14">
+			<div className="border-t border-borderColor flexer gap-4 -mx-6 h-14">
 				{categories.map(({ label, Icon }) => {
 					return (
 						<div
 							key={label}
 							onClick={() => setCur(label)}
 							className={`p-2 rounded-md cursor-pointer ${
-								cur === label
-									? "bg-gray-100"
-									: "text-gray-300 hover:text-gray-800"
+								cur === label ? "bg-bg2" : "text-text2"
 							}`}
 						>
 							<Icon size={18} />

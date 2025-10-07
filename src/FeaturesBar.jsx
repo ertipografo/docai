@@ -7,12 +7,12 @@ export default function FeaturesBar({ feature, setFeature }) {
 	const cl = "";
 	const [open, setOpen] = useState(null);
 	return (
-		<div className={`${cl} bgPrimary border-b borderColor flex h-full`}>
+		<div className={`${cl} bg-bg1 border-b border-borderColor flex h-full`}>
 			{features &&
 				Object.keys(features).map((k) => {
 					return (
 						<div
-							className="flex items-center flex-1 md:flex-0 px-4 border-r borderColor cursor-pointer gap-1 relative"
+							className="flex items-center flex-1 md:flex-0 px-4 border-r border-borderColor cursor-pointer gap-1 relative"
 							key={k}
 						>
 							<div
@@ -21,7 +21,7 @@ export default function FeaturesBar({ feature, setFeature }) {
 									setFeature(feature === k ? null : k)
 								}
 							>
-								<div className="w-5 h-5 bg-gray-200 rounded-full" />
+								<div className="w-5 h-5 bg-bg2 rounded-full" />
 								<span className="font-semibold hidden md:flex whitespace-nowrap">
 									{features[k]}
 								</span>
@@ -32,9 +32,7 @@ export default function FeaturesBar({ feature, setFeature }) {
 										setOpen((i) => (i === k ? null : k))
 									}
 									className={`${
-										open === k
-											? "bgSecondary"
-											: "hover:bgSecondary"
+										open === k ? "bg-bg2" : "hover:bg-bg2"
 									} h-8 w-8 flexer ml-auto sm:ml-0 relative rounded -mr-2`}
 								>
 									<ChevronDown size="16" />
@@ -42,7 +40,7 @@ export default function FeaturesBar({ feature, setFeature }) {
 							)}
 							{open === k && (
 								<>
-									<div className="absolute bgPrimary border borderColor top-full z-50 -left-px h-40 w-xs"></div>
+									<div className="absolute bg-bg1 border border-borderColor top-full z-50 -left-px h-40 w-xs"></div>
 									<div
 										className="fixed inset-0 z-40"
 										onClick={() => setOpen(null)}

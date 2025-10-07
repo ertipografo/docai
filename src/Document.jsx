@@ -1,6 +1,6 @@
 const Page = () => {
 	return (
-		<div className="flex flex-col p-12 gap-4 border borderColor rounded-md bg-white font-serif">
+		<div className="flex flex-col p-12 gap-4 border border-borderColor rounded-md bg-white font-serif">
 			<h1 className="text-3xl font-bold">Titolo pagina</h1>
 			<h2 className="font-semibold text-lg">
 				Sottotitolo pagina and some more random text please
@@ -21,7 +21,7 @@ const Page = () => {
 				pariatur officia illum voluptatibus ex illo blanditiis neque ab,
 				nobis in.
 			</p>
-			<div className="h-[200px] w-[200px] bg-gray-200" />
+			<div className="h-[200px] w-[200px] bg-neutral-200" />
 			<p className="text-lg leading-relaxed">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				Consectetur alias voluptates veniam delectus dolores corrupti!
@@ -40,7 +40,7 @@ const Page = () => {
 				facilis distinctio pariatur officia illum voluptatibus ex illo
 				blanditiis neque ab, nobis in.
 			</p>
-			<div className="h-[30vh] bg-gray-200" />
+			<div className="h-[30vh] bg-neutral-200" />
 			<p className="text-lg leading-relaxed">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				Consectetur alias vue ab, nobis in. Lorem ipsum dolor sit amet

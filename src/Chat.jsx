@@ -4,18 +4,20 @@ import { MessageCircleQuestionMark, Copy } from "lucide-react";
 const Message = ({ incoming = false, children }) => {
 	return (
 		<div
-			className={`flex gap-2 group items-center ${
-				!incoming ? "flex-row-reverse pl-5" : "pr-5"
+			className={`flex gap-2 group items-center  ${
+				!incoming
+					? "flex-row-reverse pl-5 text-white"
+					: "pr-5 text-text1"
 			} `}
 		>
 			<div
 				className={`${
-					incoming ? "bg-gray-200" : "bg-violet-500 text-white"
+					incoming ? "bg-bg2" : "bg-violet-500"
 				} p-2 rounded`}
 			>
 				{children}
 			</div>
-			<div className="text-gray-500 cursor-pointer opacity-0 group-hover:opacity-100 w-4 h-4 flexer">
+			<div className="cursor-pointer opacity-0 group-hover:opacity-50 w-4 h-4 flexer text-white">
 				<Copy size={14} />
 			</div>
 		</div>
@@ -26,7 +28,7 @@ export default function Chat() {
 	const [cnt, setCnt] = useState("");
 	const [show, setShow] = useState(false);
 	return (
-		<div className="rounded-full 2xl:rounded-none bg-gray-800 w-10 fixed bottom-6 right-6 2xl:right-0 2xl:relative 2xl:bottom-0 2xl:w-(--chatWidth) h-10 2xl:h-(--complementarySidebarMaxHeight) flex flex-col justify-between">
+		<div className="rounded-full 2xl:rounded-none bg-bg1 w-10 fixed bottom-6 right-6 2xl:right-0 2xl:relative 2xl:bottom-0 2xl:w-(--chatWidth) h-10 2xl:h-(--complementarySidebarMaxHeight) flex flex-col justify-between">
 			<div
 				onClick={() => setShow((o) => !o)}
 				className="h-full 2xl:h-10 flex items-center justify-center gap-2 text-violet-300 px-2 cursor-pointer"
@@ -37,7 +39,7 @@ export default function Chat() {
 			<div
 				className={`2xl:flex ${
 					show ? "flex" : "hidden"
-				} w-(--chatWidth) bg-gray-800 min-h-[500px] absolute 2xl:relative 2xl:bottom-0 bottom-full right-0 rounded-xl flex-col justify-end p-4 gap-2 mb-2 2xl:mb-0`}
+				} w-(--chatWidth) bg-bg1 min-h-[500px] absolute 2xl:relative 2xl:bottom-0 bottom-full right-0 rounded-xl flex-col justify-end p-4 gap-2 mb-2 2xl:mb-0`}
 			>
 				<div className="flex flex-col gap-2">
 					<Message>Di cosa parla questo bel documentino?</Message>
@@ -60,19 +62,19 @@ export default function Chat() {
 						illum voluptatibus ex illo blanditiis neque ab, nobis in
 					</Message>
 				</div>
-				<div className="bg-gray-700/50 rounded-md overflow-hidden border border-gray-600 flex flex-col pointer-events-auto">
+				<div className="bg-bg1 rounded-md overflow-hidden border border-borderColor flex flex-col pointer-events-auto">
 					<input
 						value={cnt}
 						placeholder="Chiedi al documento..."
 						onChange={(e) => setCnt(e.target.value)}
-						className="bg-transparent text-white p-2 outline-none w-full placeholder:text-gray-400"
+						className="bg-transparent p-2 outline-none w-full"
 					/>
 					<div className="flex justify-end gap-2 items-center p-2">
 						<div
 							className={`${
 								cnt
 									? "bg-blue-500 text-white cursor-pointer"
-									: "bg-gray-500 text-gray-300"
+									: "bg-bg2 text-text2"
 							} py-1 px-2 rounded`}
 						>
 							Chiedi
