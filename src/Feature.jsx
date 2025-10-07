@@ -10,7 +10,7 @@ export default function Feature({ feature }) {
 	const ComplementaryComponent = feature && currentFeature.hasComplementary;
 	const CurrentFeatureIcon = currentFeature.Icon;
 	return (
-		<div className="flex flex-col relative border-t border-borderColor xl:border-t-0">
+		<div className="flex flex-col relative border-t border-borderColor lg:border-t-0">
 			<div className="h-headerHeight gap-2 px-2 bg-bg1 border-b border-borderColor flex items-center sticky top-0 lg:top-0 justify-between">
 				{!!ComplementaryComponent && (
 					<div

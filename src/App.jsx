@@ -10,9 +10,9 @@ export default function App() {
 
 	return (
 		<div className="flex flex-col h-screen overflow-hidden text-base text-text1">
-			<div className="h-headerHeight bg-bgDarker flexer">Header</div>
+			<div className="h-headerHeight bg-bgDark flexer">Header</div>
 			<div className="flex-1 flex overflow-hidden">
-				<div className="w-headerHeight hidden lg:block bg-bgDarker relative z-50">
+				<div className="w-headerHeight hidden lg:block bg-bgDark relative z-50">
 					<OutBar show={show} setShow={setShow} />
 				</div>
 				<div className="flex flex-col lg:flex-row flex-1 overflow-auto">

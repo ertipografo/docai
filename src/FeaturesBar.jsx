@@ -51,7 +51,7 @@ export default function FeaturesBar({ feature, setFeature }) {
 					);
 				})}
 			<div className="bg-violet-100 text-violet-700 ml-2 md:ml-auto m-1 rounded flexer px-4 font-semibold gap-2">
-				<span className="hidden xl:flex">Chiedi al documento</span>
+				<span className="hidden lg:flex">Chiedi al documento</span>
 				<MessageCircleQuestionMark size={16} />
 			</div>
 		</div>

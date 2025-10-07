@@ -2,32 +2,26 @@
 @import "tailwindcss";
 
 @theme {
+	--font-sans: "Work Sans", sans-serif;
 	--spacing-headerHeight: 50px;
 	--spacing-complementarySidebarMaxHeight: calc(
-		100vh - var(--headerHeight) - var(--headerHeight)
+		100vh - var(--spacing-headerHeight) - var(--spacing-headerHeight)
 	);
-
 	--spacing-sidebarWidth: 360px;
 	--spacing-complementarySidebarWidth: 300px;
 	--text-base: 13px;
 	--chatWidth: 360px;
 
-	--color-text1: olive;
-	--color-text2: pink;
-	--color-textOnDark: fuchsia;
-	--color-bgDark: var(--color-green-500);
-	--color-bgDarker: var(--color-green-700);
+	--color-text1: var(--color-gray-800);
+	--color-text2: var(--color-gray-400);
+	--color-textOnDark: var(--color-gray-100);
+	--color-bgDark: var(--color-gray-800);
+	--color-bgDarker: var(--color-gray-900);
 	--color-bg1: var(--color-white);
 	--color-bg2: var(--color-gray-100);
-	--color-borderColor: fuchsia;
-	--color-text1: purple;
+	--color-borderColor: var(--color-gray-200);
 	--font-weight-semibold: 500;
 	--font-weight-bold: 600;
-}
-
-body {
-	font-family: "Work Sans", sans-serif;
-	font-weight: 400;
 }
 
 .minititle {
