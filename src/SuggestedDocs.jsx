@@ -56,7 +56,9 @@ export default function SuggestedDocs() {
 							key={label}
 							onClick={() => setCur(label)}
 							className={`p-2 rounded-md cursor-pointer ${
-								cur === label ? "bg-bg2" : "text-text2"
+								cur === label
+									? "bg-bg2"
+									: "text-text2 hover:text-text1"
 							}`}
 						>
 							<Icon size={18} />
