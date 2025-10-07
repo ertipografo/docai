@@ -57,9 +57,8 @@ export default function Feature({ feature }) {
 						</div>
 					)}
 				</div>
-				<div className="rounded-full 2xl:rounded-none bg-gray-800 w-10 fixed bottom-6 right-6 2xl:right-0 2xl:relative 2xl:bottom-0 2xl:w-(--chatWidth) h-10 2xl:h-(--complementarySidebarMaxHeight) flex flex-col justify-between">
-					<Chat />
-				</div>
+
+				<Chat />
 			</div>
 		</div>
 	);
