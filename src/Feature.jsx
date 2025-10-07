@@ -2,6 +2,7 @@ import { useState } from "react";
 import { features } from "./utils";
 import { Settings2, X, Download } from "lucide-react";
 import Document from "./Document";
+import Chat from "./Chat";
 
 export default function Feature({ feature }) {
 	const [open, setOpen] = useState(false);
@@ -28,7 +29,8 @@ export default function Feature({ feature }) {
 					</span>
 				</div>
 
-				<div className="h-8 w-8 rounded cursor-pointer border borderColor flexer">
+				<div className="h-8 px-3 gap-2 font-semibold rounded cursor-pointer border borderColor flexer">
+					<span className="hidden lg:block">Download</span>
 					<Download size={16} />
 				</div>
 			</div>
@@ -54,6 +56,9 @@ export default function Feature({ feature }) {
 							<Document />
 						</div>
 					)}
+				</div>
+				<div className="rounded-full 2xl:rounded-none bg-gray-800 w-10 fixed bottom-6 right-6 2xl:right-0 2xl:relative 2xl:bottom-0 2xl:w-(--chatWidth) h-10 2xl:h-(--complementarySidebarMaxHeight) flex flex-col justify-between">
+					<Chat />
 				</div>
 			</div>
 		</div>
