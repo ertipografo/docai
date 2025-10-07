@@ -7,22 +7,32 @@
 	--featureSidebarTop: calc(var(--headerHeight) + var(--toolbarHeight));
 	--sidebarHeight: calc(100vh - var(--headerHeight));
 	--featureSidebarHeight: calc(100vh - var(--featureSidebarTop));
-	--sidebarWidth: 380px;
+	--sidebarWidth: 340px;
 	--mapSidebarWidth: 280px;
+	--text-base: 13px;
 }
 
 body {
 	font-family: "Work Sans", sans-serif;
+	font-weight: 400;
 }
 .font-semibold {
-	font-weight: 600;
+	font-weight: 500;
 }
 .font-bold {
-	font-weight: 900;
+	font-weight: 600;
+}
+
+.divideColor {
+	@apply divide-gray-200;
 }
 
 .borderColor {
 	@apply border-gray-200;
+}
+
+.minititle {
+	@apply text-xs font-semibold text-gray-400;
 }
 
 .isDark {
@@ -43,6 +53,9 @@ body {
 	@apply bg-gray-100;
 }
 
+.textPrimary {
+	@apply text-gray-800;
+}
 .textSecondary {
 	@apply text-gray-400;
 }

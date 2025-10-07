@@ -5,7 +5,7 @@ import SidebarFeatures from "./SidebarFeatures";
 
 const Fonti = () => {
 	return (
-		<div className="flex flex-col text-xs divide-gray-200 divide-y rounded max-w-sm w-full ml-auto bgSecondary">
+		<div className="flex flex-col divide-gray-200 divide-y rounded max-w-sm w-full ml-auto bgSecondary">
 			<div className="flex items-center gap-1 p-2">
 				<FileText />
 				<span className="font-semibold">
@@ -31,24 +31,24 @@ const Fonti = () => {
 export default function Title() {
 	const [show, setShow] = useState(false);
 	return (
-		<div className="flex gap-4 flex-col p-4 xl:p-8">
+		<div className="flex gap-4 flex-col pb-6">
 			<div className="h-8">
 				<div className="h-full aspect-square bg-gray-200 rounded-lg flexer text-2xl">
 					🇴🇲
 				</div>
 			</div>
 			<div className="flex flex-col gap-4">
-				<h1 className="text-lg leading-snug textPrimary">
+				<h1 className="text-lg leading-snug textPrimary font-bold">
 					{documentTitle}
 				</h1>
-				<p className="max-w-4xl text-sm leading-relaxed">
+				<p className="max-w-4xl leading-relaxed textSecondary">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Illo velit cupiditate, fugit accusamus ipsam temporibus
 					rerum nisi.
 				</p>
-				<div className="flex justify-between text-xs items-center">
+				<div className="flex justify-between items-center text-xs">
 					<div className="flex gap-1">
-						<span>Modificato:</span>
+						<span className="minititle">Modificato:</span>
 						<span className="font-semibold">23.5.2025</span>
 					</div>
 					{/* <div
@@ -66,7 +66,6 @@ export default function Title() {
 				</div>
 				{show && <Fonti />}
 			</div>
-			<SidebarFeatures />
 		</div>
 	);
 }

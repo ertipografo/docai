@@ -6,7 +6,7 @@ export default function Doc({
 }) {
 	return (
 		<div
-			className={`${className} cursor-pointer text-xs rounded  p-2 flex items-center gap-2`}
+			className={`${className} cursor-pointer rounded p-2 flex items-center gap-2`}
 		>
 			<FileText />
 			<div className="flex flex-col flex-1 gap-1">

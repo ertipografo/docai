@@ -17,23 +17,21 @@ export default function Feature({ feature }) {
 						className="absolute cursor-pointer top-2 left-2 bgPrimary rounded border borderColor h-10 min-w-10 px-2 flexer gap-2"
 					>
 						<TableOfContents size={16} />
-						<span className="lg:flex font-semibold hidden text-xs">
+						<span className="lg:flex font-semibold hidden ">
 							Indice
 						</span>
 					</div>
 					<div
 						className={`${
 							!open && "-ml-(--mapSidebarWidth)"
-						} w-(--mapSidebarWidth) transition-all p-3 pt-14 text-xs bgPrimary border-r borderColor`}
+						} w-(--mapSidebarWidth) transition-all p-3 pt-14  bgPrimary border-r borderColor`}
 					>
 						<Tree />
 					</div>
-					<div className="flex-1 flexer text-xs text-gray-300">
-						Mappa
-					</div>
+					<div className="flex-1 flexer  text-gray-300">Mappa</div>
 				</>
 			) : (
-				<div className="w-full p-10 justify-center flex text-xs text-gray-300">
+				<div className="w-full p-10 justify-center flex  text-gray-300">
 					Documento
 				</div>
 			)}

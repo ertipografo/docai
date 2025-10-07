@@ -7,9 +7,7 @@ export default function FeaturesBar({ feature, setFeature }) {
 	const cl = "";
 	const [open, setOpen] = useState(null);
 	return (
-		<div
-			className={`${cl} bgPrimary border-b borderColor flex h-full text-xs`}
-		>
+		<div className={`${cl} bgPrimary border-b borderColor flex h-full`}>
 			{features &&
 				Object.keys(features).map((k) => {
 					return (
