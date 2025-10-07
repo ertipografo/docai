@@ -3,7 +3,7 @@ import { features } from "./utils";
 
 export default function SidebarFeatures({ feature, setFeature }) {
 	return (
-		<div className="flex flex-row xl:flex-col xl:py-6 py-2 gap-1">
+		<div className="flex flex-row xl:flex-col xl:py-6 py-2 gap-1 border-y borderColor">
 			<span className="hidden xl:flex minititle mb-2">Features:</span>
 			{features.map(({ value, label, Icon }) => {
 				return (
@@ -13,7 +13,7 @@ export default function SidebarFeatures({ feature, setFeature }) {
 							value === feature
 								? "bg-gray-800 text-white"
 								: "hover:bg-gray-100"
-						} rounded-lg gap-3 font-semibold min-h-9 px-3 flex items-center cursor-pointer flex-1 xl:flex-0`}
+						} rounded-lg gap-3 font-semibold min-h-10 px-3 flex items-center cursor-pointer flex-1 xl:flex-0`}
 						onClick={() =>
 							setFeature(feature === value ? null : value)
 						}

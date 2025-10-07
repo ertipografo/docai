@@ -10,9 +10,9 @@
 		100vh - var(--headerHeight) - var(--headerHeight)
 	);
 	--featureSidebarHeight: calc(100vh - var(--featureSidebarTop));
-	--sidebarWidth: 340px;
+	--sidebarWidth: 400px;
 	--complementarySidebarWidth: 300px;
-	--text-base: 12px;
+	--text-base: 13px;
 }
 
 body {
@@ -35,7 +35,7 @@ body {
 }
 
 .minititle {
-	@apply text-xs text-gray-400 font-semibold;
+	@apply text-xs text-gray-400 font-semibold tracking-wide;
 }
 
 .isDark {

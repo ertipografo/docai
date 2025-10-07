@@ -1,6 +1,6 @@
 export default function Tree() {
 	return (
-		<ul className="tree">
+		<ul className="tree p-4">
 			<li>
 				<span>La situazione dell'Oman</span>
 				<ul>
