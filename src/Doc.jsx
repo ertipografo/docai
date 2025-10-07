@@ -2,7 +2,7 @@ import { FileText } from "lucide-react";
 
 export default function Doc({
 	idx,
-	className = "bg-white border borderColor",
+	className = "bgPrimary border borderColor",
 }) {
 	return (
 		<div

@@ -7,14 +7,14 @@ export default function Feature({ feature }) {
 	return (
 		<div
 			className={`${
-				isMap ? "" : "max-w-7xl min-h-[2999px]"
-			} border bg-white flex-1 flex rounded-b-lg borderColor border-t-0 w-full relative overflow-hidden`}
+				isMap ? "" : "min-h-[2999px]"
+			} bgPrimary flex-1 flex w-full relative overflow-hidden border borderColor border-t-0`}
 		>
 			{isMap ? (
 				<>
 					<div
 						onClick={() => setOpen((o) => !o)}
-						className="absolute cursor-pointer top-2 left-2 bg-white rounded border borderColor h-10 min-w-10 px-2 flexer gap-2"
+						className="absolute cursor-pointer top-2 left-2 bgPrimary rounded border borderColor h-10 min-w-10 px-2 flexer gap-2"
 					>
 						<TableOfContents size={16} />
 						<span className="lg:flex font-semibold hidden text-xs">
@@ -24,7 +24,7 @@ export default function Feature({ feature }) {
 					<div
 						className={`${
 							!open && "-ml-(--mapSidebarWidth)"
-						} w-(--mapSidebarWidth) transition-all p-3 pt-14 text-xs bg-white border-r borderColor`}
+						} w-(--mapSidebarWidth) transition-all p-3 pt-14 text-xs bgPrimary border-r borderColor`}
 					>
 						<Tree />
 					</div>

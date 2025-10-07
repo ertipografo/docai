@@ -14,12 +14,12 @@ export default function Toolbar({ feature }) {
 				1 / 53
 			</div>
 			<div className="flex-1 flex items-center justify-end">
-				<button className="h-10 flex items-center justify-center px-8 rounded text-xs font-semibold bg-gray-100">
+				{/* <button className="h-10 flex items-center justify-center px-8 rounded text-xs font-semibold bgSecondary">
 					<span>Download</span>
 					<span className="scale-75 -mr-2">
 						<ChevronDown />
 					</span>
-				</button>
+				</button> */}
 			</div>
 		</div>
 	);

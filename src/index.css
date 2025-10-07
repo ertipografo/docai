@@ -25,6 +25,28 @@ body {
 	@apply border-gray-200;
 }
 
+.isDark {
+	.bgPrimary,
+	&.bgPrimary {
+		@apply bg-gray-800 text-gray-400;
+		.textPrimary {
+			@apply text-white;
+		}
+	}
+}
+
+.bgPrimary {
+	@apply bg-white;
+}
+
+.bgSecondary {
+	@apply bg-gray-100;
+}
+
+.textSecondary {
+	@apply text-gray-400;
+}
+
 .flexer {
 	@apply flex items-center justify-center;
 }

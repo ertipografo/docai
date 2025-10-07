@@ -1,10 +1,11 @@
 import { ChevronDown, Image, FileText, FileAudio } from "lucide-react";
 import { useState } from "react";
 import { documentTitle } from "./utils";
+import SidebarFeatures from "./SidebarFeatures";
 
 const Fonti = () => {
 	return (
-		<div className="flex flex-col text-xs divide-gray-200 divide-y rounded max-w-sm w-full ml-auto bg-gray-100">
+		<div className="flex flex-col text-xs divide-gray-200 divide-y rounded max-w-sm w-full ml-auto bgSecondary">
 			<div className="flex items-center gap-1 p-2">
 				<FileText />
 				<span className="font-semibold">
@@ -30,29 +31,29 @@ const Fonti = () => {
 export default function Title() {
 	const [show, setShow] = useState(false);
 	return (
-		<div className="flex gap-4 flex-col p-4 border-b borderColor">
+		<div className="flex gap-4 flex-col p-4 xl:p-8">
 			<div className="h-8">
 				<div className="h-full aspect-square bg-gray-200 rounded-lg flexer text-2xl">
 					🇴🇲
 				</div>
 			</div>
 			<div className="flex flex-col gap-4">
-				<h1 className="font-semibold text-xl leading-tight">
+				<h1 className="text-lg leading-snug textPrimary">
 					{documentTitle}
 				</h1>
-				<p className="max-w-4xl text-sm text-gray-500 leading-relaxed">
+				<p className="max-w-4xl text-sm leading-relaxed">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Illo velit cupiditate, fugit accusamus ipsam temporibus
 					rerum nisi.
 				</p>
 				<div className="flex justify-between text-xs items-center">
-					<div className="flex gap-1 opacity-50">
+					<div className="flex gap-1">
 						<span>Modificato:</span>
 						<span className="font-semibold">23.5.2025</span>
 					</div>
-					<div
+					{/* <div
 						onClick={() => setShow((s) => !s)}
-						className="flex gap-2 items-center bg-gray-100 cursor-pointer p-1 rounded pl-3"
+						className="flex gap-2 items-center bgSecondary cursor-pointer p-1 rounded pl-3"
 					>
 						<div className="scale-75 -mx-2">
 							<ChevronDown />
@@ -61,10 +62,11 @@ export default function Title() {
 						<span className="h-5 flex items-center bg-gray-500 aspect-square justify-center text-white rounded-sm">
 							4
 						</span>
-					</div>
+					</div> */}
 				</div>
 				{show && <Fonti />}
 			</div>
+			<SidebarFeatures />
 		</div>
 	);
 }
