@@ -25,22 +25,16 @@ export default function App() {
 							!show && "xl:-ml-(--sidebarWidth)"
 						} xl:w-(--sidebarWidth) transition-all border-r borderColor bgPrimary relative z-40`}
 					>
-						<Sidebar />
+						<Sidebar feature={feature} setFeature={setFeature} />
 					</div>
-
 					<div className="flex-1 overflow-visible xl:overflow-auto">
 						<div className="flex flex-col bgSecondary relative min-h-full">
-							<div className="flex pl-2 pr-4 xl:hidden fixed z-30 top-14 left-14 right-0">
+							{/* <div className="flex pl-2 pr-4 xl:hidden fixed z-30 top-14 left-14 right-0">
 								<div className="bg-gray-50 flex-1 h-12 px-1 items-center flex gap-2 font-semibold">
 									<div className="h-8 w-8 bg-gray-200 rounded-lg flexer text-2xl">
 										🇴🇲
 									</div>
 									<span>{documentTitle}</span>
-								</div>
-							</div>
-							{/* <div className="h-0 sticky top-0 z-50">
-								<div className="absolute flex flex-col justify-end top-0 left-0 h-(--sidebarHeight) w-full">
-									<BottomBar />
 								</div>
 							</div> */}
 
@@ -52,9 +46,8 @@ export default function App() {
 										<Toolbar feature={feature} />
 									</div>
 								</div>
-								<div className="bgSecondary px-4 pb-20">
-									<Feature feature={feature} />
-								</div> */}
+								*/}
+								<Feature feature={feature} />
 							</div>
 						</div>
 					</div>

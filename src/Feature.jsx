@@ -1,40 +1,39 @@
 import { useState } from "react";
 import Tree from "./Tree";
-import { TableOfContents } from "lucide-react";
+import { Menu, X } from "lucide-react";
+
 export default function Feature({ feature }) {
 	const [open, setOpen] = useState(true);
-	const isMap = feature === "mappa";
 	return (
-		<div
-			className={`${
-				isMap ? "" : "min-h-[2999px]"
-			} bgPrimary flex-1 flex w-full relative overflow-hidden border borderColor border-t-0`}
-		>
-			{isMap ? (
-				<>
+		<div className="flex flex-col xl:flex-row relative">
+			{/* <div className="h-0 w-0 sticky top-0 overflow-visible z-20">
+				<div
+					className="h-12 w-12 inset-0 bgPrimary flexer"
+					onClick={() => setOpen((o) => !o)}
+				>
+					<Menu size={16} />
+				</div>
+			</div> */}
+
+			<div
+				className={`${
+					open ? "xl:w-(--complementarySidebarWidth)" : "xl:w-12"
+				} sticky top-0 h-auto xl:h-(--sidebarHeight) flex flex-col transition-all bgPrimary border-b xl:border-b-0 xl:border-r borderColor p-2`}
+			>
+				<div className="flex justify-start xl:justify-end items-center">
 					<div
 						onClick={() => setOpen((o) => !o)}
-						className="absolute cursor-pointer top-2 left-2 bgPrimary rounded border borderColor h-10 min-w-10 px-2 flexer gap-2"
+						className="h-8 w-8 flexer bgSecondary rounded cursor-pointer"
 					>
-						<TableOfContents size={16} />
-						<span className="lg:flex font-semibold hidden ">
-							Indice
-						</span>
+						{open ? <X size={16} /> : <Menu size={16} />}
 					</div>
-					<div
-						className={`${
-							!open && "-ml-(--mapSidebarWidth)"
-						} w-(--mapSidebarWidth) transition-all p-3 pt-14  bgPrimary border-r borderColor`}
-					>
-						<Tree />
-					</div>
-					<div className="flex-1 flexer  text-gray-300">Mappa</div>
-				</>
-			) : (
-				<div className="w-full p-10 justify-center flex  text-gray-300">
-					Documento
 				</div>
-			)}
+				<div className={`${open ? "flex" : "hidden"}`}>{feature}</div>
+			</div>
+
+			<div className="bgSecondary p-10 flex-1">
+				<div className="h-[3300px] bg-white">1</div>
+			</div>
 		</div>
 	);
 }

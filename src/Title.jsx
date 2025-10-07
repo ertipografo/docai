@@ -1,7 +1,6 @@
 import { Calendar, Image, FileText, FileAudio } from "lucide-react";
 import { useState } from "react";
 import { documentTitle } from "./utils";
-import SidebarFeatures from "./SidebarFeatures";
 
 const Fonti = () => {
 	return (
@@ -41,14 +40,14 @@ export default function Title() {
 				<h1 className="text-lg leading-snug textPrimary font-bold">
 					{documentTitle}
 				</h1>
-				<p className="max-w-4xl leading-relaxed textSecondary">
+				<p className="max-w-4xl leading-relaxed">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Illo velit cupiditate, fugit accusamus ipsam temporibus
 					rerum nisi.
 				</p>
-				<div className="flex justify-between items-center text-xs">
+				<div className="flex justify-between items-center text-xs mt-2">
 					<div className="flex gap-2 items-center font-semibold textSecondary">
-						<Calendar size={15} />
+						<Calendar size={16} />
 						<span>Modificato:</span>
 						<span className="font-semibold">23.5.2025</span>
 					</div>

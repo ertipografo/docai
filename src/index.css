@@ -8,7 +8,7 @@
 	--sidebarHeight: calc(100vh - var(--headerHeight));
 	--featureSidebarHeight: calc(100vh - var(--featureSidebarTop));
 	--sidebarWidth: 340px;
-	--mapSidebarWidth: 280px;
+	--complementarySidebarWidth: 240px;
 	--text-base: 13px;
 }
 
@@ -50,7 +50,7 @@ body {
 }
 
 .bgSecondary {
-	@apply bg-gray-100;
+	@apply bg-gray-50;
 }
 
 .textPrimary {
