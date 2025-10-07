@@ -1,4 +1,4 @@
-import { ChevronDown, Image, FileText, FileAudio } from "lucide-react";
+import { Calendar, Image, FileText, FileAudio } from "lucide-react";
 import { useState } from "react";
 import { documentTitle } from "./utils";
 import SidebarFeatures from "./SidebarFeatures";
@@ -47,8 +47,9 @@ export default function Title() {
 					rerum nisi.
 				</p>
 				<div className="flex justify-between items-center text-xs">
-					<div className="flex gap-1">
-						<span className="minititle">Modificato:</span>
+					<div className="flex gap-2 items-center font-semibold textSecondary">
+						<Calendar size={15} />
+						<span>Modificato:</span>
 						<span className="font-semibold">23.5.2025</span>
 					</div>
 					{/* <div
