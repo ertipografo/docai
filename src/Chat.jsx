@@ -21,17 +21,17 @@ const Message = ({ incoming = false, children }) => {
 
 export default function Chat() {
 	const [cnt, setCnt] = useState("");
-	const [active, setActive] = useState(true);
+	const [active, setActive] = useState(false);
 
 	return (
 		<div
 			className={`${
-				active && "bg-gray-500/10"
-			} mb-6 mt-auto flex flex-col p-2 gap-2 rounded-xl`}
+				active ? "bg-gray-500/10" : "pointer-events-none"
+			} mb-6 mt-auto flex flex-col p-2 gap-2 rounded-xl fixed lg:relative bottom-0 lg:left-0 lg:right-0 left-2 right-2`}
 		>
 			<div
 				className={`${
-					active ? "top-0" : "top-2 opacity-0 pointer-events-none"
+					active ? "top-0" : "top-2 opacity-0"
 				} transition-all p-2 relative bgPrimary border borderColor rounded-md flex flex-col gap-3 min-h-[300px]`}
 			>
 				<Message>Di cosa parla questo bel documentino?</Message>
@@ -40,8 +40,9 @@ export default function Chat() {
 				<Message incoming={true}>
 					Ao frate l'esame è il tuo me dispiace, cazzi tuoi 😋
 				</Message>
+				<Message>Magari mori</Message>
 			</div>
-			<div className="bgPrimary rounded-md overflow-hidden border borderColor flex flex-col">
+			<div className="bgPrimary rounded-md overflow-hidden border borderColor flex flex-col pointer-events-auto">
 				<input
 					onFocus={() => setActive(true)}
 					onBlur={() => setActive(false)}

@@ -1,17 +1,26 @@
-import { ChevronDown } from "lucide-react";
+import { Image, FileText, FileAudio } from "lucide-react";
 
 export default function Fonti() {
 	return (
-		<div className="flex flex-col gap-2 border-t mt-auto">
-			{/* <div className="textSecondary items-center flex justify-between h-8">
-				<div className="flex gap-2 items-center">
-					<span className="minititle">Fonti</span>
-					<div className="font-semibold bg-secondary flexer h-6 w-6 bgSecondary rounded">
-						4
-					</div>
-				</div>
-				<ChevronDown size={16} />
-			</div> */}
+		<div className="flex flex-col divide-gray-200 divide-y rounded max-w-sm w-full ml-auto bgSecondary">
+			<div className="flex items-center gap-2 p-2">
+				<FileText size={18} />
+				<span className="font-semibold">
+					Primo Documento fonte per la nota
+				</span>
+			</div>
+			<div className="flex items-center gap-2 p-2">
+				<Image size={18} />
+				<span className="font-semibold">
+					Foto scattata il 23.5.2025
+				</span>
+			</div>
+			<div className="flex items-center gap-2 p-2">
+				<FileAudio size={18} />
+				<span className="font-semibold">
+					Audio registrazione di maggio
+				</span>
+			</div>
 		</div>
 	);
 }

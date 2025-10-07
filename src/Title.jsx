@@ -1,31 +1,7 @@
-import { Calendar, Image, FileText, FileAudio } from "lucide-react";
+import { Calendar, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { documentTitle } from "./utils";
-
-const Fonti = () => {
-	return (
-		<div className="flex flex-col divide-gray-200 divide-y rounded max-w-sm w-full ml-auto bgSecondary">
-			<div className="flex items-center gap-1 p-2">
-				<FileText />
-				<span className="font-semibold">
-					Primo Documento fonte per la nota
-				</span>
-			</div>
-			<div className="flex items-center gap-1 p-2">
-				<Image />
-				<span className="font-semibold">
-					Foto scattata il 23.5.2025
-				</span>
-			</div>
-			<div className="flex items-center gap-1 p-2">
-				<FileAudio />
-				<span className="font-semibold">
-					Audio registrazione di maggio
-				</span>
-			</div>
-		</div>
-	);
-};
+import Fonti from "./Fonti";
 
 export default function Title() {
 	const [show, setShow] = useState(false);
@@ -49,18 +25,16 @@ export default function Title() {
 						<span>Modificato:</span>
 						<span className="font-semibold">23.5.2025</span>
 					</div>
-					{/* <div
+					<div
 						onClick={() => setShow((s) => !s)}
-						className="flex gap-2 items-center bgSecondary cursor-pointer p-1 rounded pl-3"
+						className="flex gap-2 items-center border borderColor cursor-pointer p-1 rounded-full pl-2"
 					>
-						<div className="scale-75 -mx-2">
-							<ChevronDown />
-						</div>
+						<ChevronDown size={16} className="-mr-1.5" />
 						<span>Fonti</span>
-						<span className="h-5 flex items-center bg-gray-500 aspect-square justify-center text-white rounded-sm">
+						<span className="h-5 flex items-center bg-gray-500 aspect-square justify-center text-white rounded-full">
 							4
 						</span>
-					</div> */}
+					</div>
 				</div>
 				{show && <Fonti />}
 			</div>

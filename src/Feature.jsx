@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { features } from "./utils";
 import { Settings2, X, Download } from "lucide-react";
+import Document from "./Document";
 
 export default function Feature({ feature }) {
 	const [open, setOpen] = useState(false);
@@ -45,11 +46,14 @@ export default function Feature({ feature }) {
 						</div>
 					</div>
 				)}
-				{/* <div className="w-20 bg-orange-200 h-(--complementarySidebarMaxHeight) sticky top-(--headerHeight)">
-						123
-					</div> */}
-				<div className="bg-teal-300 flex-1">
-					<div className="min-h-[3300px] bg-white p-5">{feature}</div>
+				<div className="flex-1 bgSecondary">
+					{feature === "mappa" ? (
+						<div className="bgPrimary h-full p-4">{feature}</div>
+					) : (
+						<div className="mx-auto max-w-7xl p-5">
+							<Document />
+						</div>
+					)}
 				</div>
 			</div>
 		</div>
