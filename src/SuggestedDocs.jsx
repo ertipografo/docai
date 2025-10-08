@@ -12,10 +12,12 @@ export default function SuggestedDocs() {
   const [cur, setCur] = useState("preferiti");
   return (
     <div className="bg-bg1 flex flex-col justify-between">
-      <div className="p-3 overflow-auto">
-        <div className="flex flex-col gap-4">
-          <span className="minititle">{`Lista ${cur}`}</span>
-          <div className="flex flex-col gap-4">
+      <div className="overflow-auto">
+        <div className="flex flex-col">
+          <div className="h-headerHeight flex items-center px-2">
+            <span className="minititle">{`Lista ${cur}`}</span>
+          </div>
+          <div className="flex flex-col gap-4 p-3">
             {Array.from({ length: 5 }).map((_, index) => {
               const randomAvailableFeatures = getRandomArbitrary(0, 3);
               return (

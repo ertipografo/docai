@@ -1,4 +1,4 @@
-import { Settings2, X, ChevronDown } from "lucide-react";
+import { Settings2, X, ChevronDown, ChevronRight } from "lucide-react";
 import { features } from "./utils";
 
 export default function Toolbar({ feature, setOpen, open }) {
@@ -18,6 +18,7 @@ export default function Toolbar({ feature, setOpen, open }) {
             {open ? <X size={14} /> : <Settings2 size={14} />}
           </div>
         )}
+        <ChevronRight size={14} />
         <CurrentFeatureIcon size={14} />
         <span className="font-semibold">{currentFeature.label}</span>
       </div>
