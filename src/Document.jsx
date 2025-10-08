@@ -1,6 +1,6 @@
 const Page = () => {
   return (
-    <div className="flex flex-col p-12 gap-4 border border-borderColor rounded-md bg-white text-black font-serif">
+    <div className="flex flex-col p-12 gap-4 border border-borderColor rounded-md bg-white text-black font-serif opacity-0">
       <h1 className="text-xl font-bold">Titolo pagina</h1>
       <h2 className="font-semibold text-lg">
         Sottotitolo pagina and some more random text please

@@ -11,7 +11,7 @@ export default function Feature({ feature }) {
   const ComplementaryComponent = feature && currentFeature.hasComplementary;
   return (
     <div className="flex flex-col relative border-t border-borderColor lg:border-t-0">
-      <Toolbar feature={feature} setOpen={setOpen} open={open} />
+      {/*  <Toolbar feature={feature} setOpen={setOpen} open={open} /> */}
       <div className="flex-1 flex">
         {!!ComplementaryComponent && (
           <div
@@ -28,7 +28,7 @@ export default function Feature({ feature }) {
           {feature === "mappa" ? (
             <div className="bg-bg1 h-full p-4">{feature}</div>
           ) : (
-            <div className="mx-auto max-w-5xl p-2">
+            <div className="mx-auto p-2">
               <Document />
             </div>
           )}

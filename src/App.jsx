@@ -12,30 +12,25 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-screen overflow-hidden text-base text-text1">
-      <div className="h-headerHeight bg-bg1 border-b border-borderColor text-xs flexer">
+      <div className="h-headerHeight bg-bgDark text-textOnDark text-xs flexer">
         <Logo className="scale-75" />
       </div>
       <div className="flex-1 flex overflow-hidden">
-        <div className="w-headerHeight hidden lg:block bg-bg1 border-r border-borderColor relative z-50">
+        <div className="w-siderWidth hidden lg:block bg-bg1 border-r border-borderColor relative z-50">
           <OutBar show={show} setShow={setShow} />
         </div>
         <div className="flex flex-col lg:flex-row flex-1 overflow-auto">
           <div
             className={`${
               !show && "lg:-ml-sidebarWidth"
-            } lg:w-sidebarWidth transition-all lg:border-r border-borderColor bg-bg1 relative z-40`}
+            } lg:w-sidebarWidth transition-all bg-bg1 relative z-40`}
           >
             <Sidebar feature={feature} setFeature={setFeature} />
           </div>
-          <div className="flex-1 overflow-visible lg:overflow-auto">
-            <div className="flex flex-col bg-bg2 relative min-h-full">
-              <div className="flex flex-col relative flex-1 bg-bg1">
-                <Feature feature={feature} />
-              </div>
+          <div className="bg-bg1 border-l border-borderColor flex flex-col flex-1 bg-gray-50">
+            <div className="border-b border-borderColor p-paddingUnit bg-bg1">
+              k
             </div>
-          </div>
-          <div className="2xl:flex flex lg:hidden w-full lg:w-suggestedSidebarWidth lg:h-sidebarMaxHeight h-auto lg:sticky top-0 bg-bg1 border-l border-borderColor">
-            <SuggestedDocs />
           </div>
         </div>
       </div>

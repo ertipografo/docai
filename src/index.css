@@ -3,16 +3,18 @@
 
 @theme {
   --font-sans: "Work Sans", sans-serif;
-  --spacing-headerHeight: 50px;
+  --spacing-headerHeight: 55px;
+  --spacing-siderWidth: 60px;
   --spacing-sidebarMaxHeight: calc(100vh - var(--spacing-headerHeight));
   --spacing-complementarySidebarMaxHeight: calc(
     100vh - var(--spacing-headerHeight) - var(--spacing-headerHeight)
   );
-  --spacing-sidebarWidth: 360px;
+  --spacing-sidebarWidth: 420px;
   --spacing-paddingUnit: 30px;
   --spacing-complementarySidebarWidth: 300px;
   --spacing-suggestedSidebarWidth: 240px;
-  --text-base: 13px;
+  --text-base: 14px;
+  --text-lg: 18px;
   --chatWidth: 360px;
 
   --color-text1: var(--color-gray-800);
@@ -22,7 +24,7 @@
   --color-bgDarker: var(--color-gray-900);
   --color-bg1: var(--color-white);
   --color-bg2: var(--color-gray-100);
-  --color-borderColor: var(--color-gray-200);
+  --color-borderColor: var(--color-gray-100);
   --font-weight-semibold: 500;
   --font-weight-bold: 600;
 
