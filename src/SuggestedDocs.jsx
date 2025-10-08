@@ -33,7 +33,7 @@ export default function SuggestedDocs() {
                             className={`p-[2px] ${
                               i <= randomAvailableFeatures
                                 ? "text-current"
-                                : "hover:bg-tahiti"
+                                : "text-text2"
                             }`}
                           >
                             <Icon size={14} />

@@ -54,7 +54,7 @@ export default function Feature({ feature }) {
           )}
         </div>
 
-        <Chat />
+        {feature === "originale" && <Chat />}
       </div>
     </div>
   );
