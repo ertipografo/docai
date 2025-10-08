@@ -3,7 +3,7 @@ import { features } from "./utils";
 
 export default function SidebarFeatures({ feature, setFeature }) {
   return (
-    <div className="flex flex-row lg:flex-col lg:py-6 py-2 gap-1 border-t border-borderColor">
+    <div className="flex flex-row lg:flex-col lg:py-paddingUnit gap-1 border-t border-borderColor">
       <span className="hidden lg:flex minititle mb-2">Features:</span>
       {features.map(({ value, label, Icon }) => {
         return (

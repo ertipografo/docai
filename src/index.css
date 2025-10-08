@@ -4,11 +4,14 @@
 @theme {
   --font-sans: "Work Sans", sans-serif;
   --spacing-headerHeight: 50px;
+  --spacing-sidebarMaxHeight: calc(100vh - var(--spacing-headerHeight));
   --spacing-complementarySidebarMaxHeight: calc(
     100vh - var(--spacing-headerHeight) - var(--spacing-headerHeight)
   );
   --spacing-sidebarWidth: 360px;
+  --spacing-paddingUnit: 30px;
   --spacing-complementarySidebarWidth: 300px;
+  --spacing-suggestedSidebarWidth: 240px;
   --text-base: 13px;
   --chatWidth: 360px;
 

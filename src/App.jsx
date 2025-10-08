@@ -4,6 +4,7 @@ import { features } from "./utils";
 import Sidebar from "./Sidebar";
 import OutBar from "./OutBar";
 import Logo from "./Logo";
+import SuggestedDocs from "./SuggestedDocs";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
@@ -32,6 +33,9 @@ export default function App() {
                 <Feature feature={feature} />
               </div>
             </div>
+          </div>
+          <div className="2xl:flex flex lg:hidden w-full lg:w-suggestedSidebarWidth lg:h-sidebarMaxHeight h-auto lg:sticky top-0 bg-bg1 border-l border-borderColor">
+            <SuggestedDocs />
           </div>
         </div>
       </div>

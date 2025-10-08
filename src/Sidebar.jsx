@@ -3,12 +3,12 @@ import SidebarFeatures from "./SidebarFeatures";
 import Title from "./Title";
 export default function Sidebar({ feature, setFeature }) {
   return (
-    <div className="h-full flex flex-col relative mx-6">
+    <div className="h-full flex flex-col relative mx-paddingUnit">
       <Title />
 
       <SidebarFeatures setFeature={setFeature} feature={feature} />
 
-      <SuggestedDocs />
+      {/* <SuggestedDocs /> */}
     </div>
   );
 }

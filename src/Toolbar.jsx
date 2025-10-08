@@ -1,26 +1,31 @@
-import { ChevronDown } from "lucide-react";
+import { Settings2, X, ChevronDown } from "lucide-react";
 import { features } from "./utils";
 
-export default function Toolbar({ feature }) {
-	return (
-		<div className="h-full flex pl-4 pr-1 items-center gap-2">
-			<div className="flex-1 flex items-center gap-2">
-				<div className="h-5 w-5 bg-bg2 rounded-full" />
-				<span className="whitespace-nowrap font-semibold">
-					{features[feature]}
-				</span>
-			</div>
-			<div className="flex-1 flex opacity-50 items-center font-semibold justify-center">
-				1 / 53
-			</div>
-			<div className="flex-1 flex items-center justify-end">
-				{/* <button className="h-10 flex items-center justify-center px-8 rounded  font-semibold bg-bg2">
-					<span>Download</span>
-					<span className="scale-75 -mr-2">
-						<ChevronDown />
-					</span>
-				</button> */}
-			</div>
-		</div>
-	);
+export default function Toolbar({ feature, setOpen, open }) {
+  const currentFeature = features.find((f) => f.value === feature);
+  const ComplementaryComponent = feature && currentFeature.hasComplementary;
+  const CurrentFeatureIcon = currentFeature.Icon;
+  return (
+    <div className="h-headerHeight gap-2 px-2 bg-bg1 border-b border-borderColor flex items-center sticky top-0 lg:top-0 justify-between">
+      <div className="flex items-center gap-2 justify-center">
+        {!!ComplementaryComponent && (
+          <div
+            onClick={() => setOpen((o) => !o)}
+            className={`${
+              open ? "bg-bg2" : "bg-bgDark text-textOnDark"
+            } h-6 w-6 rounded cursor-pointer  flexer`}
+          >
+            {open ? <X size={14} /> : <Settings2 size={14} />}
+          </div>
+        )}
+        <CurrentFeatureIcon size={14} />
+        <span className="font-semibold">{currentFeature.label}</span>
+      </div>
+
+      <div className="h-8 px-3 gap-2 font-semibold rounded cursor-pointer border border-borderColor flexer">
+        <span className="hidden lg:block text-xs">Download</span>
+        <ChevronDown size={14} />
+      </div>
+    </div>
+  );
 }
