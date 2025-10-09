@@ -1,16 +1,22 @@
 import { Menu, X } from "lucide-react";
+import Chat from "./Chat";
 
-export default function Toolbar({ showSidebar, setShowSidebar }) {
+export default function Toolbar({
+  showSidebar,
+  setShowSidebar,
+  complementaryComponent,
+}) {
+  const Compo = complementaryComponent;
   return (
     <div
       className={`${
-        showSidebar ? "w-complementarySidebarWidth" : "w-14"
-      } bg-bg1 border-r transition-all border-borderColor h-sidebarMaxHeight top-0 sticky`}
+        showSidebar ? "w-complementarySidebarWidth" : "w-headerHeight"
+      } bg-bg1 border-r transition-all border-borderColor h-complementarySidebarMaxHeight top-headerHeight sticky flex flex-col overflow-hidden`}
     >
       <div
         className={`${
           showSidebar ? "flex pl-3 pr-2" : "flexer"
-        } h-14 justify-between items-center`}
+        } h-headerHeight justify-between items-center`}
       >
         {showSidebar && <span className="minititle">Complementary</span>}
         <div
@@ -20,7 +26,14 @@ export default function Toolbar({ showSidebar, setShowSidebar }) {
           {showSidebar ? <X size={16} /> : <Menu size={16} />}
         </div>
       </div>
-      {showSidebar && <div className="bg-yellow-100 flexer h-20">Toolbar</div>}
+
+      <div
+        className={`flex-1 w-complementarySidebarWidth transition-all ${
+          showSidebar ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <Compo />
+      </div>
     </div>
   );
 }
