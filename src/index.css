@@ -4,12 +4,11 @@
 @theme {
   --font-sans: "Work Sans", sans-serif;
   --spacing-headerHeight: 55px;
-  --spacing-siderWidth: 60px;
   --spacing-sidebarMaxHeight: calc(100vh - var(--spacing-headerHeight));
   --spacing-complementarySidebarMaxHeight: calc(
     100vh - var(--spacing-headerHeight) - var(--spacing-headerHeight)
   );
-  --spacing-sidebarWidth: 420px;
+  --spacing-sidebarWidth: 380px;
   --spacing-paddingUnit: 30px;
   --spacing-complementarySidebarWidth: 300px;
   --spacing-suggestedSidebarWidth: 240px;
@@ -19,11 +18,12 @@
 
   --color-text1: var(--color-gray-800);
   --color-text2: var(--color-gray-400);
-  --color-textOnDark: var(--color-gray-100);
+  --color-textOnDark: var(--color-white);
   --color-bgDark: var(--color-gray-800);
   --color-bgDarker: var(--color-gray-900);
   --color-bg1: var(--color-white);
-  --color-bg2: var(--color-gray-100);
+  --color-bg2: var(--color-gray-50);
+  --color-bg3: var(--color-gray-100);
   --color-borderColor: var(--color-gray-100);
   --font-weight-semibold: 500;
   --font-weight-bold: 600;

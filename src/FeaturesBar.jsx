@@ -1,59 +1,27 @@
-import { ChevronDown, MessageCircleQuestionMark } from "lucide-react";
+import { PanelRightOpen, PanelRightClose } from "lucide-react";
 import { features } from "./utils";
-import { useState } from "react";
-
-export default function FeaturesBar({ feature, setFeature }) {
-	//const cl = feature === "mappa" ? "" : "max-w-7xl";
-	const cl = "";
-	const [open, setOpen] = useState(null);
-	return (
-		<div className={`${cl} bg-bg1 border-b border-borderColor flex h-full`}>
-			{features &&
-				Object.keys(features).map((k) => {
-					return (
-						<div
-							className="flex items-center flex-1 md:flex-0 px-4 border-r border-borderColor cursor-pointer gap-1 relative"
-							key={k}
-						>
-							<div
-								className="flex h-8 flexer gap-2"
-								onClick={() =>
-									setFeature(feature === k ? null : k)
-								}
-							>
-								<div className="w-5 h-5 bg-bg2 rounded-full" />
-								<span className="font-semibold hidden md:flex whitespace-nowrap">
-									{features[k]}
-								</span>
-							</div>
-							{k !== "originale" && (
-								<div
-									onClick={() =>
-										setOpen((i) => (i === k ? null : k))
-									}
-									className={`${
-										open === k ? "bg-bg2" : "hover:bg-bg2"
-									} h-8 w-8 flexer ml-auto sm:ml-0 relative rounded -mr-2`}
-								>
-									<ChevronDown size="16" />
-								</div>
-							)}
-							{open === k && (
-								<>
-									<div className="absolute bg-bg1 border border-borderColor top-full z-50 -left-px h-40 w-xs"></div>
-									<div
-										className="fixed inset-0 z-40"
-										onClick={() => setOpen(null)}
-									></div>
-								</>
-							)}
-						</div>
-					);
-				})}
-			<div className="bg-violet-100 text-violet-700 ml-2 md:ml-auto m-1 rounded flexer px-4 font-semibold gap-2">
-				<span className="hidden lg:flex">Chiedi al documento</span>
-				<MessageCircleQuestionMark size={16} />
-			</div>
-		</div>
-	);
+export default function FeaturesBar({ show, setShow, feature, setFeature }) {
+  const cl = "cursor-pointer aspect-square flexer";
+  return (
+    <div className="h-sidebarHeight w-headerHeight bg-bg1 sticky top-headerHeight flex flex-col border-r border-borderColor">
+      <div className={cl} onClick={() => setShow(!show)}>
+        {show ? <PanelRightOpen size={18} /> : <PanelRightClose size={18} />}
+      </div>
+      {features.map(({ value, Icon }) => {
+        return (
+          <div
+            key={value}
+            className={`${cl} ${
+              feature === value
+                ? "bg-bg1"
+                : "hover:bg-white hover:text-text1 text-text2"
+            }`}
+            onClick={() => setFeature(value)}
+          >
+            <Icon className="opacity-75" size={18} />
+          </div>
+        );
+      })}
+    </div>
+  );
 }
