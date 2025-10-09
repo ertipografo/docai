@@ -8,6 +8,7 @@ import { ChevronUp } from "lucide-react";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
+  const [showFeatureBar, setShowFeatureBar] = useState(false);
   const [show, setShow] = useState(true);
 
   return (
@@ -23,9 +24,18 @@ export default function App() {
           <div
             className={`${
               !show && "lg:-ml-sidebarWidth"
-            } lg:w-sidebarWidth transition-all bg-white relative z-50 relative`}
+            } lg:w-sidebarWidth transition-all bg-white relative z-50`}
           >
             <Sidebar feature={feature} setFeature={setFeature} />
+            {/* <div
+              className="bg-red-300"
+              onClick={() => {
+                setFeature("originale");
+                setShowFeatureBar(true);
+              }}
+            >
+              Chatta
+            </div> */}
           </div>
           <div className="flex items-center pl-4 pr-2 gap-3 font-bold lg:hidden fixed top-0 left-0 w-full h-headerHeight bg-bg1 border-b border-borderColor z-40">
             <div className="text-2xl">🇴🇲</div>
@@ -34,7 +44,11 @@ export default function App() {
               <ChevronUp size={16} />
             </div>
           </div>
-          <Feature feature={feature} />
+          <Feature
+            feature={feature}
+            showFeatureBar={showFeatureBar}
+            setShowFeatureBar={setShowFeatureBar}
+          />
         </div>
       </div>
     </div>

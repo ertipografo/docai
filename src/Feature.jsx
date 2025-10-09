@@ -1,23 +1,25 @@
-import { useState } from "react";
 import { features } from "./utils";
 import Toolbar from "./Toolbar";
 import FeatureTopBar from "./FeatureTopBar";
 
-export default function Feature({ feature }) {
-  const [showSidebar, setShowSidebar] = useState(false);
+export default function Feature({
+  feature,
+  showFeatureBar,
+  setShowFeatureBar,
+}) {
   const currentFeature = features.find((f) => f.value === feature);
 
-  const hasSidebar = currentFeature?.hasComplementary;
+  const hasFeatureBar = currentFeature?.hasComplementary;
   const isMap = currentFeature?.value === "mappa";
   return (
     <div className="bg-bg3 flex-1 lg:overflow-auto border-l border-borderColor">
       {currentFeature && <FeatureTopBar currentFeature={currentFeature} />}
       <div className="flex relative">
-        {hasSidebar && (
+        {hasFeatureBar && (
           <Toolbar
-            complementaryComponent={hasSidebar}
-            showSidebar={showSidebar}
-            setShowSidebar={setShowSidebar}
+            complementaryComponent={hasFeatureBar}
+            showFeatureBar={showFeatureBar}
+            setShowFeatureBar={setShowFeatureBar}
           />
         )}
         {isMap ? (
