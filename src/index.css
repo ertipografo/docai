@@ -4,12 +4,16 @@
 @theme {
   --font-sans: "Work Sans", sans-serif;
   --spacing-headerHeight: 55px;
+  --spacing-doubleHeaderHeight: calc(
+    var(--spacing-headerHeight) + var(--spacing-headerHeight)
+  );
   --spacing-sidebarMaxHeight: calc(100vh - var(--spacing-headerHeight));
   --spacing-complementarySidebarMaxHeight: calc(
     100vh - var(--spacing-headerHeight) - var(--spacing-headerHeight)
   );
   --spacing-sidebarWidth: 390px;
   --spacing-paddingUnit: 30px;
+  --spacing-buttonHeight: 39px;
   --spacing-documentWidth: 960px;
   --spacing-complementarySidebarWidth: 320px;
   --spacing-suggestedSidebarWidth: 240px;

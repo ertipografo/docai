@@ -1,9 +1,10 @@
-import { ChevronDown, Star } from "lucide-react";
+import { ChevronDown, ChevronRight, Star } from "lucide-react";
 export default function FeatureTopBar({ currentFeature }) {
   const CurrentFeatureIcon = currentFeature.Icon;
   return (
-    <div className="h-headerHeight bg-bg1 flex items-center justify-between pl-5 pr-2 border-b border-borderColor sticky top-0 z-10">
+    <div className="h-headerHeight bg-bg1 flex items-center justify-between pl-5 pr-2 border-b border-borderColor sticky top-headerHeight lg:top-0 z-10">
       <div className="flex items-center gap-3">
+        <ChevronRight size={16} />
         <CurrentFeatureIcon size={16} />
         <span className="font-semibold">{currentFeature.label}</span>
       </div>
@@ -14,7 +15,7 @@ export default function FeatureTopBar({ currentFeature }) {
             5.4 <span className="text-text2">(456)</span>
           </span>
         </div>
-        <div className="bg-actionSecondary font-semibold px-3 rounded h-10 flexer gap-1 text-xs">
+        <div className="bg-actionSecondary font-semibold px-3 rounded h-buttonHeight flexer gap-1 text-xs">
           <span>Download</span>
           <ChevronDown size={16} />
         </div>

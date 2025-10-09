@@ -10,7 +10,7 @@ export default function Feature({ feature }) {
   const hasSidebar = currentFeature?.hasComplementary;
   const isMap = currentFeature?.value === "mappa";
   return (
-    <div className="bg-bg3 flex-1 overflow-auto border-l border-borderColor">
+    <div className="bg-bg3 flex-1 lg:overflow-auto border-l border-borderColor">
       {currentFeature && <FeatureTopBar currentFeature={currentFeature} />}
       <div className="flex relative">
         {hasSidebar && (

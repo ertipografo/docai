@@ -7,33 +7,46 @@ export default function Toolbar({
   complementaryComponent,
 }) {
   const Compo = complementaryComponent;
-  return (
-    <div
-      className={`${
-        showSidebar ? "w-complementarySidebarWidth" : "w-headerHeight"
-      } bg-bg1 border-r transition-all border-borderColor h-complementarySidebarMaxHeight top-headerHeight sticky flex flex-col overflow-hidden`}
-    >
-      <div
-        className={`${
-          showSidebar ? "flex pl-3 pr-2" : "flexer"
-        } h-headerHeight justify-between items-center`}
-      >
-        {showSidebar && <span className="minititle">Complementary</span>}
-        <div
-          onClick={() => setShowSidebar((s) => !s)}
-          className="w-10 h-10 hover:bg-bg3 flexer rounded cursor-pointer"
-        >
-          {showSidebar ? <X size={16} /> : <Menu size={16} />}
-        </div>
-      </div>
 
+  const position = `fixed lg:sticky left-0 top-0 lg:left-auto lg:top-headerHeight`;
+  const width = `${
+    showSidebar
+      ? "w-complementarySidebarWidth"
+      : "w-complementarySidebarWidth lg:w-headerHeight"
+  }`;
+  const margin = `lg:ml-0 ${
+    showSidebar ? "ml-0" : "-ml-complementarySidebarWidth"
+  }`;
+
+  const height = `h-screen lg:h-complementarySidebarMaxHeight lg:border-r border-borderColor`;
+
+  return (
+    <>
       <div
-        className={`flex-1 w-complementarySidebarWidth transition-all ${
-          showSidebar ? "opacity-100" : "opacity-0"
-        }`}
+        className={`z-[998] shadow-xl lg:shadow-none overflow-hidden transition-all ${position} ${width} ${margin} ${height} bg-bg1 flex flex-col `}
       >
-        <Compo />
+        <div className="hidden lg:flex min-h-headerHeight items-center justify-between px-2">
+          {showSidebar && <span className="minititle">Complementary</span>}
+          <div
+            onClick={() => setShowSidebar((s) => !s)}
+            className="h-buttonHeight w-buttonHeight hover:bg-bg3 flexer rounded cursor-pointer"
+          >
+            {showSidebar ? <X size={16} /> : <Menu size={16} />}
+          </div>
+        </div>
+
+        {showSidebar && (
+          <div className="w-complementarySidebarWidth flex-1 overflow-auto">
+            <Compo />
+          </div>
+        )}
       </div>
-    </div>
+      <div
+        onClick={() => setShowSidebar((s) => !s)}
+        className="fixed lg:hidden flex items-center justify-center cursor-pointer bottom-5 right-5 bg-bgDark text-textOnDark z-[999] h-buttonHeight w-buttonHeight rounded-lg"
+      >
+        {showSidebar ? <X size={16} /> : <Menu size={16} />}
+      </div>
+    </>
   );
 }
