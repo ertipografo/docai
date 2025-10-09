@@ -1,4 +1,10 @@
-import { ChevronDown, ChevronRight, Star, Menu, X } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronRight,
+  Star,
+  PanelRightClose,
+  PanelRightOpen,
+} from "lucide-react";
 export default function FeatureTopBar({
   currentFeature,
   setShowFeatureBar,
@@ -7,14 +13,18 @@ export default function FeatureTopBar({
   const CurrentFeatureIcon = currentFeature.Icon;
   return (
     <div className="sticky top-headerHeight lg:top-0 z-10">
-      <div className="mx-auto py-3 px-6 lg:px-3 max-w-documentWidth w-full">
-        <div className="h-headerHeight flex justify-between bg-bg3 rounded px-2 items-center">
+      <div className="mx-auto py-3 px-6 max-w-documentWidth w-full">
+        <div className="h-headerHeight flex justify-between bg-bg3 rounded-lg px-2 items-center">
           <div className="flex items-center gap-3">
             <div
               className="w-buttonHeight aspect-square cursor-pointer rounded hover:bg-actionSecondary flexer"
               onClick={() => setShowFeatureBar((s) => !s)}
             >
-              {showFeatureBar ? <X size={18} /> : <Menu size={18} />}
+              {showFeatureBar ? (
+                <PanelRightOpen size={18} />
+              ) : (
+                <PanelRightClose size={18} />
+              )}
             </div>
             <ChevronRight size={16} />
             <CurrentFeatureIcon size={16} />

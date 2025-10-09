@@ -20,7 +20,7 @@ export default function Feature({
           setShowFeatureBar={setShowFeatureBar}
         />
       )}
-      <div className="flex-1 lg:overflow-auto bg-bg3">
+      <div className="flex-1 lg:overflow-auto bg-bg3 flex flex-col">
         {currentFeature && (
           <FeatureTopBar
             setShowFeatureBar={setShowFeatureBar}
@@ -28,11 +28,11 @@ export default function Feature({
             showFeatureBar={showFeatureBar}
           />
         )}
-        <div className="flex relative flex-col h-full">
+        <div className="flex relative flex-col flex-1 p-3 pt-0">
           {isMap ? (
-            <div className="bg-bg1 p-10 flex-1">1</div>
+            <div className="bg-bg1 p-10 flex-1 rounded-lg">1</div>
           ) : (
-            <div className="flex-1 p-3 pt-0">
+            <div className="flex-1">
               <div className="max-w-documentWidth mx-auto">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <div
