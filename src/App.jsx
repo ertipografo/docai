@@ -37,7 +37,7 @@ export default function App() {
           <div className="flex items-center pl-4 pr-2 gap-3 font-bold lg:hidden fixed top-0 left-0 w-full h-headerHeight bg-bg1 border-b border-borderColor z-40">
             <div className="text-2xl">🇴🇲</div>
             <span className="line-clamp-1 break-all">{documentTitle}</span>
-            <div className="h-buttonHeight w-buttonHeight bg-bg3 flexer rounded ml-auto">
+            <div className="h-buttonHeight w-buttonHeight bg-actionSecondary flexer rounded ml-auto">
               <ChevronUp size={16} />
             </div>
           </div>
