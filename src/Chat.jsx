@@ -15,7 +15,7 @@ const Message = ({ incoming = false, children }) => {
       >
         {children}
       </div>
-      <div className="cursor-pointer opacity-0 group-hover:opacity-50 w-4 h-4 flexer text-white">
+      <div className="cursor-pointer hover:opacity-100 opacity-0 group-hover:opacity-50 w-4 h-4 flexer">
         <Copy size={14} />
       </div>
     </div>

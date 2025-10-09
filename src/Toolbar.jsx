@@ -1,5 +1,4 @@
 import { Menu, X } from "lucide-react";
-import Chat from "./Chat";
 
 export default function Toolbar({
   showSidebar,
@@ -9,13 +8,13 @@ export default function Toolbar({
   const Compo = complementaryComponent;
 
   const position = `fixed lg:sticky left-0 top-0 lg:left-auto lg:top-headerHeight`;
-  const width = `${
+  const width = `w-1/2 min-w-complementarySidebarWidth ${
     showSidebar
-      ? "w-complementarySidebarWidth"
-      : "w-complementarySidebarWidth lg:w-headerHeight"
+      ? "lg:w-complementarySidebarWidth"
+      : "lg:min-w-0 lg:w-headerHeight"
   }`;
-  const margin = `lg:ml-0 ${
-    showSidebar ? "ml-0" : "-ml-complementarySidebarWidth"
+  const margin = `lg:translate-x-0 ${
+    showSidebar ? "translate-x-0" : "-translate-x-full"
   }`;
 
   const height = `h-screen lg:h-complementarySidebarMaxHeight lg:border-r border-borderColor`;
@@ -36,7 +35,7 @@ export default function Toolbar({
         </div>
 
         {showSidebar && (
-          <div className="w-complementarySidebarWidth flex-1 overflow-auto">
+          <div className="w-full lg:w-complementarySidebarWidth flex-1 overflow-auto">
             <Compo />
           </div>
         )}

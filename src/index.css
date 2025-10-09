@@ -12,7 +12,6 @@
     100vh - var(--spacing-headerHeight) - var(--spacing-headerHeight)
   );
   --spacing-sidebarWidth: 390px;
-  --spacing-paddingUnit: 30px;
   --spacing-buttonHeight: 39px;
   --spacing-documentWidth: 960px;
   --spacing-complementarySidebarWidth: 320px;
