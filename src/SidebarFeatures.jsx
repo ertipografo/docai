@@ -3,7 +3,7 @@ import { features } from "./utils";
 
 export default function SidebarFeatures({ feature, setFeature }) {
   return (
-    <div className="flex flex-row lg:flex-col gap-2">
+    <div className="flex flex-row lg:flex-col gap-1">
       {features.map(({ value, label, Icon }) => {
         const isOriginal = value === "originale";
         const isOpen = feature === value;
@@ -16,7 +16,7 @@ export default function SidebarFeatures({ feature, setFeature }) {
             <div
               className={`${
                 isOpen ? "bg-bg3 rounded-t" : "rounded hover:bg-bg3 rounded"
-              } h-10 flex items-center px-3 group cursor-pointer gap-3 font-semibold`}
+              } h-12 flex items-center px-3 group cursor-pointer gap-3 font-semibold`}
             >
               <Icon size={16} />
               <span className="hidden lg:flex">{label}</span>

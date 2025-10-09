@@ -4,7 +4,7 @@ import { documentTitle } from "./utils";
 export default function Title() {
   return (
     <div className="flex flex-col">
-      <div className="flex items-center gap-2 mb-3 justify-between">
+      <div className="flex items-center justify-between h-14">
         <div className="text-2xl">🇴🇲</div>
       </div>
       <div className="flex flex-col gap-2">

@@ -32,7 +32,7 @@ export default function OutBar({ show, setShow }) {
           </div> */}
         </div>
       ))}
-      <div className="aspect-square rounded bg-blue-500 text-textOnDark flexer mt-auto">
+      <div className="aspect-square rounded bg-actionPrimary text-textOnDark flexer mt-auto">
         <FolderUp size={18} />
       </div>
     </div>
