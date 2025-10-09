@@ -1,38 +1,45 @@
 import { useState } from "react";
 import { features } from "./utils";
-
-import Document from "./Document";
-import Chat from "./Chat";
+import { ChevronRight } from "lucide-react";
 import Toolbar from "./Toolbar";
 
 export default function Feature({ feature }) {
-  const [open, setOpen] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
   const currentFeature = features.find((f) => f.value === feature);
-  const ComplementaryComponent = feature && currentFeature.hasComplementary;
+  const CurrentFeatureIcon = feature && currentFeature.Icon;
+  const hasSidebar = currentFeature?.hasComplementary;
+  const isMap = currentFeature?.value === "mappa";
   return (
-    <div className="flex flex-col relative border-t border-borderColor lg:border-t-0">
-      {/*  <Toolbar feature={feature} setOpen={setOpen} open={open} /> */}
-      <div className="flex-1 flex">
-        {!!ComplementaryComponent && (
-          <div
-            className={`${
-              open ? "w-complementarySidebarWidth border-r " : "w-0"
-            } sticky top-headerHeight h-complementarySidebarMaxHeight flex flex-col transition-all bg-bg1 z-30 overflow-hidden border-borderColor`}
-          >
-            <div className={`${open ? "block" : "hidden"}`}>
-              <ComplementaryComponent />
+    <div className="bg-bg3 flex-1 overflow-auto border-l border-borderColor">
+      {currentFeature && (
+        <div className="h-14 bg-bg1 flex items-center px-3 border-b border-borderColor">
+          <div className="flex items-center gap-2">
+            <CurrentFeatureIcon size={16} />
+            <ChevronRight size={16} />
+            <span className="font-semibold">{currentFeature.label}</span>
+          </div>
+        </div>
+      )}
+      <div className="flex">
+        {hasSidebar && (
+          <Toolbar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+        )}
+        {isMap ? (
+          <div className="bg-bg1 p-10 flex-1">1</div>
+        ) : (
+          <div className="flex-1 bg-bg2 p-3">
+            <div className="max-w-documentWidth mx-auto">
+              {Array.from({ length: 5 }).map((_, index) => (
+                <div
+                  className="bg-bg1 h-[1200px] mb-10 rounded-lg flexer"
+                  key={index}
+                >
+                  {index}
+                </div>
+              ))}
             </div>
           </div>
         )}
-        <div className="flex-1 bg-bg2">
-          {feature === "mappa" ? (
-            <div className="bg-bg1 h-full p-4">{feature}</div>
-          ) : (
-            <div className="mx-auto p-2">
-              <Document />
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );

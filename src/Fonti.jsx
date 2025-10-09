@@ -4,11 +4,11 @@ import { useState } from "react";
 export default function Fonti() {
   const [open, setOpen] = useState(false);
   return (
-    <div className="mt-auto flex flex-col pt-4 border-t border-borderColor">
+    <div className="mt-auto flex flex-col">
       <div
         className={`${
-          open ? "rounded-t bg-bg3" : "rounded hover:bg-bg3"
-        } h-10 flex items-center justify-between gap-3 px-3 cursor-pointer font-semibold`}
+          open ? "rounded-t" : "rounded hover:bg-bg3"
+        } h-10 flex bg-bg3 items-center justify-between gap-3 px-3 cursor-pointer font-semibold`}
         onClick={() => setOpen(!open)}
       >
         <div className="flex items-center gap-3">

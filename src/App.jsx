@@ -4,9 +4,6 @@ import { features } from "./utils";
 import Sidebar from "./Sidebar";
 import OutBar from "./OutBar";
 import Logo from "./Logo";
-import SuggestedDocs from "./SuggestedDocs";
-import { PanelRightOpen, PanelRightClose } from "lucide-react";
-import FeaturesBar from "./FeaturesBar";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
@@ -29,16 +26,8 @@ export default function App() {
           >
             <Sidebar feature={feature} setFeature={setFeature} />
           </div>
-          {/*  <FeaturesBar
-            show={show}
-            setShow={setShow}
-            feature={feature}
-            setFeature={setFeature}
-          /> */}
-          {/*  <div className="w-14 bg-bg1 flex flex-col border-r border-borderColor h-sidebarHeight sticky top-headerHeight justify-center">
-           
-          </div> */}
-          <div className="bg-bg2 flex flex-col flex-1"></div>
+
+          <Feature feature={feature} />
         </div>
       </div>
     </div>

@@ -8,11 +8,12 @@
   --spacing-complementarySidebarMaxHeight: calc(
     100vh - var(--spacing-headerHeight) - var(--spacing-headerHeight)
   );
-  --spacing-sidebarWidth: 380px;
+  --spacing-sidebarWidth: 390px;
   --spacing-paddingUnit: 30px;
+  --spacing-documentWidth: 960px;
   --spacing-complementarySidebarWidth: 300px;
   --spacing-suggestedSidebarWidth: 240px;
-  --text-base: 14px;
+  --text-base: 13px;
   --text-lg: 18px;
   --chatWidth: 360px;
 
