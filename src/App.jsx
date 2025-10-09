@@ -26,16 +26,12 @@ export default function App() {
               !show && "lg:-ml-sidebarWidth"
             } lg:w-sidebarWidth transition-all bg-white relative z-50`}
           >
-            <Sidebar feature={feature} setFeature={setFeature} />
-            {/* <div
-              className="bg-red-300"
-              onClick={() => {
-                setFeature("originale");
-                setShowFeatureBar(true);
-              }}
-            >
-              Chatta
-            </div> */}
+            <Sidebar
+              feature={feature}
+              setFeature={setFeature}
+              setShowFeatureBar={setShowFeatureBar}
+            />
+            {/*  */}
           </div>
           <div className="flex items-center pl-4 pr-2 gap-3 font-bold lg:hidden fixed top-0 left-0 w-full h-headerHeight bg-bg1 border-b border-borderColor z-40">
             <div className="text-2xl">🇴🇲</div>
