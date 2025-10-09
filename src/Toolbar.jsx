@@ -24,13 +24,17 @@ export default function Toolbar({
       <div
         className={`z-[998] shadow-xl lg:shadow-none overflow-hidden transition-all ${position} ${width} ${margin} ${height} bg-bg1 flex flex-col `}
       >
-        <div className="hidden lg:flex min-h-headerHeight items-center justify-between px-2">
-          {showFeatureBar && <span className="minititle">Complementary</span>}
-          <div
-            onClick={() => setShowFeatureBar((s) => !s)}
-            className="h-buttonHeight w-buttonHeight hover:bg-bg3 flexer rounded cursor-pointer"
-          >
-            {showFeatureBar ? <X size={16} /> : <Menu size={16} />}
+        <div className="hidden lg:flex min-h-headerHeight items-center justify-between">
+          {showFeatureBar && (
+            <span className="minititle ml-3">Complementary</span>
+          )}
+          <div className="w-headerHeight h-headerHeight flexer">
+            <div
+              onClick={() => setShowFeatureBar((s) => !s)}
+              className="h-buttonHeight w-buttonHeight hover:bg-bg3 flexer rounded cursor-pointer"
+            >
+              {showFeatureBar ? <X size={16} /> : <Menu size={16} />}
+            </div>
           </div>
         </div>
 

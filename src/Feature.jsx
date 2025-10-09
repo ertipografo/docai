@@ -29,7 +29,7 @@ export default function Feature({
             <div className="max-w-documentWidth mx-auto">
               {Array.from({ length: 5 }).map((_, index) => (
                 <div
-                  className="bg-bg1 h-[1200px] mb-10 rounded-lg flexer"
+                  className="bg-bg1 h-[1200px] border border-borderColor mb-10 rounded-lg flexer"
                   key={index}
                 >
                   {index}

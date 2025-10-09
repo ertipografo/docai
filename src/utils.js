@@ -1,11 +1,17 @@
-import { Network, FileText, Scissors, ShieldQuestionMark } from "lucide-react";
+import {
+  Network,
+  FileText,
+  Scissors,
+  ShieldQuestionMark,
+  MessageSquareText,
+} from "lucide-react";
 import Tree from "./Tree";
 import Chat from "./Chat";
 
 export const features = [
   {
-    label: "Transcript",
-    Icon: FileText,
+    label: "Chatta col documento",
+    Icon: MessageSquareText,
     value: "originale",
     hasComplementary: Chat,
   },

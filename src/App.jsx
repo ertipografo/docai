@@ -23,15 +23,16 @@ export default function App() {
         <div className="lg:flex lg:flex-row flex-1 lg:overflow-auto">
           <div
             className={`${
-              !show && "lg:-ml-sidebarWidth"
-            } lg:w-sidebarWidth transition-all bg-white relative z-50`}
+              !show ? "w-full lg:w-headerHeight" : "lg:w-sidebarWidth"
+            } bg-white relative z-50`}
           >
             <Sidebar
               feature={feature}
               setFeature={setFeature}
               setShowFeatureBar={setShowFeatureBar}
+              show={show}
+              setShow={setShow}
             />
-            {/*  */}
           </div>
           <div className="flex items-center pl-4 pr-2 gap-3 font-bold lg:hidden fixed top-0 left-0 w-full h-headerHeight bg-bg1 border-b border-borderColor z-40">
             <div className="text-2xl">🇴🇲</div>

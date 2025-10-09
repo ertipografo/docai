@@ -22,6 +22,7 @@
 
   --color-text1: var(--color-gray-800);
   --color-text2: var(--color-gray-400);
+  --color-text3: var(--color-gray-300);
   --color-textOnDark: var(--color-white);
   --color-bgDark: var(--color-gray-800);
   --color-bgDarker: var(--color-gray-900);
