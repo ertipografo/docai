@@ -15,7 +15,7 @@ export const features = [
     value: "originale",
     hasComplementary: Chat,
   },
-  { label: "Riassunto", Icon: Scissors, value: "riassunto" },
+  { label: "Riassunto", Icon: Scissors, value: "riassunto", hasFormats: true },
   {
     label: "Mappa Concettuale",
     Icon: Network,
@@ -26,6 +26,7 @@ export const features = [
     label: "Quiz",
     Icon: ShieldQuestionMark,
     value: "quiz",
+    hasFormats: true,
   },
 ];
 
