@@ -3,6 +3,7 @@ import { features } from "./utils";
 import Sidebar from "./Sidebar";
 import Logo from "./Logo";
 import FeatureTop from "./FeatureTop";
+import BottomBar from "./BottomBar";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
@@ -28,20 +29,15 @@ export default function App() {
               setShow={setShow}
             />
           </div>
-          <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto px-3 pb-20">
+          <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto px-3">
             <FeatureTop feature={feature} setFeature={setFeature} />
-
             <div className="flex-1 overflow-visible flex">
               <div className="flex-1">
-                <div className="h-[5000px] bg-bg1"></div>
+                <div className="h-[5000px] bg-bg1 rounded-b-lg"></div>
               </div>
             </div>
+            <BottomBar />
           </div>
-          {/*  <Feature
-            feature={feature}
-            showFeatureBar={showFeatureBar}
-            setShowFeatureBar={setShowFeatureBar}
-          /> */}
         </div>
       </div>
     </div>
