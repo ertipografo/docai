@@ -3,21 +3,21 @@ import { documentTitle } from "./utils";
 
 export default function Title({ setShow }) {
   return (
-    <div className="flex flex-col px-2 lg:px-0 max-w-xl">
-      <div className="flex items-center justify-between h-headerHeight my-0 lg:my-3">
+    <div className="flex flex-col max-w-xl px-3 lg:px-8 pb-3 lg:pb-8">
+      <div className="flex items-center justify-between h-headerHeight my-0 lg:mt-3">
         <div className="text-2xl">🇴🇲</div>
         <div
-          className="hidden lg:flex hover:bg-actionSecondary cursor-pointer w-buttonHeight h-buttonHeight items-center justify-center rounded"
+          className="hidden text-text3 lg:flex hover:bg-actionSecondary cursor-pointer w-buttonHeight h-buttonHeight items-center justify-center rounded"
           onClick={() => setShow(false)}
         >
           <PanelRightOpen size={18} />
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <h1 className="text-xl leading-[1.25] font-bold">{documentTitle}</h1>
+        <h1 className="text-lg leading-[1.25] font-bold">{documentTitle}</h1>
         <p className="max-w-4xl leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo velit
-          cupiditate, fugit accusamus ipsam temporibus rerum.
+          Lorem ipsum dolor sit amet consectetur adi pisicing elit. Illo velit
+          cupiditate, fugit accus amus ipsam temporibus rerum.
         </p>
         {/* <div className="flex mt-4 text-xs items-center gap-8 font-semibold text-text2">
           <div className="flex items-center gap-1.5">

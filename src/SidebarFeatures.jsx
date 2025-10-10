@@ -13,7 +13,7 @@ export default function SidebarFeatures({
   const cur = featureModes[1];
 
   return (
-    <div className="hidden lg:flex flex-col gap-1">
+    <div className="hidden lg:flex flex-col gap-1 px-8 pb-8">
       {features.map(({ value, label, Icon }) => {
         const isOriginal = value === "originale";
         const isOpen = feature === value;
@@ -27,22 +27,15 @@ export default function SidebarFeatures({
                 }
               }}
               className={`${
-                isOpen ? "bg-bg3 rounded-t" : "rounded hover:bg-bg3 rounded"
+                isOpen ? "bg-bg3 rounded" : "rounded hover:bg-bg3 rounded"
               } h-12 flex items-center px-3 group cursor-pointer gap-3 font-semibold`}
             >
               <Icon size={16} />
               <span className="hidden lg:flex">{label}</span>
               <div className="ml-auto text-text2">
-                {isOpen && !isOriginal ? (
-                  <ChevronDown size={16} />
-                ) : (
-                  <ChevronRight size={16} />
-                )}
+                <ChevronRight size={16} />
               </div>
             </div>
-            {isOpen && !isOriginal && (
-              <div className="h-20 bg-bg3 flexer text-xs">feature premium</div>
-            )}
           </div>
         );
       })}

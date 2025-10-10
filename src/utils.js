@@ -41,7 +41,7 @@ export function getRandomArbitrary(min, max) {
 export const titles = [
   "Ipsum dolor sit amet consectetur adipisicing elit alias voluptates",
   "Consectetur alias voluptates veniam",
-  "delectus dolores corrupti sint amet facilis",
+  "Delectus dolores corrupti sint amet facilis",
   "Distinctio pariatur officia illum voluptatibus ex illo blanditiis neque ab",
   "Nobis in. Lorem ipsum dolor sit amet consectetur adipisicing elit",
   " Consectetur alias voluptates venia",

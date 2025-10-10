@@ -1,6 +1,6 @@
 import { PanelRightOpen, PanelRightClose } from "lucide-react";
 import SidebarFeatures from "./SidebarFeatures";
-import Fonti from "./Fonti";
+import SuggestedDocs from "./SuggestedDocs";
 import Title from "./Title";
 import { features } from "./utils";
 
@@ -35,16 +35,19 @@ export default function Sidebar({
     <>
       <div
         className={`${
-          show ? "block" : "block lg:hidden"
-        } w-full lg:w-sidebarWidth h-full`}
+          show ? "flex" : "flex lg:hidden"
+        } w-full lg:w-sidebarWidth flex-col h-full`}
       >
-        <div className="h-full relative px-2 lg:px-6 pb-4 flex flex-col gap-6">
+        <div className="relative flex flex-col">
           <Title setShow={setShow} />
           <SidebarFeatures
             setFeature={setFeature}
             feature={feature}
             setShowFeatureBar={setShowFeatureBar}
           />
+        </div>
+        <div className="mt-auto bg-bg3 rounded-lg overflow-hidden m-3 hidden lg:flex">
+          <SuggestedDocs />
         </div>
       </div>
 

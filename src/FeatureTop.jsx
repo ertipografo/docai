@@ -47,7 +47,7 @@ export default function FeatureTop({ feature, setFeature }) {
         </div>
         <div className="flex-1 flex items-center justify-end">
           <div className="flexer gap-2 h-buttonHeight px-3 text-xs font-semibold bg-actionSecondary rounded cursor-pointer">
-            <span>Doload</span>
+            <span>Download</span>
             <ChevronDown size={16} />
           </div>
         </div>

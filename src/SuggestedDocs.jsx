@@ -11,31 +11,31 @@ const categories = [
 export default function SuggestedDocs() {
   const [cur, setCur] = useState("preferiti");
   return (
-    <div className="bg-bg1 flex flex-col justify-between">
-      <div className="overflow-auto">
+    <div className="flex flex-col justify-between">
+      <div className="overflow-auto bg-bg2">
         <div className="flex flex-col">
-          <div className="h-headerHeight flex items-center px-2">
-            <span className="minititle">{`Lista ${cur}`}</span>
-          </div>
-          <div className="flex flex-col gap-4 p-3">
+          <div className="flex flex-col gap-1 p-3">
             {Array.from({ length: 5 }).map((_, index) => {
               const randomAvailableFeatures = getRandomArbitrary(0, 3);
               return (
                 <div
                   key={index}
-                  className="cursor-pointer group flex items-center"
+                  className={`cursor-pointer group flex items-center ${
+                    index === 3 ? "bg-bg1" : "hover:bg-bg1"
+                  } p-3 rounded`}
                 >
-                  <div className="flex flex-col gap-1 flex-1 text-xs">
+                  <div className="flex flex-col gap-2 flex-1 text-xs">
                     <span className="font-semibold">{titles[index]}</span>
-                    <div className="flex items-center gap-1">
-                      {features.map(({ value, Icon }, i) => {
+                    <div className="flex items-center gap-3">
+                      {features.map((f, i) => {
+                        const { value, Icon } = f;
                         return (
                           <div
                             key={value}
-                            className={`p-[2px] ${
+                            className={`${
                               i <= randomAvailableFeatures
-                                ? "text-current"
-                                : "text-text2"
+                                ? "opacity-60"
+                                : "opacity-20"
                             }`}
                           >
                             <Icon size={14} />
@@ -44,26 +44,24 @@ export default function SuggestedDocs() {
                       })}
                     </div>
                   </div>
-                  <div className="w-8 h-8 opacity-0 transition-opacity group-hover:opacity-100 flexer">
-                    <ChevronRight size={16} />
-                  </div>
                 </div>
               );
             })}
           </div>
         </div>
       </div>
-      <div className="border-t border-borderColor flexer gap-4 h-12">
-        {categories.map(({ label, Icon }) => {
+      <div className="flexer gap-4 h-headerHeight">
+        {categories.map((f) => {
+          const { label, Icon } = f;
           return (
             <div
               key={label}
               onClick={() => setCur(label)}
-              className={`p-2 rounded-md cursor-pointer ${
-                cur === label ? "bg-bg2" : "text-text2 hover:text-text1"
+              className={`h-buttonHeight w-buttonHeight flexer rounded-md cursor-pointer ${
+                cur === label ? "bg-bg1" : "text-text2 hover:text-text1"
               }`}
             >
-              <Icon size={14} />
+              <Icon size={16} />
             </div>
           );
         })}
