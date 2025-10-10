@@ -18,9 +18,7 @@ export default function App() {
       <div className="h-headerHeight z-[999] sticky top-0 bg-bgDark text-textOnDark text-xs flex items-center relative z-50">
         <div className="flex-1">
           <div
-            className={`h-headerHeight flexer w-headerHeight ${
-              show ? "" : "text-text1 bg-bg1"
-            }`}
+            className={`h-headerHeight flexer w-headerHeight ${show ? "" : ""}`}
             onClick={() => setShow((s) => !s)}
           >
             <div className="h-buttonHeight w-buttonHeight flexer rounded cursor-pointer">
@@ -43,7 +41,7 @@ export default function App() {
           <div
             className={`${
               !show ? "w-full lg:w-headerHeight" : "lg:w-sidebarWidth"
-            } bg-white relative z-50 transition-all`}
+            } bg-bg2 relative z-50 transition-all`}
           >
             <Sidebar
               feature={feature}

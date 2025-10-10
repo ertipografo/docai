@@ -34,7 +34,7 @@
   --color-bgDark: var(--color-neutral-800);
   --color-bgDarker: var(--color-neutral-900);
   --color-bg1: var(--color-white);
-  --color-bg2: var(--color-neutral-100);
+  --color-bg2: var(--color-neutral-50);
   --color-bg3: var(--color-neutral-200);
   --color-borderColor: var(--color-neutral-200);
   --font-weight-semibold: 500;
@@ -42,7 +42,7 @@
 
   --color-action1: var(--color-sky-500);
   --color-action2: var(--color-bg3);
-  --color-action3: var(--color-bg2);
+  --color-action3: var(--color-bg3);
 
   /* GO DARK MODE */
   /* --color-bg1: var(--color-neutral-800);

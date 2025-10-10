@@ -22,7 +22,7 @@ export default function SidebarFeatures({
                 }
               }}
               className={`${
-                isOpen ? "bg-bg2 rounded" : "rounded hover:bg-bg2 rounded"
+                isOpen ? "bg-bg1 rounded" : "rounded hover:bg-bg1 rounded"
               } h-12 flex items-center px-3 group cursor-pointer gap-3 font-semibold`}
             >
               <Icon size={16} />

@@ -80,7 +80,7 @@ export default function BottomBar() {
     <div className="h-1 bg-red-500 sticky bottom-3">
       <div className="absolute bottom-full w-full left-0 h-headerHeight flex px-3">
         <div className="flex-1 items-center flex">
-          <div className="flex gap-3 items-center h-buttonHeight px-3 bg-bg1 rounded border border-borderColor">
+          <div className="flex gap-3 items-center h-buttonHeight px-3 bg-bg1 rounded bg-bg2">
             <div className="flex gap-2 items-center text-xs font-semibold">
               <Star className="text-transparent fill-amber-400" size={16} />
               <span>
@@ -90,7 +90,7 @@ export default function BottomBar() {
           </div>
         </div>
         <div className="flex-1 flexer">
-          <div className="h-buttonHeight flexer rounded border border-borderColor bg-bg1 min-w-14 text-xs font-semibold">
+          <div className="h-buttonHeight flexer rounded bg-bg2 bg-bg1 min-w-14 text-xs font-semibold">
             1 / 34
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function BottomBar() {
           )}
           <div
             onClick={() => setOpenChat((s) => !s)}
-            className="bg-bgDark cursor-pointer flexer text-textOnDark h-buttonHeight w-buttonHeight rounded-full"
+            className="bg-bgDark cursor-pointer flexer text-textOnDark h-buttonHeight w-buttonHeight rounded"
           >
             {openChat ? (
               <X size={16} />

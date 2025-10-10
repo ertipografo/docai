@@ -12,7 +12,7 @@ export default function SuggestedDocs() {
   const [cur, setCur] = useState("preferiti");
   return (
     <div className="flex flex-col justify-between">
-      <div className="overflow-auto bg-bg2">
+      <div className="overflow-auto bg-bg1">
         <div className="flex flex-col">
           <div className="flex flex-col gap-1 p-3">
             {Array.from({ length: 5 }).map((_, index) => {
@@ -21,7 +21,7 @@ export default function SuggestedDocs() {
                 <div
                   key={index}
                   className={`cursor-pointer group flex items-center ${
-                    index === 3 ? "bg-bg1" : "hover:bg-bg1"
+                    index === 3 ? "bg-bg2" : "hover:bg-bg2"
                   } p-3 rounded`}
                 >
                   <div className="flex flex-col gap-2 flex-1 text-xs">
