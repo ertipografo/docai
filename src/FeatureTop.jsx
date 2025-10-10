@@ -31,9 +31,9 @@ export default function FeatureTop({ feature, setFeature }) {
   const FeatureIcon = currentFeature?.Icon;
   const hasComplementary = currentFeature?.hasComplementary;
   return (
-    <div className="sticky bg-bg3 top-headerHeight lg:top-0 pt-3 top-headerHeight border-b border-borderColor">
+    <div className="sticky bg-bg3 top-headerHeight lg:top-0 pt-3 top-headerHeight">
       <MobileFeatures feature={feature} setFeature={setFeature} />
-      <div className="bg-bg1 rounded-t flex items-center px-2 h-headerHeight">
+      <div className="bg-bg2 rounded-t flex items-center px-2 h-headerHeight">
         <div className="flex-1 flex items-center justify-start">
           {hasComplementary && (
             <div className="bg-actionSecondary rounded cursor-pointer h-buttonHeight aspect-square flexer">
