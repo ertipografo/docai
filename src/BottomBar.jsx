@@ -77,8 +77,8 @@ function Chat() {
 export default function BottomBar() {
   const [openChat, setOpenChat] = useState(false);
   return (
-    <div className="m-3 sticky bottom-3">
-      <div className="h-headerHeight flex">
+    <div className="h-1 bg-red-500 sticky bottom-3">
+      <div className="absolute bottom-full w-full left-0 h-headerHeight flex px-3">
         <div className="flex-1 items-center flex">
           <div className="flex gap-3 items-center h-buttonHeight px-3 bg-bg1 rounded border border-borderColor">
             <div className="flex gap-2 items-center text-xs font-semibold">
