@@ -4,7 +4,7 @@ import { documentTitle } from "./utils";
 export default function Title({ setShow }) {
   return (
     <div className="flex flex-col px-2 lg:px-0 max-w-xl">
-      <div className="flex items-center justify-between h-headerHeight">
+      <div className="flex items-center justify-between h-headerHeight my-0 lg:my-3">
         <div className="text-2xl">🇴🇲</div>
         <div
           className="hidden lg:flex hover:bg-actionSecondary cursor-pointer w-buttonHeight h-buttonHeight items-center justify-center rounded"
