@@ -15,13 +15,20 @@ export default function Sidebar({
     const cl = `aspect-square flexer cursor-pointer w-buttonHeight rounded`;
     const PanelIcon = show ? PanelRightOpen : PanelRightClose;
     const items = [
-      <div className={`${cl} hover:bg-bg3`} onClick={() => setShow((s) => !s)}>
+      <div
+        className={`${cl} hover:bg-actionTertiary`}
+        onClick={() => setShow((s) => !s)}
+      >
         <PanelIcon size={18} />
       </div>,
       <div className={`${cl} text-2xl`}>🇴🇲</div>,
       ...features.map((f) => (
         <div
-          className={`${cl} ${feature === f.value ? "bg-bg3" : ""}`}
+          className={`${cl} ${
+            feature === f.value
+              ? "bg-actionTertiary"
+              : "hover:bg-actionTertiary"
+          }`}
           onClick={() => setFeature(f.value)}
         >
           <f.Icon size={18} />
