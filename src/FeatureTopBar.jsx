@@ -17,7 +17,7 @@ export default function FeatureTopBar({
         <div className="h-headerHeight flex justify-between bg-bg3 rounded-lg px-2 items-center">
           <div className="flex items-center gap-3">
             <div
-              className="w-buttonHeight aspect-square cursor-pointer rounded hover:bg-actionSecondary flexer"
+              className="w-buttonHeight aspect-square cursor-pointer rounded hover:bg-action2 flexer"
               onClick={() => setShowFeatureBar((s) => !s)}
             >
               {showFeatureBar ? (
@@ -37,7 +37,7 @@ export default function FeatureTopBar({
                 5.4 <span className="text-text2">(456)</span>
               </span>
             </div>
-            <div className="bg-actionSecondary font-semibold px-3 rounded h-buttonHeight flexer gap-1 text-xs">
+            <div className="bg-action2 font-semibold px-3 rounded h-buttonHeight flexer gap-1 text-xs">
               <span>Download</span>
               <ChevronDown size={16} />
             </div>

@@ -1,15 +1,12 @@
 import { useState } from "react";
-import MobileTitle from "./MobileTitle";
-import { features, documentTitle } from "./utils";
+import { features } from "./utils";
 import Sidebar from "./Sidebar";
-import OutBar from "./OutBar";
 import Logo from "./Logo";
-import { ChevronUp } from "lucide-react";
 import FeatureTop from "./FeatureTop";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
-  const [showFeatureBar, setShowFeatureBar] = useState(false);
+  //const [showFeatureBar, setShowFeatureBar] = useState(false);
   const [show, setShow] = useState(true);
 
   return (
@@ -22,12 +19,11 @@ export default function App() {
           <div
             className={`${
               !show ? "w-full lg:w-headerHeight" : "lg:w-sidebarWidth"
-            } bg-white relative z-50`}
+            } bg-white relative z-50 transition-all`}
           >
             <Sidebar
               feature={feature}
               setFeature={setFeature}
-              setShowFeatureBar={setShowFeatureBar}
               show={show}
               setShow={setShow}
             />

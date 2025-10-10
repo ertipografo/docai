@@ -37,9 +37,9 @@
   --font-weight-semibold: 500;
   --font-weight-bold: 600;
 
-  --color-actionPrimary: var(--color-indigo-600);
-  --color-actionSecondary: var(--color-bg3);
-  --color-actionTertiary: var(--color-bg2);
+  --color-action1: var(--color-indigo-600);
+  --color-action2: var(--color-bg3);
+  --color-action3: var(--color-bg2);
 
   /* GO DARK MODE */
   /* --color-bg1: var(--color-neutral-800);

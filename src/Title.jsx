@@ -7,7 +7,7 @@ export default function Title({ setShow }) {
       <div className="flex items-center justify-between h-headerHeight my-0 lg:mt-3">
         <div className="text-2xl">🇴🇲</div>
         <div
-          className="hidden text-text3 lg:flex hover:bg-actionTertiary cursor-pointer w-buttonHeight h-buttonHeight items-center justify-center rounded"
+          className="hidden text-text3 lg:flex hover:bg-action3 cursor-pointer w-buttonHeight h-buttonHeight items-center justify-center rounded"
           onClick={() => setShow(false)}
         >
           <PanelRightOpen size={18} />

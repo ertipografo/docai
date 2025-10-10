@@ -12,11 +12,11 @@ export default function Sidebar({
   setShow,
 }) {
   const collapsedItems = () => {
-    const cl = `aspect-square flexer cursor-pointer w-buttonHeight rounded`;
+    const cl = `h-buttonHeight flexer cursor-pointer w-buttonHeight rounded`;
     const PanelIcon = show ? PanelRightOpen : PanelRightClose;
     const items = [
       <div
-        className={`${cl} hover:bg-actionTertiary`}
+        className={`${cl} hover:bg-action3`}
         onClick={() => setShow((s) => !s)}
       >
         <PanelIcon size={18} />
@@ -25,9 +25,7 @@ export default function Sidebar({
       ...features.map((f) => (
         <div
           className={`${cl} ${
-            feature === f.value
-              ? "bg-actionTertiary"
-              : "hover:bg-actionTertiary"
+            feature === f.value ? "bg-action3" : "hover:bg-action3"
           }`}
           onClick={() => setFeature(f.value)}
         >
@@ -58,7 +56,11 @@ export default function Sidebar({
         </div>
       </div>
 
-      <div className={`${show ? "hidden" : "hidden lg:flex"} flex-col`}>
+      <div
+        className={`${
+          show ? "hidden" : "hidden lg:flex"
+        } flex-col w-headerHeight`}
+      >
         {collapsedItems().map((el, k) => {
           return (
             <div key={k} className="overflow-hidden aspect-square flexer">

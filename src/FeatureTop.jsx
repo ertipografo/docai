@@ -36,7 +36,7 @@ export default function FeatureTop({ feature, setFeature }) {
       <div className="bg-bg1 rounded-t-lg flex items-center px-2 h-headerHeight">
         <div className="flex-1 flex items-center justify-start">
           {hasComplementary && (
-            <div className="bg-actionSecondary rounded cursor-pointer h-buttonHeight aspect-square flexer">
+            <div className="bg-action3 hover:bg-action2 rounded cursor-pointer h-buttonHeight aspect-square flexer">
               <Settings2 size={16} />
             </div>
           )}
@@ -46,7 +46,7 @@ export default function FeatureTop({ feature, setFeature }) {
           {featureLabel}
         </div>
         <div className="flex-1 flex items-center justify-end">
-          <div className="flexer gap-2 h-buttonHeight px-3 text-xs font-semibold bg-actionSecondary rounded cursor-pointer">
+          <div className="flexer gap-2 h-buttonHeight px-3 text-xs font-semibold bg-action2 rounded cursor-pointer">
             <span>Download</span>
             <ChevronDown size={16} />
           </div>

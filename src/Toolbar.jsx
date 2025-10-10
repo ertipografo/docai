@@ -26,7 +26,7 @@ export default function Toolbar({
           <span className="font-semibold">Complementary</span>
           <div
             onClick={() => setShowFeatureBar((s) => !s)}
-            className="h-buttonHeight aspect-square hover:bg-actionSecondary rounded cursor-pointer flexer"
+            className="h-buttonHeight aspect-square hover:bg-action2 rounded cursor-pointer flexer"
           >
             <X size={18} />
           </div>

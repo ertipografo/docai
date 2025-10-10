@@ -12,7 +12,7 @@ export default function OutBar() {
         </div>
       ))}
       <div className="aspect-square flexer mt-auto">
-        <div className="bg-actionPrimary w-buttonHeight aspect-square text-textOnDark flexer rounded">
+        <div className="bg-action1 w-buttonHeight aspect-square text-textOnDark flexer rounded">
           <FolderUp size={18} />
         </div>
       </div>
