@@ -10,8 +10,8 @@ import Chat from "./Chat";
 
 export const features = [
   {
-    label: "Chatta col documento",
-    Icon: MessageSquareText,
+    label: "Documento Originale",
+    Icon: FileText,
     value: "originale",
     hasComplementary: Chat,
   },
