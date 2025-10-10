@@ -71,7 +71,7 @@ export default function App() {
                     Mappa
                   </div>
                 ) : (
-                  <div className="min-h-[5000px] bg-bg1 rounded-b-lg flex-1 p-4">
+                  <div className="min-h-[5000px] bg-bg1 rounded-b-lg flex-1 p-8">
                     Doc
                   </div>
                 )}
