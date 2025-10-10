@@ -28,11 +28,9 @@ export default function Title() {
             <div className="flexer h-5 w-5 bg-bg2 rounded">4</div>
             <ChevronDown size={14} />
           </div>
-          <div className="text-text2 ml-auto">
-            <div className="px-2 gap-2 h-6 flexer bg-bg2 rounded">
-              <FilePenLine size={14} />
-              <span>Edit</span>
-            </div>
+          <div className="gap-1.5 ml-auto cursor-pointer flex items-center">
+            <FilePenLine size={14} />
+            <span>Edit</span>
           </div>
         </div>
       </div>

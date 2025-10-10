@@ -18,10 +18,12 @@ export default function App() {
       <div className="h-headerHeight z-[999] sticky top-0 bg-bgDark text-textOnDark text-xs flex items-center relative z-50">
         <div className="flex-1">
           <div
-            className="h-headerHeight flexer w-headerHeight"
+            className={`h-headerHeight flexer w-headerHeight ${
+              show ? "" : "text-text1 bg-bg1"
+            }`}
             onClick={() => setShow((s) => !s)}
           >
-            <div className="h-buttonHeight w-buttonHeight bg-bg1 text-text1 flexer rounded cursor-pointer">
+            <div className="h-buttonHeight w-buttonHeight flexer rounded cursor-pointer">
               <PanelIcon size={16} />
             </div>
           </div>
