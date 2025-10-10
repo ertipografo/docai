@@ -1,4 +1,4 @@
-import { ChevronDown, Settings, Settings2 } from "lucide-react";
+import { ChevronDown, ChevronUp, Settings2 } from "lucide-react";
 import { features } from "./utils";
 import { useState } from "react";
 const MobileFeatures = ({ feature, setFeature }) => {
@@ -32,28 +32,28 @@ const Format = () => {
     <div className="relative">
       <div
         onClick={() => setShow((s) => !s)}
-        className="flex items-center font-semibold gap-2 h-buttonHeight pl-3 pr-2 border border-borderColor rounded cursor-pointer"
+        className="flex items-center font-semibold gap-2 h-buttonHeight pl-3 pr-2 bg-action3 rounded cursor-pointer"
       >
         <span>Formato</span>
         <div className="bg-bgDark text-textOnDark h-7 rounded text-xs flex items-center px-2 uppercase">
-          XL
+          {formats[1]}
         </div>
-        <ChevronDown size={16} />
+        {show ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
       </div>
       <div
         className={`${
           show
             ? "mt-2 pointer-events-auto opacity-100"
             : "mt-0 pointer-events-none opacity-0"
-        } absolute top-full left-0 flex divide-y divide-bg2 flex-col bg-bg1 rounded-md border transition-all border-borderColor shadow-lg shadow-gray-800/10`}
+        } absolute top-full left-0 flex flex-col bg-bg2 rounded transition-all divide-y divide-bg3 px-1`}
       >
         {formats.map((f, i) => {
           return (
             <div
-              className="flex cursor-pointer hover:bg-bg2/50 p-1 items-center text-xs font-semibold"
+              className="flex cursor-pointer py-1 items-center text-xs font-semibold"
               key={f}
             >
-              <div className="uppercase flexer h-8 w-8 rounded bg-bgDark text-textOnDark">
+              <div className="uppercase flexer h-8 w-8 rounded-sm bg-bgDark text-textOnDark">
                 {f}
               </div>
               <div className="flex-1 flex justify-center px-6">
@@ -62,7 +62,7 @@ const Format = () => {
                     Premium
                   </div>
                 ) : (
-                  <div className="px-2 py-[2px] bg-bg2 text-text2 rounded-full">
+                  <div className="px-2 py-[2px] bg-bg1 text-text2 rounded-full">
                     Gratis
                   </div>
                 )}
