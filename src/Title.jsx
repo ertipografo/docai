@@ -1,4 +1,4 @@
-import { PanelRightOpen, Folder, Calendar, Star } from "lucide-react";
+import { Folder, ChevronDown, FileStack, FilePenLine } from "lucide-react";
 import { documentTitle } from "./utils";
 
 export default function Title() {
@@ -6,6 +6,10 @@ export default function Title() {
     <div className="flex flex-col max-w-xl px-5 lg:px-8 pb-5 lg:pb-8">
       <div className="flex items-center justify-between h-headerHeight my-0 lg:mt-3">
         <div className="text-2xl">🇴🇲</div>
+        {/* <div className="flex items-center gap-1.5 text-xs text-text2">
+          <Calendar size={14} />
+          <span>23.5.2025</span>
+        </div> */}
       </div>
       <div className="flex flex-col gap-2">
         <h1 className="text-lg leading-[1.25] font-bold">{documentTitle}</h1>
@@ -19,8 +23,16 @@ export default function Title() {
             <span>Docsity AI</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <Calendar size={14} />
-            <span>23.5.2025</span>
+            <FileStack size={14} />
+            <span>Fonti</span>
+            <div className="flexer h-5 w-5 bg-bg2 rounded">4</div>
+            <ChevronDown size={14} />
+          </div>
+          <div className="text-text2 ml-auto">
+            <div className="px-2 gap-2 h-6 flexer bg-bg2 rounded">
+              <FilePenLine size={14} />
+              <span>Edit</span>
+            </div>
           </div>
         </div>
       </div>
