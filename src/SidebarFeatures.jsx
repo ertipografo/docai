@@ -1,20 +1,15 @@
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { features } from "./utils";
-import { useState } from "react";
 
 export default function SidebarFeatures({
   feature,
   setFeature,
   setShowFeatureBar,
 }) {
-  const [open, setOpen] = useState(false);
-  const featureModes = ["Sm", "Md", "Lg", "Xl"];
-
-  const cur = featureModes[1];
-
   return (
     <div className="hidden lg:flex flex-col gap-1 px-8 pb-8">
-      {features.map(({ value, label, Icon }) => {
+      {features.map((f) => {
+        const { value, label, Icon } = f;
         const isOriginal = value === "originale";
         const isOpen = feature === value;
         return (
@@ -27,7 +22,7 @@ export default function SidebarFeatures({
                 }
               }}
               className={`${
-                isOpen ? "bg-bg3 rounded" : "rounded hover:bg-bg3 rounded"
+                isOpen ? "bg-bg2 rounded" : "rounded hover:bg-bg2 rounded"
               } h-12 flex items-center px-3 group cursor-pointer gap-3 font-semibold`}
             >
               <Icon size={16} />

@@ -10,7 +10,7 @@ const MobileFeatures = ({ feature, setFeature }) => {
             key={f.value}
             onClick={() => setFeature(feature === f.value ? null : f.value)}
             className={`${
-              feature === f.value ? "bg-violet-500 text-textOnDark" : "bg-bg1"
+              feature === f.value ? "bg-bg1" : "bg-bg2 text-text2"
             } flex-1 px-2 flex rounded justify-center cursor-pointer gap-2 items-center h-full`}
           >
             <Icon size={18} />

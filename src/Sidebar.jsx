@@ -19,12 +19,12 @@ export default function Sidebar({
         <PanelIcon size={18} />
       </div>,
       <div className={`${cl} text-2xl`}>🇴🇲</div>,
-      ...features.map(({ Icon, value }) => (
+      ...features.map((f) => (
         <div
-          className={`${cl} ${feature === value ? "bg-bg3" : ""}`}
-          onClick={() => setFeature(value)}
+          className={`${cl} ${feature === f.value ? "bg-bg3" : ""}`}
+          onClick={() => setFeature(f.value)}
         >
-          <Icon size={18} />
+          <f.Icon size={18} />
         </div>
       )),
     ];
