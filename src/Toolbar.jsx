@@ -19,23 +19,22 @@ export default function Toolbar({
     showFeatureBar ? "lg:w-complementarySidebarWidth" : "lg:w-0"
   }`;
 
-  const border = showFeatureBar ? "border-r" : "";
   return ComplementaryComponent ? (
     <div
-      className={`${width} ${height} ${top} ${position} ${transform} ${border} bg-bg1 border-borderColor z-[99999] overflow-hidden`}
+      className={`${width} ${height} ${top} ${position} ${transform} shadow-lg lg:shadow-none bg-bg1 border-borderColor z-[99999] overflow-hidden`}
     >
-      <div className="flex flex-col h-full">
-        <div className="h-headerHeight bg-bg1 flex items-center pr-2 pl-3 justify-between">
-          <span className="font-semibold">Complementary</span>
-          <div
-            onClick={() => setShowFeatureBar((s) => !s)}
-            className="h-buttonHeight aspect-square hover:bg-action2 rounded cursor-pointer flexer"
-          >
-            <X size={18} />
+      <div className="flex flex-col h-full px-2 pb-2">
+        <div className="flex flex-col h-full bg-bg1 lg:bg-bg2 p-2 rounded">
+          <div className="h-10 flex items-center pr-2 pl-3 justify-between">
+            <span className="font-semibold">Complementary</span>
+            <div
+              onClick={() => setShowFeatureBar((s) => !s)}
+              className="h-buttonHeight aspect-square hover:bg-action2 rounded cursor-pointer flex items-center justify-center lg:hidden"
+            >
+              <X size={18} />
+            </div>
           </div>
-        </div>
-        <div className="flex-1 w-complementarySidebarWidth">
-          <div className="h-full">
+          <div className="flex-1 w-complementarySidebarWidth">
             <ComplementaryComponent />
           </div>
         </div>

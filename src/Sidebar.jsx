@@ -1,4 +1,3 @@
-import { PanelRightOpen, PanelRightClose } from "lucide-react";
 import SidebarFeatures from "./SidebarFeatures";
 import SuggestedDocs from "./SuggestedDocs";
 import Title from "./Title";
@@ -13,14 +12,8 @@ export default function Sidebar({
 }) {
   const collapsedItems = () => {
     const cl = `h-buttonHeight flexer cursor-pointer w-buttonHeight rounded`;
-    const PanelIcon = show ? PanelRightOpen : PanelRightClose;
+
     const items = [
-      <div
-        className={`${cl} hover:bg-action3`}
-        onClick={() => setShow((s) => !s)}
-      >
-        <PanelIcon size={18} />
-      </div>,
       <div className={`${cl} text-2xl`}>🇴🇲</div>,
       ...features.map((f) => (
         <div

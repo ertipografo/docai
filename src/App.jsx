@@ -5,16 +5,29 @@ import Logo from "./Logo";
 import FeatureTop from "./FeatureTop";
 import BottomBar from "./BottomBar";
 import Toolbar from "./Toolbar";
+import { PanelRightOpen, PanelRightClose } from "lucide-react";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
   const [showFeatureBar, setShowFeatureBar] = useState(false);
   const [show, setShow] = useState(true);
+  const PanelIcon = show ? PanelRightOpen : PanelRightClose;
 
   return (
     <div className="lg:h-screen lg:flex flex-col lg:overflow-hidden text-base text-text1">
-      <div className="h-headerHeight z-[999] sticky top-0 bg-bgDark text-textOnDark text-xs flexer relative z-50">
-        <Logo className="scale-75" />
+      <div className="h-headerHeight z-[999] sticky top-0 bg-bgDark text-textOnDark text-xs flex items-center relative z-50">
+        <div className="flex-1">
+          <div
+            className="h-headerHeight bg-bg1/10 flexer aspect-square cursor-pointer"
+            onClick={() => setShow((s) => !s)}
+          >
+            <PanelIcon size={16} />
+          </div>
+        </div>
+        <div className="flex-1 flexer">
+          <Logo className="scale-75" />
+        </div>
+        <div className="flex-1 justify-end flex">1</div>
       </div>
       <div className="lg:flex-1 lg:flex lg:overflow-hidden">
         <div className="lg:flex lg:flex-row flex-1 lg:overflow-auto">
