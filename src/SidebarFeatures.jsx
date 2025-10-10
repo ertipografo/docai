@@ -13,7 +13,7 @@ export default function SidebarFeatures({
   const cur = featureModes[1];
 
   return (
-    <div className="flex flex-row lg:flex-col gap-1">
+    <div className="hidden lg:flex flex-col gap-1">
       {features.map(({ value, label, Icon }) => {
         const isOriginal = value === "originale";
         const isOpen = feature === value;
