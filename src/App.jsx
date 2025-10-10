@@ -4,10 +4,11 @@ import Sidebar from "./Sidebar";
 import Logo from "./Logo";
 import FeatureTop from "./FeatureTop";
 import BottomBar from "./BottomBar";
+import Toolbar from "./Toolbar";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
-  //const [showFeatureBar, setShowFeatureBar] = useState(false);
+  const [showFeatureBar, setShowFeatureBar] = useState(false);
   const [show, setShow] = useState(true);
 
   return (
@@ -30,10 +31,22 @@ export default function App() {
             />
           </div>
           <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto px-3">
-            <FeatureTop feature={feature} setFeature={setFeature} />
+            <FeatureTop
+              feature={feature}
+              setFeature={setFeature}
+              showFeatureBar={showFeatureBar}
+              setShowFeatureBar={setShowFeatureBar}
+            />
             <div className="flex-1 overflow-visible flex">
-              <div className="flex-1">
-                <div className="h-[5000px] bg-bg1 rounded-b-lg"></div>
+              <div className="flex-1 flex">
+                <Toolbar
+                  feature={feature}
+                  showFeatureBar={showFeatureBar}
+                  setShowFeatureBar={setShowFeatureBar}
+                />
+                <div className="min-h-[5000px] bg-bg1 rounded-b-lg flex-1 p-4">
+                  Doc
+                </div>
               </div>
             </div>
             <BottomBar />

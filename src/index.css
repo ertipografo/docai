@@ -12,8 +12,11 @@
       var(--spacing-headerHeight)
   );
   --spacing-sidebarMaxHeight: calc(100vh - var(--spacing-headerHeight));
-  --spacing-complementarySidebarMaxHeight: calc(
-    100vh - var(--spacing-headerHeight) - var(--spacing-headerHeight)
+  --spacing-complementaryTop: calc(
+    (var(--spacing) * 3) + var(--spacing-headerHeight)
+  );
+  --spacing-complementaryHeight: calc(
+    100vh - var(--spacing-complementaryTop) - var(--spacing-headerHeight)
   );
   --spacing-sidebarWidth: 390px;
   --spacing-buttonHeight: 39px;

@@ -6,14 +6,12 @@ import {
   MessageSquareText,
 } from "lucide-react";
 import Tree from "./Tree";
-import Chat from "./Chat";
 
 export const features = [
   {
     label: "Documento Originale",
     Icon: FileText,
     value: "originale",
-    hasComplementary: Chat,
   },
   { label: "Riassunto", Icon: Scissors, value: "riassunto", hasFormats: true },
   {

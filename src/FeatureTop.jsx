@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronUp, Settings2 } from "lucide-react";
+import { ChevronDown, ChevronUp, Settings2, X } from "lucide-react";
 import { features } from "./utils";
 import { useState } from "react";
 const MobileFeatures = ({ feature, setFeature }) => {
@@ -75,7 +75,12 @@ const Format = () => {
   );
 };
 
-export default function FeatureTop({ feature, setFeature }) {
+export default function FeatureTop({
+  feature,
+  setFeature,
+  showFeatureBar,
+  setShowFeatureBar,
+}) {
   const currentFeature = features.find((f) => f.value === feature);
 
   const featureLabel = currentFeature?.label ?? "niente";
@@ -87,8 +92,11 @@ export default function FeatureTop({ feature, setFeature }) {
       <div className="bg-bg1 rounded-t-lg flex items-center px-2 h-headerHeight">
         <div className="flex-1 gap-2 flex items-center justify-start">
           {hasComplementary && (
-            <div className="bg-action3 hover:bg-action2 rounded cursor-pointer h-buttonHeight aspect-square flexer">
-              <Settings2 size={16} />
+            <div
+              onClick={() => setShowFeatureBar((s) => !s)}
+              className="bg-action3 hover:bg-action2 rounded cursor-pointer h-buttonHeight aspect-square flexer"
+            >
+              {showFeatureBar ? <X size={16} /> : <Settings2 size={16} />}
             </div>
           )}
           {currentFeature?.hasFormats && <Format />}
