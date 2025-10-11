@@ -52,7 +52,11 @@ export default function App() {
               )}
             </div>
             <BottomBar />
-            <div className="bg-orange-300 min-h-[2000px]">121</div>
+            {feature !== "mappa" && (
+              <div className="bg-violet-200 rounded-lg min-h-[300px] mb-3 p-8">
+                footer contents
+              </div>
+            )}
           </div>
         </div>
       </div>
