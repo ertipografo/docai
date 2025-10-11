@@ -3,7 +3,7 @@ import { Star } from "lucide-react";
 export default function BottomBar() {
   return (
     <div className="sticky bottom-0 z-[99997] h-0">
-      <div className="h-headerHeight flex absolute bottom-3 left-0 w-full px-3">
+      <div className="h-headerHeight flex absolute bottom-3 left-1/2 -translate-x-1/2 w-full px-6 lg:px-3 max-w-documentWidth ">
         <div className="flex-1 items-center flex">
           <div className="flex gap-3 items-center h-buttonHeight px-3 bg-bg1 rounded bg-bg2">
             <div className="flex gap-2 items-center text-xs font-semibold">

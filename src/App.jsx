@@ -34,14 +34,18 @@ export default function App() {
             />
           </div>
           <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto h-full">
-            <FeatureTop
-              feature={feature}
-              setFeature={setFeature}
-              showFeatureBar={showFeatureBar}
-              setShowFeatureBar={setShowFeatureBar}
-            />
-            <div className="flex-1 flex flex">
-              <div className="flex-1">
+            <div
+              className={`pl-3 pr-3 lg:pl-0 ${
+                feature !== "mappa" && "max-w-documentWidth"
+              } mx-auto w-full`}
+            >
+              <FeatureTop
+                feature={feature}
+                setFeature={setFeature}
+                showFeatureBar={showFeatureBar}
+                setShowFeatureBar={setShowFeatureBar}
+              />
+              <div className="flex-1 flex flex">
                 <Toolbar
                   feature={feature}
                   showFeatureBar={showFeatureBar}
@@ -49,7 +53,6 @@ export default function App() {
                 />
                 <Feature feature={feature} />
               </div>
-              {/* <Chat showChat={showChat} setShowChat={setShowChat} /> */}
             </div>
             <BottomBar />
           </div>

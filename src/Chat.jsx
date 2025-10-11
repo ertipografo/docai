@@ -81,10 +81,10 @@ export default function Chat({ showChat, setShowChat }) {
         !showChat
           ? "w-0 min-w-0 lg:w-0"
           : "min-w-chatWidth w-[70vw] lg:w-chatWidth p-3"
-      } transition-all h-full lg:h-chatHeight right-0 lg:right-auto top-0 lg:top-chatTop fixed lg:sticky flex flex-col`}
+      } transition-all h-sidebarMaxHeight lg:h-chatHeight right-0 lg:right-auto top-headerHeight lg:top-chatTop fixed lg:sticky flex flex-col`}
     >
       {!showChat ? (
-        <div className="h-headerHeight absolute bottom-3 mr-3 right-full flex items-center">
+        <div className="h-headerHeight absolute bottom-3 mr-6 right-full flex items-center">
           <div
             onClick={() => setShowChat((s) => !s)}
             className="bg-violet-500 text-violet-100 h-buttonHeight w-buttonHeight rounded cursor-pointer flexer "
