@@ -18,9 +18,7 @@ export default function Sidebar({
 
       ...features.map((f) => (
         <div
-          className={`${cl} ${
-            feature === f.value ? "bg-action3" : "hover:bg-action3"
-          }`}
+          className={`${cl} ${feature === f.value ? "bg-bg1" : "hover:bg-bg1"}`}
           onClick={() => setFeature(f.value)}
         >
           <f.Icon size={18} />

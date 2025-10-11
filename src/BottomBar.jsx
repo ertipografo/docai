@@ -102,7 +102,7 @@ export default function BottomBar() {
           )}
           <div
             onClick={() => setOpenChat((s) => !s)}
-            className="bg-bgDark cursor-pointer flexer text-textOnDark h-buttonHeight w-buttonHeight rounded"
+            className="bg-action2 cursor-pointer flexer h-buttonHeight w-buttonHeight rounded"
           >
             {openChat ? (
               <X size={16} />

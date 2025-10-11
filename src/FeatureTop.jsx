@@ -32,7 +32,7 @@ const Format = () => {
     <div className="relative">
       <div
         onClick={() => setShow((s) => !s)}
-        className="flex items-center font-semibold gap-2 h-buttonHeight px-2 bg-bg2 rounded cursor-pointer"
+        className="flex items-center font-semibold gap-2 h-buttonHeight px-2 bg-action3 rounded cursor-pointer"
       >
         <span className="hidden sm:block">Formato</span>
         <div className="bg-bgDark text-textOnDark h-7 rounded text-xs flex items-center px-2 uppercase">
@@ -94,7 +94,7 @@ export default function FeatureTop({
           {hasComplementary && (
             <div
               onClick={() => setShowFeatureBar((s) => !s)}
-              className="bg-bg2 rounded cursor-pointer h-buttonHeight aspect-square flexer"
+              className="bg-action3 rounded cursor-pointer h-buttonHeight aspect-square flexer"
             >
               {showFeatureBar ? <X size={16} /> : <Settings2 size={16} />}
             </div>
@@ -106,7 +106,7 @@ export default function FeatureTop({
           {featureLabel}
         </div>
         <div className="flex-1 flex items-center justify-end">
-          <div className="flexer gap-2 h-buttonHeight px-3 text-xs font-semibold bg-action3 hover:bg-action2 rounded cursor-pointer">
+          <div className="flexer gap-2 h-buttonHeight px-3 text-xs font-semibold bg-action2 rounded cursor-pointer">
             <span>Download</span>
             <ChevronDown size={16} />
           </div>
