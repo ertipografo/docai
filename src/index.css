@@ -19,6 +19,7 @@
     100vh - var(--spacing-complementaryTop) - var(--spacing-headerHeight)
   );
   --spacing-sidebarWidth: 390px;
+  --spacing-chatWidth: 340px;
   --spacing-buttonHeight: 39px;
   --spacing-documentWidth: 900px;
   --spacing-complementarySidebarWidth: 320px;
@@ -36,6 +37,7 @@
   --color-bg1: var(--color-white);
   --color-bg2: var(--color-neutral-50);
   --color-bg3: var(--color-neutral-200);
+  --color-bg4: var(--color-neutral-500);
   --color-borderColor: var(--color-neutral-200);
   --font-weight-semibold: 500;
   --font-weight-bold: 600;

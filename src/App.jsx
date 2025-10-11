@@ -7,11 +7,13 @@ import BottomBar from "./BottomBar";
 import Toolbar from "./Toolbar";
 
 import Header from "./Header";
+import Chat from "./Chat";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
   const [showFeatureBar, setShowFeatureBar] = useState(false);
   const [show, setShow] = useState(true);
+  const [showChat, setShowChat] = useState(true);
 
   return (
     <div className="h-screen pt-headerHeight flex flex-col lg:overflow-hidden text-base text-text1">
@@ -20,7 +22,7 @@ export default function App() {
         <div className="lg:flex flex-col lg:flex-row flex-1 lg:overflow-auto">
           <div
             className={`${
-              !show ? "w-full lg:w-headerHeight lg:-mr-3" : "lg:w-sidebarWidth"
+              !show ? "w-full lg:w-headerHeight" : "lg:w-sidebarWidth"
             } bg-bg2 relative z-50 transition-all`}
           >
             <Sidebar
@@ -30,30 +32,36 @@ export default function App() {
               setShow={setShow}
             />
           </div>
-          <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto h-full pl-3 lg:pl-0 pr-3">
-            <FeatureTop
-              feature={feature}
-              setFeature={setFeature}
-              showFeatureBar={showFeatureBar}
-              setShowFeatureBar={setShowFeatureBar}
-            />
-            <div className="flex-1 overflow-visible flex">
-              <Toolbar
-                feature={feature}
-                showFeatureBar={showFeatureBar}
-                setShowFeatureBar={setShowFeatureBar}
-              />
-              {feature === "mappa" ? (
-                <div className="bg-bg1 flex-1 p-8 rounded-b-lg">Mappa</div>
-              ) : (
-                <div className="min-h-[5000px] bg-bg1 rounded-b-lg flex-1 p-8">
-                  Doc
+          <div className="bg-bg2 flex-1 flex flex-col lg:overflow-y-auto overflow-x-hidden h-full">
+            <div className="flex">
+              <div className="flex-1 max-w-documentWidth mx-auto">
+                <FeatureTop
+                  feature={feature}
+                  setFeature={setFeature}
+                  showFeatureBar={showFeatureBar}
+                  setShowFeatureBar={setShowFeatureBar}
+                />
+                <div className="flex-1 overflow-visible flex">
+                  <Toolbar
+                    feature={feature}
+                    showFeatureBar={showFeatureBar}
+                    setShowFeatureBar={setShowFeatureBar}
+                  />
+                  {feature === "mappa" ? (
+                    <div className="bg-bg1 flex-1 p-8 rounded-b-lg">Mappa</div>
+                  ) : (
+                    <div className="min-h-[5000px] bg-bg1 rounded-b-lg flex-1 p-8">
+                      Doc
+                    </div>
+                  )}
                 </div>
-              )}
+                <BottomBar />
+              </div>
+
+              <Chat showChat={showChat} setShowChat={setShowChat} />
             </div>
-            <BottomBar />
             {feature !== "mappa" && (
-              <div className="bg-violet-200 rounded-lg min-h-[300px] mb-3 p-8">
+              <div className="bg-violet-200 rounded-lg min-h-[300px] my-3 p-8">
                 footer contents
               </div>
             )}

@@ -1,17 +1,14 @@
+import { Copy, X, MessagesSquare } from "lucide-react";
 import { useState } from "react";
-import { MessageCircleQuestionMark, Copy } from "lucide-react";
-
 const Message = ({ incoming = false, children }) => {
   return (
     <div
       className={`flex gap-2 group items-center  ${
-        !incoming ? "flex-row-reverse pl-5 text-white" : "pr-5 text-text1"
+        !incoming ? "flex-row-reverse pl-5" : "pr-5"
       } `}
     >
       <div
-        className={`${
-          incoming ? "bg-bg2" : "bg-indigo-100 text-indigo-900"
-        } p-2 rounded`}
+        className={`${!incoming ? "bg-white" : "bg-violet-200"} p-3 rounded-lg`}
       >
         {children}
       </div>
@@ -22,11 +19,20 @@ const Message = ({ incoming = false, children }) => {
   );
 };
 
-export default function Chat() {
+function ChatComponent({ setShowChat }) {
   const [cnt, setCnt] = useState("");
   return (
-    <div className="h-full flex flex-col justify-end p-2 gap-2">
-      <div className="flex flex-col gap-2">
+    <div className="h-full flex flex-col justify-end p-3 pt-0 gap-2 text-violet-900">
+      <div className="h-headerHeight font-semibold pl-2 flex items-center justify-between">
+        <span>Chiedi al documento</span>
+        <div
+          onClick={() => setShowChat(false)}
+          className="hover:bg-violet-200  cursor-pointer flexer h-buttonHeight w-buttonHeight rounded"
+        >
+          <X size={18} />
+        </div>
+      </div>
+      <div className="flex flex-col gap-2 flex-1 justify-end">
         <Message>Di cosa parla questo bel documentino?</Message>
         <Message incoming={true}>Bo che lo chiedi a me?</Message>
         <Message>Dai cazzo te costa dirmelo?</Message>
@@ -45,7 +51,7 @@ export default function Chat() {
           officia illum voluptatibus ex illo blanditiis neque ab, nobis in
         </Message>
       </div>
-      <div className="bg-bg1 rounded-md overflow-hidden border border-borderColor flex flex-col pointer-events-auto">
+      <div className="bg-bg1 rounded border border-violet-200 overflow-hidden flex flex-col pointer-events-auto">
         <input
           value={cnt}
           placeholder="Chiedi al documento..."
@@ -56,7 +62,7 @@ export default function Chat() {
           <div
             className={`${
               cnt
-                ? "bg-blue-500 text-white cursor-pointer"
+                ? "bg-violet-500 text-white cursor-pointer"
                 : "bg-bg2 text-text2"
             } py-1 px-2 rounded`}
           >
@@ -64,6 +70,30 @@ export default function Chat() {
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+export default function Chat({ showChat, setShowChat }) {
+  return (
+    <div
+      className={`${
+        showChat ? "mr-0" : "-mr-chatWidth"
+      } w-chatWidth transition-all h-sidebarMaxHeight top-0 sticky p-3 flex flex-col`}
+    >
+      <div className="bg-violet-100 flex-1 rounded-lg">
+        <ChatComponent setShowChat={setShowChat} />
+      </div>
+      {!showChat && (
+        <div className="h-headerHeight absolute bottom-3 mr-3 right-full flex items-center">
+          <div
+            onClick={() => setShowChat((s) => !s)}
+            className="bg-violet-500 text-violet-100 h-buttonHeight w-buttonHeight rounded cursor-pointer flexer "
+          >
+            <MessagesSquare size={18} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
