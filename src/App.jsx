@@ -30,7 +30,7 @@ export default function App() {
               setShow={setShow}
             />
           </div>
-          <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto px-3 h-full">
+          <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto h-full pl-3 lg:pl-0 pr-3">
             <FeatureTop
               feature={feature}
               setFeature={setFeature}
