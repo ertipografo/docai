@@ -77,14 +77,13 @@ function ChatComponent({ setShowChat }) {
 export default function Chat({ showChat, setShowChat }) {
   return (
     <div
-      className={`${
-        showChat ? "mr-0" : "-mr-[70vw] lg:-mr-chatWidth"
-      } min-w-chatWidth w-[70vw] lg:w-chatWidth z-[9999099] transition-all h-full lg:h-sidebarMaxHeight right-0 lg:right-auto top-0 fixed lg:sticky p-3 flex flex-col`}
+      className={`z-[99998] ${
+        !showChat
+          ? "w-0 min-w-0 lg:w-0"
+          : "min-w-chatWidth w-[70vw] lg:w-chatWidth p-3"
+      } transition-all h-full lg:h-chatHeight right-0 lg:right-auto top-0 lg:top-chatTop fixed lg:sticky flex flex-col`}
     >
-      <div className="bg-violet-100 flex-1 rounded-lg">
-        <ChatComponent setShowChat={setShowChat} />
-      </div>
-      {!showChat && (
+      {!showChat ? (
         <div className="h-headerHeight absolute bottom-3 mr-3 right-full flex items-center">
           <div
             onClick={() => setShowChat((s) => !s)}
@@ -92,6 +91,10 @@ export default function Chat({ showChat, setShowChat }) {
           >
             <MessagesSquare size={18} />
           </div>
+        </div>
+      ) : (
+        <div className="bg-violet-100 flex-1 rounded-lg">
+          <ChatComponent setShowChat={setShowChat} />
         </div>
       )}
     </div>

@@ -12,12 +12,19 @@
       var(--spacing-headerHeight)
   );
   --spacing-sidebarMaxHeight: calc(100vh - var(--spacing-headerHeight));
+
   --spacing-complementaryTop: calc(
     (var(--spacing) * 3) + var(--spacing-headerHeight)
   );
   --spacing-complementaryHeight: calc(
     100vh - var(--spacing-complementaryTop) - var(--spacing-headerHeight)
   );
+
+  --spacing-chatTop: 0;
+  --spacing-chatHeight: calc(
+    100vh - var(--spacing-chatTop) - var(--spacing-headerHeight)
+  );
+
   --spacing-sidebarWidth: 390px;
   --spacing-chatWidth: 340px;
   --spacing-buttonHeight: 39px;
