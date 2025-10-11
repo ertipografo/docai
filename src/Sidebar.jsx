@@ -55,11 +55,9 @@ export default function Sidebar({
       >
         {collapsedItems().map((el, k) => {
           return (
-            <>
-              <div key={k} className="overflow-hidden aspect-square flexer">
-                {el}
-              </div>
-            </>
+            <div key={k} className="overflow-hidden aspect-square flexer">
+              {el}
+            </div>
           );
         })}
       </div>

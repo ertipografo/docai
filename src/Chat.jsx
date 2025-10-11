@@ -78,8 +78,8 @@ export default function Chat({ showChat, setShowChat }) {
   return (
     <div
       className={`${
-        showChat ? "mr-0" : "-mr-chatWidth"
-      } w-chatWidth transition-all h-sidebarMaxHeight top-0 sticky p-3 flex flex-col`}
+        showChat ? "mr-0" : "-mr-[70vw] lg:-mr-chatWidth"
+      } min-w-chatWidth w-[70vw] lg:w-chatWidth z-[9999099] transition-all h-full lg:h-sidebarMaxHeight right-0 lg:right-auto top-0 fixed lg:sticky p-3 flex flex-col`}
     >
       <div className="bg-violet-100 flex-1 rounded-lg">
         <ChatComponent setShowChat={setShowChat} />
