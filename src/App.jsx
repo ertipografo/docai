@@ -18,7 +18,9 @@ export default function App() {
       <div className="h-headerHeight z-[999] sticky top-0 bg-bgDark text-textOnDark text-xs flex items-center relative z-50">
         <div className="flex-1">
           <div
-            className={`h-headerHeight flexer w-headerHeight ${show ? "" : ""}`}
+            className={`hidden lg:flex items-center justify-center h-headerHeight w-headerHeight ${
+              show ? "" : ""
+            }`}
             onClick={() => setShow((s) => !s)}
           >
             <div className="h-buttonHeight w-buttonHeight flexer rounded cursor-pointer">
@@ -30,8 +32,8 @@ export default function App() {
           <Logo className="scale-75" />
         </div>
         <div className="flex-1 justify-end flex pr-2">
-          <div className="h-buttonHeight gap-2 flexer font-semibold px-3 rounded cursor-pointer bg-action1 text-white">
-            <span>Carica nuovo</span>
+          <div className="h-buttonHeight min-w-buttonHeight gap-2 flexer font-semibold px-3 rounded cursor-pointer bg-action1 text-white">
+            <span className="hidden lg:flex">Carica nuovo</span>
             <FolderUp size={16} />
           </div>
         </div>
