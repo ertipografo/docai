@@ -68,29 +68,29 @@ const Page = () => {
 };
 
 export default function Feature({ feature, isLoading }) {
+  const loadingContents = (
+    <div className="w-sm rounded-panel gap-3 flex flex-col bg-bg1 p-3 items-center">
+      <div className="animate-spin w-buttonHeight h-buttonHeight flexer">
+        <LoaderCircle size={16} />
+      </div>
+      <div className="font-semibold text-center">
+        Stiamo preparando la tua feature, torna fra na quarantacinquina di
+        minuti
+      </div>
+      <div className="rounded-button overflow-hidden h-2 w-full bg-bg3">
+        <div className="w-1/3 bg-violet-400 h-full" />
+      </div>
+    </div>
+  );
   const isMap = feature === "mappa";
-  return isLoading || isMap ? (
-    <div
-      className={`bg-bg1 ${
-        isMap ? "polka" : "flexer rounded-t-panel"
-      } mb-3 rounded-b-panel flex-1 p-8`}
-    >
-      {isMap ? (
-        <div>{feature}</div>
-      ) : (
-        <div className="w-sm rounded-panel gap-3 flex flex-col bg-bg1 p-3 items-center">
-          <div className="animate-spin w-buttonHeight h-buttonHeight flexer">
-            <LoaderCircle size={16} />
-          </div>
-          <div className="font-semibold text-center">
-            Stiamo preparando la tua feature, torna fra na quarantacinquina di
-            minuti
-          </div>
-          <div className="rounded-button overflow-hidden h-2 w-full bg-bg3">
-            <div className="w-1/3 bg-violet-400 h-full" />
-          </div>
-        </div>
-      )}
+
+  return isLoading ? (
+    <div className="bg-bg1 flexer rounded-t-panel mb-3 rounded-b-panel flex-1 p-8">
+      {loadingContents}
+    </div>
+  ) : isMap ? (
+    <div className="bg-bg1 polka mb-3 rounded-b-panel flex-1 p-8">
+      {isMap ? <div>{feature}</div> : loadingContents}
     </div>
   ) : (
     <div className="py-3 flex flex-col gap-10 rounded-b-panel flex-1">

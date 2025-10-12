@@ -16,8 +16,8 @@ export default function SuggestedDocs() {
       <div className="flex flex-col">
         {show && (
           <>
-            <div className="flex justify-between items-center bg-bg1 p-3 pl-6 pb-0">
-              <span className="font-semibold text-text2 capitalize ">{`${cur}`}</span>
+            <div className="flex justify-between text-text2 items-center bg-bg1 p-3 pl-6 pb-0">
+              <span className="font-semibold capitalize ">{`${cur}`}</span>
               <div
                 onClick={() => setShow(!show)}
                 className="hover:bg-action3 cursor-pointer w-buttonHeight h-buttonHeight rounded-button flexer"
