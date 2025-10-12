@@ -46,12 +46,12 @@ export default function Sidebar({
       >
         <div className="relative flex flex-col">
           <Title />
-          <div className="font-semibold mb-3 mx-5 flex gap-2">
+          <div className="font-semibold mb-3 mx-3 lg:mx-8 flex gap-2">
             {modes.map((m) => {
               return (
                 <div
                   key={m}
-                  onClick={() => setMode(m)}
+                  onClick={() => setMode((s) => (s === m ? null : m))}
                   className={`${m === modes[0] ? "hidden lg:flex" : "flex"} ${
                     m === mode ? "bg-bg1" : "hover:bg-bg1"
                   } h-buttonHeight px-3 rounded-button cursor-pointer items-center justify-center gap-2`}
@@ -79,12 +79,13 @@ export default function Sidebar({
               isLoading={isLoading}
             />
           ) : (
-            <Fonti showModal={showModal} setShowModal={setShowModal} />
+            mode === modes[1] && (
+              <Fonti showModal={showModal} setShowModal={setShowModal} />
+            )
           )}
         </div>
-        <div className="mt-auto bg-bg3 rounded-panel overflow-hidden m-3 hidden lg:block">
-          <SuggestedDocs />
-        </div>
+
+        <SuggestedDocs />
       </div>
 
       <div

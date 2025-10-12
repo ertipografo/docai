@@ -8,7 +8,7 @@ export default function Modal({ showModal, setShowModal }) {
           : "opacity-0 pointer-events-none"
       } transition-all fixed inset-0 z-[999099999] bg-bgDark/95 flex flex-col items-center h-screen`}
     >
-      <div className="max-w-3xl w-full text-textOnDark flex-1 flex flex-col justify-center">
+      <div className="max-w-3xl p-6 w-full text-textOnDark flex-1 flex flex-col justify-center">
         <div className="h-headerHeight flexer gap-2 relative">
           <FileImage size={18} />
           <span>file_immagine_descrizione</span>

@@ -8,7 +8,7 @@ export default function SidebarFeatures({
   isLoading,
 }) {
   return (
-    <div className="hidden lg:flex flex-col gap-1 px-5 pb-6">
+    <div className="hidden lg:flex flex-col gap-1 mx-6 p-3 bg-bg1 rounded-panel">
       {features.map((f) => {
         const { value, label, Icon } = f;
         const isOriginal = value === "originale";
@@ -23,14 +23,14 @@ export default function SidebarFeatures({
                 }
               }}
               className={`${
-                isOpen ? "bg-bg1 rounded-button" : "rounded-button hover:bg-bg1"
+                isOpen
+                  ? "bg-bg2 rounded-button text-action1"
+                  : "rounded-button hover:bg-bg2"
               } h-12 group flex items-center px-3 group cursor-pointer gap-3 font-semibold`}
             >
               <Icon
                 size={16}
-                className={`${
-                  isOpen ? "text-text1" : "text-text2 group-hover:text-text1"
-                }`}
+                className={`${isOpen ? "text-action1" : "text-text2"}`}
               />
               <span className="hidden lg:flex">{label}</span>
               <div className="ml-auto text-text2">
@@ -39,12 +39,12 @@ export default function SidebarFeatures({
                     <LoaderCircle size={16} />
                   </div>
                 ) : (
-                  <ChevronRight size={16} />
+                  isOpen && <ChevronRight size={16} />
                 )}
               </div>
             </div>
             {isOpen && isLoading && (
-              <div className="absolute rounded-button overflow-hidden bottom-1 left-2 right-2 h-1 bg-bg3">
+              <div className="absolute rounded-button overflow-hidden bottom-1 left-3 right-3 h-1 bg-bg3">
                 <div className="w-1/3 bg-violet-400 h-full" />
               </div>
             )}

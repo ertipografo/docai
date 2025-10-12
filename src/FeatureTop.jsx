@@ -9,7 +9,7 @@ import { features } from "./utils";
 import { useState } from "react";
 const MobileFeatures = ({ feature, setFeature }) => {
   return (
-    <div className="my-3 h-buttonHeight lg:hidden flex items-center gap-2 text-text1">
+    <div className="my-3 bg-bg1 rounded-panel p-2 lg:hidden flex items-center gap-2 text-text1">
       {features.map((f) => {
         const { Icon } = f;
         return (
@@ -17,11 +17,13 @@ const MobileFeatures = ({ feature, setFeature }) => {
             key={f.value}
             onClick={() => setFeature(feature === f.value ? null : f.value)}
             className={`${
-              feature === f.value ? "bg-bg1" : "bg-bg3/30 text-text2"
-            } flex-1 px-2 flex rounded-button justify-center cursor-pointer gap-2 items-center h-full`}
+              feature === f.value
+                ? "bg-bg1 text-action1"
+                : "bg-bg3/30 text-text2"
+            } h-buttonHeight flex-1 px-2 flex rounded-button justify-center cursor-pointer gap-2 items-center`}
           >
             <Icon size={18} />
-            <span className="font-semibold capitalize hidden sm:flex">
+            <span className="font-semibold capitalize hidden md:flex">
               {f.value}
             </span>
           </div>

@@ -1,10 +1,4 @@
-import {
-  Folder,
-  ChevronDown,
-  FileStack,
-  SquarePen,
-  ChevronRight,
-} from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { documentTitle } from "./utils";
 
 const Tags = () => {
@@ -17,8 +11,8 @@ const Tags = () => {
     "ultimissima giuro",
   ];
   return (
-    <div className="flex items-start mt-3">
-      <div className="mr-2">Tags:</div>
+    <div className="flex items-start mt-2 lg:mt-5">
+      <div className="mr-2 font-semibold">Tags:</div>
       <div className="items-center flex-1 flex gap-1.5 flex-wrap">
         {tags.map((tag, i) => {
           return (
