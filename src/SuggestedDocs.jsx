@@ -24,7 +24,7 @@ export default function SuggestedDocs() {
                     index === 3 ? "bg-bg2" : "hover:bg-bg2"
                   } p-3 rounded`}
                 >
-                  <div className="flex flex-col gap-2 flex-1 text-xs">
+                  <div className="flex flex-col gap-2 flex-1">
                     <span className="font-semibold">{titles[index]}</span>
                     <div className="flex items-center gap-3">
                       {features.map((f, i) => {

@@ -11,12 +11,14 @@ import Feature from "./Feature";
 import Chat from "./Chat";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import PerfectScrollbar from "react-perfect-scrollbar";
+import Fonti from "./Fonti";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
   const [showFeatureBar, setShowFeatureBar] = useState(false);
   const [show, setShow] = useState(true);
   const [showChat, setShowChat] = useState(true);
+  const [showModal, setShowModal] = useState(true);
 
   return (
     <div className="h-screen pt-headerHeight flex flex-col lg:overflow-hidden text-base text-text1">
@@ -32,7 +34,7 @@ export default function App() {
               feature={feature}
               setFeature={setFeature}
               show={show}
-              setShow={setShow}
+              setShowModal={setShowModal}
             />
           </div>
           <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto">
@@ -57,7 +59,7 @@ export default function App() {
                   <Feature feature={feature} />
                 </div>
               </div>
-              <BottomBar />
+              <BottomBar showChat={showChat} setShowChat={setShowChat} />
               {feature !== "mappa" && (
                 <div className="min-h-headerHeight flexer my-3 mr-3 text-text2">
                   Footerino
@@ -68,6 +70,7 @@ export default function App() {
           <Chat showChat={showChat} setShowChat={setShowChat} />
         </div>
       </div>
+      <Fonti showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 }

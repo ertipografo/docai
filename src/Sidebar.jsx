@@ -8,7 +8,7 @@ export default function Sidebar({
   setFeature,
   setShowFeatureBar,
   show,
-  setShow,
+  setShowModal,
 }) {
   const collapsedItems = () => {
     const cl = `h-buttonHeight flexer cursor-pointer w-buttonHeight rounded`;
@@ -36,7 +36,7 @@ export default function Sidebar({
         } w-full lg:w-sidebarWidth flex-col h-full`}
       >
         <div className="relative flex flex-col">
-          <Title setShow={setShow} />
+          <Title setShowModal={setShowModal} />
           <SidebarFeatures
             setFeature={setFeature}
             feature={feature}

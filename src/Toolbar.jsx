@@ -21,10 +21,10 @@ export default function Toolbar({
 
   return ComplementaryComponent ? (
     <div
-      className={`${width} ${height} ${top} ${position} ${transform} shadow-lg lg:shadow-none bg-bg1 border-borderColor z-[99999] overflow-hidden`}
+      className={`${width} ${height} ${top} ${position} ${transform} shadow-lg lg:shadow-none bg-bg1 lg:bg-bg2 z-[99999] overflow-hidden`}
     >
-      <div className="flex flex-col h-full px-2 pb-2">
-        <div className="flex flex-col h-full bg-bg1 lg:bg-bg2 p-2 rounded-button">
+      <div className="flex flex-col h-full p-3 pt-0 pl-0">
+        <div className="flex flex-col h-full bg-bg1 p-2 rounded-panel">
           <div className="h-10 flex items-center pr-2 pl-3 justify-between">
             <span className="font-semibold">Complementary</span>
             <div

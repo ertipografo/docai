@@ -1,6 +1,6 @@
 const Page = () => {
   return (
-    <div className="bg-bg1 p-10 flex flex-col gap-1">
+    <div className="bg-bg1 p-10 pb-24 flex flex-col gap-1 rounded-panel">
       <span className="text-2xl font-bold mb-3">Titolo pagina</span>
       <span className="text-lg font-semibold">
         Lorem ipsum dolor sit amet consectetur adipisicing elit
@@ -70,7 +70,7 @@ export default function Feature({ feature }) {
   return feature === "mappa" ? (
     <div className="bg-bg1 mb-3 rounded-b-panel flex-1 p-8 polka">Mappa</div>
   ) : (
-    <div className="min-h-[5000px] flex flex-col gap-10 rounded-b-panel flex-1">
+    <div className="py-3 flex flex-col gap-10 rounded-b-panel flex-1">
       {Array.from({ length: 5 }).map((_, i) => (
         <Page key={i} />
       ))}
