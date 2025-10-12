@@ -33,7 +33,7 @@ export default function App() {
               setShow={setShow}
             />
           </div>
-          <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto h-full">
+          <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto">
             <div
               className={`pl-3 pr-3 lg:pl-0 ${
                 feature !== "mappa" && "max-w-documentWidth"
