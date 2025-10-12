@@ -70,6 +70,9 @@
   @apply text-xs text-neutral-400 font-semibold tracking-wide;
 }
 
+body .ps__rail-x {
+  @apply hidden!;
+}
 body .ps__rail-y {
   @apply hidden! lg:block!;
 }
