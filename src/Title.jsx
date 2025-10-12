@@ -1,6 +1,32 @@
 import { Folder, ChevronDown, FileStack, FilePenLine } from "lucide-react";
 import { documentTitle } from "./utils";
 
+const Tags = () => {
+  const tags = [
+    "prima",
+    "seconda",
+    "terza",
+    "quarto tag",
+    "2025",
+    "ultimissima giuro",
+  ];
+  return (
+    <div className="flex items-start mt-3">
+      <div className="mr-2">Tags:</div>
+      <div className="items-center flex-1 flex gap-1.5 flex-wrap">
+        {tags.map((tag, i) => {
+          return (
+            <div key={i} className="rounded bg-bg3 text-xs py-[2px] px-2">
+              {tag}
+            </div>
+          );
+        })}
+        <div className="bg-bgDark text-textOnDark w-5 rounded flexer">+</div>
+      </div>
+    </div>
+  );
+};
+
 export default function Title({ setShowModal }) {
   return (
     <div className="flex flex-col px-5 lg:px-8 pb-5 lg:pb-8 pt-5 lg:pt-0 max-w-documentWidth mx-auto w-full">
@@ -28,14 +54,14 @@ export default function Title({ setShowModal }) {
           >
             <FileStack size={14} />
             <span>Fonti</span>
-            <div className="flexer h-5 w-5 bg-bg2 rounded">4</div>
-            <ChevronDown size={14} />
+            <div className="flexer h-5 w-5 bg-bg3 rounded">4</div>
           </div>
           <div className="gap-1.5 ml-auto flex items-center text-text2 h-buttonHeightSm hover:bg-bg1 px-2 rounded-button cursor-pointer">
             <FilePenLine size={14} />
             <span>Edit</span>
           </div>
         </div>
+        <Tags />
       </div>
     </div>
   );
