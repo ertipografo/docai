@@ -23,7 +23,7 @@ export default function BottomBar({ showChat, setShowChat }) {
           <div className="flex-1 flex items-center justify-end relative">
             <div
               onClick={() => setShowChat((s) => !s)}
-              className="h-buttonHeight cursor-pointer w-buttonHeight rounded-button bg-violet-500 flexer"
+              className="h-buttonHeight cursor-pointer w-buttonHeight rounded-button bg-action1 flexer"
             >
               {showChat ? <X size={18} /> : <MessagesSquare size={18} />}
             </div>

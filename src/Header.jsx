@@ -1,6 +1,6 @@
 import Logo from "./Logo";
 import { PanelRightOpen, PanelRightClose, Plus } from "lucide-react";
-export default function Header({ show, setShow }) {
+export default function Header({ show, setShow, setIsLoading }) {
   const PanelIcon = show ? PanelRightOpen : PanelRightClose;
   return (
     <div className="h-headerHeight z-[999] relative lg:fixed w-full left-0 top-0 bg-bg2 text-xs flex items-center z-50">
@@ -21,7 +21,10 @@ export default function Header({ show, setShow }) {
       <div className="flex-1 flexer relative h-headerHeight">
         <Logo className="scale-75" />
         <div className="absolute top-0 right-3 h-headerHeight items-center flex gap-2">
-          <div className="h-buttonHeight min-w-buttonHeight gap-2 flexer font-semibold px-3 rounded-button cursor-pointer bg-action1 text-white">
+          <div
+            onClick={() => setIsLoading((s) => !s)}
+            className="h-buttonHeight min-w-buttonHeight gap-2 flexer font-semibold px-3 rounded-button cursor-pointer bg-action1 text-white"
+          >
             <span className="hidden sm:flex">Carica nuovo</span>
             <Plus size={18} />
           </div>

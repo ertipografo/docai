@@ -19,10 +19,11 @@ export default function App() {
   const [show, setShow] = useState(true);
   const [showChat, setShowChat] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className="h-screen pt-0 lg:pt-headerHeight flex flex-col lg:overflow-hidden text-base text-text1">
-      <Header show={show} setShow={setShow} />
+      <Header setIsLoading={setIsLoading} show={show} setShow={setShow} />
       <div className="flex-1 flex-col lg:flex-row flex lg:overflow-hidden">
         <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto">
           <div
@@ -35,6 +36,7 @@ export default function App() {
               setFeature={setFeature}
               show={show}
               setShowModal={setShowModal}
+              isLoading={isLoading}
             />
           </div>
           <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto">
@@ -44,27 +46,31 @@ export default function App() {
                   feature !== "mappa" ? "max-w-documentWidth" : ""
                 } mx-auto w-full flex-1 flex-col flex`}
               >
-                <FeatureTop
-                  feature={feature}
-                  setFeature={setFeature}
-                  showFeatureBar={showFeatureBar}
-                  setShowFeatureBar={setShowFeatureBar}
-                />
+                {!isLoading && (
+                  <FeatureTop
+                    feature={feature}
+                    setFeature={setFeature}
+                    showFeatureBar={showFeatureBar}
+                    setShowFeatureBar={setShowFeatureBar}
+                  />
+                )}
                 <div className="flex-1 flex flex-col lg:flex-row">
                   <Toolbar
                     feature={feature}
                     showFeatureBar={showFeatureBar}
                     setShowFeatureBar={setShowFeatureBar}
                   />
-                  <Feature feature={feature} />
+                  <Feature feature={feature} isLoading={isLoading} />
                 </div>
               </div>
-              <BottomBar showChat={showChat} setShowChat={setShowChat} />
-              {feature !== "mappa" && (
+              {!isLoading && (
+                <BottomBar showChat={showChat} setShowChat={setShowChat} />
+              )}
+              {/*  {feature !== "mappa" && (
                 <div className="min-h-headerHeight flexer my-3 mr-3 text-text2">
                   Footerino
                 </div>
-              )}
+              )} */}
             </PerfectScrollbar>
           </div>
           <Chat showChat={showChat} setShowChat={setShowChat} />

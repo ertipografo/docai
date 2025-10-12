@@ -53,7 +53,7 @@
   --font-weight-semibold: 500;
   --font-weight-bold: 600;
 
-  --color-action1: var(--color-sky-500);
+  --color-action1: var(--color-violet-500);
   --color-action2: var(--color-neutral-200);
   --color-action3: var(--color-neutral-100);
   --color-actionDark: var(--color-neutral-600);

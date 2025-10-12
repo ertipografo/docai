@@ -13,6 +13,7 @@ export default function Sidebar({
   show,
   setShowModal,
   showModal,
+  isLoading,
 }) {
   const collapsedItems = () => {
     const cl = `h-buttonHeight flexer cursor-pointer w-buttonHeight rounded`;
@@ -44,7 +45,7 @@ export default function Sidebar({
         } w-full lg:w-sidebarWidth flex-col h-full`}
       >
         <div className="relative flex flex-col">
-          <Title setShowModal={setShowModal} />
+          <Title />
           <div className="font-semibold mb-3 mx-5 flex gap-2">
             {modes.map((m) => {
               return (
@@ -75,6 +76,7 @@ export default function Sidebar({
               setFeature={setFeature}
               feature={feature}
               setShowFeatureBar={setShowFeatureBar}
+              isLoading={isLoading}
             />
           ) : (
             <Fonti showModal={showModal} setShowModal={setShowModal} />
