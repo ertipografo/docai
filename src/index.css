@@ -70,8 +70,11 @@
   @apply text-xs text-neutral-400 font-semibold tracking-wide;
 }
 
+body .ps__rail-y {
+  @apply hidden! lg:block!;
+}
 body .ps__thumb-y {
-  @apply bg-action2;
+  @apply bg-neutral-400;
 }
 
 .flexer {
