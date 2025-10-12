@@ -87,7 +87,7 @@ export default function FeatureTop({
   const FeatureIcon = currentFeature?.Icon;
   const hasComplementary = currentFeature?.hasComplementary;
   return (
-    <div className="sticky bg-bg2 top-headerHeight lg:top-0 pt-3">
+    <div className="sticky bg-bg2 top-headerHeight lg:top-0 pt-3 z-50">
       <MobileFeatures feature={feature} setFeature={setFeature} />
       <div className="bg-bg1 rounded-t-panel flex items-center px-2 h-headerHeight">
         <div className="flex-1 gap-2 flex items-center justify-start">
