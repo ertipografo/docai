@@ -1,6 +1,6 @@
-import { FileImage, FileAudio, FileText, X } from "lucide-react";
+import { FileImage, FileAudio, FileText, ExternalLink } from "lucide-react";
 
-export default function Fonti({ showModal, setShowModal }) {
+export default function Fonti({ setShowModal }) {
   const fonti = [
     {
       Icon: FileImage,
@@ -9,7 +9,7 @@ export default function Fonti({ showModal, setShowModal }) {
     },
     {
       Icon: FileAudio,
-      label: "registrazione audio 25.3.2025 - rossi",
+      label: "registrazione audio 25.3.2025",
       cl: "text-emerald-500",
     },
     {
@@ -24,42 +24,34 @@ export default function Fonti({ showModal, setShowModal }) {
     },
     {
       Icon: FileText,
-      label: "appunti meccanica maggio 2025 - rossi",
+      label: "appunti meccanica [maggio 2025]",
       cl: "text-purple-500",
     },
   ];
 
   return (
-    <div
-      className={`${
-        showModal
-          ? "pointer-events-auto opacity-100"
-          : "opacity-0 pointer-events-none"
-      } transition-all fixed inset-0 z-[9999999] bg-bgDark/60 flexer`}
-    >
-      <div className="p-3 bg-bg1 w-full max-w-md rounded-panel">
-        <div className="font-semibold flex justify-between items-center pl-3">
-          <span>Fonti</span>
+    <div className="flex flex-col gap-1 p-3 bg-bg1 rounded-panel mx-5">
+      {fonti.map((f) => {
+        const { cl, label, Icon } = f;
+
+        return (
           <div
-            onClick={() => setShowModal(false)}
-            className="flexer w-buttonHeight h-buttonHeight cursor-pointer rounded-button hover:bg-bg2"
+            onClick={() => setShowModal(true)}
+            key={label}
+            className={`flex flex-col flex-1 lg:flex-0`}
           >
-            <X size={18} />
-          </div>
-        </div>
-        <div className="flex flex-col">
-          {fonti.map((f) => {
-            return (
-              <div key={f.label} className="flex items-center gap-2 ">
-                <div className={`${f.cl} flexer h-buttonHeight w-buttonHeight`}>
-                  <f.Icon size={20} />
-                </div>
-                {f.label}
+            <div
+              className={`hover:bg-bg2 rounded-button h-12 group flex items-center px-3 group cursor-pointer gap-3 font-semibold`}
+            >
+              <Icon size={16} className={`${cl}`} />
+              <span>{label}</span>
+              <div className="ml-auto text-text2 opacity-0 group-hover:opacity-100">
+                <ExternalLink size={16} />
               </div>
-            );
-          })}
-        </div>
-      </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

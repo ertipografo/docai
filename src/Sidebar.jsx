@@ -1,7 +1,10 @@
+import { useState } from "react";
 import SidebarFeatures from "./SidebarFeatures";
 import SuggestedDocs from "./SuggestedDocs";
 import Title from "./Title";
+import Fonti from "./Fonti";
 import { features } from "./utils";
+import { Shuffle, GitFork } from "lucide-react";
 
 export default function Sidebar({
   feature,
@@ -9,6 +12,7 @@ export default function Sidebar({
   setShowFeatureBar,
   show,
   setShowModal,
+  showModal,
 }) {
   const collapsedItems = () => {
     const cl = `h-buttonHeight flexer cursor-pointer w-buttonHeight rounded`;
@@ -28,6 +32,10 @@ export default function Sidebar({
     return items;
   };
 
+  const modes = ["output", "fonti"];
+
+  const [mode, setMode] = useState(modes[0]);
+
   return (
     <>
       <div
@@ -37,13 +45,42 @@ export default function Sidebar({
       >
         <div className="relative flex flex-col">
           <Title setShowModal={setShowModal} />
-          <SidebarFeatures
-            setFeature={setFeature}
-            feature={feature}
-            setShowFeatureBar={setShowFeatureBar}
-          />
+          <div className="font-semibold mb-3 mx-5 flex gap-2">
+            {modes.map((m) => {
+              return (
+                <div
+                  key={m}
+                  onClick={() => setMode(m)}
+                  className={`${m === modes[0] ? "hidden lg:flex" : "flex"} ${
+                    m === mode ? "bg-bg1" : "hover:bg-bg1"
+                  } h-buttonHeight px-3 rounded-button cursor-pointer items-center justify-center gap-2`}
+                >
+                  {m === modes[1] ? (
+                    <GitFork size={16} />
+                  ) : (
+                    <Shuffle size={16} />
+                  )}
+                  <span className="capitalize">{m}</span>
+                  {m === modes[1] && (
+                    <div className="w-5 h-5 rounded text-xs flexer bg-bg3">
+                      5
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          {mode === modes[0] ? (
+            <SidebarFeatures
+              setFeature={setFeature}
+              feature={feature}
+              setShowFeatureBar={setShowFeatureBar}
+            />
+          ) : (
+            <Fonti showModal={showModal} setShowModal={setShowModal} />
+          )}
         </div>
-        <div className="mt-auto bg-bg3 rounded-panel overflow-hidden m-3 hidden lg:flex">
+        <div className="mt-auto bg-bg3 rounded-panel overflow-hidden m-3 hidden lg:block">
           <SuggestedDocs />
         </div>
       </div>

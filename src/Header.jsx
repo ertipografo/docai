@@ -6,7 +6,7 @@ export default function Header({ show, setShow }) {
     <div className="h-headerHeight z-[999] relative lg:fixed w-full left-0 top-0 bg-bg2 text-xs flex items-center z-50">
       <div
         className={`hidden lg:flex ${
-          show ? "pl-4 max-w-sidebarWidth" : "max-w-headerHeight"
+          show ? "pl-6 max-w-sidebarWidth" : "max-w-headerHeight"
         } flex-1`}
       >
         <div

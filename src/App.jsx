@@ -11,7 +11,7 @@ import Feature from "./Feature";
 import Chat from "./Chat";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import PerfectScrollbar from "react-perfect-scrollbar";
-import Fonti from "./Fonti";
+import Modal from "./Modal";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
@@ -70,7 +70,7 @@ export default function App() {
           <Chat showChat={showChat} setShowChat={setShowChat} />
         </div>
       </div>
-      <Fonti showModal={showModal} setShowModal={setShowModal} />
+      <Modal setShowModal={setShowModal} showModal={showModal} />
     </div>
   );
 }
