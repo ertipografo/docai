@@ -17,8 +17,8 @@ export default function App() {
   const [feature, setFeature] = useState(features[0].value);
   const [showFeatureBar, setShowFeatureBar] = useState(false);
   const [show, setShow] = useState(true);
-  const [showChat, setShowChat] = useState(true);
-  const [showModal, setShowModal] = useState(true);
+  const [showChat, setShowChat] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="h-screen pt-0 lg:pt-headerHeight flex flex-col lg:overflow-hidden text-base text-text1">

@@ -14,16 +14,16 @@ export default function Header({ show, setShow }) {
           onClick={() => setShow((s) => !s)}
         >
           <div className="bg-bg1 h-buttonHeight rounded-button w-buttonHeight flexer cursor-pointer">
-            <PanelIcon size={16} />
+            <PanelIcon size={18} />
           </div>
         </div>
       </div>
       <div className="flex-1 flexer relative h-headerHeight">
         <Logo className="scale-75" />
-        <div className="absolute top-0 right-3 h-headerHeight items-center flex">
+        <div className="absolute top-0 right-3 h-headerHeight items-center flex gap-2">
           <div className="h-buttonHeight min-w-buttonHeight gap-2 flexer font-semibold px-3 rounded-button cursor-pointer bg-action1 text-white">
             <span className="hidden sm:flex">Carica nuovo</span>
-            <Plus size={16} />
+            <Plus size={18} />
           </div>
         </div>
       </div>
