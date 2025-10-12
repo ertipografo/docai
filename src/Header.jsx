@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import { PanelRightOpen, PanelRightClose, FolderUp } from "lucide-react";
+import { PanelRightOpen, PanelRightClose, Plus } from "lucide-react";
 export default function Header({ show, setShow }) {
   const PanelIcon = show ? PanelRightOpen : PanelRightClose;
   return (
@@ -13,11 +13,7 @@ export default function Header({ show, setShow }) {
           className={`hidden lg:flex items-center justify-center h-headerHeight w-headerHeight`}
           onClick={() => setShow((s) => !s)}
         >
-          <div
-            className={`${
-              !show ? "bg-bg3" : "bg-bg1"
-            } h-buttonHeight rounded-button w-buttonHeight flexer cursor-pointer`}
-          >
+          <div className="bg-bg1 h-buttonHeight rounded-button w-buttonHeight flexer cursor-pointer">
             <PanelIcon size={16} />
           </div>
         </div>
@@ -26,8 +22,8 @@ export default function Header({ show, setShow }) {
         <Logo className="scale-75" />
         <div className="absolute top-0 right-3 h-headerHeight items-center flex">
           <div className="h-buttonHeight min-w-buttonHeight gap-2 flexer font-semibold px-3 rounded-button cursor-pointer bg-action1 text-white">
-            <span className="hidden lg:flex">Carica nuovo</span>
-            <FolderUp size={16} />
+            <span className="hidden sm:flex">Carica nuovo</span>
+            <Plus size={16} />
           </div>
         </div>
       </div>

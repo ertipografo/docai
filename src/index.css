@@ -3,7 +3,7 @@
 
 @theme {
   --font-sans: "Work Sans", sans-serif;
-  --spacing-headerHeight: 55px;
+  --spacing-headerHeight: 56px;
   --spacing-headerHeight2: calc(
     var(--spacing-headerHeight) + var(--spacing-headerHeight)
   );
@@ -25,10 +25,13 @@
     100vh - var(--spacing-chatTop) - var(--spacing-headerHeight)
   );
 
+  --breakpoint-sm: 934px;
+  --breakpoint-lg: 1200px;
+
   --spacing-sidebarWidth: 390px;
   --spacing-chatWidth: 340px;
-  --spacing-buttonHeight: 39px;
-  --spacing-buttonHeightSm: 30px;
+  --spacing-buttonHeight: 40px;
+  --spacing-buttonHeightSm: 34px;
   --spacing-documentWidth: 1100px;
   --spacing-complementarySidebarWidth: 320px;
   --spacing-suggestedSidebarWidth: 240px;
