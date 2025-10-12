@@ -29,7 +29,7 @@ export default function SuggestedDocs() {
             <div className="overflow-auto bg-bg1">
               <div className="flex flex-col py-3">
                 <div className="flex flex-col gap-1">
-                  {Array.from({ length: 5 }).map((_, index) => {
+                  {Array.from({ length: 4 }).map((_, index) => {
                     const randomAvailableFeatures = getRandomArbitrary(0, 3);
                     return (
                       <div

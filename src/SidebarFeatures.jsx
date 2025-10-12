@@ -8,7 +8,7 @@ export default function SidebarFeatures({
   isLoading,
 }) {
   return (
-    <div className="hidden lg:flex flex-col gap-1 mx-6 p-3 bg-bg1 rounded-panel">
+    <div className="hidden lg:flex flex-col gap-1 mx-3 lg:mb-3 p-3 bg-bg1 rounded-panel">
       {features.map((f) => {
         const { value, label, Icon } = f;
         const isOriginal = value === "originale";
