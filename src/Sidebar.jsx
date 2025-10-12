@@ -51,7 +51,7 @@ export default function Sidebar({
       <div
         className={`${
           show ? "hidden" : "hidden lg:flex"
-        } flex-col w-headerHeight`}
+        } flex-col w-headerHeight pt-3`}
       >
         {collapsedItems().map((el, k) => {
           return (

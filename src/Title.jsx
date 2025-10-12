@@ -3,7 +3,7 @@ import { documentTitle } from "./utils";
 
 export default function Title() {
   return (
-    <div className="flex flex-col max-w-xl px-5 lg:px-8 pb-5 lg:pb-8">
+    <div className="flex flex-col px-5 lg:px-8 pb-5 lg:pb-8 max-w-documentWidth mx-auto w-full">
       <div className="flex items-center justify-between h-headerHeight my-0 lg:mt-3">
         <div className="text-2xl">🇴🇲</div>
         {/* <div className="flex items-center gap-1.5 text-xs text-text2">

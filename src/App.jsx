@@ -25,7 +25,7 @@ export default function App() {
         <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto">
           <div
             className={`${
-              !show ? "w-full lg:w-headerHeight lg:-mr-3" : "lg:w-sidebarWidth"
+              !show ? "w-full lg:w-headerHeight" : "lg:w-sidebarWidth"
             } bg-bg2 relative z-50 transition-all`}
           >
             <Sidebar
