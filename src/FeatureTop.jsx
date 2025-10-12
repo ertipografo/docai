@@ -11,8 +11,8 @@ const MobileFeatures = ({ feature, setFeature }) => {
             key={f.value}
             onClick={() => setFeature(feature === f.value ? null : f.value)}
             className={`${
-              feature === f.value ? "bg-bg1" : "bg-bg3 text-text2"
-            } flex-1 px-2 flex rounded-panel justify-center cursor-pointer gap-2 items-center h-full`}
+              feature === f.value ? "bg-bg1" : "bg-bg2 text-text2"
+            } flex-1 px-2 flex rounded-button justify-center cursor-pointer gap-2 items-center h-full`}
           >
             <Icon size={18} />
             <span className="font-semibold capitalize hidden sm:flex">
@@ -87,7 +87,7 @@ export default function FeatureTop({
   const FeatureIcon = currentFeature?.Icon;
   const hasComplementary = currentFeature?.hasComplementary;
   return (
-    <div className="sticky bg-bg2 top-headerHeight lg:top-0 pt-3 top-headerHeight">
+    <div className="sticky bg-bg2 top-headerHeight lg:top-0 pt-3">
       <MobileFeatures feature={feature} setFeature={setFeature} />
       <div className="bg-bg1 rounded-t-panel flex items-center px-2 h-headerHeight">
         <div className="flex-1 gap-2 flex items-center justify-start">

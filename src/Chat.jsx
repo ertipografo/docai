@@ -89,7 +89,7 @@ export default function Chat({ showChat, setShowChat }) {
         <div className="h-headerHeight absolute bottom-3 mr-6 right-full flex items-center">
           <div
             onClick={() => setShowChat((s) => !s)}
-            className="bg-violet-500 text-violet-100 h-buttonHeight w-buttonHeight rounded-button cursor-pointer flexer "
+            className="bg-bgDark text-textOnDark h-buttonHeight w-buttonHeight rounded-button cursor-pointer flexer "
           >
             <MessagesSquare size={18} />
           </div>

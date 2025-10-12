@@ -25,6 +25,7 @@ export const features = [
     Icon: ShieldQuestionMark,
     value: "quiz",
     hasFormats: true,
+    hasComplementary: Tree,
   },
 ];
 

@@ -84,6 +84,14 @@ body .ps__thumb-y {
   @apply flex items-center justify-center;
 }
 
+.polka {
+  background-image: radial-gradient(
+    var(--color-neutral-200) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
 .tree {
   li {
     span {
