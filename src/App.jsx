@@ -22,7 +22,7 @@ export default function App() {
     <div className="h-screen pt-headerHeight flex flex-col lg:overflow-hidden text-base text-text1">
       <Header show={show} setShow={setShow} />
       <div className="flex-1 flex-col lg:flex-row flex lg:overflow-hidden">
-        <div className="lg:flex flex-col lg:flex-row flex-1 lg:overflow-auto">
+        <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto">
           <div
             className={`${
               !show ? "w-full lg:w-headerHeight lg:-mr-3" : "lg:w-sidebarWidth"
@@ -36,11 +36,11 @@ export default function App() {
             />
           </div>
           <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto">
-            <PerfectScrollbar className="overflow-visible! lg:overflow-hidden!">
+            <PerfectScrollbar className="overflow-visible! lg:overflow-hidden! flex flex-col flex-1">
               <div
                 className={`pl-3 pr-3 lg:pl-0 ${
-                  feature !== "mappa" && "max-w-documentWidth"
-                } mx-auto w-full`}
+                  feature !== "mappa" ? "max-w-documentWidth" : ""
+                } mx-auto w-full flex-1 flex-col flex`}
               >
                 <FeatureTop
                   feature={feature}
@@ -48,7 +48,7 @@ export default function App() {
                   showFeatureBar={showFeatureBar}
                   setShowFeatureBar={setShowFeatureBar}
                 />
-                <div className="flex-1 flex">
+                <div className="flex-1 flex flex-col lg:flex-row">
                   <Toolbar
                     feature={feature}
                     showFeatureBar={showFeatureBar}
@@ -58,9 +58,11 @@ export default function App() {
                 </div>
               </div>
               <BottomBar />
-              <div className="min-h-20 flexer my-3 mr-3 text-text2">
-                Footerino
-              </div>
+              {feature !== "mappa" && (
+                <div className="min-h-headerHeight flexer my-3 mr-3 text-text2">
+                  Footerino
+                </div>
+              )}
             </PerfectScrollbar>
           </div>
           <Chat showChat={showChat} setShowChat={setShowChat} />

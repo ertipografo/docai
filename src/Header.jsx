@@ -9,7 +9,7 @@ export default function Header({ show, setShow }) {
           className="hidden lg:flex items-center justify-center h-headerHeight w-headerHeight"
           onClick={() => setShow((s) => !s)}
         >
-          <div className="h-buttonHeight w-buttonHeight flexer rounded cursor-pointer">
+          <div className="h-buttonHeight w-buttonHeight flexer cursor-pointer">
             <PanelIcon size={16} />
           </div>
         </div>
@@ -18,7 +18,7 @@ export default function Header({ show, setShow }) {
         <Logo className="scale-75" />
       </div>
       <div className="flex-1 justify-end flex pr-2">
-        <div className="h-buttonHeight min-w-buttonHeight gap-2 flexer font-semibold px-3 rounded cursor-pointer bg-action1 text-white">
+        <div className="h-buttonHeight min-w-buttonHeight gap-2 flexer font-semibold px-3 rounded-button cursor-pointer bg-action1 text-white">
           <span className="hidden lg:flex">Carica nuovo</span>
           <FolderUp size={16} />
         </div>

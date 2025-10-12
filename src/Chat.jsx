@@ -8,7 +8,9 @@ const Message = ({ incoming = false, children }) => {
       } `}
     >
       <div
-        className={`${!incoming ? "bg-white" : "bg-violet-200"} p-3 rounded-lg`}
+        className={`${
+          !incoming ? "bg-white" : "bg-violet-200"
+        } p-3 rounded-button leading-relaxed`}
       >
         {children}
       </div>
@@ -27,7 +29,7 @@ function ChatComponent({ setShowChat }) {
         <span>Chiedi al documento</span>
         <div
           onClick={() => setShowChat(false)}
-          className="hover:bg-violet-200  cursor-pointer flexer h-buttonHeight w-buttonHeight rounded"
+          className="hover:bg-violet-200  cursor-pointer flexer h-buttonHeight w-buttonHeight rounded-button"
         >
           <X size={18} />
         </div>
@@ -51,12 +53,12 @@ function ChatComponent({ setShowChat }) {
           officia illum voluptatibus ex illo blanditiis neque ab, nobis in
         </Message>
       </div>
-      <div className="bg-bg1 rounded border border-violet-200 overflow-hidden flex flex-col pointer-events-auto">
+      <div className="bg-bg1 rounded-button border border-violet-200 overflow-hidden flex flex-col pointer-events-auto">
         <input
           value={cnt}
           placeholder="Chiedi al documento..."
           onChange={(e) => setCnt(e.target.value)}
-          className="bg-transparent p-2 outline-none w-full"
+          className="bg-transparent p-3 outline-none w-full"
         />
         <div className="flex justify-end gap-2 items-center p-2">
           <div
@@ -64,7 +66,7 @@ function ChatComponent({ setShowChat }) {
               cnt
                 ? "bg-violet-500 text-white cursor-pointer"
                 : "bg-bg2 text-text2"
-            } py-1 px-2 rounded`}
+            } h-buttonHeight flexer px-3 rounded-button`}
           >
             Chiedi
           </div>
@@ -77,23 +79,23 @@ function ChatComponent({ setShowChat }) {
 export default function Chat({ showChat, setShowChat }) {
   return (
     <div
-      className={`z-[99998] ${
+      className={`bg-transparent lg:bg-bg2 z-[99998] ${
         !showChat
           ? "w-0 min-w-0 lg:w-0"
-          : "min-w-chatWidth w-[70vw] lg:w-chatWidth p-3"
+          : "min-w-chatWidth w-[70vw] lg:w-chatWidth p-3 pl-0"
       } transition-all h-sidebarMaxHeight lg:h-chatHeight right-0 lg:right-auto top-headerHeight lg:top-chatTop fixed lg:sticky flex flex-col`}
     >
       {!showChat ? (
         <div className="h-headerHeight absolute bottom-3 mr-6 right-full flex items-center">
           <div
             onClick={() => setShowChat((s) => !s)}
-            className="bg-violet-500 text-violet-100 h-buttonHeight w-buttonHeight rounded cursor-pointer flexer "
+            className="bg-violet-500 text-violet-100 h-buttonHeight w-buttonHeight rounded-button cursor-pointer flexer "
           >
             <MessagesSquare size={18} />
           </div>
         </div>
       ) : (
-        <div className="bg-violet-100 flex-1 rounded-lg">
+        <div className="bg-violet-100 flex-1 rounded-panel">
           <ChatComponent setShowChat={setShowChat} />
         </div>
       )}

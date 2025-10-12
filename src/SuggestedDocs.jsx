@@ -57,7 +57,7 @@ export default function SuggestedDocs() {
             <div
               key={label}
               onClick={() => setCur(label)}
-              className={`h-buttonHeight w-buttonHeight flexer rounded-md cursor-pointer ${
+              className={`h-buttonHeight w-buttonHeight flexer rounded-button cursor-pointer ${
                 cur === label ? "bg-bg1" : "text-text2 hover:text-text1"
               }`}
             >

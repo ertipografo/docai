@@ -43,7 +43,7 @@ export default function Sidebar({
             setShowFeatureBar={setShowFeatureBar}
           />
         </div>
-        <div className="mt-auto bg-bg3 rounded-lg overflow-hidden m-3 hidden lg:flex">
+        <div className="mt-auto bg-bg3 rounded-panel overflow-hidden m-3 hidden lg:flex">
           <SuggestedDocs />
         </div>
       </div>

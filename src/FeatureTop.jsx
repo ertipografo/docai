@@ -12,7 +12,7 @@ const MobileFeatures = ({ feature, setFeature }) => {
             onClick={() => setFeature(feature === f.value ? null : f.value)}
             className={`${
               feature === f.value ? "bg-bg1" : "bg-bg3 text-text2"
-            } flex-1 px-2 flex rounded justify-center cursor-pointer gap-2 items-center h-full`}
+            } flex-1 px-2 flex rounded-panel justify-center cursor-pointer gap-2 items-center h-full`}
           >
             <Icon size={18} />
             <span className="font-semibold capitalize hidden sm:flex">
@@ -32,10 +32,10 @@ const Format = () => {
     <div className="relative">
       <div
         onClick={() => setShow((s) => !s)}
-        className="flex items-center font-semibold gap-2 h-buttonHeight px-2 bg-action3 rounded cursor-pointer"
+        className="flex items-center font-semibold gap-2 h-buttonHeight px-2 bg-action3 rounded-button cursor-pointer"
       >
         <span className="hidden sm:block">Formato</span>
-        <div className="bg-bgDark text-textOnDark h-7 rounded text-xs flex items-center px-2 uppercase">
+        <div className="bg-bgDark text-textOnDark h-7 rounded-button text-xs flex items-center px-2 uppercase">
           {formats[1]}
         </div>
         {show ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -45,7 +45,7 @@ const Format = () => {
           show
             ? "mt-2 pointer-events-auto opacity-100"
             : "mt-0 pointer-events-none opacity-0"
-        } absolute top-full left-0 flex flex-col bg-bg2 rounded transition-all divide-y divide-bg3 px-1`}
+        } absolute top-full left-0 flex flex-col bg-bg2 rounded-button transition-all px-1`}
       >
         {formats.map((f, i) => {
           return (
@@ -89,12 +89,12 @@ export default function FeatureTop({
   return (
     <div className="sticky bg-bg2 top-headerHeight lg:top-0 pt-3 top-headerHeight">
       <MobileFeatures feature={feature} setFeature={setFeature} />
-      <div className="bg-bg1 rounded-t-lg flex items-center px-2 h-headerHeight">
+      <div className="bg-bg1 rounded-t-panel flex items-center px-2 h-headerHeight">
         <div className="flex-1 gap-2 flex items-center justify-start">
           {hasComplementary && (
             <div
               onClick={() => setShowFeatureBar((s) => !s)}
-              className="bg-action3 rounded cursor-pointer h-buttonHeight aspect-square flexer"
+              className="bg-action3 rounded-button cursor-pointer h-buttonHeight aspect-square flexer"
             >
               {showFeatureBar ? <X size={16} /> : <Settings2 size={16} />}
             </div>
@@ -106,7 +106,7 @@ export default function FeatureTop({
           {featureLabel}
         </div>
         <div className="flex-1 flex items-center justify-end">
-          <div className="flexer gap-2 h-buttonHeight px-3 text-xs font-semibold bg-action2 rounded cursor-pointer">
+          <div className="flexer gap-2 h-buttonHeight px-3 text-xs font-semibold bg-action2 rounded-button cursor-pointer">
             <span>Download</span>
             <ChevronDown size={16} />
           </div>
