@@ -24,8 +24,8 @@ const Message = ({ incoming = false, children }) => {
 function ChatComponent({ setShowChat }) {
   const [cnt, setCnt] = useState("");
   return (
-    <div className="h-full flex flex-col justify-end p-3 pt-0 gap-2 text-violet-900">
-      <div className="h-headerHeight font-semibold pl-2 flex items-center justify-between">
+    <div className="h-full flex flex-col justify-end gap-2 text-violet-900">
+      <div className="font-semibold flex items-center justify-between">
         <span>Chiedi al documento</span>
         <div
           onClick={() => setShowChat(false)}
@@ -82,12 +82,14 @@ export default function Chat({ showChat, setShowChat }) {
       className={`bg-transparent lg:bg-bg2 z-[99998] ${
         !showChat
           ? "w-0 min-w-0 lg:w-0"
-          : "min-w-chatWidth w-[70vw] lg:w-chatWidth p-3 pl-0 pt-0"
+          : "min-w-chatWidth w-[50vw] lg:min-w-chatWidth lg:w-[20vw]"
       } transition-all h-sidebarMaxHeight lg:h-chatHeight right-0 lg:right-auto top-headerHeight lg:top-chatTop fixed lg:sticky flex flex-col`}
     >
       {showChat && (
-        <div className="bg-violet-100 flex-1 rounded-panel">
-          <ChatComponent setShowChat={setShowChat} />
+        <div className="bg-transparent flex-1 w-full p-3 pt-0">
+          <div className="h-full bg-violet-100 p-3 rounded-panel">
+            <ChatComponent setShowChat={setShowChat} />
+          </div>
         </div>
       )}
     </div>

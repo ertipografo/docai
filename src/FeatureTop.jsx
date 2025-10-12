@@ -9,7 +9,7 @@ import { features } from "./utils";
 import { useState } from "react";
 const MobileFeatures = ({ feature, setFeature }) => {
   return (
-    <div className="mb-3 h-headerHeight lg:hidden flex items-center gap-2 text-text1">
+    <div className="my-3 h-buttonHeight lg:hidden flex items-center gap-2 text-text1">
       {features.map((f) => {
         const { Icon } = f;
         return (
@@ -98,7 +98,7 @@ export default function FeatureTop({
   const FeatureIcon = currentFeature?.Icon;
   const hasComplementary = currentFeature?.hasComplementary;
   return (
-    <div className="sticky bg-bg2 top-headerHeight lg:top-0 z-50 text-textOnDark">
+    <div className="sticky bg-bg2 top-0 z-50 text-textOnDark">
       <MobileFeatures feature={feature} setFeature={setFeature} />
       <div className="bg-bgDark rounded-panel flex items-center px-2 h-headerHeight">
         <div className="flex-1 gap-2 flex items-center justify-start">

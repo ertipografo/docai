@@ -21,7 +21,7 @@ export default function App() {
   const [showModal, setShowModal] = useState(true);
 
   return (
-    <div className="h-screen pt-headerHeight flex flex-col lg:overflow-hidden text-base text-text1">
+    <div className="h-screen pt-0 lg:pt-headerHeight flex flex-col lg:overflow-hidden text-base text-text1">
       <Header show={show} setShow={setShow} />
       <div className="flex-1 flex-col lg:flex-row flex lg:overflow-hidden">
         <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto">
