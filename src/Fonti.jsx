@@ -30,7 +30,7 @@ export default function Fonti({ setShowModal }) {
   ];
 
   return (
-    <div className="flex flex-col gap-1 p-3 bg-bg1 rounded-panel ml-5 mr-3">
+    <div className="flex flex-col gap-1 p-3 bg-bg1 rounded-panel ml-5 mr-3 mb-3">
       {fonti.map((f) => {
         const { cl, label, Icon } = f;
 

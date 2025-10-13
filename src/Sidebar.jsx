@@ -46,7 +46,7 @@ export default function Sidebar({
       >
         <div className="relative flex flex-col">
           <Title />
-          <div className="font-semibold mb-3 mx-3 lg:mx-8 flex gap-2">
+          <div className="font-semibold mb-3 mx-3 lg:mx-5 flex gap-2">
             {modes.map((m) => {
               return (
                 <div

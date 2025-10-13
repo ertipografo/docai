@@ -16,7 +16,7 @@ export default function SuggestedDocs() {
       <div className="flex flex-col">
         {show && (
           <>
-            <div className="flex justify-between text-text2 items-center bg-bg1 p-3 pl-6 pb-0">
+            <div className="flex justify-between text-text2 items-center bg-bg1 p-2 pl-5 pb-0">
               <span className="font-semibold capitalize ">{`${cur}`}</span>
               <div
                 onClick={() => setShow(!show)}
@@ -26,43 +26,39 @@ export default function SuggestedDocs() {
               </div>
             </div>
 
-            <div className="overflow-auto bg-bg1">
-              <div className="flex flex-col py-3">
-                <div className="flex flex-col gap-1">
-                  {Array.from({ length: 4 }).map((_, index) => {
-                    const randomAvailableFeatures = getRandomArbitrary(0, 3);
-                    return (
-                      <div
-                        key={index}
-                        className={`mx-3 cursor-pointer group flex items-center ${
-                          index === 3 ? "bg-bg2" : "hover:bg-bg2"
-                        } p-3 rounded-button`}
-                      >
-                        <div className="flex flex-col gap-2 flex-1">
-                          <span className="font-semibold">{titles[index]}</span>
-                          <div className="flex items-center gap-3">
-                            {features.map((f, i) => {
-                              const { value, Icon } = f;
-                              return (
-                                <div
-                                  key={value}
-                                  className={`${
-                                    i <= randomAvailableFeatures
-                                      ? "opacity-60"
-                                      : "opacity-20"
-                                  }`}
-                                >
-                                  <Icon size={14} />
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </div>
+            <div className="overflow-auto bg-bg1 flex flex-col gap-1">
+              {Array.from({ length: 4 }).map((_, index) => {
+                const randomAvailableFeatures = getRandomArbitrary(0, 3);
+                return (
+                  <div
+                    key={index}
+                    className={`mx-2 cursor-pointer group flex items-center ${
+                      index === 3 ? "bg-bg2" : "hover:bg-bg2"
+                    } p-3 rounded-button`}
+                  >
+                    <div className="flex flex-col gap-2 flex-1">
+                      <span className="font-semibold">{titles[index]}</span>
+                      <div className="flex items-center gap-3">
+                        {features.map((f, i) => {
+                          const { value, Icon } = f;
+                          return (
+                            <div
+                              key={value}
+                              className={`${
+                                i <= randomAvailableFeatures
+                                  ? "opacity-60"
+                                  : "opacity-20"
+                              }`}
+                            >
+                              <Icon size={14} />
+                            </div>
+                          );
+                        })}
                       </div>
-                    );
-                  })}
-                </div>
-              </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </>
         )}

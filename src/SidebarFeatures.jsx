@@ -8,7 +8,7 @@ export default function SidebarFeatures({
   isLoading,
 }) {
   return (
-    <div className="hidden lg:flex flex-col gap-1 mx-3 lg:mb-3 p-3 bg-bg1 rounded-panel">
+    <div className="hidden lg:flex flex-col gap-1 mx-3 lg:mb-3 p-2 bg-bg1 rounded-panel">
       {features.map((f) => {
         const { value, label, Icon } = f;
         const isOriginal = value === "originale";
@@ -26,7 +26,7 @@ export default function SidebarFeatures({
                 isOpen
                   ? "bg-bg2 rounded-button text-action1"
                   : "rounded-button hover:bg-bg2"
-              } h-12 group flex items-center px-3 group cursor-pointer gap-3 font-semibold`}
+              } h-12 group flex items-center px-5 group cursor-pointer gap-3 font-semibold`}
             >
               <Icon
                 size={16}
