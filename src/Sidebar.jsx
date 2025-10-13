@@ -46,43 +46,45 @@ export default function Sidebar({
       >
         <div className="relative flex flex-col">
           <Title />
-          <div className="font-semibold mb-3 mx-3 lg:mx-5 flex gap-2">
-            {modes.map((m) => {
-              return (
-                <div
-                  key={m}
-                  onClick={() => setMode((s) => (s === m ? null : m))}
-                  className={`${m === modes[0] ? "hidden lg:flex" : "flex"} ${
-                    m === mode ? "bg-bg1" : "hover:bg-bg1"
-                  } h-buttonHeight px-3 rounded-button cursor-pointer items-center justify-center gap-2`}
-                >
-                  {m === modes[1] ? (
-                    <GitFork size={16} />
-                  ) : (
-                    <Shuffle size={16} />
-                  )}
-                  <span className="capitalize">{m}</span>
-                  {m === modes[1] && (
-                    <div className="w-5 h-5 rounded text-xs flexer bg-bg3">
-                      5
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+          <div className="mx-3 p-3 bg-bg1 rounded-panel">
+            <div className="font-semibold lg:mb-2 flex gap-2">
+              {modes.map((m) => {
+                return (
+                  <div
+                    key={m}
+                    onClick={() => setMode((s) => (s === m ? null : m))}
+                    className={`${m === modes[0] ? "hidden lg:flex" : "flex"} ${
+                      m === mode ? "bg-bg2" : "hover:bg-bg2"
+                    } h-buttonHeight px-3 rounded-button cursor-pointer items-center justify-center gap-2`}
+                  >
+                    {m === modes[1] ? (
+                      <GitFork size={16} />
+                    ) : (
+                      <Shuffle size={16} />
+                    )}
+                    <span className="capitalize">{m}</span>
+                    {m === modes[1] && (
+                      <div className="w-5 h-5 rounded text-xs flexer bg-bg3">
+                        5
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+            {mode === modes[0] ? (
+              <SidebarFeatures
+                setFeature={setFeature}
+                feature={feature}
+                setShowFeatureBar={setShowFeatureBar}
+                isLoading={isLoading}
+              />
+            ) : (
+              mode === modes[1] && (
+                <Fonti showModal={showModal} setShowModal={setShowModal} />
+              )
+            )}
           </div>
-          {mode === modes[0] ? (
-            <SidebarFeatures
-              setFeature={setFeature}
-              feature={feature}
-              setShowFeatureBar={setShowFeatureBar}
-              isLoading={isLoading}
-            />
-          ) : (
-            mode === modes[1] && (
-              <Fonti showModal={showModal} setShowModal={setShowModal} />
-            )
-          )}
         </div>
 
         <SuggestedDocs />

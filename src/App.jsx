@@ -22,8 +22,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="h-screen pt-0 lg:pt-headerHeight flex flex-col lg:overflow-hidden text-base text-text1">
-      <Header setIsLoading={setIsLoading} show={show} setShow={setShow} />
+    <div className="h-screen pt-headerHeight lg:pt-0 flex flex-col lg:overflow-hidden text-base text-text1">
       <div className="flex-1 flex-col lg:flex-row flex lg:overflow-hidden">
         <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto">
           <div
@@ -40,7 +39,8 @@ export default function App() {
             />
           </div>
           <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto">
-            <PerfectScrollbar className="overflow-visible! lg:overflow-hidden! flex flex-col flex-1">
+            <Header setIsLoading={setIsLoading} show={show} setShow={setShow} />
+            <PerfectScrollbar className="overflow-visible! lg:overflow-hidden! flex flex-col flex-1 z-[78]">
               <div
                 className={`pl-3 pr-3 lg:pl-0 ${
                   feature !== "mappa" ? "max-w-documentWidth" : ""

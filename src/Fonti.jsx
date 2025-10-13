@@ -7,21 +7,13 @@ export default function Fonti({ setShowModal }) {
       label: "file_immagine_descrizione",
       cl: "text-sky-500",
     },
-    {
-      Icon: FileAudio,
-      label: "registrazione audio 25.3.2025",
-      cl: "text-emerald-500",
-    },
+
     {
       Icon: FileAudio,
       label: "registrazione audio 27.3.2025",
       cl: "text-emerald-500",
     },
-    {
-      Icon: FileText,
-      label: "appunti meccanica marzo 2025",
-      cl: "text-purple-500",
-    },
+
     {
       Icon: FileText,
       label: "appunti meccanica [maggio 2025]",
@@ -30,7 +22,7 @@ export default function Fonti({ setShowModal }) {
   ];
 
   return (
-    <div className="flex flex-col gap-1 p-3 bg-bg1 rounded-panel ml-5 mr-3 mb-3">
+    <div className="flex flex-col gap-1">
       {fonti.map((f) => {
         const { cl, label, Icon } = f;
 

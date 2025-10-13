@@ -29,7 +29,7 @@ const Tags = () => {
 
 export default function Title() {
   return (
-    <div className="flex flex-col px-5 lg:px-8 pb-5 lg:pb-8 max-w-documentWidth mx-auto w-full">
+    <div className="flex flex-col px-5 lg:px-8 my-3 max-w-documentWidth mx-auto w-full">
       {/*  <div className="hidden sm:flex items-center justify-between h-headerHeight">
         <div className="text-2xl h-buttonHeight w-buttonHeight rounded-button">
           🇴🇲
@@ -60,7 +60,7 @@ export default function Title() {
             <SquarePen size={14} />
           </div>
         </div> */}
-        <Tags />
+        {/*  <Tags /> */}
       </div>
     </div>
   );

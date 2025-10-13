@@ -3,8 +3,8 @@ import { PanelRightOpen, PanelRightClose, Plus } from "lucide-react";
 export default function Header({ show, setShow, setIsLoading }) {
   const PanelIcon = show ? PanelRightOpen : PanelRightClose;
   return (
-    <div className="h-headerHeight z-[999] relative lg:fixed w-full left-0 top-0 bg-bg2 text-xs flex items-center z-50">
-      <div
+    <div className="fixed lg:relative h-headerHeight w-full left-0 top-0 bg-bg2 text-xs flex items-center z-0">
+      {/* <div
         className={`hidden lg:flex ${
           show ? "pl-6 max-w-sidebarWidth" : "max-w-headerHeight"
         } flex-1`}
@@ -17,7 +17,7 @@ export default function Header({ show, setShow, setIsLoading }) {
             <PanelIcon size={18} />
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="flex-1 flexer relative h-headerHeight">
         <Logo className="scale-75" />
         <div className="absolute top-0 right-3 h-headerHeight items-center flex gap-2">
