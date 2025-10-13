@@ -86,7 +86,7 @@ export default function Chat({ showChat, setShowChat }) {
       } transition-all h-sidebarMaxHeight lg:h-chatHeight right-0 lg:right-auto top-headerHeight lg:top-chatTop fixed lg:sticky flex flex-col`}
     >
       {showChat && (
-        <div className="pl-0 flex-1 w-full p-3 pt-0">
+        <div className="pl-0 flex-1 w-full p-3">
           <div className="h-full bg-violet-100 p-3 rounded-panel">
             <ChatComponent setShowChat={setShowChat} />
           </div>

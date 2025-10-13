@@ -4,7 +4,8 @@ import SuggestedDocs from "./SuggestedDocs";
 import Title from "./Title";
 import Fonti from "./Fonti";
 import { features } from "./utils";
-import { Shuffle, GitFork } from "lucide-react";
+import { Shuffle, GitFork, PanelRightClose } from "lucide-react";
+import Header from "./Header";
 
 export default function Sidebar({
   feature,
@@ -14,11 +15,16 @@ export default function Sidebar({
   setShowModal,
   showModal,
   isLoading,
+  setIsLoading,
+  setShow,
 }) {
   const collapsedItems = () => {
     const cl = `h-buttonHeight flexer cursor-pointer w-buttonHeight rounded`;
 
     const items = [
+      <div className="cursor-pointer" onClick={() => setShow((s) => !s)}>
+        <PanelRightClose size={18} />
+      </div>,
       <div className={`${cl} text-2xl`}>🇴🇲</div>,
 
       ...features.map((f) => (
@@ -45,6 +51,7 @@ export default function Sidebar({
         } w-full lg:w-sidebarWidth flex-col h-full`}
       >
         <div className="relative flex flex-col">
+          <Header setShow={setShow} show={show} setIsLoading={setIsLoading} />
           <Title />
           <div className="mx-3 p-3 bg-bg1 rounded-panel">
             <div className="font-semibold lg:mb-2 flex gap-2">
@@ -93,7 +100,7 @@ export default function Sidebar({
       <div
         className={`${
           show ? "hidden" : "hidden lg:flex"
-        } flex-col w-headerHeight`}
+        } flex-col w-headerHeight mt-3`}
       >
         {collapsedItems().map((el, k) => {
           return (

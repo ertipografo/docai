@@ -26,7 +26,7 @@ export default function SidebarFeatures({
                 isOpen
                   ? "bg-bg2 rounded-button text-action1"
                   : "rounded-button hover:bg-bg2"
-              } h-12 group flex items-center px-5 group cursor-pointer gap-3 font-semibold`}
+              } h-12 group flex items-center pl-5 pr-3 group cursor-pointer gap-3 font-semibold`}
             >
               <Icon
                 size={16}

@@ -29,26 +29,34 @@ const Tags = () => {
 
 export default function Title() {
   return (
-    <div className="flex flex-col px-5 lg:px-8 my-3 max-w-documentWidth mx-auto w-full">
+    <div className="flex flex-col px-5 lg:px-8 mb-3 max-w-documentWidth mx-auto w-full">
       {/*  <div className="hidden sm:flex items-center justify-between h-headerHeight">
         <div className="text-2xl h-buttonHeight w-buttonHeight rounded-button">
           🇴🇲
         </div>
       </div> */}
 
-      <div className="flex flex-col gap-2 mt-3">
+      <div className="flex flex-col gap-2">
         <div>
-          <div className="float-left h-[28px] flex items-center">
+          {/* <div className="float-left h-[28px] flex items-center">
             <div className="bg-bg3 px-3 rounded-button font-semibold h-full flexer">
               Nota
             </div>
             <div className="h-full px-1 flexer">
               <ChevronRight size={16} />
             </div>
-          </div>
+          </div> */}
           <h1 className="text-[20px] leading-[28px] font-bold">
             {documentTitle}
           </h1>
+          <div className="gap-2 mt-2 flex">
+            <div className="bg-violet-100 text-violet-500 px-3 py-1 rounded-button font-semibold h-full flexer">
+              Nota
+            </div>
+            <div className="bg-bg3 px-3 py-1 rounded-button font-semibold h-full flexer">
+              Docsity
+            </div>
+          </div>
         </div>
         <p className="max-w-4xl leading-relaxed">
           Lorem ipsum dolor sit amet consectetur adi pisicing elit. Illo velit

@@ -5,8 +5,6 @@ import Sidebar from "./Sidebar";
 import FeatureTop from "./FeatureTop";
 import BottomBar from "./BottomBar";
 import Toolbar from "./Toolbar";
-
-import Header from "./Header";
 import Feature from "./Feature";
 import Chat from "./Chat";
 import "react-perfect-scrollbar/dist/css/styles.css";
@@ -22,7 +20,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="h-screen pt-headerHeight lg:pt-0 flex flex-col lg:overflow-hidden text-base text-text1">
+    <div className="h-screen flex flex-col lg:overflow-hidden text-base text-text1">
       <div className="flex-1 flex-col lg:flex-row flex lg:overflow-hidden">
         <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto">
           <div
@@ -34,12 +32,13 @@ export default function App() {
               feature={feature}
               setFeature={setFeature}
               show={show}
+              setShow={setShow}
               setShowModal={setShowModal}
               isLoading={isLoading}
+              setIsLoading={setIsLoading}
             />
           </div>
           <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto">
-            <Header setIsLoading={setIsLoading} show={show} setShow={setShow} />
             <PerfectScrollbar className="overflow-visible! lg:overflow-hidden! flex flex-col flex-1 z-[78]">
               <div
                 className={`pl-3 pr-3 lg:pl-0 ${
