@@ -30,7 +30,7 @@ export const features = [
 ];
 
 export const documentTitle =
-  "Il Sultanato dell'Oman dagli anni 70 ai giorni nostri";
+  "NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica insegnamento CLIL 2";
 
 export function getRandomArbitrary(min, max) {
   min = Math.ceil(min);

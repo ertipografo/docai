@@ -6,6 +6,7 @@ import Fonti from "./Fonti";
 import { features } from "./utils";
 import { Shuffle, GitFork, PanelRightClose } from "lucide-react";
 import Header from "./Header";
+import Outputs from "./Outputs";
 
 export default function Sidebar({
   feature,
@@ -44,16 +45,23 @@ export default function Sidebar({
   const [mode, setMode] = useState(modes[0]);
 
   return (
-    <>
-      <div
-        className={`${
-          show ? "flex" : "flex lg:hidden"
-        } w-full lg:w-sidebarWidth flex-col h-full`}
-      >
-        <div className="relative flex flex-col">
+    <div
+      className={`${
+        !show ? "w-full lg:w-headerHeight" : "lg:w-[25vw] lg:min-w-sidebarWidth"
+      } relative z-50`}
+    >
+      <div className="bg-bg2 flex flex-col flex-1 h-full">
+        <div className="relative flex flex-col flex-1 bg-bg1 p-3">
           <Header setShow={setShow} show={show} setIsLoading={setIsLoading} />
           <Title />
-          <div className="mx-3 p-3 bg-bg1 rounded-panel">
+          <Outputs />
+          {/*   <SidebarFeatures
+            setFeature={setFeature}
+            feature={feature}
+            setShowFeatureBar={setShowFeatureBar}
+            isLoading={isLoading}
+          /> */}
+          <div className="border border-red-400 hidden mx-3 p-3 bg-bgDark2 rounded-panel">
             <div className="font-semibold lg:mb-2 flex gap-2">
               {modes.map((m) => {
                 return (
@@ -61,7 +69,7 @@ export default function Sidebar({
                     key={m}
                     onClick={() => setMode((s) => (s === m ? null : m))}
                     className={`${m === modes[0] ? "hidden lg:flex" : "flex"} ${
-                      m === mode ? "bg-bg2" : "hover:bg-bg2"
+                      m === mode ? "bg-bgDark" : "hover:bg-bgDark"
                     } h-buttonHeight px-3 rounded-button cursor-pointer items-center justify-center gap-2`}
                   >
                     {m === modes[1] ? (
@@ -71,7 +79,7 @@ export default function Sidebar({
                     )}
                     <span className="capitalize">{m}</span>
                     {m === modes[1] && (
-                      <div className="w-5 h-5 rounded text-xs flexer bg-bg3">
+                      <div className="w-5 text-bgDark h-5 rounded text-xs flexer bg-textOnDark">
                         5
                       </div>
                     )}
@@ -92,9 +100,8 @@ export default function Sidebar({
               )
             )}
           </div>
+          {/*  <SuggestedDocs /> */}
         </div>
-
-        <SuggestedDocs />
       </div>
 
       <div
@@ -110,6 +117,6 @@ export default function Sidebar({
           );
         })}
       </div>
-    </>
+    </div>
   );
 }

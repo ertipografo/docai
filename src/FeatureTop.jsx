@@ -4,31 +4,34 @@ import {
   Settings2,
   X,
   ArrowDownToLine,
+  ChevronRight,
 } from "lucide-react";
 import { features } from "./utils";
 import { useState } from "react";
 const MobileFeatures = ({ feature, setFeature }) => {
   return (
-    <div className="my-3 bg-bg1 rounded-panel p-2 lg:hidden flex items-center gap-2 text-text1">
-      {features.map((f) => {
-        const { Icon } = f;
-        return (
-          <div
-            key={f.value}
-            onClick={() => setFeature(feature === f.value ? null : f.value)}
-            className={`${
-              feature === f.value
-                ? "bg-bg1 text-action1"
-                : "bg-bg3/30 text-text2"
-            } h-buttonHeight flex-1 px-2 flex rounded-button justify-center cursor-pointer gap-2 items-center`}
-          >
-            <Icon size={18} />
-            <span className="font-semibold capitalize hidden md:flex">
-              {f.value}
-            </span>
-          </div>
-        );
-      })}
+    <div className="sticky bg-bg2 top-0 z-50">
+      <div className="my-3 bg-bg1 rounded-panel p-2 lg:hidden flex items-center gap-2 text-text1">
+        {features.map((f) => {
+          const { Icon } = f;
+          return (
+            <div
+              key={f.value}
+              onClick={() => setFeature(feature === f.value ? null : f.value)}
+              className={`${
+                feature === f.value
+                  ? "bg-bg1 text-action1"
+                  : "bg-bg3/30 text-text2"
+              } h-buttonHeight flex-1 px-2 flex rounded-button justify-center cursor-pointer gap-2 items-center`}
+            >
+              <Icon size={18} />
+              <span className="font-semibold capitalize hidden md:flex">
+                {f.value}
+              </span>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
@@ -40,7 +43,7 @@ const Format = () => {
     <div className="relative">
       <div
         onClick={() => setShow((s) => !s)}
-        className="flex items-center font-semibold gap-2 h-buttonHeight px-2 bg-actionDark rounded-button cursor-pointer"
+        className="flex items-center font-semibold gap-2 h-buttonHeight px-2 bg-action2 rounded-button cursor-pointer"
       >
         <span className="hidden sm:block">Formato</span>
         <div className="bg-bg3 text-text1 h-7 rounded text-xs flex items-center px-2 uppercase">
@@ -53,7 +56,7 @@ const Format = () => {
           show
             ? "mt-4 pointer-events-auto opacity-100"
             : "mt-2 pointer-events-none opacity-0"
-        } absolute top-full left-0 flex flex-col bg-bgDark rounded-panel transition-all p-2`}
+        } absolute top-full left-0 flex flex-col bg-red-300 rounded-panel transition-all p-2`}
       >
         {formats.map((f, i) => {
           const isPremium = i > 1;
@@ -87,6 +90,27 @@ const Format = () => {
     </div>
   );
 };
+/* 
+const Breadcrumbs = () => {
+  const items = [
+    "Store",
+    "Esercizi",
+    "Psicologia e Sociologia",
+    "Didattica generale e speciale",
+  ];
+
+  return (
+    <div className="font-semibold min-h-buttonHeight flex items-center mt-3">
+      <div className="h-buttonHeightSm w-buttonHeightSm mr-3 bg-bg3 rounded-button" />
+      {items.map((t, i) => (
+        <div key={t} className="flex items-center">
+          {i > 0 && <ChevronRight size={14} className="mx-1" />}
+          <span>{t}</span>
+        </div>
+      ))}
+    </div>
+  );
+}; */
 
 export default function FeatureTop({
   feature,
@@ -100,14 +124,15 @@ export default function FeatureTop({
   const FeatureIcon = currentFeature?.Icon;
   const hasComplementary = currentFeature?.hasComplementary;
   return (
-    <div className="sticky bg-bg2 top-0 lg:pt-3 z-50 text-textOnDark">
+    <>
       <MobileFeatures feature={feature} setFeature={setFeature} />
-      <div className="bg-bgDark rounded-panel flex items-center px-2 h-headerHeight">
+
+      <div className="hidden items-center bg-red-100 mt-3">
         <div className="flex-1 gap-2 flex items-center justify-start">
           {hasComplementary && (
             <div
               onClick={() => setShowFeatureBar((s) => !s)}
-              className="bg-actionDark rounded-button cursor-pointer h-buttonHeight aspect-square flexer"
+              className="bg-action2 rounded-button cursor-pointer h-buttonHeight aspect-square flexer"
             >
               {showFeatureBar ? <X size={16} /> : <Settings2 size={16} />}
             </div>
@@ -119,12 +144,12 @@ export default function FeatureTop({
           {featureLabel}
         </div>
         <div className="flex-1 flex items-center justify-end">
-          <div className="flexer gap-2 h-buttonHeight px-3 text-xs font-semibold bg-actionDark rounded-button cursor-pointer">
+          <div className="flexer gap-2 h-buttonHeight px-3 text-xs font-semibold bg-action2 rounded-button cursor-pointer">
             <span className="hidden sm:flex">Download</span>
             <ArrowDownToLine size={16} />
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

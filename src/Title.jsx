@@ -1,5 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import { documentTitle } from "./utils";
+import Rating from "./Rating";
 
 const Tags = () => {
   const tags = [
@@ -29,46 +30,26 @@ const Tags = () => {
 
 export default function Title() {
   return (
-    <div className="flex flex-col px-5 lg:px-8 mb-3 max-w-documentWidth mx-auto w-full">
-      {/*  <div className="hidden sm:flex items-center justify-between h-headerHeight">
-        <div className="text-2xl h-buttonHeight w-buttonHeight rounded-button">
-          🇴🇲
+    <div className="flex flex-col max-w-documentWidth mx-auto w-full gap-2 p-5">
+      <div className="gap-2 flex h-buttonHeight text-xs items-center">
+        <div className="h-6 bg-violet-100 text-violet-400 px-2 rounded font-semibold flexer">
+          Nota
         </div>
-      </div> */}
-
-      <div className="flex flex-col gap-2">
-        <div>
-          {/* <div className="float-left h-[28px] flex items-center">
-            <div className="bg-bg3 px-3 rounded-button font-semibold h-full flexer">
-              Nota
-            </div>
-            <div className="h-full px-1 flexer">
-              <ChevronRight size={16} />
-            </div>
-          </div> */}
-          <h1 className="text-[20px] leading-[28px] font-bold">
-            {documentTitle}
-          </h1>
-          <div className="gap-2 mt-2 flex">
-            <div className="bg-violet-100 text-violet-500 px-3 py-1 rounded-button font-semibold h-full flexer">
-              Nota
-            </div>
-            <div className="bg-bg3 px-3 py-1 rounded-button font-semibold h-full flexer">
-              Docsity
-            </div>
-          </div>
+        <div className="bg-bg3 text-text2 px-2 rounded font-semibold h-6 flexer">
+          Docsity
         </div>
-        <p className="max-w-4xl leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adi pisicing elit. Illo velit
-          cupiditate, fugit accus amus ipsam temporibus rerum.
-        </p>
-        {/* <div className="flex mt-2 text-xs items-center gap-3 text-text1 font-semibold lg:-mx-2">
-       
-          <div className="gap-1.5 ml-auto flex items-center text-text2 h-buttonHeightSm hover:bg-bg1 px-2 rounded-button cursor-pointer">
-            <SquarePen size={14} />
-          </div>
-        </div> */}
-        {/*  <Tags /> */}
+        <div className="flexer ml-auto">
+          <Rating />
+        </div>
+      </div>
+      <h1 className="text-lg leading-[1.4] font-bold">{documentTitle}</h1>
+      <p className="max-w-4xl leading-relaxed opacity-70">
+        NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica
+        insegnamento CLIL 2, Esercizi di Didattica generale e speciale
+      </p>
+      <div className="flex flex-col gap-1 text-action1">
+        <div>Università telematica eCampus (UNIECAMPUS)</div>
+        <div>Didattica generale e speciale</div>
       </div>
     </div>
   );

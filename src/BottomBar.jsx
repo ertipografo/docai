@@ -1,5 +1,5 @@
-import { Star, MessagesSquare, X } from "lucide-react";
-
+import { MessagesSquare, X } from "lucide-react";
+import Rating from "./Rating";
 export default function BottomBar({ showChat, setShowChat }) {
   return (
     <div className="sticky bottom-0 z-[99997]">
@@ -7,12 +7,7 @@ export default function BottomBar({ showChat, setShowChat }) {
         <div className="flex h-headerHeight items-center px-2 rounded-panel bg-bgDark text-textOnDark">
           <div className="flex-1 items-center flex">
             <div className="flex gap-3 items-center h-buttonHeight px-2 hover:bg-actionDark cursor-pointer rounded-button">
-              <div className="flex gap-2 items-center text-xs font-semibold">
-                <Star className="text-transparent fill-amber-400" size={16} />
-                <span>
-                  4.6 <span className="text-text2">(263)</span>
-                </span>
-              </div>
+              <Rating />
             </div>
           </div>
           <div className="flex-1 flexer">
