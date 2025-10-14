@@ -38,11 +38,9 @@ export default function Sidebar({
 
   return (
     <>
-      <div className="bg-bg2 flex flex-col flex-1 h-full overflow-hidden">
-        <div className="relative flex flex-col flex-1 bg-bg2 p-3 gap-5">
-          <Header />
-          <Title />
-        </div>
+      <div className="flex flex-col flex-1 h-full justify-between overflow-hidden px-10 pb-3">
+        <Title />
+        <div className="bg-bgDark h-20 -mx-5 p-5 rounded-panel"></div>
       </div>
 
       <div

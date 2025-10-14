@@ -30,7 +30,7 @@ const Tags = () => {
 
 export default function Title() {
   return (
-    <div className="flex flex-col max-w-documentWidth mx-auto w-full gap-2 px-5">
+    <div className="flex flex-col max-w-documentWidth mx-auto w-full gap-2">
       <div className="gap-2 flex h-buttonHeight text-xs items-center">
         <div className="h-6 bg-violet-100 text-violet-400 px-2 rounded font-semibold flexer">
           Nota

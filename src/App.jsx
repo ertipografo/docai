@@ -8,9 +8,7 @@ import Toolbar from "./Toolbar";
 import Feature from "./Feature";
 import Archive from "./Archive";
 import Container from "./Container";
-
 import Modal from "./Modal";
-import OutBar from "./OutBar";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
@@ -29,7 +27,9 @@ export default function App() {
       side={
         <div
           className={`${
-            !show ? "w-full lg:w-headerHeight" : "lg:w-sidebarWidth"
+            !show
+              ? "w-full w-headerHeight"
+              : "lg:w-[25vw] lg:min-w-sidebarWidth"
           } relative z-50`}
         >
           <Sidebar
@@ -56,7 +56,7 @@ export default function App() {
           <div
             className={`${
               feature !== "mappa" ? "max-w-documentWidth" : ""
-            } mx-auto w-full flex-1 flex-col flex`}
+            } w-full flex-1 flex-col flex`}
           >
             <div className="flex-1 flex flex-col lg:flex-row">
               <Toolbar
