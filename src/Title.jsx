@@ -43,7 +43,7 @@ export default function Title() {
         </div>
       </div>
       <h1 className="text-lg leading-[1.4] font-bold">{documentTitle}</h1>
-      <p className="max-w-4xl leading-relaxed opacity-70">
+      <p className="max-w-4xl leading-relaxed">
         NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica
         insegnamento CLIL 2, Esercizi di Didattica generale e speciale
       </p>

@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Work Sans", sans-serif;
-  --spacing-headerHeight: 56px;
+  --font-serif: "Fraunces", serif;
+  --spacing-headerHeight: 48px;
   --spacing-headerHeight2: calc(
     var(--spacing-headerHeight) + var(--spacing-headerHeight)
   );
@@ -46,8 +48,8 @@
   --color-bgDark: var(--color-gray-800);
   --color-bgDark2: var(--color-gray-700);
   --color-bg1: var(--color-white);
-  --color-bg2: var(--color-gray-50);
-  --color-bg3: var(--color-gray-100);
+  --color-bg2: var(--color-gray-100);
+  --color-bg3: var(--color-gray-200);
   --color-bg4: var(--color-gray-500);
   --color-borderColor: var(--color-gray-200);
   --font-weight-semibold: 500;
@@ -60,10 +62,6 @@
 
   --radius-panel: calc(var(--spacing) * 3.6);
   --radius-button: calc(var(--spacing) * 1.8);
-}
-
-.minititle {
-  @apply text-xs text-gray-400 font-semibold tracking-wide;
 }
 
 body .ps__rail-x {

@@ -11,11 +11,7 @@ import Outputs from "./Outputs";
 export default function Sidebar({
   feature,
   setFeature,
-  setShowFeatureBar,
   show,
-  setShowModal,
-  showModal,
-  isLoading,
   setIsLoading,
   setShow,
 }) {
@@ -40,21 +36,12 @@ export default function Sidebar({
     return items;
   };
 
-  const modes = ["output", "fonti"];
-
-  const [mode, setMode] = useState(modes[0]);
-
   return (
-    <div
-      className={`${
-        !show ? "w-full lg:w-headerHeight" : "lg:w-[20vw] lg:min-w-sidebarWidth"
-      } relative z-50`}
-    >
+    <>
       <div className="bg-bg2 flex flex-col flex-1 h-full overflow-hidden">
         <div className="relative flex flex-col flex-1 bg-bg2 p-3 gap-5">
-          <Header setShow={setShow} show={show} setIsLoading={setIsLoading} />
+          <Header />
           <Title />
-          <Outputs />
         </div>
       </div>
 
@@ -71,6 +58,6 @@ export default function Sidebar({
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
