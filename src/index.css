@@ -46,8 +46,8 @@
   --color-bgDark: var(--color-gray-800);
   --color-bgDark2: var(--color-gray-700);
   --color-bg1: var(--color-white);
-  --color-bg2: var(--color-gray-100);
-  --color-bg3: var(--color-gray-200);
+  --color-bg2: var(--color-gray-50);
+  --color-bg3: var(--color-gray-100);
   --color-bg4: var(--color-gray-500);
   --color-borderColor: var(--color-gray-200);
   --font-weight-semibold: 500;

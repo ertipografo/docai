@@ -10,60 +10,32 @@ const categories = [
 
 export default function SuggestedDocs() {
   const [cur, setCur] = useState(categories[0].label);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   return (
-    <div className="mt-auto h-headerHeight px-10 flex items-center justify-between">
-      <div className="flex gap-2">
-        {categories.map((f) => {
-          const { label, Icon } = f;
-          return (
-            <div
-              key={label}
-              onClick={() => {
-                setCur(label);
-                setShow(true);
-              }}
-              className={`h-buttonHeight w-buttonHeight flexer rounded-button cursor-pointer ${
-                show && cur === label
-                  ? "bg-bgDark2"
-                  : "text-text2 hover:bg-bgDark2"
-              }`}
-            >
-              <Icon size={16} />
-            </div>
-          );
-        })}
-      </div>
-      <div className="w-buttonHeight h-buttonHeight bg-bgDark2 rounded-button flexer">
-        C
-      </div>
-    </div>
-  );
-  return (
-    <div className="mt-auto text-textOnDark rounded-panel overflow-hidden m-3 hidden lg:block">
+    <div className="flex-1 flex flex-col overflow-hidden">
       <div className="flex flex-col">
         {show && (
           <>
             <div className="flex justify-between text-text2 items-center p-2 ml-1 pb-0">
-              <span className="font-semibold capitalize ">{`${cur}`}</span>
-              <div
+              <span className="font-semibold capitalize h-buttonHeight flex items-center">
+                {cur}
+              </span>
+              {/* <div
                 onClick={() => setShow(!show)}
-                className="hover:bg-bgDark2 cursor-pointer w-buttonHeight h-buttonHeight rounded-button flexer"
+                className="hover:bg-bg2 cursor-pointer w-buttonHeight h-buttonHeight rounded-button flexer"
               >
                 <ChevronDown size={16} />
-              </div>
+              </div> */}
             </div>
 
-            <div className="overflow-auto flex flex-col py-1 gap-1">
-              {Array.from({ length: 3 }).map((_, index) => {
+            <div className="overflow-auto flex flex-col gap-3">
+              {Array.from({ length: 2 }).map((_, index) => {
                 const randomAvailableFeatures = getRandomArbitrary(0, 3);
                 return (
                   <div
                     key={index}
-                    className={`cursor-pointer group flex items-center ${
-                      index === 1 ? "bg-bgDark2" : "hover:bg-bgDark2"
-                    } p-3 rounded-button`}
+                    className={`cursor-pointer group flex items-center px-3 rounded-button`}
                   >
                     <div className="flex flex-col gap-2 flex-1">
                       <span className="font-semibold">{titles[index]}</span>
@@ -91,7 +63,23 @@ export default function SuggestedDocs() {
             </div>
           </>
         )}
-        <div className="flexer gap-4 h-buttonHeight rounded-panel"></div>
+      </div>
+      <div className="mt-auto flexer gap-3">
+        {categories.map((r) => {
+          return (
+            <div
+              key={r.label}
+              onClick={() => setCur(r.label)}
+              className={`${
+                cur === r.label
+                  ? "bg-bg2"
+                  : "text-text2 hover:text-text1 hover:bg-bg2"
+              } h-buttonHeightSm w-buttonHeightSm flexer rounded-button cursor-pointer`}
+            >
+              <r.Icon size={16} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
