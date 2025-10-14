@@ -36,11 +36,38 @@ export default function Sidebar({
     return items;
   };
 
+  const questions = [
+    "Riassunto compatto",
+    "Mappa concettuale compatta",
+    "Famme na frittata",
+    "Un quiz piu esteso",
+  ];
+
   return (
     <>
       <div className="flex flex-col flex-1 h-full justify-between overflow-hidden px-10 pb-3">
         <Title />
-        <div className="bg-bgDark h-20 -mx-5 p-5 rounded-panel"></div>
+        {/* <SidebarFeatures setFeature={setFeature} feature={feature} /> */}
+        <div className="flex flex-col gap-2 bg-bg3 -mx-5 p-2 rounded-panel">
+          <div className="bg-bg1 border border-gray-300 text-gray-400 p-2 rounded-button">
+            <div className="mb-3"> Chiedi al documento...</div>
+            <div className="flex flex-wrap justify-end gap-1">
+              {questions.map((w, i) => {
+                return (
+                  <div
+                    className="bg-bg3/50 text-violet-500 px-2 py-1 text-xs font-semibold rounded-button"
+                    key={i}
+                  >
+                    {w}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          <div className="bg-action1 text-white font-semibold text-xs ml-auto rounded-button h-buttonHeightSm flexer px-3">
+            Chiedi
+          </div>
+        </div>
       </div>
 
       <div
