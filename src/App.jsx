@@ -8,6 +8,7 @@ import Feature from "./Feature";
 import Container from "./Container";
 import Modal from "./Modal";
 import Breacrumbs from "./Breacrumbs";
+import Logo from "./Logo";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
@@ -16,7 +17,7 @@ export default function App() {
   const [showChat, setShowChat] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isArchive, setIsArchive] = useState(true);
+  const [isArchive, setIsArchive] = useState(false);
   const [noteType, setNoteType] = useState("note");
 
   const isMap = feature === "mappa";
@@ -27,11 +28,15 @@ export default function App() {
       setNoteType={setNoteType}
       side={<div>side</div>}
       main={<div>Main</div>}
+      setShow={setShow}
+      show={show}
     />
   ) : (
     <Container
       setIsArchive={setIsArchive}
       setNoteType={setNoteType}
+      setShow={setShow}
+      show={show}
       side={
         <div
           className={`bg-bg1 ${
@@ -41,11 +46,7 @@ export default function App() {
           <Sidebar
             feature={feature}
             setFeature={setFeature}
-            show={show}
-            setShow={setShow}
             setShowModal={setShowModal}
-            isLoading={isLoading}
-            setIsLoading={setIsLoading}
             noteType={noteType}
           />
         </div>
@@ -53,7 +54,12 @@ export default function App() {
       main={
         <>
           <div className="w-full flex-1 flex-col flex">
-            <div className="min-h-header  flex items-center px-padding-sm">
+            <div className="min-h-header flex items-center px-padding-sm">
+              {!show && (
+                <div className=" mr-padding-sm">
+                  <Logo />
+                </div>
+              )}
               <Breacrumbs />
             </div>
 
@@ -72,7 +78,7 @@ export default function App() {
               )}
               <div
                 className={`${
-                  !isMap ? "max-w-document mx-auto" : ""
+                  !isMap && !showFeatureBar ? "max-w-document mx-auto" : ""
                 } flex-1 flex flex-col lg:flex-row`}
               >
                 <Toolbar

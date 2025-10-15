@@ -4,17 +4,17 @@ import { features } from "./utils";
 const FeatureCreator = () => {
   const exampleFeature = features[1];
   return (
-    <div className="bg-gray-800 text-gray-100 rounded-button flex-1 overflow-hidden p-padding-sm flex flex-col gap-padding-sm">
+    <div className="bg-gray-800 text-gray-100 rounded-btn flex-1 overflow-hidden p-padding-sm flex flex-col gap-padding-sm">
       <div className="flex items-center gap-padding-sm">
-        <div className="flex-1 h-btn gap-padding-sm px-padding-sm rounded-button bg-gray-700/50 border border-gray-600 flex items-center">
+        <div className="flex-1 h-btn gap-padding-sm px-padding-sm rounded-btn bg-gray-700/50 border border-gray-600 flex items-center">
           <exampleFeature.Icon size={16} />
           <span className="capitalize">{exampleFeature.value}</span>
           <ChevronDown size={16} className="opacity-50 ml-auto" />
         </div>
-        <div className="max-w-btn flex-1 h-btn px-padding-sm rounded-button bg-gray-700/50 border border-gray-600 flex items-center">
+        <div className="max-w-btn flex-1 h-btn px-padding-sm rounded-btn bg-gray-700/50 border border-gray-600 flex items-center">
           MD
         </div>
-        <div className="h-btn px-padding-sm rounded-button bg-action-primary text-white flexer">
+        <div className="h-btn px-padding-sm rounded-btn bg-action-primary text-white flexer">
           <MoveRight size={16} />
         </div>
       </div>
@@ -32,7 +32,7 @@ export default function Outputs() {
 
   return (
     <div className="mt-auto bg-dark rounded-panel p-padding-sm">
-      <div className="overflow-hidden flex flex-col bg-dark-alt rounded-button">
+      <div className="overflow-hidden flex flex-col bg-dark-alt rounded-btn">
         <div className="text-text2 h-10 flex items-center pl-padding-sm">
           Chiedi al documento...
         </div>
@@ -54,7 +54,7 @@ export default function Outputs() {
               return (
                 <div
                   key={k}
-                  className="flex items-center gap-5 px-padding-sm py-padding-sm hover:bg-bg2 rounded-button"
+                  className="flex items-center gap-5 px-padding-sm py-padding-sm hover:bg-bg2 rounded-btn"
                 >
                   <f.Icon size={16} />
                   <div className="flex flex-col">

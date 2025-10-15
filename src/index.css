@@ -38,7 +38,7 @@
 
   /* RADII */
   --radius-panel: calc(var(--spacing) * 3.6);
-  --radius-button: calc(var(--spacing) * 1.8);
+  --radius-btn: calc(var(--spacing) * 1.8);
 
   /* MEASURES */
   --spacing-btn: 40px;
@@ -50,10 +50,8 @@
   --spacing-header: calc(var(--spacing-btn) + (var(--spacing-padding-sm) * 2));
   --spacing-sidebar: calc(320px + (calc(var(--spacing-padding-lg) * 2)));
   --spacing-sidebar-height: calc(100vh - var(--spacing-header));
-  --spacing-complementary-t: calc((var(--spacing) * 3) + var(--spacing-header));
-  --spacing-complementary-h: calc(
-    100vh - var(--spacing-complementary-t) - var(--spacing-header)
-  );
+  --spacing-complementary-t: calc(var(--spacing-header));
+  --spacing-complementary-h: calc(100vh - var(--spacing-complementary-t));
   --chat: 360px;
   --spacing-chat-t: 0;
   --spacing-chat-h: calc(100vh - var(--spacing-chat-t) - var(--spacing-header));

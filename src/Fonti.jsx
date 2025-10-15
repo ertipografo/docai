@@ -33,7 +33,7 @@ export default function Fonti({ setShowModal }) {
           <div
             onClick={() => setShowModal(true)}
             key={label}
-            className={`h-btn px-padding-sm hover:bg-bg4 rounded-button group flex items-center group cursor-pointer gap-padding-sm font-semibold`}
+            className={`h-btn px-padding-sm hover:bg-bg4 rounded-btn group flex items-center group cursor-pointer gap-padding-sm font-semibold`}
           >
             <Icon size={16} className={`${cl}`} />
             <span>{label}</span>

@@ -19,7 +19,7 @@ const Page = () => {
         molestiae nam iusto, amet nostrum fuga consequuntur placeat beatae.
         Impedit?
       </p>
-      <div className="rounded-button bg-bg2 h-40 my-6" />
+      <div className="rounded-btn bg-bg2 h-40 my-6" />
       <span className="text-lg font-semibold">
         Lorem ipsum dolor sit amet consectetur adipisicing elit
       </span>
@@ -56,7 +56,7 @@ const Page = () => {
           </p>
         </div>
       </div>
-      <div className="rounded-button bg-bg2 h-60 my-6" />
+      <div className="rounded-btn bg-bg2 h-60 my-6" />
       <p className="text-[14px] leading-[1.8] opacity-80">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
         cupiditate aperiam? Quibusdam dolor atque dignissimos minus, aspernatur,
@@ -77,7 +77,7 @@ export default function Feature({ feature, isLoading }) {
         Stiamo preparando la tua feature, torna fra na quarantacinquina di
         minuti
       </div>
-      <div className="rounded-button overflow-hidden h-padding-sm w-full bg-bg3">
+      <div className="rounded-btn overflow-hidden h-padding-sm w-full bg-bg3">
         <div className="w-1/3 bg-violet-400 h-full" />
       </div>
     </div>

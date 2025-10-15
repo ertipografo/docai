@@ -21,7 +21,7 @@ const MobileFeatures = ({ feature, setFeature }) => {
                 feature === f.value
                   ? "bg-bg1 text-action-primary"
                   : "bg-bg3/30 text-text2"
-              } h-btn flex-1 px-padding-sm flex rounded-button justify-center cursor-pointer gap-padding-sm items-center`}
+              } h-btn flex-1 px-padding-sm flex rounded-btn justify-center cursor-pointer gap-padding-sm items-center`}
             >
               <Icon size={18} />
               <span className="font-semibold capitalize hidden md:flex">
@@ -42,7 +42,7 @@ const Format = () => {
     <div className="relative">
       <div
         onClick={() => setShow((s) => !s)}
-        className="flex items-center font-semibold gap-padding-sm h-btn px-padding-sm bg-action-secondary rounded-button cursor-pointer"
+        className="flex items-center font-semibold gap-padding-sm h-btn px-padding-sm bg-action-secondary rounded-btn cursor-pointer"
       >
         <span className="hidden sm:block">Formato</span>
         <div className="bg-bg3 text-text1 h-7 rounded text-xs flex items-center px-padding-sm uppercase">
@@ -73,11 +73,11 @@ const Format = () => {
               </div>
               <div className="flex-1 flex px-6">
                 {isPremium ? (
-                  <div className="px-padding-sm py-1 bg-amber-100 text-amber-800 rounded-button">
+                  <div className="px-padding-sm py-1 bg-amber-100 text-amber-800 rounded-btn">
                     Premium
                   </div>
                 ) : (
-                  <div className="px-padding-sm py-1 bg-sky-100 text-sky-800 rounded-button">
+                  <div className="px-padding-sm py-1 bg-sky-100 text-sky-800 rounded-btn">
                     Gratis
                   </div>
                 )}
@@ -103,7 +103,7 @@ export default function FeatureTop({
   const sticker = useRef(null);
 
   const baseCl = "bg-transparent text-text1";
-  const stickyCl = "bg-dark text-text-dark";
+  const stickyCl = "bg-bg2";
 
   const [cl, setCl] = useState(baseCl);
 
@@ -122,18 +122,15 @@ export default function FeatureTop({
     <>
       <MobileFeatures feature={feature} setFeature={setFeature} />
 
-      <div
-        ref={sticker}
-        className="sticky max-w-document mx-auto px-padding-sm -top-px pt-padding-sm -mt-padding-sm z-50"
-      >
+      <div ref={sticker} className="sticky max-w-document mx-auto -top-px z-50">
         <div
-          className={`${cl} transition-all flex items-center rounded-panel h-header px-padding-sm`}
+          className={`${cl} transition-all flex items-center h-header px-padding-sm`}
         >
           <div className="flex-1 gap-padding-sm flex items-center justify-start">
             {hasComplementary && (
               <div
                 onClick={() => setShowFeatureBar((s) => !s)}
-                className="bg-action-secondary rounded-button cursor-pointer h-btn aspect-square flexer"
+                className="bg-action-secondary rounded-btn cursor-pointer h-btn aspect-square flexer"
               >
                 {showFeatureBar ? <X size={16} /> : <Settings2 size={16} />}
               </div>
@@ -145,7 +142,7 @@ export default function FeatureTop({
             {featureLabel}
           </div>
           <div className="flex-1 flex items-center justify-end">
-            <div className="flexer gap-padding-sm h-btn px-padding-sm text-xs font-semibold bg-action-secondary text-text1 rounded-button cursor-pointer">
+            <div className="flexer gap-padding-sm h-btn px-padding-sm text-xs font-semibold bg-action-secondary text-text1 rounded-btn cursor-pointer">
               <span className="hidden sm:flex">Download</span>
               <ArrowDownToLine size={16} />
             </div>

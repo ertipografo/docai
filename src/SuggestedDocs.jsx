@@ -23,7 +23,7 @@ export default function SuggestedDocs() {
               </span>
               {/* <div
                 onClick={() => setShow(!show)}
-                className="hover:bg-bg2 cursor-pointer w-btn h-btn rounded-button flexer"
+                className="hover:bg-bg2 cursor-pointer w-btn h-btn rounded-btn flexer"
               >
                 <ChevronDown size={16} />
               </div> */}
@@ -35,7 +35,7 @@ export default function SuggestedDocs() {
                 return (
                   <div
                     key={index}
-                    className={`cursor-pointer group flex items-center px-padding-sm rounded-button`}
+                    className={`cursor-pointer group flex items-center px-padding-sm rounded-btn`}
                   >
                     <div className="flex flex-col gap-padding-sm flex-1">
                       <span className="font-semibold">{titles[index]}</span>
@@ -74,7 +74,7 @@ export default function SuggestedDocs() {
                 cur === r.label
                   ? "bg-bg2"
                   : "text-text2 hover:text-text1 hover:bg-bg2"
-              } h-btn-sm w-btn-sm flexer rounded-button cursor-pointer`}
+              } h-btn-sm w-btn-sm flexer rounded-btn cursor-pointer`}
             >
               <r.Icon size={16} />
             </div>

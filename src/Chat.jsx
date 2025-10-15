@@ -10,7 +10,7 @@ const Message = ({ incoming = false, children }) => {
       <div
         className={`${
           !incoming ? "bg-white" : "bg-violet-200"
-        } p-padding-sm rounded-button leading-relaxed`}
+        } p-padding-sm rounded-btn leading-relaxed`}
       >
         {children}
       </div>
@@ -29,7 +29,7 @@ function ChatComponent({ setShowChat }) {
         <span>Chiedi al documento</span>
         <div
           onClick={() => setShowChat(false)}
-          className="hover:bg-violet-200  cursor-pointer flexer h-btn w-btn rounded-button"
+          className="hover:bg-violet-200  cursor-pointer flexer h-btn w-btn rounded-btn"
         >
           <X size={18} />
         </div>
@@ -53,7 +53,7 @@ function ChatComponent({ setShowChat }) {
           officia illum voluptatibus ex illo blanditiis neque ab, nobis in
         </Message>
       </div>
-      <div className="bg-bg1 rounded-button border border-violet-200 overflow-hidden flex flex-col pointer-events-auto">
+      <div className="bg-bg1 rounded-btn border border-violet-200 overflow-hidden flex flex-col pointer-events-auto">
         <input
           value={cnt}
           placeholder="Chiedi al documento..."
@@ -66,7 +66,7 @@ function ChatComponent({ setShowChat }) {
               cnt
                 ? "bg-violet-500 text-white cursor-pointer"
                 : "bg-bg2 text-text2"
-            } h-btn flexer px-padding-sm rounded-button`}
+            } h-btn flexer px-padding-sm rounded-btn`}
           >
             Chiedi
           </div>

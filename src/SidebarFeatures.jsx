@@ -47,7 +47,7 @@ export default function SidebarFeatures({
               </div>
             </div>
             {isOpen && isLoading && (
-              <div className="absolute rounded-button overflow-hidden bottom-1 left-padding-sm right-padding-sm h-1 bg-bg3">
+              <div className="absolute rounded-btn overflow-hidden bottom-1 left-padding-sm right-padding-sm h-1 bg-bg3">
                 <div className="w-1/3 bg-violet-400 h-full" />
               </div>
             )}

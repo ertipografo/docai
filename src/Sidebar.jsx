@@ -1,87 +1,19 @@
 import Title from "./Title";
-import { features } from "./utils";
-import { PanelRightClose } from "lucide-react";
+
 import Header from "./Header";
 import SidebarFeatures from "./SidebarFeatures";
 
 export default function Sidebar({
   feature,
   setFeature,
-  show,
   noteType,
-  setShow,
   setShowModal,
 }) {
-  const collapsedItems = () => {
-    const cl = `h-btn flexer cursor-pointer w-btn rounded`;
-
-    const items = [
-      <div className="cursor-pointer" onClick={() => setShow((s) => !s)}>
-        <PanelRightClose size={18} />
-      </div>,
-      <div className={`${cl} text-2xl`}>🇴🇲</div>,
-
-      ...features.map((f) => (
-        <div
-          className={`${cl} ${feature === f.value ? "bg-bg1" : "hover:bg-bg1"}`}
-          onClick={() => setFeature(f.value)}
-        >
-          <f.Icon size={18} />
-        </div>
-      )),
-    ];
-    return items;
-  };
-
-  /*   const questions = [
-    "Riassunto compatto",
-    "Mappa concettuale compatta",
-    "Famme na frittata",
-    "Un quiz piu esteso",
-  ]; */
-
   return (
-    <>
-      <div className="flex flex-col flex-1 h-full overflow-hidden">
-        <Header />
-        <Title noteType={noteType} setShowModal={setShowModal} />
-        <SidebarFeatures setFeature={setFeature} feature={feature} />
-
-        {/* <div className="flex flex-col gap-padding-sm bg-bg3 -mx-5 p-padding-sm rounded-panel">
-          <div className="bg-bg1 border border-gray-300 text-gray-400 p-padding-sm rounded-button">
-            <div className="mb-padding-sm"> Chiedi al documento...</div>
-            <div className="flex flex-wrap justify-end gap-1">
-              {questions.map((w, i) => {
-                return (
-                  <div
-                    className="bg-bg3/50 text-violet-500 px-padding-sm py-1 text-xs font-semibold rounded-button"
-                    key={i}
-                  >
-                    {w}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="bg-action-primary text-white font-semibold text-xs ml-auto rounded-button h-btn-sm flexer px-padding-sm">
-            Chiedi
-          </div>
-        </div> */}
-      </div>
-
-      <div
-        className={`${
-          show ? "hidden" : "hidden lg:flex"
-        } flex-col w-header mt-3`}
-      >
-        {collapsedItems().map((el, k) => {
-          return (
-            <div key={k} className="overflow-hidden aspect-square flexer">
-              {el}
-            </div>
-          );
-        })}
-      </div>
-    </>
+    <div className="flex flex-col flex-1 h-full overflow-hidden">
+      <Header />
+      <Title noteType={noteType} setShowModal={setShowModal} />
+      <SidebarFeatures setFeature={setFeature} feature={feature} />
+    </div>
   );
 }
