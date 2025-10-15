@@ -1,37 +1,8 @@
 import { documentTitle } from "./utils";
 import Rating from "./Rating";
+import Meta from "./Meta";
 /* import Fonti from "./Fonti";
 import { Folder } from "lucide-react"; */
-
-const Tags = () => {
-  const tags = [
-    "prima",
-    "seconda",
-    "terza",
-    "quarto tag",
-    "2025",
-    "ultimissima giuro",
-  ];
-  return (
-    <div className="flex items-start text-xs text-text2">
-      <div className="items-center flex-1 flex gap-1.5 flex-wrap">
-        {tags.map((tag, i) => {
-          return (
-            <div
-              key={i}
-              className="rounded-full flexer bg-bg2 h-btn-sm px-padding-sm"
-            >
-              {tag}
-            </div>
-          );
-        })}
-        <div className="bg-bg2 px-padding-sm h-btn-sm rounded-full flexer">
-          +
-        </div>
-      </div>
-    </div>
-  );
-};
 
 export default function Title({ noteType, setShowModal }) {
   /*   const folders = [
@@ -95,8 +66,9 @@ export default function Title({ noteType, setShowModal }) {
           NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica
           insegnamento CLIL 2, Esercizi di Didattica generale e speciale
         </p>
+
         <div className="flex flex-col gap-padding-sm mt-padding-sm">
-          <Tags />
+          <Meta setShowModal={setShowModal} />
         </div>
       </div>
     </div>

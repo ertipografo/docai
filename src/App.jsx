@@ -7,7 +7,6 @@ import Toolbar from "./Toolbar";
 import Feature from "./Feature";
 import Container from "./Container";
 import Modal from "./Modal";
-import Fonti from "./Fonti";
 import Breacrumbs from "./Breacrumbs";
 import Logo from "./Logo";
 
@@ -67,8 +66,6 @@ export default function App() {
               )}
               <div className="flex-1 items-center pr-padding-sm flex">
                 <Breacrumbs />
-
-                <Fonti setShowModal={setShowModal} />
               </div>
             </div>
 
