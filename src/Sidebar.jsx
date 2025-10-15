@@ -1,6 +1,7 @@
 import Title from "./Title";
 import Header from "./Header";
 import SidebarFeatures from "./SidebarFeatures";
+import SuggestedDocs from "./SuggestedDocs";
 
 export default function Sidebar({
   feature,
@@ -16,6 +17,7 @@ export default function Sidebar({
 
         <SidebarFeatures setFeature={setFeature} feature={feature} />
       </div>
+      <SuggestedDocs />
     </div>
   );
 }
