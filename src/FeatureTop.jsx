@@ -11,7 +11,7 @@ import { useState } from "react";
 const MobileFeatures = ({ feature, setFeature }) => {
   return (
     <div className="sticky bg-bg2 top-0 z-50">
-      <div className="my-3 bg-bg1 rounded-panel p-2 lg:hidden flex items-center gap-2 text-text1">
+      <div className="my-paddingSm bg-bg1 rounded-panel p-paddingSm lg:hidden flex items-center gap-paddingSm text-text1">
         {features.map((f) => {
           const { Icon } = f;
           return (
@@ -22,7 +22,7 @@ const MobileFeatures = ({ feature, setFeature }) => {
                 feature === f.value
                   ? "bg-bg1 text-action1"
                   : "bg-bg3/30 text-text2"
-              } h-buttonHeight flex-1 px-2 flex rounded-button justify-center cursor-pointer gap-2 items-center`}
+              } h-buttonHeight flex-1 px-paddingSm flex rounded-button justify-center cursor-pointer gap-paddingSm items-center`}
             >
               <Icon size={18} />
               <span className="font-semibold capitalize hidden md:flex">
@@ -43,10 +43,10 @@ const Format = () => {
     <div className="relative">
       <div
         onClick={() => setShow((s) => !s)}
-        className="flex items-center font-semibold gap-2 h-buttonHeight px-2 bg-action2 rounded-button cursor-pointer"
+        className="flex items-center font-semibold gap-paddingSm h-buttonHeight px-paddingSm bg-action2 rounded-button cursor-pointer"
       >
         <span className="hidden sm:block">Formato</span>
-        <div className="bg-bg3 text-text1 h-7 rounded text-xs flex items-center px-2 uppercase">
+        <div className="bg-bg3 text-text1 h-7 rounded text-xs flex items-center px-paddingSm uppercase">
           {formats[1]}
         </div>
         {show ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -55,14 +55,14 @@ const Format = () => {
         className={`${
           show
             ? "mt-4 pointer-events-auto opacity-100"
-            : "mt-2 pointer-events-none opacity-0"
+            : "mt-paddingSm pointer-events-none opacity-0"
         } absolute top-full left-0 flex flex-col bg-red-300 rounded-panel transition-all p-2`}
       >
         {formats.map((f, i) => {
           const isPremium = i > 1;
           return (
             <div
-              className="flex cursor-pointer p-2 items-center text-xs font-semibold"
+              className="flex cursor-pointer p-paddingSm items-center text-xs font-semibold"
               key={f}
             >
               <div
@@ -74,11 +74,11 @@ const Format = () => {
               </div>
               <div className="flex-1 flex px-6">
                 {isPremium ? (
-                  <div className="px-2 py-1 bg-amber-100 text-amber-800 rounded-button">
+                  <div className="px-paddingSm py-1 bg-amber-100 text-amber-800 rounded-button">
                     Premium
                   </div>
                 ) : (
-                  <div className="px-2 py-1 bg-sky-100 text-sky-800 rounded-button">
+                  <div className="px-paddingSm py-1 bg-sky-100 text-sky-800 rounded-button">
                     Gratis
                   </div>
                 )}
@@ -100,8 +100,8 @@ const Breadcrumbs = () => {
   ];
 
   return (
-    <div className="font-semibold min-h-buttonHeight flex items-center mt-3">
-      <div className="h-buttonHeightSm w-buttonHeightSm mr-3 bg-bg3 rounded-button" />
+    <div className="font-semibold min-h-buttonHeight flex items-center mt-paddingSm">
+      <div className="h-buttonHeightSm w-buttonHeightSm mr-paddingSm bg-bg3 rounded-button" />
       {items.map((t, i) => (
         <div key={t} className="flex items-center">
           {i > 0 && <ChevronRight size={14} className="mx-1" />}
@@ -127,8 +127,8 @@ export default function FeatureTop({
     <>
       <MobileFeatures feature={feature} setFeature={setFeature} />
 
-      <div className="hidden items-center bg-red-100 mt-3">
-        <div className="flex-1 gap-2 flex items-center justify-start">
+      <div className="hidden items-center bg-red-100 mt-paddingSm">
+        <div className="flex-1 gap-paddingSm flex items-center justify-start">
           {hasComplementary && (
             <div
               onClick={() => setShowFeatureBar((s) => !s)}
@@ -139,12 +139,12 @@ export default function FeatureTop({
           )}
           {currentFeature?.hasFormats && <Format />}
         </div>
-        <div className="flex-1 flex items-center justify-center gap-2 font-semibold flex whitespace-nowrap">
+        <div className="flex-1 flex items-center justify-center gap-paddingSm font-semibold flex whitespace-nowrap">
           {FeatureIcon && <FeatureIcon size={18} />}
           {featureLabel}
         </div>
         <div className="flex-1 flex items-center justify-end">
-          <div className="flexer gap-2 h-buttonHeight px-3 text-xs font-semibold bg-action2 rounded-button cursor-pointer">
+          <div className="flexer gap-paddingSm h-buttonHeight px-paddingSm text-xs font-semibold bg-action2 rounded-button cursor-pointer">
             <span className="hidden sm:flex">Download</span>
             <ArrowDownToLine size={16} />
           </div>

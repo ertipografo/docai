@@ -17,7 +17,7 @@ export default function SuggestedDocs() {
       <div className="flex flex-col">
         {show && (
           <>
-            <div className="flex justify-between text-text2 items-center p-2 ml-1 pb-0">
+            <div className="flex justify-between text-text2 items-center p-paddingSm ml-1 pb-0">
               <span className="font-semibold capitalize h-buttonHeight flex items-center">
                 {cur}
               </span>
@@ -29,17 +29,17 @@ export default function SuggestedDocs() {
               </div> */}
             </div>
 
-            <div className="overflow-auto flex flex-col gap-3">
+            <div className="overflow-auto flex flex-col gap-paddingSm">
               {Array.from({ length: 2 }).map((_, index) => {
                 const randomAvailableFeatures = getRandomArbitrary(0, 3);
                 return (
                   <div
                     key={index}
-                    className={`cursor-pointer group flex items-center px-3 rounded-button`}
+                    className={`cursor-pointer group flex items-center px-paddingSm rounded-button`}
                   >
-                    <div className="flex flex-col gap-2 flex-1">
+                    <div className="flex flex-col gap-paddingSm flex-1">
                       <span className="font-semibold">{titles[index]}</span>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-paddingSm">
                         {features.map((f, i) => {
                           const { value, Icon } = f;
                           return (
@@ -64,7 +64,7 @@ export default function SuggestedDocs() {
           </>
         )}
       </div>
-      <div className="mt-auto flexer gap-3">
+      <div className="mt-auto flexer gap-paddingSm">
         {categories.map((r) => {
           return (
             <div

@@ -10,10 +10,10 @@ export default function Container({ side, main, setIsArchive }) {
       <div className="flex flex-col w-full">
         <Header />
 
-        <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto bg-bg2">
+        <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto">
           {side && side}
-          <div className="bg-bg2 flex-1 flex flex-col lg:overflow-auto">
-            <PerfectScrollbar className="overflow-visible! lg:overflow-hidden! flex flex-col flex-1 px-3">
+          <div className="flex-1 flex flex-col lg:overflow-auto">
+            <PerfectScrollbar className="overflow-visible! lg:overflow-hidden! flex flex-col flex-1 px-paddingSm">
               {main}
             </PerfectScrollbar>
           </div>

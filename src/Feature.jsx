@@ -1,8 +1,8 @@
 import { LoaderCircle } from "lucide-react";
 const Page = () => {
   return (
-    <div className="bg-bg1 p-10 pb-24 flex flex-col gap-1 rounded-panel">
-      <span className="text-2xl font-bold mb-3">Titolo pagina</span>
+    <div className="bg-bg1 p-paddingLg pb-24 flex flex-col gap-1 rounded-panel">
+      <span className="text-2xl font-bold mb-paddingSm">Titolo pagina</span>
       <span className="text-lg font-semibold">
         Lorem ipsum dolor sit amet consectetur adipisicing elit
       </span>
@@ -36,7 +36,7 @@ const Page = () => {
         molestiae nam iusto, amet nostrum fuga consequuntur placeat beatae.
         Impedit?
       </p>
-      <div className="flex my-6 gap-6">
+      <div className="flex my-paddingLg gap-paddingLg">
         <div className="flex-1">
           <p className="text-[14px] leading-[1.8] opacity-80">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
@@ -69,7 +69,7 @@ const Page = () => {
 
 export default function Feature({ feature, isLoading }) {
   const loadingContents = (
-    <div className="w-sm rounded-panel gap-3 flex flex-col bg-bg1 p-3 items-center">
+    <div className="w-sm rounded-panel gap-paddingSm flex flex-col bg-bg1 p-paddingSm items-center">
       <div className="animate-spin w-buttonHeight h-buttonHeight flexer">
         <LoaderCircle size={16} />
       </div>
@@ -77,7 +77,7 @@ export default function Feature({ feature, isLoading }) {
         Stiamo preparando la tua feature, torna fra na quarantacinquina di
         minuti
       </div>
-      <div className="rounded-button overflow-hidden h-2 w-full bg-bg3">
+      <div className="rounded-button overflow-hidden h-paddingSm w-full bg-bg3">
         <div className="w-1/3 bg-violet-400 h-full" />
       </div>
     </div>
@@ -85,15 +85,15 @@ export default function Feature({ feature, isLoading }) {
   const isMap = feature === "mappa";
 
   return isLoading ? (
-    <div className="bg-bg1 flexer rounded-t-panel mb-3 rounded-b-panel flex-1 p-8">
+    <div className="bg-bg1 flexer rounded-t-panel mb-paddingSm rounded-b-panel flex-1 p-paddingLg">
       {loadingContents}
     </div>
   ) : isMap ? (
-    <div className="bg-bg1 polka mb-3 rounded-b-panel flex-1 p-8">
+    <div className="bg-bg1 polka mb-paddingSm rounded-b-panel flex-1 p-paddingLg">
       {isMap ? <div>{feature}</div> : loadingContents}
     </div>
   ) : (
-    <div className="py-3 flex flex-col gap-10 rounded-b-panel flex-1">
+    <div className="py-paddingSm flex flex-col gap-paddingLg rounded-b-panel flex-1">
       {Array.from({ length: 5 }).map((_, i) => (
         <Page key={i} />
       ))}

@@ -2,7 +2,7 @@ import { ChevronRight } from "lucide-react";
 import { documentTitle } from "./utils";
 import Rating from "./Rating";
 
-const Tags = () => {
+/* const Tags = () => {
   const tags = [
     "prima",
     "seconda",
@@ -12,12 +12,15 @@ const Tags = () => {
     "ultimissima giuro",
   ];
   return (
-    <div className="flex items-start mt-2 lg:mt-5">
-      <div className="mr-2 font-semibold">Tags:</div>
+    <div className="flex items-start mt-paddingSm lg:mt-5">
+      <div className="mr-paddingSm font-semibold">Tags:</div>
       <div className="items-center flex-1 flex gap-1.5 flex-wrap">
         {tags.map((tag, i) => {
           return (
-            <div key={i} className="rounded bg-bg3 text-xs py-[2px] px-2">
+            <div
+              key={i}
+              className="rounded bg-bg3 text-xs py-[2px] px-paddingSm"
+            >
               {tag}
             </div>
           );
@@ -27,15 +30,15 @@ const Tags = () => {
     </div>
   );
 };
-
+ */
 export default function Title() {
   return (
-    <div className="flex flex-col max-w-documentWidth mx-auto w-full gap-2">
-      <div className="gap-2 flex h-buttonHeight text-xs items-center">
-        <div className="h-6 bg-violet-100 text-violet-400 px-2 rounded font-semibold flexer">
+    <div className="flex flex-col max-w-documentWidth mx-auto w-full gap-paddingSm p-paddingLg pt-0">
+      <div className="gap-paddingSm flex h-buttonHeight text-xs items-center">
+        <div className="h-6 bg-violet-100 text-violet-400 px-paddingSm rounded font-semibold flexer">
           Nota
         </div>
-        <div className="bg-bg3 text-text2 px-2 rounded font-semibold h-6 flexer">
+        <div className="bg-bg3 text-text2 px-paddingSm rounded font-semibold h-6 flexer">
           Docsity
         </div>
         <div className="flexer ml-auto">

@@ -3,10 +3,10 @@ import Rating from "./Rating";
 export default function BottomBar({ showChat, setShowChat }) {
   return (
     <div className="sticky bottom-0 z-[99997]">
-      <div className="px-3 absolute bottom-3 left-1/2 -translate-x-1/2 w-full max-w-md">
-        <div className="flex h-headerHeight items-center px-2 rounded-panel bg-bgDark text-textOnDark">
+      <div className="px-paddingSm absolute bottom-paddingSm left-1/2 -translate-x-1/2 w-full max-w-md">
+        <div className="flex h-headerHeight items-center px-paddingSm rounded-panel bg-bgDark text-textOnDark">
           <div className="flex-1 items-center flex">
-            <div className="flex gap-3 items-center h-buttonHeight px-2 hover:bg-actionDark cursor-pointer rounded-button">
+            <div className="flex gap-paddingSm items-center h-buttonHeight px-paddingSm hover:bg-actionDark cursor-pointer rounded-button">
               <Rating />
             </div>
           </div>

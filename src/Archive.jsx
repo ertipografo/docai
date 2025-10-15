@@ -6,7 +6,7 @@ export default function Archive({ setIsArchive }) {
     <Container
       setIsArchive={setIsArchive}
       main={
-        <div className="bg-bg2 py-3">
+        <div className="bg-bg2 py-paddingSm">
           <Header />
         </div>
       }

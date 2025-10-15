@@ -45,17 +45,17 @@ export default function Sidebar({
 
   return (
     <>
-      <div className="flex flex-col flex-1 h-full justify-between overflow-hidden px-10 pb-3">
+      <div className="flex flex-col flex-1 h-full justify-between overflow-hidden">
         <Title />
         {/* <SidebarFeatures setFeature={setFeature} feature={feature} /> */}
-        <div className="flex flex-col gap-2 bg-bg3 -mx-5 p-2 rounded-panel">
-          <div className="bg-bg1 border border-gray-300 text-gray-400 p-2 rounded-button">
-            <div className="mb-3"> Chiedi al documento...</div>
+        {/* <div className="flex flex-col gap-paddingSm bg-bg3 -mx-5 p-paddingSm rounded-panel">
+          <div className="bg-bg1 border border-gray-300 text-gray-400 p-paddingSm rounded-button">
+            <div className="mb-paddingSm"> Chiedi al documento...</div>
             <div className="flex flex-wrap justify-end gap-1">
               {questions.map((w, i) => {
                 return (
                   <div
-                    className="bg-bg3/50 text-violet-500 px-2 py-1 text-xs font-semibold rounded-button"
+                    className="bg-bg3/50 text-violet-500 px-paddingSm py-1 text-xs font-semibold rounded-button"
                     key={i}
                   >
                     {w}
@@ -64,10 +64,10 @@ export default function Sidebar({
               })}
             </div>
           </div>
-          <div className="bg-action1 text-white font-semibold text-xs ml-auto rounded-button h-buttonHeightSm flexer px-3">
+          <div className="bg-action1 text-white font-semibold text-xs ml-auto rounded-button h-buttonHeightSm flexer px-paddingSm">
             Chiedi
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div

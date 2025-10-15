@@ -27,10 +27,8 @@ export default function App() {
       side={
         <div
           className={`${
-            !show
-              ? "w-full w-headerHeight"
-              : "lg:w-[25vw] lg:min-w-sidebarWidth"
-          } relative z-50`}
+            !show ? "w-full w-headerHeight" : "w-full lg:w-sidebarWidth"
+          }`}
         >
           <Sidebar
             feature={feature}
@@ -67,7 +65,7 @@ export default function App() {
               <Feature feature={feature} isLoading={isLoading} />
             </div>
           </div>
-          {!isLoading && (
+          {!isLoading && null && (
             <BottomBar showChat={showChat} setShowChat={setShowChat} />
           )}
           <Modal setShowModal={setShowModal} showModal={showModal} />

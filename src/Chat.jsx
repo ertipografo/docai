@@ -3,14 +3,14 @@ import { useState } from "react";
 const Message = ({ incoming = false, children }) => {
   return (
     <div
-      className={`flex gap-2 group items-center  ${
+      className={`flex gap-paddingSm group items-center  ${
         !incoming ? "flex-row-reverse pl-5" : "pr-5"
       } `}
     >
       <div
         className={`${
           !incoming ? "bg-white" : "bg-violet-200"
-        } p-3 rounded-button leading-relaxed`}
+        } p-paddingSm rounded-button leading-relaxed`}
       >
         {children}
       </div>
@@ -24,8 +24,8 @@ const Message = ({ incoming = false, children }) => {
 function ChatComponent({ setShowChat }) {
   const [cnt, setCnt] = useState("");
   return (
-    <div className="h-full flex flex-col justify-end gap-2 text-violet-900">
-      <div className="font-semibold flex items-center justify-between">
+    <div className="h-full flex flex-col justify-end gap-paddingSm text-violet-900">
+      <div className="font-semibold flex items-center justify-between -mt-1">
         <span>Chiedi al documento</span>
         <div
           onClick={() => setShowChat(false)}
@@ -34,7 +34,7 @@ function ChatComponent({ setShowChat }) {
           <X size={18} />
         </div>
       </div>
-      <div className="flex flex-col gap-2 flex-1 justify-end">
+      <div className="flex flex-col gap-paddingSm flex-1 justify-end">
         <Message>Di cosa parla questo bel documentino?</Message>
         <Message incoming={true}>Bo che lo chiedi a me?</Message>
         <Message>Dai cazzo te costa dirmelo?</Message>
@@ -58,15 +58,15 @@ function ChatComponent({ setShowChat }) {
           value={cnt}
           placeholder="Chiedi al documento..."
           onChange={(e) => setCnt(e.target.value)}
-          className="bg-transparent p-3 outline-none w-full"
+          className="bg-transparent p-paddingSm outline-none w-full"
         />
-        <div className="flex justify-end gap-2 items-center p-2">
+        <div className="flex justify-end gap-paddingSm items-center p-paddingSm">
           <div
             className={`${
               cnt
                 ? "bg-violet-500 text-white cursor-pointer"
                 : "bg-bg2 text-text2"
-            } h-buttonHeight flexer px-3 rounded-button`}
+            } h-buttonHeight flexer px-paddingSm rounded-button`}
           >
             Chiedi
           </div>
@@ -86,8 +86,8 @@ export default function Chat({ showChat, setShowChat }) {
       } transition-all h-sidebarMaxHeight lg:h-chatHeight right-0 lg:right-auto top-headerHeight lg:top-chatTop fixed lg:sticky flex flex-col`}
     >
       {showChat && (
-        <div className="pl-0 flex-1 w-full p-3">
-          <div className="h-full bg-violet-100 p-3 rounded-panel">
+        <div className="pl-0 flex-1 w-full p-paddingSm">
+          <div className="h-full bg-violet-100 p-paddingSm rounded-panel">
             <ChatComponent setShowChat={setShowChat} />
           </div>
         </div>
