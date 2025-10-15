@@ -12,20 +12,20 @@ import Rating from "./Rating";
     "ultimissima giuro",
   ];
   return (
-    <div className="flex items-start mt-paddingSm lg:mt-5">
-      <div className="mr-paddingSm font-semibold">Tags:</div>
+    <div className="flex items-start mt-padding-sm lg:mt-5">
+      <div className="mr-padding-sm font-semibold">Tags:</div>
       <div className="items-center flex-1 flex gap-1.5 flex-wrap">
         {tags.map((tag, i) => {
           return (
             <div
               key={i}
-              className="rounded bg-bg3 text-xs py-[2px] px-paddingSm"
+              className="rounded bg-bg3 text-xs py-[2px] px-padding-sm"
             >
               {tag}
             </div>
           );
         })}
-        <div className="bg-bgDark text-textOnDark w-5 rounded flexer">+</div>
+        <div className="bg-bg-dark text-text-dark w-5 rounded flexer">+</div>
       </div>
     </div>
   );
@@ -33,12 +33,12 @@ import Rating from "./Rating";
  */
 export default function Title() {
   return (
-    <div className="flex flex-col max-w-documentWidth mx-auto w-full gap-paddingSm p-paddingLg pt-0">
-      <div className="gap-paddingSm flex h-buttonHeight text-xs items-center">
-        <div className="h-6 bg-violet-100 text-violet-400 px-paddingSm rounded font-semibold flexer">
+    <div className="flex flex-col max-w-document mx-auto w-full gap-padding-sm p-padding-lg pt-0">
+      <div className="gap-padding-sm flex h-btn text-xs items-center">
+        <div className="h-6 bg-violet-100 text-violet-400 px-padding-sm rounded font-semibold flexer">
           Nota
         </div>
-        <div className="bg-bg3 text-text2 px-paddingSm rounded font-semibold h-6 flexer">
+        <div className="bg-bg3 text-text2 px-padding-sm rounded font-semibold h-6 flexer">
           Docsity
         </div>
         <div className="flexer ml-auto">
@@ -50,7 +50,7 @@ export default function Title() {
         NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica
         insegnamento CLIL 2, Esercizi di Didattica generale e speciale
       </p>
-      <div className="flex flex-col gap-1 text-action1">
+      <div className="flex flex-col gap-1 text-action-primary">
         <div>Università telematica eCampus (UNIECAMPUS)</div>
         <div>Didattica generale e speciale</div>
       </div>

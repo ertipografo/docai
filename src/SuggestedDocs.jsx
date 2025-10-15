@@ -17,29 +17,29 @@ export default function SuggestedDocs() {
       <div className="flex flex-col">
         {show && (
           <>
-            <div className="flex justify-between text-text2 items-center p-paddingSm ml-1 pb-0">
-              <span className="font-semibold capitalize h-buttonHeight flex items-center">
+            <div className="flex justify-between text-text2 items-center p-padding-sm ml-1 pb-0">
+              <span className="font-semibold capitalize h-btn flex items-center">
                 {cur}
               </span>
               {/* <div
                 onClick={() => setShow(!show)}
-                className="hover:bg-bg2 cursor-pointer w-buttonHeight h-buttonHeight rounded-button flexer"
+                className="hover:bg-bg2 cursor-pointer w-btn h-btn rounded-button flexer"
               >
                 <ChevronDown size={16} />
               </div> */}
             </div>
 
-            <div className="overflow-auto flex flex-col gap-paddingSm">
+            <div className="overflow-auto flex flex-col gap-padding-sm">
               {Array.from({ length: 2 }).map((_, index) => {
                 const randomAvailableFeatures = getRandomArbitrary(0, 3);
                 return (
                   <div
                     key={index}
-                    className={`cursor-pointer group flex items-center px-paddingSm rounded-button`}
+                    className={`cursor-pointer group flex items-center px-padding-sm rounded-button`}
                   >
-                    <div className="flex flex-col gap-paddingSm flex-1">
+                    <div className="flex flex-col gap-padding-sm flex-1">
                       <span className="font-semibold">{titles[index]}</span>
-                      <div className="flex items-center gap-paddingSm">
+                      <div className="flex items-center gap-padding-sm">
                         {features.map((f, i) => {
                           const { value, Icon } = f;
                           return (
@@ -64,7 +64,7 @@ export default function SuggestedDocs() {
           </>
         )}
       </div>
-      <div className="mt-auto flexer gap-paddingSm">
+      <div className="mt-auto flexer gap-padding-sm">
         {categories.map((r) => {
           return (
             <div
@@ -74,7 +74,7 @@ export default function SuggestedDocs() {
                 cur === r.label
                   ? "bg-bg2"
                   : "text-text2 hover:text-text1 hover:bg-bg2"
-              } h-buttonHeightSm w-buttonHeightSm flexer rounded-button cursor-pointer`}
+              } h-btn-sm w-btn-sm flexer rounded-button cursor-pointer`}
             >
               <r.Icon size={16} />
             </div>

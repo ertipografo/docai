@@ -23,8 +23,10 @@ export default function SidebarFeatures({
                 }
               }}
               className={`${
-                isOpen ? "text-violet-400 bg-action3" : "hover:bg-action3"
-              } h-12 rounded-button group flex items-center px-paddingSm group cursor-pointer gap-paddingSm font-semibold`}
+                isOpen
+                  ? "text-violet-400 bg-action-tertiary"
+                  : "hover:bg-action-tertiary"
+              } h-12 rounded-button group flex items-center px-padding-sm group cursor-pointer gap-padding-sm font-semibold`}
             >
               <Icon
                 size={16}
@@ -42,7 +44,7 @@ export default function SidebarFeatures({
               </div>
             </div>
             {isOpen && isLoading && (
-              <div className="absolute rounded-button overflow-hidden bottom-1 left-paddingSm right-paddingSm h-1 bg-bg3">
+              <div className="absolute rounded-button overflow-hidden bottom-1 left-padding-sm right-padding-sm h-1 bg-bg3">
                 <div className="w-1/3 bg-violet-400 h-full" />
               </div>
             )}

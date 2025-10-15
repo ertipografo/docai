@@ -3,14 +3,14 @@ import { useState } from "react";
 const Message = ({ incoming = false, children }) => {
   return (
     <div
-      className={`flex gap-paddingSm group items-center  ${
+      className={`flex gap-padding-sm group items-center  ${
         !incoming ? "flex-row-reverse pl-5" : "pr-5"
       } `}
     >
       <div
         className={`${
           !incoming ? "bg-white" : "bg-violet-200"
-        } p-paddingSm rounded-button leading-relaxed`}
+        } p-padding-sm rounded-button leading-relaxed`}
       >
         {children}
       </div>
@@ -24,17 +24,17 @@ const Message = ({ incoming = false, children }) => {
 function ChatComponent({ setShowChat }) {
   const [cnt, setCnt] = useState("");
   return (
-    <div className="h-full flex flex-col justify-end gap-paddingSm text-violet-900">
+    <div className="h-full flex flex-col justify-end gap-padding-sm text-violet-900">
       <div className="font-semibold flex items-center justify-between -mt-1">
         <span>Chiedi al documento</span>
         <div
           onClick={() => setShowChat(false)}
-          className="hover:bg-violet-200  cursor-pointer flexer h-buttonHeight w-buttonHeight rounded-button"
+          className="hover:bg-violet-200  cursor-pointer flexer h-btn w-btn rounded-button"
         >
           <X size={18} />
         </div>
       </div>
-      <div className="flex flex-col gap-paddingSm flex-1 justify-end">
+      <div className="flex flex-col gap-padding-sm flex-1 justify-end">
         <Message>Di cosa parla questo bel documentino?</Message>
         <Message incoming={true}>Bo che lo chiedi a me?</Message>
         <Message>Dai cazzo te costa dirmelo?</Message>
@@ -58,15 +58,15 @@ function ChatComponent({ setShowChat }) {
           value={cnt}
           placeholder="Chiedi al documento..."
           onChange={(e) => setCnt(e.target.value)}
-          className="bg-transparent p-paddingSm outline-none w-full"
+          className="bg-transparent p-padding-sm outline-none w-full"
         />
-        <div className="flex justify-end gap-paddingSm items-center p-paddingSm">
+        <div className="flex justify-end gap-padding-sm items-center p-padding-sm">
           <div
             className={`${
               cnt
                 ? "bg-violet-500 text-white cursor-pointer"
                 : "bg-bg2 text-text2"
-            } h-buttonHeight flexer px-paddingSm rounded-button`}
+            } h-btn flexer px-padding-sm rounded-button`}
           >
             Chiedi
           </div>
@@ -82,12 +82,12 @@ export default function Chat({ showChat, setShowChat }) {
       className={`bg-transparent lg:bg-bg2 z-[99998] ${
         !showChat
           ? "w-0 min-w-0 lg:w-0"
-          : "min-w-chatWidth w-[50vw] lg:min-w-chatWidth lg:w-[20vw]"
-      } transition-all h-sidebarMaxHeight lg:h-chatHeight right-0 lg:right-auto top-headerHeight lg:top-chatTop fixed lg:sticky flex flex-col`}
+          : "min-w-chat w-[50vw] lg:min-w-chat lg:w-[20vw]"
+      } transition-all h-sidebar-height lg:h-chat-h right-0 lg:right-auto top-header lg:top-chat-t fixed lg:sticky flex flex-col`}
     >
       {showChat && (
-        <div className="pl-0 flex-1 w-full p-paddingSm">
-          <div className="h-full bg-violet-100 p-paddingSm rounded-panel">
+        <div className="pl-0 flex-1 w-full p-padding-sm">
+          <div className="h-full bg-violet-100 p-padding-sm rounded-panel">
             <ChatComponent setShowChat={setShowChat} />
           </div>
         </div>

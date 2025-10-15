@@ -33,7 +33,7 @@ export default function Fonti({ setShowModal }) {
             className={`flex flex-col flex-1 lg:flex-0`}
           >
             <div
-              className={`hover:bg-bg2 rounded-button h-12 group flex items-center px-paddingSm group cursor-pointer gap-paddingSm font-semibold`}
+              className={`hover:bg-bg2 rounded-button h-12 group flex items-center px-padding-sm group cursor-pointer gap-padding-sm font-semibold`}
             >
               <Icon size={16} className={`${cl}`} />
               <span>{label}</span>

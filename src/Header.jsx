@@ -1,9 +1,9 @@
 import Logo from "./Logo";
 export default function Header() {
   return (
-    <div className="px-paddingSm min-h-headerHeight flex items-center justify-center">
-      <div className="h-buttonHeight">
-        <Logo className="scale-75" />
+    <div className="px-padding-lg min-h-header flex items-center">
+      <div className="h-btn-sm">
+        <Logo />
       </div>
     </div>
   );

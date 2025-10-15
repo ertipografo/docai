@@ -9,32 +9,30 @@ export default function Toolbar({
   const currentFeature = features.find((f) => f.value === feature);
   const ComplementaryComponent = currentFeature?.hasComplementary;
 
-  const height = `h-screen lg:h-complementaryHeight`;
-  const top = `top-0 lg:top-complementaryTop`;
+  const height = `h-screen lg:h-complementary-h`;
+  const top = `top-0 lg:top-complementary-t`;
   const position = "fixed lg:sticky left-0 lg:left-auto";
   const transform = `transition-all lg:translate-x-0 ${
     showFeatureBar ? "translate-x-0" : "-translate-x-full"
   }`;
-  const width = `w-complementarySidebarWidth ${
-    showFeatureBar ? "lg:w-complementarySidebarWidth" : "lg:w-0"
-  }`;
+  const width = `w-sidebar ${showFeatureBar ? "lg:w-sidebar" : "lg:w-0"}`;
 
   return ComplementaryComponent ? (
     <div
       className={`${width} ${height} ${top} ${position} ${transform} shadow-lg lg:shadow-none bg-bg1 lg:bg-bg2 z-[99999] overflow-hidden`}
     >
-      <div className="flex flex-col h-full p-paddingSm pt-0 pl-0">
-        <div className="flex flex-col h-full bg-bg1 p-paddingSm rounded-panel">
-          <div className="h-10 flex items-center pr-paddingSm pl-paddingSm justify-between">
+      <div className="flex flex-col h-full p-padding-sm pt-0 pl-0">
+        <div className="flex flex-col h-full bg-bg1 p-padding-sm rounded-panel">
+          <div className="h-10 flex items-center pr-padding-sm pl-padding-sm justify-between">
             <span className="font-semibold">Complementary</span>
             <div
               onClick={() => setShowFeatureBar((s) => !s)}
-              className="h-buttonHeight aspect-square hover:bg-action3 rounded-button cursor-pointer flex items-center justify-center lg:hidden"
+              className="h-btn aspect-square hover:bg-action-tertiary rounded-button cursor-pointer flex items-center justify-center lg:hidden"
             >
               <X size={18} />
             </div>
           </div>
-          <div className="flex-1 w-complementarySidebarWidth">
+          <div className="flex-1 w-sidebar">
             <ComplementaryComponent />
           </div>
         </div>

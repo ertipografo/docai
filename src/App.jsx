@@ -25,11 +25,7 @@ export default function App() {
     <Container
       setIsArchive={setIsArchive}
       side={
-        <div
-          className={`${
-            !show ? "w-full w-headerHeight" : "w-full lg:w-sidebarWidth"
-          }`}
-        >
+        <div className={`${!show ? "w-full w-header" : "w-full lg:w-sidebar"}`}>
           <Sidebar
             feature={feature}
             setFeature={setFeature}
@@ -53,7 +49,7 @@ export default function App() {
           )}
           <div
             className={`${
-              feature !== "mappa" ? "max-w-documentWidth" : ""
+              feature !== "mappa" ? "max-w-document" : ""
             } w-full flex-1 flex-col flex`}
           >
             <div className="flex-1 flex flex-col lg:flex-row">

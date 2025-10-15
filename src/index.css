@@ -6,63 +6,54 @@
   /* FONTS */
   --font-sans: "Work Sans", sans-serif;
   --font-serif: "Fraunces", serif;
-
-  --spacing-buttonHeight: 40px;
-  --spacing-buttonHeightSm: 30px;
-  --spacing-paddingSm: calc(var(--spacing) * 3);
-  --spacing-paddingLg: calc(var(--spacing) * 10);
-  --spacing-headerHeight: calc(
-    var(--spacing-buttonHeight) + (var(--spacing-paddingSm) * 2)
-  );
-  --spacing-sidebarWidth: calc(320px + (calc(var(--spacing-paddingLg) * 2)));
-
-  --spacing-sidebarMaxHeight: calc(100vh - var(--spacing-headerHeight));
-
-  --spacing-complementaryTop: calc(
-    (var(--spacing) * 3) + var(--spacing-headerHeight)
-  );
-  --spacing-complementaryHeight: calc(
-    100vh - var(--spacing-complementaryTop) - var(--spacing-headerHeight)
-  );
-
-  --spacing-chatTop: 0;
-  --spacing-chatHeight: calc(
-    100vh - var(--spacing-chatTop) - var(--spacing-headerHeight)
-  );
-
-  --breakpoint-sm: 934px;
-  --breakpoint-lg: 1200px;
-
-  --spacing-chatWidth: 340px;
-
-  --spacing-documentWidth: 920px;
-  --spacing-complementarySidebarWidth: 320px;
-  --spacing-suggestedSidebarWidth: 240px;
+  --text-xs: 11px;
   --text-base: 14px;
   --text-lg: 20px;
-  --chatWidth: 360px;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 600;
 
+  /* COLORS */
   --color-text1: var(--color-gray-800);
   --color-text2: var(--color-gray-400);
   --color-text3: var(--color-gray-300);
-  --color-textOnDark: var(--color-white);
-  --color-bgDark: var(--color-gray-800);
-  --color-bgDark2: var(--color-gray-700);
+  --color-text-dark: var(--color-white);
+  --color-bg-dark: var(--color-gray-800);
+  --color-bg-dark-alt: var(--color-gray-700);
   --color-bg1: var(--color-white);
   --color-bg2: var(--color-gray-50);
   --color-bg3: var(--color-gray-200);
   --color-bg4: var(--color-gray-500);
-  --color-borderColor: var(--color-gray-200);
-  --font-weight-semibold: 500;
-  --font-weight-bold: 600;
+  --color-border-color: var(--color-gray-200);
+  --color-action-primary: var(--color-violet-500);
+  --color-action-secondary: var(--color-gray-200);
+  --color-action-tertiary: var(--color-gray-100);
+  --color-action-dark: var(--color-gray-600);
 
-  --color-action1: var(--color-violet-500);
-  --color-action2: var(--color-gray-200);
-  --color-action3: var(--color-gray-100);
-  --color-actionDark: var(--color-gray-600);
+  /* BREAKPOINTS */
+  --breakpoint-sm: 934px;
+  --breakpoint-lg: 1200px;
 
+  /* RADII */
   --radius-panel: calc(var(--spacing) * 3.6);
   --radius-button: calc(var(--spacing) * 1.8);
+
+  /* MEASURES */
+  --spacing-btn: 40px;
+  --spacing-btn-sm: 30px;
+  --spacing-padding-sm: calc(var(--spacing) * 3);
+  --spacing-padding-lg: calc(var(--spacing) * 10);
+  --spacing-header: calc(var(--spacing-btn) + (var(--spacing-padding-sm) * 2));
+  --spacing-sidebar: calc(320px + (calc(var(--spacing-padding-lg) * 2)));
+  --spacing-sidebar-height: calc(100vh - var(--spacing-header));
+  --spacing-complementary-t: calc((var(--spacing) * 3) + var(--spacing-header));
+  --spacing-complementary-h: calc(
+    100vh - var(--spacing-complementary-t) - var(--spacing-header)
+  );
+  --chat: 360px;
+  --spacing-chat-t: 0;
+  --spacing-chat-h: calc(100vh - var(--spacing-chat-t) - var(--spacing-header));
+  --spacing-chat: 340px;
+  --spacing-document: 920px;
 }
 
 body .ps__rail-x {
@@ -91,7 +82,7 @@ body .ps__thumb-y {
     }
     @apply pl-5 p-1 relative;
     &:before {
-      @apply content-[""] absolute left-0 w-paddingSm top-[14px] h-[2px] -mt-[1px] bg-gray-500;
+      @apply content-[""] absolute left-0 w-padding-sm top-[14px] h-[2px] -mt-[1px] bg-gray-500;
     }
   }
 }
