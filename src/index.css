@@ -65,7 +65,7 @@ body .ps__rail-x {
   @apply hidden!;
 }
 body .ps__rail-y {
-  @apply hidden! lg:block!;
+  @apply hidden! lg:block! z-[99999];
 }
 body .ps__thumb-y {
   @apply bg-gray-400;

@@ -7,6 +7,7 @@ import Toolbar from "./Toolbar";
 import Feature from "./Feature";
 import Container from "./Container";
 import Modal from "./Modal";
+import Breacrumbs from "./Breacrumbs";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
@@ -49,27 +50,28 @@ export default function App() {
       }
       main={
         <>
-          <div
-            className={`${
-              feature !== "mappa" ? "max-w-document mx-auto" : ""
-            } w-full flex-1 flex-col flex`}
-          >
-            {!isLoading && (
-              <FeatureTop
-                feature={feature}
-                setFeature={setFeature}
-                showFeatureBar={showFeatureBar}
-                setShowFeatureBar={setShowFeatureBar}
-              />
-            )}
+          <div className="w-full flex-1 flex-col flex">
+            <div className="min-h-header flex items-center px-padding-sm">
+              <Breacrumbs />
+            </div>
 
-            <div className="flex-1 flex flex-col lg:flex-row">
-              <Toolbar
-                feature={feature}
-                showFeatureBar={showFeatureBar}
-                setShowFeatureBar={setShowFeatureBar}
-              />
-              <Feature feature={feature} isLoading={isLoading} />
+            <div className="bg-bg2 rounded-t-panel mr-padding-sm">
+              {!isLoading && (
+                <FeatureTop
+                  feature={feature}
+                  setFeature={setFeature}
+                  showFeatureBar={showFeatureBar}
+                  setShowFeatureBar={setShowFeatureBar}
+                />
+              )}
+              <div className="flex-1 flex flex-col lg:flex-row max-w-document mx-auto">
+                <Toolbar
+                  feature={feature}
+                  showFeatureBar={showFeatureBar}
+                  setShowFeatureBar={setShowFeatureBar}
+                />
+                <Feature feature={feature} isLoading={isLoading} />
+              </div>
             </div>
           </div>
           {!isLoading && null && (
