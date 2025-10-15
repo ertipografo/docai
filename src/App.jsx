@@ -26,6 +26,8 @@ export default function App() {
     <Container
       setIsArchive={setIsArchive}
       setNoteType={setNoteType}
+      setFeature={setFeature}
+      feature={feature}
       side={<div>side</div>}
       main={<div>Main</div>}
       setShow={setShow}
@@ -36,6 +38,8 @@ export default function App() {
       setIsArchive={setIsArchive}
       setNoteType={setNoteType}
       setShow={setShow}
+      feature={feature}
+      setFeature={setFeature}
       show={show}
       side={
         <div
@@ -54,8 +58,12 @@ export default function App() {
       main={
         <>
           <div className="w-full flex-1 flex-col flex">
-            <div className="min-h-header flex items-center px-padding-sm gap-padding-sm">
-              {!show && <Logo />}
+            <div className="min-h-header flex items-center gap-padding-sm">
+              {!show && (
+                <div className="pl-padding-lg -ml-padding-sm">
+                  <Logo />
+                </div>
+              )}
               <Breacrumbs />
             </div>
 

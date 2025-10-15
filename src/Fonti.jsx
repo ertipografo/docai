@@ -22,7 +22,7 @@ export default function Fonti({ setShowModal }) {
   ];
 
   return (
-    <div className="bg-rose-100 mt-auto">
+    <div className="mt-auto">
       {fonti.map((f) => {
         const { cl, label, Icon } = f;
 

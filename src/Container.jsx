@@ -1,16 +1,19 @@
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
-import { ChevronLeft, Menu, PanelRightOpen } from "lucide-react";
+import { ChevronLeft, PanelRightClose, PanelRightOpen } from "lucide-react";
+import { features } from "./utils";
+const cl = "hover:bg-bg2 cursor-pointer w-btn h-btn flexer rounded-btn";
 
 export default function Container({
   side,
   main,
   setIsArchive,
   setNoteType,
+  setFeature,
   show,
   setShow,
+  feature,
 }) {
-  const cl = "hover:bg-bg2 cursor-pointer w-btn h-btn flexer rounded-btn";
   const actions = [
     {
       icon: (
@@ -23,19 +26,19 @@ export default function Container({
     {
       icon: (
         <div className={cl}>
-          <PanelRightOpen size={16} />
+          {show ? <PanelRightOpen size={16} /> : <PanelRightClose size={16} />}
         </div>
       ),
       action: () => setShow((s) => !s),
     },
-    {
+    /*  {
       icon: (
         <div className={cl}>
           <Menu size={16} />
         </div>
       ),
       action: () => setNoteType((s) => (s === "note" ? "doc" : "note")),
-    },
+    }, */
   ];
 
   return (
@@ -53,6 +56,18 @@ export default function Container({
               {icon}
             </div>
           ))}
+          {!show &&
+            features.map((k, r) => (
+              <div
+                className={`h-header w-header flexer`}
+                onClick={() => setFeature(k.value)}
+                key={r}
+              >
+                <div className={`${cl} ${feature === k.value ? "bg-bg2" : ""}`}>
+                  <k.Icon size={16} />
+                </div>
+              </div>
+            ))}
         </div>
         <div className="flex flex-col w-full">
           <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto">
