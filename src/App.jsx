@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { features } from "./utils";
 import Sidebar from "./Sidebar";
-
 import FeatureTop from "./FeatureTop";
 import BottomBar from "./BottomBar";
 import Toolbar from "./Toolbar";
 import Feature from "./Feature";
-import Archive from "./Archive";
 import Container from "./Container";
 import Modal from "./Modal";
 
@@ -18,12 +16,19 @@ export default function App() {
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isArchive, setIsArchive] = useState(true);
+  const [noteType, setNoteType] = useState("note");
 
   return isArchive ? (
-    <Archive setIsArchive={setIsArchive} />
+    <Container
+      setIsArchive={setIsArchive}
+      setNoteType={setNoteType}
+      side={<div>side</div>}
+      main={<div>Main</div>}
+    />
   ) : (
     <Container
       setIsArchive={setIsArchive}
+      setNoteType={setNoteType}
       side={
         <div
           className={`bg-bg1 ${
@@ -38,6 +43,7 @@ export default function App() {
             setShowModal={setShowModal}
             isLoading={isLoading}
             setIsLoading={setIsLoading}
+            noteType={noteType}
           />
         </div>
       }

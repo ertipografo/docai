@@ -1,19 +1,15 @@
-import { useState } from "react";
-import SidebarFeatures from "./SidebarFeatures";
-import SuggestedDocs from "./SuggestedDocs";
 import Title from "./Title";
-import Fonti from "./Fonti";
 import { features } from "./utils";
-import { Shuffle, GitFork, PanelRightClose } from "lucide-react";
+import { PanelRightClose } from "lucide-react";
 import Header from "./Header";
-import Outputs from "./Outputs";
 
 export default function Sidebar({
   feature,
   setFeature,
   show,
-  setIsLoading,
+  noteType,
   setShow,
+  setShowModal,
 }) {
   const collapsedItems = () => {
     const cl = `h-btn flexer cursor-pointer w-btn rounded`;
@@ -36,18 +32,18 @@ export default function Sidebar({
     return items;
   };
 
-  const questions = [
+  /*   const questions = [
     "Riassunto compatto",
     "Mappa concettuale compatta",
     "Famme na frittata",
     "Un quiz piu esteso",
-  ];
+  ]; */
 
   return (
     <>
       <div className="flex flex-col flex-1 h-full overflow-hidden">
         <Header />
-        <Title />
+        <Title noteType={noteType} setShowModal={setShowModal} />
 
         {/* <SidebarFeatures setFeature={setFeature} feature={feature} /> */}
         {/* <div className="flex flex-col gap-padding-sm bg-bg3 -mx-5 p-padding-sm rounded-panel">

@@ -1,7 +1,7 @@
 import { documentTitle } from "./utils";
 import Rating from "./Rating";
-import MiniLabel from "./Minilabel";
-import { User } from "lucide-react";
+import Fonti from "./Fonti";
+import { Folder } from "lucide-react";
 
 /* const Tags = () => {
   const tags = [
@@ -32,40 +32,72 @@ import { User } from "lucide-react";
   );
 };
  */
-export default function Title() {
-  return (
-    <div className="flex flex-col max-w-document mx-auto w-full gap-padding-sm p-padding-lg pt-0">
-      <div className="gap-padding-sm flex h-btn text-xs items-center">
-        <div className="h-btn-sm bg-action-primary/10 text-action-primary px-padding-sm rounded font-semibold flexer">
-          Nota
+export default function Title({ noteType, setShowModal }) {
+  /*   const folders = [
+    "Università telematica eCampus (UNIECAMPUS)",
+    "Didattica generale e speciale",
+  ];
+
+  const categories = (
+    <div className="flex flex-col gap-padding-xs text-text2">
+      {folders.map((f, k) => (
+        <div key={k} className="flex gap-padding-sm font-semibold items-start">
+          <div className="pt-[2.5px]">
+            <Folder
+              size={14}
+              className="fill-action-secondary text-action-secondary"
+            />
+          </div>
+          <span>{f}</span>
         </div>
-        <div className="bg-action-tertiary text-text2 px-padding-sm rounded font-semibold h-btn-sm flexer">
-          Docsity
-        </div>
-        <div className="flexer ml-auto">
+      ))}
+    </div>
+  ); */
+
+  const author = (
+    <div className="flex items-center gap-padding-sm font-semibold bg-bg4 p-padding-sm rounded-button">
+      {/*  <div className="bg-bg2 h-btn w-btn rounded-full" /> */}
+      <div className="flex flex-col gap-px flex-1">
+        <div>Carmela Dangelo 🇰🇲 </div>
+        <div className="flex items-center gap-padding-xs text-xs">
+          <span className="text-text2">23 Documenti</span>
           <Rating />
         </div>
       </div>
-      <h1 className="text-lg leading-tight font-bold">{documentTitle}</h1>
-      <p className="max-w-4xl leading-relaxed">
-        NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica
-        insegnamento CLIL 2, Esercizi di Didattica generale e speciale
-      </p>
-      <div className="flex flex-col gap-1 text-action-primary">
-        <div>Università telematica eCampus (UNIECAMPUS)</div>
-        <div>Didattica generale e speciale</div>
-      </div>
-      <div className="flex items-center gap-padding-sm font-semibold text-xs">
-        <div className="bg-bg3 h-btn w-btn rounded-full" />
-        <div className="flex flex-col gap-px flex-1">
-          <div>Carmela D'Angelo</div>
-          <div className="flex items-center gap-2">
-            <span className="text-text2">23 Documenti</span>
+    </div>
+  );
+
+  return (
+    <div className="flex flex-col max-w-document mx-auto w-full gap-padding-md p-padding-lg pt-padding-sm">
+      <div className="flex flex-col gap-padding-sm">
+        <div className="gap-padding-xs flex text-xs items-center">
+          <div className="h-btn-sm bg-action-primary/10 text-action-primary px-padding-sm rounded-full font-semibold flexer">
+            {noteType}
+          </div>
+          <div className="bg-action-tertiary text-text2 px-padding-sm rounded-full font-semibold h-btn-sm flexer">
+            Docsity
+          </div>
+          <div className="flexer ml-auto">
             <Rating />
-            <span className="text-action-primary">Segui</span>
           </div>
         </div>
+
+        <h1 className="text-lg leading-tight font-bold">{documentTitle}</h1>
+        <p className="max-w-4xl leading-relaxed">
+          NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica
+          insegnamento CLIL 2, Esercizi di Didattica generale e speciale
+        </p>
       </div>
+      {noteType === "note" ? (
+        <>
+          <Fonti setShowModal={setShowModal} />
+        </>
+      ) : (
+        <>
+          {/* {categories} */}
+          {author}
+        </>
+      )}
     </div>
   );
 }

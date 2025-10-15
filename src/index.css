@@ -22,8 +22,8 @@
   --color-bg1: var(--color-white);
   --color-bg2: var(--color-gray-100);
   --color-bg3: var(--color-gray-200);
-  --color-bg4: var(--color-gray-500);
-  --color-border-color: var(--color-gray-200);
+  --color-bg4: var(--color-gray-50);
+  --color-border: var(--color-gray-200);
   --color-action-primary: var(--color-violet-500);
   --color-action-secondary: var(--color-gray-200);
   --color-action-tertiary: var(--color-gray-100);
@@ -43,6 +43,7 @@
   --spacing-btn-sm: 24px;
   --spacing-padding-xs: calc(var(--spacing) * 1.5);
   --spacing-padding-sm: calc(var(--spacing) * 3);
+  --spacing-padding-md: calc(var(--spacing) * 4.5);
   --spacing-padding-lg: calc(var(--spacing) * 10);
   --spacing-header: calc(var(--spacing-btn) + (var(--spacing-padding-sm) * 2));
   --spacing-sidebar: calc(320px + (calc(var(--spacing-padding-lg) * 2)));

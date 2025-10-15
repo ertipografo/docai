@@ -47,7 +47,7 @@ export default function Outputs() {
 
   /* return (
     <div className="mt-auto flex flex-col">
-      <div className="rounded-panel p-padding-sm border border-border-color gap-padding-sm flex flex-col">
+      <div className="rounded-panel p-padding-sm border border-border gap-padding-sm flex flex-col">
         <div className="relative">
           <div className="flex flex-col max-h-[200px] overflow-auto pb-10 relative">
             {outputs.map(({ f, size }, k) => {

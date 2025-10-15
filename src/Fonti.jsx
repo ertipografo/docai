@@ -22,7 +22,10 @@ export default function Fonti({ setShowModal }) {
   ];
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col rounded-panel -mx-padding-sm border border-border p-padding-sm">
+      <span className="text-xs text-text2 font-semibold pl-padding-sm py-padding-xs">
+        Fonti:
+      </span>
       {fonti.map((f) => {
         const { cl, label, Icon } = f;
 
@@ -30,16 +33,12 @@ export default function Fonti({ setShowModal }) {
           <div
             onClick={() => setShowModal(true)}
             key={label}
-            className={`flex flex-col flex-1 lg:flex-0`}
+            className={`h-btn px-padding-sm hover:bg-bg4 rounded-button group flex items-center group cursor-pointer gap-padding-sm font-semibold`}
           >
-            <div
-              className={`hover:bg-bg2 rounded-button h-12 group flex items-center px-padding-sm group cursor-pointer gap-padding-sm font-semibold`}
-            >
-              <Icon size={16} className={`${cl}`} />
-              <span>{label}</span>
-              <div className="ml-auto text-text2 opacity-0 group-hover:opacity-100">
-                <ExternalLink size={16} />
-              </div>
+            <Icon size={16} className={`${cl}`} />
+            <span>{label}</span>
+            <div className="ml-auto text-text2 opacity-0 group-hover:opacity-100">
+              <ExternalLink size={16} />
             </div>
           </div>
         );
