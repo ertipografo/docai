@@ -71,7 +71,13 @@ export default function Title({ noteType, setShowModal }) {
     <div className="flex flex-col max-w-document mx-auto w-full gap-padding-md p-padding-lg pt-padding-sm">
       <div className="flex flex-col gap-padding-sm">
         <div className="gap-padding-xs flex text-xs items-center">
-          <div className="h-btn-sm bg-action-primary/10 text-action-primary px-padding-sm rounded-full font-semibold flexer">
+          <div
+            className={`${
+              noteType === "note"
+                ? "bg-action-note/10 text-action-note"
+                : "bg-action-primary/10 text-action-primary"
+            } capitalize h-btn-sm  px-padding-sm rounded-full font-semibold flexer`}
+          >
             {noteType}
           </div>
           <div className="bg-action-tertiary text-text2 px-padding-sm rounded-full font-semibold h-btn-sm flexer">

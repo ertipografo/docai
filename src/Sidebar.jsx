@@ -2,6 +2,7 @@ import Title from "./Title";
 import { features } from "./utils";
 import { PanelRightClose } from "lucide-react";
 import Header from "./Header";
+import SidebarFeatures from "./SidebarFeatures";
 
 export default function Sidebar({
   feature,
@@ -44,8 +45,8 @@ export default function Sidebar({
       <div className="flex flex-col flex-1 h-full overflow-hidden">
         <Header />
         <Title noteType={noteType} setShowModal={setShowModal} />
+        <SidebarFeatures setFeature={setFeature} feature={feature} />
 
-        {/* <SidebarFeatures setFeature={setFeature} feature={feature} /> */}
         {/* <div className="flex flex-col gap-padding-sm bg-bg3 -mx-5 p-padding-sm rounded-panel">
           <div className="bg-bg1 border border-gray-300 text-gray-400 p-padding-sm rounded-button">
             <div className="mb-padding-sm"> Chiedi al documento...</div>

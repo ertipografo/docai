@@ -1,7 +1,7 @@
 import { LoaderCircle } from "lucide-react";
 const Page = () => {
   return (
-    <div className="bg-bg1 p-padding-lg pb-24 flex flex-col gap-1 rounded-panel">
+    <div className="bg-bg1 p-padding-lg pb-24 flex flex-col gap-1">
       <span className="text-2xl font-bold mb-padding-sm">Titolo pagina</span>
       <span className="text-lg font-semibold">
         Lorem ipsum dolor sit amet consectetur adipisicing elit
@@ -85,15 +85,13 @@ export default function Feature({ feature, isLoading }) {
   const isMap = feature === "mappa";
 
   return isLoading ? (
-    <div className="bg-bg1 flexer rounded-t-panel mb-padding-sm rounded-b-panel flex-1 p-padding-lg">
-      {loadingContents}
-    </div>
+    <div className="bg-bg1 flexer flex-1 p-padding-lg">{loadingContents}</div>
   ) : isMap ? (
-    <div className="bg-bg1 polka mb-padding-sm rounded-b-panel flex-1 p-padding-lg">
+    <div className="bg-bg1 polka flex-1 p-padding-lg">
       {isMap ? <div>{feature}</div> : loadingContents}
     </div>
   ) : (
-    <div className="py-padding-sm flex flex-col gap-padding-lg rounded-b-panel flex-1">
+    <div className="flex flex-col gap-px flex-1">
       {Array.from({ length: 5 }).map((_, i) => (
         <Page key={i} />
       ))}

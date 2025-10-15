@@ -49,19 +49,20 @@ export default function App() {
       }
       main={
         <>
-          {!isLoading && (
-            <FeatureTop
-              feature={feature}
-              setFeature={setFeature}
-              showFeatureBar={showFeatureBar}
-              setShowFeatureBar={setShowFeatureBar}
-            />
-          )}
           <div
             className={`${
-              feature !== "mappa" ? "max-w-document" : ""
+              feature !== "mappa" ? "max-w-document mx-auto" : ""
             } w-full flex-1 flex-col flex`}
           >
+            {!isLoading && (
+              <FeatureTop
+                feature={feature}
+                setFeature={setFeature}
+                showFeatureBar={showFeatureBar}
+                setShowFeatureBar={setShowFeatureBar}
+              />
+            )}
+
             <div className="flex-1 flex flex-col lg:flex-row">
               <Toolbar
                 feature={feature}

@@ -126,8 +126,10 @@ export default function FeatureTop({
   return (
     <>
       <MobileFeatures feature={feature} setFeature={setFeature} />
-
-      <div className="hidden items-center bg-red-100 mt-padding-sm">
+      <div className="min-h-header flex items-center bg-bg1 border-b border-border px-padding-sm">
+        topper
+      </div>
+      <div className="sticky px-padding-sm top-0 z-50 min-h-header flex items-center bg-bg1 border-b border-border">
         <div className="flex-1 gap-padding-sm flex items-center justify-start">
           {hasComplementary && (
             <div

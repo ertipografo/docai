@@ -12,7 +12,7 @@ export default function Container({ side, main, setIsArchive, setNoteType }) {
 
   return (
     <div className="h-screen flex lg:overflow-hidden text-base text-text1 bg-bg2">
-      <div className="w-header justify-end bg-bg3 flex flex-col p-padding-sm gap-padding-sm">
+      <div className="w-header justify-end bg-bg1 border-r border-border flex flex-col p-padding-sm gap-padding-sm">
         {actions.map(({ label, action }) => (
           <div
             className="h-btn w-btn bg-bg1 flexer rounded-button"
@@ -27,7 +27,7 @@ export default function Container({ side, main, setIsArchive, setNoteType }) {
         <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto">
           {side && side}
           <div className="flex-1 flex flex-col lg:overflow-auto">
-            <PerfectScrollbar className="overflow-visible! lg:overflow-hidden! flex flex-col flex-1 px-padding-sm">
+            <PerfectScrollbar className="overflow-visible! lg:overflow-hidden! flex flex-col flex-1 border-l border-border">
               {main}
             </PerfectScrollbar>
           </div>
