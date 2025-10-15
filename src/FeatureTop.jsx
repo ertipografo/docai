@@ -6,11 +6,11 @@ import {
   ArrowDownToLine,
 } from "lucide-react";
 import { features } from "./utils";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 const MobileFeatures = ({ feature, setFeature }) => {
   return (
     <div className="sticky bg-bg2 top-0 z-50">
-      <div className="my-padding-sm bg-bg1 rounded-panel p-padding-sm lg:hidden flex items-center gap-padding-sm text-text1">
+      <div className="h-header lg:hidden flex items-center gap-padding-sm text-text1">
         {features.map((f) => {
           const { Icon } = f;
           return (
@@ -19,8 +19,8 @@ const MobileFeatures = ({ feature, setFeature }) => {
               onClick={() => setFeature(feature === f.value ? null : f.value)}
               className={`${
                 feature === f.value
-                  ? "bg-bg1 text-action-primary"
-                  : "bg-bg3/30 text-text2"
+                  ? "bg-bg1"
+                  : "bg-action-secondary text-text2"
               } h-btn flex-1 px-padding-sm flex rounded-btn justify-center cursor-pointer gap-padding-sm items-center`}
             >
               <Icon size={18} />
@@ -100,32 +100,13 @@ export default function FeatureTop({
   const featureLabel = currentFeature?.label ?? "niente";
   const FeatureIcon = currentFeature?.Icon;
   const hasComplementary = currentFeature?.hasComplementary;
-  const sticker = useRef(null);
-
-  const baseCl = "bg-transparent text-text1";
-  const stickyCl = "bg-bg2";
-
-  const [cl, setCl] = useState(baseCl);
-
-  useEffect(() => {
-    if (sticker?.current) {
-      const observer = new IntersectionObserver(
-        ([e]) => setCl(e.intersectionRatio < 1 ? stickyCl : baseCl),
-        { threshold: [1] }
-      );
-
-      observer.observe(sticker?.current);
-    }
-  }, [sticker]);
 
   return (
     <>
       <MobileFeatures feature={feature} setFeature={setFeature} />
 
-      <div ref={sticker} className="sticky max-w-document mx-auto -top-px z-50">
-        <div
-          className={`${cl} transition-all flex items-center h-header px-padding-sm`}
-        >
+      <div className="sticky max-w-document mx-auto top-header lg:top-0 z-50">
+        <div className="bg-bg2 flex items-center h-header px-padding-sm">
           <div className="flex-1 gap-padding-sm flex items-center justify-start">
             {hasComplementary && (
               <div

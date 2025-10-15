@@ -41,7 +41,7 @@ export default function Container({
   return (
     <div className="h-screen flex text-base text-text1 bg-bg1">
       <div className="flex-1 flex lg:overflow-hidden">
-        <div className="w-header bg-bg1 border-r border-border flex flex-col">
+        <div className="hidden lg:flex w-header bg-bg1 border-r border-border flex-col">
           {actions.map(({ icon, action }, r) => (
             <div
               className={`${
