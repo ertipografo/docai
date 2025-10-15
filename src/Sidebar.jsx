@@ -1,5 +1,4 @@
 import Title from "./Title";
-import Fonti from "./Fonti";
 import Header from "./Header";
 import SidebarFeatures from "./SidebarFeatures";
 
@@ -17,7 +16,6 @@ export default function Sidebar({
 
         <SidebarFeatures setFeature={setFeature} feature={feature} />
       </div>
-      <Fonti setShowModal={setShowModal} />
     </div>
   );
 }

@@ -106,7 +106,7 @@ export default function FeatureTop({
       <MobileFeatures feature={feature} setFeature={setFeature} />
 
       <div className="sticky max-w-document mx-auto top-header lg:top-0 z-50">
-        <div className="bg-bg2 flex items-center h-header px-padding-sm">
+        <div className="bg-bg2 flex items-center h-header">
           <div className="flex-1 gap-padding-sm flex items-center justify-start">
             {hasComplementary && (
               <div

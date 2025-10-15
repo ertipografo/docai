@@ -1,6 +1,11 @@
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
-import { ChevronLeft, PanelRightClose, PanelRightOpen } from "lucide-react";
+import {
+  ChevronLeft,
+  PanelRightClose,
+  PanelRightOpen,
+  Menu,
+} from "lucide-react";
 import { features } from "./utils";
 const cl = "hover:bg-bg2 cursor-pointer w-btn h-btn flexer rounded-btn";
 
@@ -31,14 +36,14 @@ export default function Container({
       ),
       action: () => setShow((s) => !s),
     },
-    /*  {
+    {
       icon: (
         <div className={cl}>
           <Menu size={16} />
         </div>
       ),
       action: () => setNoteType((s) => (s === "note" ? "doc" : "note")),
-    }, */
+    },
   ];
 
   return (

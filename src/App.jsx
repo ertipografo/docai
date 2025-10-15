@@ -7,6 +7,7 @@ import Toolbar from "./Toolbar";
 import Feature from "./Feature";
 import Container from "./Container";
 import Modal from "./Modal";
+import Fonti from "./Fonti";
 import Breacrumbs from "./Breacrumbs";
 import Logo from "./Logo";
 
@@ -58,13 +59,17 @@ export default function App() {
       main={
         <>
           <div className="w-full flex-1 flex-col flex">
-            <div className="min-h-header flex items-center gap-padding-sm">
+            <div className="min-h-header flex items-center gap-padding-sm px-padding-sm">
               {!show && (
                 <div className="pl-padding-lg -ml-padding-sm">
-                  <Logo />
+                  <Logo className="-ml-padding-sm" />
                 </div>
               )}
-              <Breacrumbs />
+              <div className="flex-1 items-center pr-padding-sm flex">
+                <Breacrumbs />
+
+                <Fonti setShowModal={setShowModal} />
+              </div>
             </div>
 
             <div
@@ -82,7 +87,7 @@ export default function App() {
               )}
               <div
                 className={`${
-                  !isMap && !showFeatureBar ? "max-w-document mx-auto" : ""
+                  !isMap ? "max-w-document mx-auto" : ""
                 } flex-1 flex flex-col lg:flex-row`}
               >
                 <Toolbar

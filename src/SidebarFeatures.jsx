@@ -8,7 +8,7 @@ export default function SidebarFeatures({
   isLoading,
 }) {
   return (
-    <div className="flex flex-col rounded-panel gap-padding-sm -mx-padding-md p-padding-sm">
+    <div className="hidden lg:flex flex-col rounded-panel gap-padding-sm py-padding-sm">
       {features.map((f) => {
         const { value, label, Icon } = f;
         const isOriginal = value === "originale";
@@ -24,7 +24,7 @@ export default function SidebarFeatures({
               }}
               className={`${
                 isOpen ? "bg-dark text-text-dark" : ""
-              } h-btn rounded-panel group flex items-center px-padding-sm group cursor-pointer gap-padding-sm font-semibold`}
+              } h-12 rounded-panel group flex items-center px-padding-sm group cursor-pointer gap-padding-sm font-semibold`}
             >
               <Icon
                 size={16}

@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 export default function Breacrumbs() {
   const root = ["Docsity", "ai", "documenti", "Titolo del documento"];
   return (
-    <div className="font-semibold flex gap-2 items-center">
+    <div className="hidden lg:flex font-semibold gap-2 items-center">
       {root.map((r, k) => {
         return (
           <div className="capitalize flex items-center gap-2" key={k}>
