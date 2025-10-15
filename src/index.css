@@ -59,7 +59,7 @@
   --spacing-chat-t: 0;
   --spacing-chat-h: calc(100vh - var(--spacing-chat-t) - var(--spacing-header));
   --spacing-chat: 340px;
-  --spacing-document: 920px;
+  --spacing-document: 1120px;
 }
 
 body .ps__rail-x {

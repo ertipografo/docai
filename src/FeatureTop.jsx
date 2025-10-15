@@ -4,6 +4,7 @@ import {
   Settings2,
   X,
   ArrowDownToLine,
+  Scissors,
 } from "lucide-react";
 import { features } from "./utils";
 import { useState } from "react";
@@ -35,7 +36,7 @@ const MobileFeatures = ({ feature, setFeature }) => {
   );
 };
 
-const Format = () => {
+/* const Format = () => {
   const formats = ["sm", "md", "lg", "xl"];
   const [show, setShow] = useState(false);
   return (
@@ -88,6 +89,42 @@ const Format = () => {
       </div>
     </div>
   );
+}; */
+
+const Format = ({ icon }) => {
+  const [open, setOpen] = useState(false);
+  const Icon = icon;
+  return (
+    <div className="relative flex-1 cursor-pointer">
+      <div
+        onClick={() => setOpen((s) => !s)}
+        className={`${
+          !open ? "rounded-btn" : "rounded-t-btn"
+        } h-btn overflow-hidden bg-bg1 flex items-center`}
+      >
+        <div className="px-padding-sm font-semibold white-space-nowrap flex items-center gap-padding-sm">
+          <Icon size={16} className="text-text2" />
+          <span>Demo output 0</span>
+        </div>
+        <div className="flexer h-full ml-auto aspect-square">
+          {open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        </div>
+      </div>
+      {open && (
+        <div className="absolute top-full w-full bg-bg1 shadow-xl rounded-b-btn">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div
+              className="hover:bg-bg2 font-semibold px-padding-sm h-btn flex gap-padding-sm items-center"
+              key={i}
+            >
+              <Icon size={16} className="text-text2" />
+              <span>{`Output demo ${i}`}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default function FeatureTop({
@@ -105,8 +142,12 @@ export default function FeatureTop({
     <>
       <MobileFeatures feature={feature} setFeature={setFeature} />
 
-      <div className="sticky max-w-document mx-auto top-header lg:top-0 z-50">
-        <div className="bg-bg2 flex items-center h-header">
+      <div
+        className={`${
+          feature !== "mappa" ? "max-w-document bg-bg2" : ""
+        } sticky mx-auto top-header lg:top-0 z-50`}
+      >
+        <div className="flex items-center h-header px-padding-sm">
           <div className="flex-1 gap-padding-sm flex items-center justify-start">
             {hasComplementary && (
               <div
@@ -116,7 +157,7 @@ export default function FeatureTop({
                 {showFeatureBar ? <X size={16} /> : <Settings2 size={16} />}
               </div>
             )}
-            {currentFeature?.hasFormats && <Format />}
+            {currentFeature?.hasFormats && <Format icon={FeatureIcon} />}
           </div>
           <div className="flex-1 flex items-center justify-center gap-padding-sm font-semibold flex whitespace-nowrap">
             {FeatureIcon && <FeatureIcon size={18} />}
