@@ -1,5 +1,7 @@
 import { documentTitle } from "./utils";
 import Rating from "./Rating";
+import MiniLabel from "./Minilabel";
+import { User } from "lucide-react";
 
 /* const Tags = () => {
   const tags = [
@@ -37,7 +39,7 @@ export default function Title() {
         <div className="h-btn-sm bg-action-primary/10 text-action-primary px-padding-sm rounded font-semibold flexer">
           Nota
         </div>
-        <div className="bg-bg3 text-text2 px-padding-sm rounded font-semibold h-btn-sm flexer">
+        <div className="bg-action-tertiary text-text2 px-padding-sm rounded font-semibold h-btn-sm flexer">
           Docsity
         </div>
         <div className="flexer ml-auto">
@@ -52,6 +54,17 @@ export default function Title() {
       <div className="flex flex-col gap-1 text-action-primary">
         <div>Università telematica eCampus (UNIECAMPUS)</div>
         <div>Didattica generale e speciale</div>
+      </div>
+      <div className="flex items-center gap-padding-sm font-semibold text-xs">
+        <div className="bg-bg3 h-btn w-btn rounded-full" />
+        <div className="flex flex-col gap-px flex-1">
+          <div>Carmela D'Angelo</div>
+          <div className="flex items-center gap-2">
+            <span className="text-text2">23 Documenti</span>
+            <Rating />
+            <span className="text-action-primary">Segui</span>
+          </div>
+        </div>
       </div>
     </div>
   );

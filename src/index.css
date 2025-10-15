@@ -7,7 +7,7 @@
   --font-sans: "Work Sans", sans-serif;
   --font-serif: "Fraunces", serif;
   --text-xs: 11px;
-  --text-base: 14px;
+  --text-base: 13px;
   --text-lg: 20px;
   --font-weight-semibold: 500;
   --font-weight-bold: 600;
@@ -41,6 +41,7 @@
   /* MEASURES */
   --spacing-btn: 40px;
   --spacing-btn-sm: 24px;
+  --spacing-padding-xs: calc(var(--spacing) * 1.5);
   --spacing-padding-sm: calc(var(--spacing) * 3);
   --spacing-padding-lg: calc(var(--spacing) * 10);
   --spacing-header: calc(var(--spacing-btn) + (var(--spacing-padding-sm) * 2));
