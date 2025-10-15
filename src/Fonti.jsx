@@ -22,10 +22,7 @@ export default function Fonti({ setShowModal }) {
   ];
 
   return (
-    <div className="flex flex-col rounded-panel -mx-padding-sm border border-border p-padding-sm">
-      <span className="text-xs text-text2 font-semibold pl-padding-sm py-padding-xs">
-        Fonti:
-      </span>
+    <div className="bg-rose-100 mt-auto">
       {fonti.map((f) => {
         const { cl, label, Icon } = f;
 

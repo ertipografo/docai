@@ -1,7 +1,7 @@
 import { documentTitle } from "./utils";
 import Rating from "./Rating";
-import Fonti from "./Fonti";
-import { Folder } from "lucide-react";
+/* import Fonti from "./Fonti";
+import { Folder } from "lucide-react"; */
 
 /* const Tags = () => {
   const tags = [
@@ -68,8 +68,15 @@ export default function Title({ noteType, setShowModal }) {
   );
 
   return (
-    <div className="flex flex-col max-w-document mx-auto w-full gap-padding-md p-padding-lg pt-0">
-      <div className="flex flex-col">
+    <div className="flex flex-col max-w-document mx-auto w-full gap-padding-md border-b border-border">
+      <div className="flex flex-col pt-padding-sm">
+        <h1 className="text-lg leading-tight font-bold mb-padding-sm">
+          {documentTitle}
+        </h1>
+        <p className="max-w-4xl leading-relaxed">
+          NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica
+          insegnamento CLIL 2, Esercizi di Didattica generale e speciale
+        </p>
         <div className="gap-padding-xs flex text-xs h-header items-center">
           <div
             className={`${
@@ -87,25 +94,7 @@ export default function Title({ noteType, setShowModal }) {
             <Rating />
           </div>
         </div>
-
-        <h1 className="text-lg leading-tight font-bold mb-padding-sm">
-          {documentTitle}
-        </h1>
-        <p className="max-w-4xl leading-relaxed">
-          NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica
-          insegnamento CLIL 2, Esercizi di Didattica generale e speciale
-        </p>
       </div>
-      {noteType === "note" ? (
-        <>
-          <Fonti setShowModal={setShowModal} />
-        </>
-      ) : (
-        <>
-          {/* {categories} */}
-          {author}
-        </>
-      )}
     </div>
   );
 }

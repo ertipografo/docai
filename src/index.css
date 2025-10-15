@@ -46,7 +46,7 @@
   --spacing-padding-xs: calc(var(--spacing) * 1.5);
   --spacing-padding-sm: calc(var(--spacing) * 3);
   --spacing-padding-md: calc(var(--spacing) * 4.5);
-  --spacing-padding-lg: calc(var(--spacing) * 10);
+  --spacing-padding-lg: calc(var(--spacing) * 9);
   --spacing-header: calc(var(--spacing-btn) + (var(--spacing-padding-sm) * 2));
   --spacing-sidebar: calc(320px + (calc(var(--spacing-padding-lg) * 2)));
   --spacing-sidebar-height: calc(100vh - var(--spacing-header));

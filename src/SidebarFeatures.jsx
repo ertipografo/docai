@@ -8,10 +8,7 @@ export default function SidebarFeatures({
   isLoading,
 }) {
   return (
-    <div className="hidden lg:flex flex-col gap-padding-xs mx-padding-lg">
-      <span className="font-semibold text-xs text-text2 ml-padding-sm mb-padding-sm">
-        Genera:
-      </span>
+    <>
       {features.map((f) => {
         const { value, label, Icon } = f;
         const isOriginal = value === "originale";
@@ -26,10 +23,8 @@ export default function SidebarFeatures({
                 }
               }}
               className={`${
-                isOpen
-                  ? "text-white bg-action-feature"
-                  : "hover:bg-action-tertiary"
-              } h-12 rounded-panel group flex items-center px-padding-sm group cursor-pointer gap-padding-sm font-semibold`}
+                isOpen ? "text-white bg-action-feature" : "hover:bg-bg4"
+              } h-btn rounded-btn group flex items-center px-padding-sm group cursor-pointer gap-padding-sm font-semibold`}
             >
               <Icon
                 size={16}
@@ -54,6 +49,6 @@ export default function SidebarFeatures({
           </div>
         );
       })}
-    </div>
+    </>
   );
 }

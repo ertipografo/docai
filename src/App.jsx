@@ -54,12 +54,8 @@ export default function App() {
       main={
         <>
           <div className="w-full flex-1 flex-col flex">
-            <div className="min-h-header flex items-center px-padding-sm">
-              {!show && (
-                <div className=" mr-padding-sm">
-                  <Logo />
-                </div>
-              )}
+            <div className="min-h-header flex items-center px-padding-sm gap-padding-sm">
+              {!show && <Logo />}
               <Breacrumbs />
             </div>
 

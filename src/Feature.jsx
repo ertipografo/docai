@@ -91,7 +91,7 @@ export default function Feature({ feature, isLoading }) {
       {isMap ? <div>{feature}</div> : loadingContents}
     </div>
   ) : (
-    <div className="flex flex-col gap-px flex-1">
+    <div className="flex flex-col gap-padding-lg flex-1">
       {Array.from({ length: 5 }).map((_, i) => (
         <Page key={i} />
       ))}

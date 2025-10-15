@@ -1,7 +1,7 @@
 import { ChevronRight } from "lucide-react";
 
 export default function Breacrumbs() {
-  const root = ["home", "ai", "documenti", "Titolo del documento"];
+  const root = ["Docsity", "ai", "documenti", "Titolo del documento"];
   return (
     <div className="font-semibold flex gap-2 items-center">
       {root.map((r, k) => {
