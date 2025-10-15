@@ -47,18 +47,20 @@ export default function Meta({ setShowModal }) {
   ];
 
   return (
-    <div className="flex flex-col gap-padding-sm">
-      <div className="flex items-center gap-padding-sm">
+    <div className="flex flex-col gap-padding-xs">
+      <div className="flex items-center gap-padding-sm items-center">
         {metas.map((m, i) => {
           const isOpen = open === m.label;
           return (
             <div
-              className="text-xs cursor-pointer group items-center gap-padding-xs font-semibold flex"
+              className={`${
+                isOpen ? "bg-bg2" : "bg-bg4 hover:bg-bg2"
+              } text-xs rounded-btn pl-padding-sm pr-padding-xs h-8 cursor-pointer group items-center font-semibold flex`}
               key={i}
               onClick={() => setOpen(() => (isOpen ? null : m.label))}
             >
-              <span className="group-hover:underline">{m.label}</span>
-              <div className="rounded-btn h-5 w-5 bg-bg2 flexer">{m.value}</div>
+              <span>{m.label}</span>
+              <div className="mx-2 text-text2">{m.value}</div>
               {isOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
             </div>
           );

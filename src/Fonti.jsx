@@ -29,7 +29,7 @@ export default function Fonti({ setShowModal }) {
   ];
 
   return (
-    <div className="flex flex-col bg-bg4 text-xs rounded-btn">
+    <div className="flex flex-col bg-bg2 text-xs rounded-btn">
       {fonti.map((f) => {
         const { cl, label, Icon } = f;
 
