@@ -31,8 +31,8 @@ export default function Outputs() {
   ];
 
   return (
-    <div className="mt-auto bg-bg-dark rounded-panel p-padding-sm">
-      <div className="overflow-hidden flex flex-col bg-bg-dark-alt rounded-button">
+    <div className="mt-auto bg-dark rounded-panel p-padding-sm">
+      <div className="overflow-hidden flex flex-col bg-dark-alt rounded-button">
         <div className="text-text2 h-10 flex items-center pl-padding-sm">
           Chiedi al documento...
         </div>

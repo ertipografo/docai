@@ -4,10 +4,9 @@ import {
   Settings2,
   X,
   ArrowDownToLine,
-  ChevronRight,
 } from "lucide-react";
 import { features } from "./utils";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 const MobileFeatures = ({ feature, setFeature }) => {
   return (
     <div className="sticky bg-bg2 top-0 z-50">
@@ -90,27 +89,6 @@ const Format = () => {
     </div>
   );
 };
-/* 
-const Breadcrumbs = () => {
-  const items = [
-    "Store",
-    "Esercizi",
-    "Psicologia e Sociologia",
-    "Didattica generale e speciale",
-  ];
-
-  return (
-    <div className="font-semibold min-h-btn flex items-center mt-padding-sm">
-      <div className="h-btn-sm w-btn-sm mr-padding-sm bg-bg3 rounded-button" />
-      {items.map((t, i) => (
-        <div key={t} className="flex items-center">
-          {i > 0 && <ChevronRight size={14} className="mx-1" />}
-          <span>{t}</span>
-        </div>
-      ))}
-    </div>
-  );
-}; */
 
 export default function FeatureTop({
   feature,
@@ -119,34 +97,58 @@ export default function FeatureTop({
   setShowFeatureBar,
 }) {
   const currentFeature = features.find((f) => f.value === feature);
-
   const featureLabel = currentFeature?.label ?? "niente";
   const FeatureIcon = currentFeature?.Icon;
   const hasComplementary = currentFeature?.hasComplementary;
+  const sticker = useRef(null);
+
+  const baseCl = "bg-transparent text-text1";
+  const stickyCl = "bg-dark text-text-dark";
+
+  const [cl, setCl] = useState(baseCl);
+
+  useEffect(() => {
+    if (sticker?.current) {
+      const observer = new IntersectionObserver(
+        ([e]) => setCl(e.intersectionRatio < 1 ? stickyCl : baseCl),
+        { threshold: [1] }
+      );
+
+      observer.observe(sticker?.current);
+    }
+  }, [sticker]);
+
   return (
     <>
       <MobileFeatures feature={feature} setFeature={setFeature} />
 
-      <div className="sticky max-w-document mx-auto px-padding-sm top-0 z-50 min-h-header flex items-center bg-bg1 border-b border-border">
-        <div className="flex-1 gap-padding-sm flex items-center justify-start">
-          {hasComplementary && (
-            <div
-              onClick={() => setShowFeatureBar((s) => !s)}
-              className="bg-action-secondary rounded-button cursor-pointer h-btn aspect-square flexer"
-            >
-              {showFeatureBar ? <X size={16} /> : <Settings2 size={16} />}
+      <div
+        ref={sticker}
+        className="sticky max-w-document mx-auto px-padding-sm -top-px pt-padding-sm -mt-padding-sm z-50"
+      >
+        <div
+          className={`${cl} transition-all flex items-center rounded-panel h-header px-padding-sm`}
+        >
+          <div className="flex-1 gap-padding-sm flex items-center justify-start">
+            {hasComplementary && (
+              <div
+                onClick={() => setShowFeatureBar((s) => !s)}
+                className="bg-action-secondary rounded-button cursor-pointer h-btn aspect-square flexer"
+              >
+                {showFeatureBar ? <X size={16} /> : <Settings2 size={16} />}
+              </div>
+            )}
+            {currentFeature?.hasFormats && <Format />}
+          </div>
+          <div className="flex-1 flex items-center justify-center gap-padding-sm font-semibold flex whitespace-nowrap">
+            {FeatureIcon && <FeatureIcon size={18} />}
+            {featureLabel}
+          </div>
+          <div className="flex-1 flex items-center justify-end">
+            <div className="flexer gap-padding-sm h-btn px-padding-sm text-xs font-semibold bg-action-secondary text-text1 rounded-button cursor-pointer">
+              <span className="hidden sm:flex">Download</span>
+              <ArrowDownToLine size={16} />
             </div>
-          )}
-          {currentFeature?.hasFormats && <Format />}
-        </div>
-        <div className="flex-1 flex items-center justify-center gap-padding-sm font-semibold flex whitespace-nowrap">
-          {FeatureIcon && <FeatureIcon size={18} />}
-          {featureLabel}
-        </div>
-        <div className="flex-1 flex items-center justify-end">
-          <div className="flexer gap-padding-sm h-btn px-padding-sm text-xs font-semibold bg-action-secondary rounded-button cursor-pointer">
-            <span className="hidden sm:flex">Download</span>
-            <ArrowDownToLine size={16} />
           </div>
         </div>
       </div>

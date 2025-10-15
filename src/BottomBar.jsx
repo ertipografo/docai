@@ -4,7 +4,7 @@ export default function BottomBar({ showChat, setShowChat }) {
   return (
     <div className="sticky bottom-0 z-40">
       <div className="px-padding-sm absolute bottom-padding-sm left-1/2 -translate-x-1/2 w-full max-w-md">
-        <div className="flex h-header items-center px-padding-sm rounded-panel bg-bg-dark text-text-dark">
+        <div className="flex h-header items-center px-padding-sm rounded-panel bg-dark text-text-dark">
           <div className="flex-1 items-center flex">
             <div className="flex gap-padding-sm items-center h-btn px-padding-sm hover:bg-action-dark cursor-pointer rounded-button">
               <Rating />

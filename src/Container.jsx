@@ -1,11 +1,24 @@
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
-import Header from "./Header";
+import { ChevronLeft, Menu } from "lucide-react";
+
 export default function Container({ side, main, setIsArchive, setNoteType }) {
+  const cl = "hover:bg-bg2 cursor-pointer w-btn h-btn flexer rounded-btn";
   const actions = [
-    { label: "arch", action: () => setIsArchive((s) => !s) },
     {
-      label: "ntype",
+      icon: (
+        <div className={cl + " bg-bg2"}>
+          <ChevronLeft size={16} />
+        </div>
+      ),
+      action: () => setIsArchive((s) => !s),
+    },
+    {
+      icon: (
+        <div className={cl}>
+          <Menu size={16} />
+        </div>
+      ),
       action: () => setNoteType((s) => (s === "note" ? "doc" : "note")),
     },
   ];
@@ -13,14 +26,10 @@ export default function Container({ side, main, setIsArchive, setNoteType }) {
   return (
     <div className="h-screen flex text-base text-text1 bg-bg1">
       <div className="flex-1 flex lg:overflow-hidden">
-        <div className="w-header justify-end bg-bg1 border-r border-border flex flex-col p-padding-sm gap-padding-sm">
-          {actions.map(({ label, action }) => (
-            <div
-              className="h-btn w-btn bg-bg1 flexer rounded-button"
-              onClick={action}
-              key={label}
-            >
-              {label}
+        <div className="w-header bg-bg1 border-r border-border flex flex-col">
+          {actions.map(({ icon, action }, r) => (
+            <div className="h-header w-header flexer" onClick={action} key={r}>
+              {icon}
             </div>
           ))}
         </div>

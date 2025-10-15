@@ -26,7 +26,7 @@ import { Folder } from "lucide-react";
             </div>
           );
         })}
-        <div className="bg-bg-dark text-text-dark w-5 rounded flexer">+</div>
+        <div className="bg-dark text-text-dark w-5 rounded flexer">+</div>
       </div>
     </div>
   );
@@ -68,9 +68,9 @@ export default function Title({ noteType, setShowModal }) {
   );
 
   return (
-    <div className="flex flex-col max-w-document mx-auto w-full gap-padding-md p-padding-lg pt-padding-sm">
-      <div className="flex flex-col gap-padding-sm">
-        <div className="gap-padding-xs flex text-xs items-center">
+    <div className="flex flex-col max-w-document mx-auto w-full gap-padding-md p-padding-lg pt-0">
+      <div className="flex flex-col">
+        <div className="gap-padding-xs flex text-xs h-header items-center">
           <div
             className={`${
               noteType === "note"
@@ -88,7 +88,9 @@ export default function Title({ noteType, setShowModal }) {
           </div>
         </div>
 
-        <h1 className="text-lg leading-tight font-bold">{documentTitle}</h1>
+        <h1 className="text-lg leading-tight font-bold mb-padding-sm">
+          {documentTitle}
+        </h1>
         <p className="max-w-4xl leading-relaxed">
           NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica
           insegnamento CLIL 2, Esercizi di Didattica generale e speciale

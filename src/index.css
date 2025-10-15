@@ -17,8 +17,8 @@
   --color-text2: var(--color-gray-400);
   --color-text3: var(--color-gray-300);
   --color-text-dark: var(--color-white);
-  --color-bg-dark: var(--color-gray-800);
-  --color-bg-dark-alt: var(--color-gray-700);
+  --color-dark: var(--color-gray-800);
+  --color-dark-alt: var(--color-gray-700);
   --color-bg1: var(--color-white);
   --color-bg2: var(--color-gray-100);
   --color-bg3: var(--color-gray-200);
@@ -68,7 +68,7 @@ body .ps__rail-y {
   @apply hidden! lg:block! z-[99999];
 }
 body .ps__thumb-y {
-  @apply bg-gray-400;
+  @apply bg-gray-200;
 }
 
 .flexer {

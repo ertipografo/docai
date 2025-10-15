@@ -19,6 +19,8 @@ export default function App() {
   const [isArchive, setIsArchive] = useState(true);
   const [noteType, setNoteType] = useState("note");
 
+  const isMap = feature === "mappa";
+
   return isArchive ? (
     <Container
       setIsArchive={setIsArchive}
@@ -51,11 +53,15 @@ export default function App() {
       main={
         <>
           <div className="w-full flex-1 flex-col flex">
-            <div className="min-h-header flex items-center px-padding-sm">
+            <div className="min-h-header  flex items-center px-padding-sm">
               <Breacrumbs />
             </div>
 
-            <div className="bg-bg2 rounded-t-panel mr-padding-sm">
+            <div
+              className={`bg-bg2 ${
+                isMap ? "p-px" : "px-padding-sm"
+              } mr-padding-sm rounded-t-panel`}
+            >
               {!isLoading && (
                 <FeatureTop
                   feature={feature}
@@ -64,7 +70,11 @@ export default function App() {
                   setShowFeatureBar={setShowFeatureBar}
                 />
               )}
-              <div className="flex-1 flex flex-col lg:flex-row max-w-document mx-auto">
+              <div
+                className={`${
+                  !isMap ? "max-w-document mx-auto" : ""
+                } flex-1 flex flex-col lg:flex-row`}
+              >
                 <Toolbar
                   feature={feature}
                   showFeatureBar={showFeatureBar}
