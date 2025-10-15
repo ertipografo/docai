@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { features } from "./utils";
 import Sidebar from "./Sidebar";
+import Archive from "./Archive";
 import FeatureTop from "./FeatureTop";
 import BottomBar from "./BottomBar";
 import Toolbar from "./Toolbar";
@@ -28,8 +29,7 @@ export default function App() {
       setNoteType={setNoteType}
       setFeature={setFeature}
       feature={feature}
-      side={<div>side</div>}
-      main={<div>Main</div>}
+      main={<Archive />}
       setShow={setShow}
       show={show}
     />
