@@ -68,7 +68,7 @@ export default function Title({ noteType, setShowModal }) {
   );
 
   return (
-    <div className="flex flex-col max-w-document mx-auto w-full gap-padding-md border-b border-border">
+    <div className="flex flex-col max-w-document mx-auto w-full gap-padding-md">
       <div className="flex flex-col pt-padding-sm">
         <h1 className="text-lg leading-tight font-bold mb-padding-sm">
           {documentTitle}
