@@ -20,7 +20,7 @@
   --color-bg-dark: var(--color-gray-800);
   --color-bg-dark-alt: var(--color-gray-700);
   --color-bg1: var(--color-white);
-  --color-bg2: var(--color-gray-50);
+  --color-bg2: var(--color-gray-100);
   --color-bg3: var(--color-gray-200);
   --color-bg4: var(--color-gray-500);
   --color-border-color: var(--color-gray-200);
@@ -28,6 +28,7 @@
   --color-action-secondary: var(--color-gray-200);
   --color-action-tertiary: var(--color-gray-100);
   --color-action-dark: var(--color-gray-600);
+  --color-border-primary: var(--color-purple-500);
 
   /* BREAKPOINTS */
   --breakpoint-sm: 934px;
@@ -39,7 +40,7 @@
 
   /* MEASURES */
   --spacing-btn: 40px;
-  --spacing-btn-sm: 30px;
+  --spacing-btn-sm: 24px;
   --spacing-padding-sm: calc(var(--spacing) * 3);
   --spacing-padding-lg: calc(var(--spacing) * 10);
   --spacing-header: calc(var(--spacing-btn) + (var(--spacing-padding-sm) * 2));

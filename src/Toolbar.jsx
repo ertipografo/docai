@@ -19,7 +19,7 @@ export default function Toolbar({
 
   return ComplementaryComponent ? (
     <div
-      className={`${width} ${height} ${top} ${position} ${transform} shadow-lg lg:shadow-none bg-bg1 lg:bg-bg2 z-[99999] overflow-hidden`}
+      className={`${width} ${height} ${top} ${position} ${transform} shadow-lg lg:shadow-none bg-bg1 lg:bg-bg2 z-[90] overflow-hidden`}
     >
       <div className="flex flex-col h-full p-padding-sm pt-0 pl-0">
         <div className="flex flex-col h-full bg-bg1 p-padding-sm rounded-panel">

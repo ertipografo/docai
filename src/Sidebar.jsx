@@ -45,8 +45,10 @@ export default function Sidebar({
 
   return (
     <>
-      <div className="flex flex-col flex-1 h-full justify-between overflow-hidden">
+      <div className="flex flex-col flex-1 h-full overflow-hidden">
+        <Header />
         <Title />
+
         {/* <SidebarFeatures setFeature={setFeature} feature={feature} /> */}
         {/* <div className="flex flex-col gap-padding-sm bg-bg3 -mx-5 p-padding-sm rounded-panel">
           <div className="bg-bg1 border border-gray-300 text-gray-400 p-padding-sm rounded-button">

@@ -79,7 +79,7 @@ function ChatComponent({ setShowChat }) {
 export default function Chat({ showChat, setShowChat }) {
   return (
     <div
-      className={`bg-transparent lg:bg-bg2 z-[99998] ${
+      className={`bg-transparent lg:bg-bg2 ${
         !showChat
           ? "w-0 min-w-0 lg:w-0"
           : "min-w-chat w-[50vw] lg:min-w-chat lg:w-[20vw]"

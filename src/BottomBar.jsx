@@ -2,7 +2,7 @@ import { MessagesSquare, X } from "lucide-react";
 import Rating from "./Rating";
 export default function BottomBar({ showChat, setShowChat }) {
   return (
-    <div className="sticky bottom-0 z-[99997]">
+    <div className="sticky bottom-0 z-40">
       <div className="px-padding-sm absolute bottom-padding-sm left-1/2 -translate-x-1/2 w-full max-w-md">
         <div className="flex h-header items-center px-padding-sm rounded-panel bg-bg-dark text-text-dark">
           <div className="flex-1 items-center flex">

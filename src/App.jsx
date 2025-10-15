@@ -25,7 +25,11 @@ export default function App() {
     <Container
       setIsArchive={setIsArchive}
       side={
-        <div className={`${!show ? "w-full w-header" : "w-full lg:w-sidebar"}`}>
+        <div
+          className={`bg-bg1 ${
+            !show ? "w-full w-header" : "w-full lg:w-sidebar"
+          }`}
+        >
           <Sidebar
             feature={feature}
             setFeature={setFeature}

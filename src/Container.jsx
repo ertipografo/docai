@@ -8,8 +8,6 @@ export default function Container({ side, main, setIsArchive }) {
     <div className="h-screen flex lg:overflow-hidden text-base text-text1 bg-bg2">
       <OutBar setIsArchive={setIsArchive} />
       <div className="flex flex-col w-full">
-        <Header />
-
         <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto">
           {side && side}
           <div className="flex-1 flex flex-col lg:overflow-auto">

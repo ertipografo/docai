@@ -1,4 +1,3 @@
-import { ChevronRight } from "lucide-react";
 import { documentTitle } from "./utils";
 import Rating from "./Rating";
 
@@ -35,17 +34,17 @@ export default function Title() {
   return (
     <div className="flex flex-col max-w-document mx-auto w-full gap-padding-sm p-padding-lg pt-0">
       <div className="gap-padding-sm flex h-btn text-xs items-center">
-        <div className="h-6 bg-violet-100 text-violet-400 px-padding-sm rounded font-semibold flexer">
+        <div className="h-btn-sm bg-action-primary/10 text-action-primary px-padding-sm rounded font-semibold flexer">
           Nota
         </div>
-        <div className="bg-bg3 text-text2 px-padding-sm rounded font-semibold h-6 flexer">
+        <div className="bg-bg3 text-text2 px-padding-sm rounded font-semibold h-btn-sm flexer">
           Docsity
         </div>
         <div className="flexer ml-auto">
           <Rating />
         </div>
       </div>
-      <h1 className="text-lg leading-[1.4] font-bold">{documentTitle}</h1>
+      <h1 className="text-lg leading-tight font-bold">{documentTitle}</h1>
       <p className="max-w-4xl leading-relaxed">
         NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica
         insegnamento CLIL 2, Esercizi di Didattica generale e speciale
