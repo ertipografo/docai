@@ -4,7 +4,7 @@ import Meta from "./Meta";
 /* import Fonti from "./Fonti";
 import { Folder } from "lucide-react"; */
 
-export default function Title({ noteType, setShowModal }) {
+export default function Title({ noteType }) {
   /*   const folders = [
     "Università telematica eCampus (UNIECAMPUS)",
     "Didattica generale e speciale",
@@ -62,14 +62,10 @@ export default function Title({ noteType, setShowModal }) {
         <h1 className="text-lg leading-tight font-bold mb-padding-sm">
           {documentTitle}
         </h1>
-        <p className="max-w-4xl leading-relaxed">
-          NUOVO PANIERE 2025 CLIL Ecampus INGLESE 8 Ottobre 2024 didattica
-          insegnamento CLIL 2, Esercizi di Didattica generale e speciale
+        <p className="max-w-4xl leading-relaxed r">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus,
+          quidem maxime distinctio dicta at nihil suscipit...
         </p>
-
-        <div className="flex flex-col gap-padding-sm mt-padding-sm">
-          <Meta setShowModal={setShowModal} />
-        </div>
       </div>
     </div>
   );

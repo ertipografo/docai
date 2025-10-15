@@ -13,7 +13,7 @@ export default function SuggestedDocs() {
   const [show, setShow] = useState(true);
 
   return (
-    <div className="hidden lg:flex flex-col overflow-hidden mt-auto px-padding-lg">
+    <div className="hidden lg:flex flex-col overflow-hidden mt-auto border-t border-border px-padding-lg">
       <div className="flex flex-col">
         {show && (
           <>

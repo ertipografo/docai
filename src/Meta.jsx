@@ -1,12 +1,4 @@
-import {
-  FileImage,
-  FileAudio,
-  FileText,
-  ExternalLink,
-  ChevronDown,
-  FolderGit2,
-  ChevronUp,
-} from "lucide-react";
+import { SquarePen, ChevronDown, ChevronUp } from "lucide-react";
 import Fonti from "./Fonti";
 import { useState } from "react";
 const Tags = () => {
@@ -25,13 +17,13 @@ const Tags = () => {
           return (
             <div
               key={i}
-              className="rounded-full flexer bg-bg2 h-btn-sm px-padding-sm"
+              className="rounded flexer bg-bg2 hover:bg-bg3 hover:text-text1 cursor-pointer h-btn-sm px-padding-sm"
             >
               {tag}
             </div>
           );
         })}
-        <div className="bg-bg2 aspect-square cursor-pointer h-btn-sm rounded-full flexer">
+        <div className="bg-bg2 aspect-square hover:bg-bg3 hover:text-text1 cursor-pointer h-btn-sm rounded flexer">
           +
         </div>
       </div>
@@ -47,17 +39,17 @@ export default function Meta({ setShowModal }) {
   ];
 
   return (
-    <div className="flex flex-col gap-padding-xs">
-      <div className="flex items-center gap-padding-sm items-center">
+    <div className="relative">
+      <div className="flex items-center gap-padding-sm items-center text-xs font-semibold">
         {metas.map((m, i) => {
           const isOpen = open === m.label;
           return (
             <div
               className={`border ${
                 isOpen
-                  ? "border-border-hover"
-                  : " border-border hover:border-border-hover"
-              } text-xs rounded-btn pl-padding-sm pr-padding-xs h-8 cursor-pointer group items-center font-semibold flex`}
+                  ? "bg-bg4 border-border-hover"
+                  : "border-border hover:border-border-hover"
+              } rounded-btn pl-padding-sm pr-padding-xs h-btn-md cursor-pointer group items-center flex`}
               key={i}
               onClick={() => setOpen(() => (isOpen ? null : m.label))}
             >
@@ -67,10 +59,17 @@ export default function Meta({ setShowModal }) {
             </div>
           );
         })}
+        <div className="h-btn-md cursor-pointer rounded-btn gap-padding-xs ml-auto flexer text-text2 hover:text-text1">
+          <SquarePen size={14} />
+          <span>Edit</span>
+        </div>
       </div>
-
-      {open === metas[1].label && <Fonti setShowModal={setShowModal} />}
-      {open === metas[0].label && <Tags />}
+      {open && (
+        <div className="z-50 bg-bg1 border border-border rounded-btn p-padding-xs mt-padding-xs absolute top-full left-0 w-full">
+          {open === metas[1].label && <Fonti setShowModal={setShowModal} />}
+          {open === metas[0].label && <Tags />}
+        </div>
+      )}
     </div>
   );
 }

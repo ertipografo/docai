@@ -43,6 +43,8 @@
 
   /* MEASURES */
   --spacing-btn: 40px;
+  --spacing-btn-lg: 48px;
+  --spacing-btn-md: 32px;
   --spacing-btn-sm: 24px;
   --spacing-padding-xs: calc(var(--spacing) * 1.5);
   --spacing-padding-sm: calc(var(--spacing) * 3);
