@@ -53,8 +53,10 @@ export default function Meta({ setShowModal }) {
           const isOpen = open === m.label;
           return (
             <div
-              className={`${
-                isOpen ? "bg-bg2" : "bg-bg4 hover:bg-bg2"
+              className={`border ${
+                isOpen
+                  ? "border-border-hover"
+                  : " border-border hover:border-border-hover"
               } text-xs rounded-btn pl-padding-sm pr-padding-xs h-8 cursor-pointer group items-center font-semibold flex`}
               key={i}
               onClick={() => setOpen(() => (isOpen ? null : m.label))}

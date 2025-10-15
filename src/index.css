@@ -23,7 +23,8 @@
   --color-bg2: var(--color-gray-100);
   --color-bg3: var(--color-gray-200);
   --color-bg4: var(--color-gray-50);
-  --color-border: var(--color-gray-100);
+  --color-border: var(--color-gray-200);
+  --color-border-hover: var(--color-gray-300);
   --color-action-primary: var(--color-sky-500);
   --color-action-note: var(--color-violet-500);
   --color-action-secondary: var(--color-gray-200);
