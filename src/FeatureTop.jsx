@@ -145,7 +145,7 @@ export default function FeatureTop({
       <div
         className={`${
           feature !== "mappa" ? "max-w-document bg-bg2" : ""
-        } sticky mx-auto top-header lg:top-0 z-50`}
+        } sticky mx-auto top-header lg:top-0 z-50 rounded-b-panel`}
       >
         <div className="flex items-center h-header px-padding-sm">
           <div className="flex-1 gap-padding-sm flex items-center justify-start">

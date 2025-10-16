@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { features } from "./utils";
 const cl = "hover:bg-bg2 cursor-pointer w-btn h-btn flexer rounded-btn";
-
+import Chat from "./Chat";
 export default function Container({
   side,
   main,
@@ -18,6 +18,8 @@ export default function Container({
   show,
   setShow,
   feature,
+  showChat,
+  setShowChat,
 }) {
   const actions = [
     {
@@ -86,6 +88,7 @@ export default function Container({
                 {main}
               </PerfectScrollbar>
             </div>
+            {showChat && <Chat showChat={showChat} setShowChat={setShowChat} />}
           </div>
         </div>
       </div>

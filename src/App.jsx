@@ -32,6 +32,8 @@ export default function App() {
       main={<Archive />}
       setShow={setShow}
       show={show}
+      showChat={showChat}
+      setShowChat={setShowChat}
     />
   ) : (
     <Container
@@ -41,6 +43,8 @@ export default function App() {
       feature={feature}
       setFeature={setFeature}
       show={show}
+      showChat={showChat}
+      setShowChat={setShowChat}
       side={
         <div
           className={`bg-bg1 ${
@@ -96,9 +100,10 @@ export default function App() {
               </div>
             </div>
           </div>
-          {!isLoading && null && (
+          {!isLoading && (
             <BottomBar showChat={showChat} setShowChat={setShowChat} />
           )}
+
           <Modal setShowModal={setShowModal} showModal={showModal} />
         </>
       }
