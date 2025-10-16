@@ -75,7 +75,7 @@ export default function App() {
 
             <div
               className={`bg-bg2 ${
-                isMap ? "p-px" : "px-padding-sm"
+                isMap ? "p-px" : "px-padding-sm pb-padding-sm rounded-b-panel"
               } mr-padding-sm rounded-t-panel`}
             >
               {!isLoading && (
@@ -100,9 +100,10 @@ export default function App() {
               </div>
             </div>
           </div>
-          {/*  {!isLoading && (
-            <BottomBar showChat={showChat} setShowChat={setShowChat} />
-          )} */}
+          {!isLoading && (
+            <BottomBar feature={feature} setFeature={setFeature} />
+          )}
+          {!isMap && <div className="flexer min-h-40">Qui footer</div>}
 
           <Modal setShowModal={setShowModal} showModal={showModal} />
         </>

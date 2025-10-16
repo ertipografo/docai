@@ -8,11 +8,11 @@ import {
 import Tree from "./Tree";
 
 export const features = [
-  {
+  /*   {
     label: "Documento Originale",
     Icon: FileText,
     value: "originale",
-  },
+  }, */
   { label: "Riassunto", Icon: Scissors, value: "riassunto", hasFormats: true },
   {
     label: "Mappa Concettuale",

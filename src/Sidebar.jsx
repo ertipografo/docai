@@ -38,7 +38,7 @@ export default function Sidebar({
           </div>
         </div>
       </div> */}
-      <Chat2 />
+      {/*  <Chat2 /> */}
     </div>
   );
 }

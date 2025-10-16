@@ -15,24 +15,6 @@ const Bubble = ({ idx }) => {
     </div>
   );
 };
-/* 
-export default function Chat() {
-  return (
-    <div className="flex-1 m-padding-sm rounded-panel bg-bg2 relative mt-auto overflow-auto max-h-[400px]">
-      <PerfectScrollbar>
-        <div className="flex flex-col gap-2 p-2">
-          {Array.from({ length: titles.length }).map((_, i) => (
-            <Bubble key={i} idx={i} />
-          ))}
-        </div>
-        <div className="sticky bottom-0 left-0 w-full p-padding-sm">
-          <div className="bg-white h-10">zip</div>
-        </div>
-      </PerfectScrollbar>
-    </div>
-  );
-}
- */
 
 export default function Chat() {
   return (

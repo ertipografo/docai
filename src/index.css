@@ -51,7 +51,8 @@
   --spacing-padding-md: calc(var(--spacing) * 4.5);
   --spacing-padding-lg: calc(var(--spacing) * 9);
   --spacing-header: calc(var(--spacing-btn) + (var(--spacing-padding-sm) * 2));
-  --spacing-sidebar: calc(320px + (calc(var(--spacing-padding-lg) * 2)));
+  /*  --spacing-sidebar: calc(320px + (calc(var(--spacing-padding-lg) * 2))); */
+  --spacing-sidebar: clamp(360px, 25vw, 520px);
   --spacing-sidebar-height: calc(100vh - var(--spacing-header));
   --spacing-complementary-t: calc(var(--spacing-header));
   --spacing-complementary-h: calc(100vh - var(--spacing-complementary-t));
