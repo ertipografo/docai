@@ -21,19 +21,17 @@ export default function Toolbar({
 
   return ComplementaryComponent ? (
     <div
-      className={`${width} ${height} ${top} ${position} ${transform} shadow-lg lg:shadow-none bg-bg1 lg:bg-bg2 z-[90] overflow-hidden`}
+      className={`${width} ${height} ${top} ${position} ${transform} shadow-lg lg:shadow-none z-[90] overflow-hidden`}
     >
-      <div className="flex flex-col h-full pr-padding-sm">
-        <div className="flex flex-col h-full bg-bg1 p-padding-sm rounded-panel">
-          <div className="h-10 flex items-center pr-padding-sm pl-padding-sm justify-between">
-            <span className="font-semibold">Complementary</span>
-            <div
-              onClick={() => setShowFeatureBar((s) => !s)}
-              className="h-btn aspect-square hover:bg-action-tertiary rounded-btn cursor-pointer flex items-center justify-center lg:hidden"
-            >
-              <X size={18} />
-            </div>
+      <div className="flex flex-col h-full bg-bg2">
+        <div className="flex flex-col h-full p-padding-sm rounded-panel">
+          <div
+            onClick={() => setShowFeatureBar((s) => !s)}
+            className="z-50 hover:bg-bg1 h-btn w-btn hover:bg-action-tertiary rounded-btn cursor-pointer flex items-center justify-center absolute top-padding-sm right-padding-sm"
+          >
+            <X size={18} />
           </div>
+
           <div className="flex-1 w-sidebar">
             <ComplementaryComponent />
           </div>

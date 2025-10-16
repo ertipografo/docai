@@ -38,6 +38,7 @@
   --breakpoint-lg: 1200px;
 
   /* RADII */
+  --radius-ultra: calc(var(--spacing) * 6);
   --radius-panel: calc(var(--spacing) * 3.6);
   --radius-btn: calc(var(--spacing) * 1.8);
 
@@ -55,7 +56,7 @@
   --spacing-sidebar: clamp(360px, 25vw, 520px);
   --spacing-complementary: 320px;
   --spacing-sidebar-height: calc(100vh - var(--spacing-header));
-  --spacing-complementary-t: calc(var(--spacing-header));
+  --spacing-complementary-t: 0px;
   --spacing-complementary-h: calc(100vh - var(--spacing-complementary-t));
   --chat: 360px;
   --spacing-chat-t: 0;

@@ -62,41 +62,35 @@ export default function App() {
       main={
         <>
           <div className="w-full flex-1 flex-col flex">
-            <div className="min-h-header hidden lg:flex items-center gap-padding-sm px-padding-sm">
-              {!show && (
-                <div className="pl-padding-lg -ml-padding-sm">
-                  <Logo className="-ml-padding-sm" />
-                </div>
-              )}
+            <div className="min-h-header flex items-center gap-padding-sm ml-padding-sm lg:ml-0 mr-padding-sm">
               <div className="flex-1 items-center pr-padding-sm flex">
-                <Breacrumbs />
-              </div>
-            </div>
-
-            <div
-              className={`bg-bg2 ${
-                isMap ? "p-px" : "px-padding-sm pb-padding-sm rounded-b-panel"
-              } lg:ml-0 mx-padding-sm rounded-t-panel`}
-            >
-              {!isLoading && (
                 <FeatureTop
                   feature={feature}
                   setFeature={setFeature}
                   showFeatureBar={showFeatureBar}
                   setShowFeatureBar={setShowFeatureBar}
                 />
-              )}
+              </div>
+            </div>
+
+            <div
+              className={`bg-bg2 ${
+                isMap
+                  ? ""
+                  : "px-padding-sm pt-padding-sm pb-padding-sm rounded-b-ultra"
+              } lg:ml-0 mx-padding-sm rounded-t-ultra`}
+            >
               <div
                 className={`${
                   !isMap ? "max-w-document mx-auto" : ""
                 } flex-1 flex flex-col lg:flex-row`}
               >
+                <Feature feature={feature} isLoading={isLoading} />
                 <Toolbar
                   feature={feature}
                   showFeatureBar={showFeatureBar}
                   setShowFeatureBar={setShowFeatureBar}
                 />
-                <Feature feature={feature} isLoading={isLoading} />
               </div>
             </div>
           </div>
