@@ -15,7 +15,9 @@ export default function Toolbar({
   const transform = `lg:translate-x-0 ${
     showFeatureBar ? "translate-x-0" : "-translate-x-full"
   }`;
-  const width = `w-sidebar ${showFeatureBar ? "lg:w-sidebar" : "lg:w-0"}`;
+  const width = `w-complementary ${
+    showFeatureBar ? "lg:w-complementary" : "lg:w-0"
+  }`;
 
   return ComplementaryComponent ? (
     <div

@@ -29,7 +29,7 @@ export default function Fonti({ setShowModal }) {
   ];
 
   return (
-    <div className="flex flex-col text-xs">
+    <div className="flex flex-col border rounded-btn border-border">
       {fonti.map((f) => {
         const { cl, label, Icon } = f;
 
@@ -37,7 +37,7 @@ export default function Fonti({ setShowModal }) {
           <div
             onClick={() => setShowModal(true)}
             key={label}
-            className={`hover:bg-bg4 h-btn px-padding-sm rounded group flex items-center group cursor-pointer gap-padding-sm font-semibold`}
+            className={`h-btn px-padding-sm rounded group flex items-center group cursor-pointer gap-padding-sm font-semibold`}
           >
             <Icon size={16} className={`${cl}`} />
             <span className="whitespace-nowrap">{label}</span>

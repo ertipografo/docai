@@ -1,4 +1,4 @@
-import { SquarePen, ChevronDown, ChevronUp } from "lucide-react";
+import { SquarePen, ChevronDown, BookUp2 } from "lucide-react";
 import Fonti from "./Fonti";
 import { useState } from "react";
 const Tags = () => {
@@ -32,44 +32,30 @@ const Tags = () => {
 };
 
 export default function Meta({ setShowModal }) {
-  const [open, setOpen] = useState(null);
-  const metas = [
-    { label: "Tag", value: 6 },
-    { label: "Fonti", value: 4 },
-  ];
-
+  const [show, setShow] = useState(false);
   return (
-    <div className="relative">
-      <div className="flex items-center gap-padding-sm items-center text-xs font-semibold">
-        {metas.map((m, i) => {
-          const isOpen = open === m.label;
-          return (
-            <div
-              className={`border ${
-                isOpen
-                  ? "bg-bg4 border-border-hover"
-                  : "border-border hover:border-border-hover"
-              } rounded-btn pl-padding-sm pr-padding-xs h-btn-md cursor-pointer group items-center flex`}
-              key={i}
-              onClick={() => setOpen(() => (isOpen ? null : m.label))}
-            >
-              <span>{m.label}</span>
-              <div className="mx-2 text-text2">{m.value}</div>
-              {isOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+    <div className="flex flex-col gap-padding-sm">
+      {/*   <div className="flex flex-col gap-padding-sm">
+        <div className="flex items-center justify-between">
+          <div
+            onClick={() => setShow((s) => !s)}
+            className="font-semibold bg-bg4 rounded-btn overflow-hidden flex items-center h-btn cursor-pointer gap-padding-xs px-padding-sm"
+          >
+            <BookUp2 size={16} />
+            <span className="ml-padding-xs">Fonti</span>
+            <div className="h-6 w-6 text-text2 flexer bg-bg1 rounded-btn">
+              4
             </div>
-          );
-        })}
-        <div className="h-btn-md cursor-pointer rounded-btn gap-padding-xs ml-auto flexer text-text2 hover:text-text1">
-          <SquarePen size={14} />
-          <span>Edit</span>
+            <ChevronDown size={14} className="ml-auto" />
+          </div>
+          <div className="text-xs font-semibold h-btn-md cursor-pointer rounded-btn gap-padding-xs ml-auto flexer text-text2 hover:text-text1">
+            <SquarePen size={14} />
+            <span>Edit</span>
+          </div>
         </div>
-      </div>
-      {open && (
-        <div className="z-50 bg-bg1 border border-border rounded-btn p-padding-xs mt-padding-xs absolute top-full left-0 w-full">
-          {open === metas[1].label && <Fonti setShowModal={setShowModal} />}
-          {open === metas[0].label && <Tags />}
-        </div>
-      )}
+        {show && <Fonti setShowModal={setShowModal} />}
+      </div> */}
+      <Tags />
     </div>
   );
 }

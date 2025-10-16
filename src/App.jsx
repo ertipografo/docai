@@ -76,7 +76,7 @@ export default function App() {
             <div
               className={`bg-bg2 ${
                 isMap ? "p-px" : "px-padding-sm pb-padding-sm rounded-b-panel"
-              } mr-padding-sm rounded-t-panel`}
+              } lg:ml-0 mx-padding-sm rounded-t-panel`}
             >
               {!isLoading && (
                 <FeatureTop

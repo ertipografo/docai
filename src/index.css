@@ -53,6 +53,7 @@
   --spacing-header: calc(var(--spacing-btn) + (var(--spacing-padding-sm) * 2));
   /*  --spacing-sidebar: calc(320px + (calc(var(--spacing-padding-lg) * 2))); */
   --spacing-sidebar: clamp(360px, 25vw, 520px);
+  --spacing-complementary: 320px;
   --spacing-sidebar-height: calc(100vh - var(--spacing-header));
   --spacing-complementary-t: calc(var(--spacing-header));
   --spacing-complementary-h: calc(100vh - var(--spacing-complementary-t));
