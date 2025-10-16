@@ -27,15 +27,15 @@ export default function BottomBar({ setFeature, feature }) {
   const btn =
     "cursor-pointer capitalize flex h-btn rounded-btn items-center font-semibold overflow-hidden";
   const active = "bg-violet-200 text-violet-900";
+  const activeChat = "bg-gray-100 text-text1";
   const inactive = "bg-gray-600 text-gray-300";
   const inner = "flex h-btn gap-padding-xs px-padding-sm items-center";
   return (
     <div className="sticky bottom-0 z-[99] py-padding-lg px-padding-sm">
-      <div className="bg-gray-800 text-white max-w-4xl mx-auto rounded-panel flex flex-col overflow-hidden">
+      <div className="bg-gray-800 text-white max-w-2xl mx-auto rounded-panel flex flex-col overflow-hidden">
         <AdditionalComponent open={open} feature={feature} setOpen={setOpen} />
         <div className="h-header bg-gray-700 gap-padding-md flex items-center px-padding-sm justify-between">
           <div className="gap-padding-sm flex items-center">
-            <span className="text-gray-400 text-xs font-semibold">Genera:</span>
             {features.map((f, i) => {
               const { Icon } = f;
               return (
@@ -53,7 +53,7 @@ export default function BottomBar({ setFeature, feature }) {
                     }}
                   >
                     <Icon size={16} />
-                    <span>{f.value}</span>
+                    <span className="hidden md:flex">{f.value}</span>
                   </div>
                   <div
                     className="group h-btn mr-padding-sm flex items-center"
@@ -72,7 +72,7 @@ export default function BottomBar({ setFeature, feature }) {
           </div>
           {/* <div className="h-btn-sm w-px bg-gray-500" /> */}
           <div
-            className={`${btn} ${open === "chat" ? active : inactive}`}
+            className={`${btn} ${open === "chat" ? activeChat : inactive}`}
             onClick={() => setOpen((r) => (r === "chat" ? null : "chat"))}
           >
             <div className={inner}>

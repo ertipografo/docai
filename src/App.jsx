@@ -62,7 +62,7 @@ export default function App() {
       main={
         <>
           <div className="w-full flex-1 flex-col flex">
-            <div className="min-h-header flex items-center gap-padding-sm px-padding-sm">
+            <div className="min-h-header hidden lg:flex items-center gap-padding-sm px-padding-sm">
               {!show && (
                 <div className="pl-padding-lg -ml-padding-sm">
                   <Logo className="-ml-padding-sm" />

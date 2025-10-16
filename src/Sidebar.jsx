@@ -20,25 +20,10 @@ export default function Sidebar({
       <div className="px-padding-lg my-padding-sm py-padding-sm">
         <Meta setShowModal={setShowModal} />
       </div>
-      {/* <div className="px-padding-lg">
-        <SidebarFeatures setFeature={setFeature} feature={feature} />
+      <div className="hidden lg:flex text-xs font-semibold text-text2 flex-1 mb-padding-lg rounded-panel mx-padding-lg bg-bg4 items-center justify-center">
+        output?
       </div>
-
-      <SuggestedDocs /> */}
-      {/* <div className="p-padding-sm mt-auto border-t border-border">
-        <div className="flex flex-col">
-          <div className="h-20 bg-teal-100">qui</div>
-          <div className="p-1 flex items-center border border-border rounded-btn overflow-hidden">
-            <div className="h-btn flex-1 flex items-center px-2">
-              Qui chiedi
-            </div>
-            <div className="bg-gray-900 text-white rounded font-semibold text-gray-900 h-btn flexer px-padding-sm">
-              Chiedi
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/*  <Chat2 /> */}
+      <SuggestedDocs />
     </div>
   );
 }

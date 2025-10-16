@@ -29,7 +29,7 @@ export default function Fonti({ setShowModal }) {
   ];
 
   return (
-    <div className="flex flex-col border rounded-btn border-border">
+    <div className="flex flex-col">
       {fonti.map((f) => {
         const { cl, label, Icon } = f;
 

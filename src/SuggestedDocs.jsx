@@ -17,7 +17,7 @@ export default function SuggestedDocs() {
       <div className="flex flex-col">
         {show && (
           <>
-            <div className="flex justify-between text-text2 items-center">
+            <div className="flex justify-between text-text2 items-center pt-padding-sm">
               <span className="font-semibold capitalize h-btn flex items-center">
                 {cur}
               </span>
@@ -38,7 +38,9 @@ export default function SuggestedDocs() {
                     className={`cursor-pointer group flex items-center`}
                   >
                     <div className="flex flex-col gap-padding-xs flex-1">
-                      <span className="font-semibold">{titles[index]}</span>
+                      <span className="font-semibold group-hover:underline">
+                        {titles[index]}
+                      </span>
                       <div className="flex items-center gap-padding-sm">
                         {features.map((f, i) => {
                           const { value, Icon } = f;
