@@ -44,5 +44,11 @@ export const titles = [
   "Delectus dolores corrupti sint amet facilis",
   "Distinctio pariatur officia illum voluptatibus ex illo blanditiis neque ab",
   "Nobis in. Lorem ipsum dolor sit amet consectetur adipisicing elit",
-  " Consectetur alias voluptates venia",
+  "Consectetur alias voluptates venia",
+  "Ipsum dolor sit amet consectetur adipisicing elit alias voluptates",
+  "Consectetur alias voluptates veniam",
+  "Delectus dolores corrupti sint amet facilis",
+  "Distinctio pariatur officia illum voluptatibus ex illo blanditiis neque ab",
+  "Nobis in. Lorem ipsum dolor sit amet consectetur adipisicing elit",
+  "Consectetur alias voluptates venia",
 ];

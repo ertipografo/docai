@@ -100,9 +100,9 @@ export default function App() {
               </div>
             </div>
           </div>
-          {!isLoading && (
+          {/*  {!isLoading && (
             <BottomBar showChat={showChat} setShowChat={setShowChat} />
-          )}
+          )} */}
 
           <Modal setShowModal={setShowModal} showModal={showModal} />
         </>
