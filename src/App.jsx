@@ -62,16 +62,13 @@ export default function App() {
       main={
         <>
           <div className="w-full flex-1 flex-col flex">
-            <div className="min-h-header flex items-center gap-padding-sm ml-padding-sm lg:ml-0 mr-padding-sm">
-              <div className="flex-1 items-center pr-padding-sm flex">
-                <FeatureTop
-                  feature={feature}
-                  setFeature={setFeature}
-                  showFeatureBar={showFeatureBar}
-                  setShowFeatureBar={setShowFeatureBar}
-                />
-              </div>
-            </div>
+            <FeatureTop
+              feature={feature}
+              setFeature={setFeature}
+              showFeatureBar={showFeatureBar}
+              setShowFeatureBar={setShowFeatureBar}
+              show={show}
+            />
 
             <div
               className={`bg-bg2 ${
