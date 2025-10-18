@@ -1,6 +1,5 @@
-import { Menu, X, ArrowDownToLine, ChevronDown, ThumbsUp } from "lucide-react";
+import { Menu, X, ArrowDownToLine, ChevronDown, Star } from "lucide-react";
 import { features } from "./utils";
-import Rating from "./Rating";
 
 export default function FeatureTop({
   feature,
@@ -17,7 +16,7 @@ export default function FeatureTop({
   return (
     <div className="sticky bg-bg1 top-feature-topbar-top z-[999] px-padding-sm lg:pl-0">
       <div
-        className={`py-padding-sm bg-bg2 rounded-t-panel flex items-center gap-padding-sm px-padding-sm min-w-btn text-xs font-semibold`}
+        className={`py-padding-sm bg-bg2 rounded-t-panel flex items-center gap-padding-sm px-padding-sm min-w-btn font-semibold`}
       >
         <div
           className={`${
@@ -36,7 +35,7 @@ export default function FeatureTop({
             {hasFormats && (
               <div className={btnClass}>
                 <span>Formato</span>
-                <div className="-mx-1 rounded w-btn-sm h-btn-sm flexer bg-action-note/10 text-action-note">
+                <div className="-mx-1 rounded text-xs w-btn-sm h-btn-sm flexer bg-action-note/10 text-action-note">
                   XL
                 </div>
                 <ChevronDown size={14} />
@@ -44,9 +43,15 @@ export default function FeatureTop({
             )}
           </div>
           <div className="flex items-center gap-padding-sm">
-            <Rating />
-            <div className={`${btnClass} bg-transparent! hover:bg-bg1!`}>
-              <ThumbsUp size={16} />
+            <div className="text-xs flex gap-px items-center cursor-pointer hover:bg-bg3 rounded-btn p-padding-sm">
+              <span className="text-text2 hidden md:flex mr-padding-xs">
+                Valuta:
+              </span>
+              <Star size={14} className="text-transparent fill-text1" />
+              <Star size={14} className="text-transparent fill-text1" />
+              <Star size={14} className="text-transparent fill-text1" />
+              <Star size={14} className="text-transparent fill-text2" />
+              <Star size={14} className="text-transparent fill-text2" />
             </div>
             <div className={`${btnClass}`}>
               <span className="hidden sm:flex">Download</span>
@@ -54,24 +59,6 @@ export default function FeatureTop({
             </div>
           </div>
         </div>
-        {/*  <div className="justify-between mx-auto w-full flex items-center">
-          <div>
-            {hasComplementary && (
-              <div
-                onClick={() => setShowFeatureBar((s) => !s)}
-                className={`${btnClass}`}
-              >
-                {showFeatureBar ? <X size={16} /> : <Menu size={16} />}
-              </div>
-            )}
-          </div>
-          <div className="flex items-center gap-padding-sm">
-            <div className={`${btnClass}`}>
-              <span className="hidden sm:flex">Download</span>
-              <ArrowDownToLine size={16} />
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );

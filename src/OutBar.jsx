@@ -1,19 +1,7 @@
-import {
-  ChevronLeft,
-  PanelRightClose,
-  PanelRightOpen,
-  Menu,
-} from "lucide-react";
-import { features } from "./utils";
+import { ChevronLeft, PanelRightClose, PanelRightOpen } from "lucide-react";
+import UploadCta from "./UploadCta";
 const cl = "hover:bg-bg2 cursor-pointer w-btn h-btn flexer rounded-btn";
-export default function Outbar({
-  setIsArchive,
-  setShow,
-  setNoteType,
-  setFeature,
-  feature,
-  show,
-}) {
+export default function Outbar({ setIsArchive, setShow, show }) {
   const actions = [
     {
       icon: (
@@ -31,14 +19,6 @@ export default function Outbar({
       ),
       action: () => setShow((s) => !s),
     },
-    {
-      icon: (
-        <div className={cl}>
-          <Menu size={16} />
-        </div>
-      ),
-      action: () => setNoteType((s) => (s === "note" ? "doc" : "note")),
-    },
   ];
   return (
     <div className="hidden lg:flex w-header bg-bg1 border-r border-border flex-col">
@@ -46,25 +26,16 @@ export default function Outbar({
         <div
           className={`${
             r === 0 ? "border-b border-border" : ""
-          } h-header w-header flexer`}
+          } py-padding-sm w-header flexer`}
           onClick={action}
           key={r}
         >
           {icon}
         </div>
       ))}
-      {!show &&
-        features.map((k, r) => (
-          <div
-            className={`h-header w-header flexer`}
-            onClick={() => setFeature(k.value)}
-            key={r}
-          >
-            <div className={`${cl} ${feature === k.value ? "bg-bg2" : ""}`}>
-              <k.Icon size={16} />
-            </div>
-          </div>
-        ))}
+      <div className="flexer aspect-square">
+        <UploadCta hideLabel={true} />
+      </div>
     </div>
   );
 }

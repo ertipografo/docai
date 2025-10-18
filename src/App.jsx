@@ -33,6 +33,7 @@ export default function App() {
       show={show}
       showChat={showChat}
       setShowChat={setShowChat}
+      setIsLoading={setIsLoading}
     />
   ) : (
     <Container
@@ -44,6 +45,7 @@ export default function App() {
       show={show}
       showChat={showChat}
       setShowChat={setShowChat}
+      setIsLoading={setIsLoading}
       side={
         <div
           className={`bg-bg1 ${
@@ -60,10 +62,14 @@ export default function App() {
       }
       main={
         <>
-          <div className="w-full flex-1 flex-col flex lg:pt-header">
-            {!isLoading && (
-              <FeaturesBar feature={feature} setFeature={setFeature} />
-            )}
+          <div className="w-full flex-1 flex-col flex lg:mt-header">
+            <FeaturesBar
+              noteType={noteType}
+              feature={feature}
+              setFeature={setFeature}
+              isLoading={isLoading}
+            />
+
             <FeatureTop
               feature={feature}
               setFeature={setFeature}
@@ -73,7 +79,9 @@ export default function App() {
             />
             <div
               className={`${
-                isMap ? "border" : "bg-bg2 px-padding-sm rounded-b-panel"
+                isMap
+                  ? "border border-bg2"
+                  : "bg-bg2 px-padding-sm rounded-b-panel"
               } lg:ml-0 mx-padding-sm`}
             >
               <div className="flex-1 flex flex-col lg:flex-row min-h-screen">

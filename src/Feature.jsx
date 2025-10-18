@@ -1,4 +1,4 @@
-import { LoaderCircle } from "lucide-react";
+import { Loader } from "lucide-react";
 const Page = () => {
   return (
     <div className="bg-bg1 rounded-btn p-padding-lg pb-24 flex flex-col gap-1">
@@ -71,13 +71,13 @@ export default function Feature({ feature, isLoading }) {
   const loadingContents = (
     <div className="w-sm rounded-panel gap-padding-sm flex flex-col bg-bg1 p-padding-sm items-center">
       <div className="animate-spin w-btn h-btn flexer">
-        <LoaderCircle size={16} />
+        <Loader size={16} />
       </div>
       <div className="font-semibold text-center">
         Stiamo preparando la tua feature, torna fra na quarantacinquina di
         minuti
       </div>
-      <div className="rounded-btn overflow-hidden h-padding-sm w-full bg-bg3">
+      <div className="rounded-btn overflow-hidden h-padding-xs w-full bg-bg3">
         <div className="w-1/3 bg-violet-400 h-full" />
       </div>
     </div>
@@ -85,7 +85,9 @@ export default function Feature({ feature, isLoading }) {
   const isMap = feature === "mappa";
 
   return isLoading ? (
-    <div className="bg-bg1 flexer flex-1 p-padding-lg">{loadingContents}</div>
+    <div className="bg-bg1 flex justify-center flex-1 p-padding-lg">
+      {loadingContents}
+    </div>
   ) : isMap ? (
     <div className="bg-bg1 polka flex-1 p-padding-lg">{feature}</div>
   ) : (
