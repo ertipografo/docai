@@ -1,9 +1,9 @@
-import Logo from "./Logo";
+import Header from "./Header";
 
 const Section = ({ title, children }) => {
   return (
     <div className="flex flex-col">
-      <div className="bg-bg0 z-50 sticky top-0 h-btn flex items-center text-md font-bold">
+      <div className="bg-bg1 z-50 sticky top-0 h-btn flex items-center text-md font-bold">
         {title}
       </div>
       <div className="flex flex-col sm:flex-row flex-wrap sm:gap-padding-lg">
@@ -49,29 +49,37 @@ const Doc = ({ isMulti, isPremium }) => {
 
 export default function Archive() {
   return (
-    <div className="flex flex-col flex-1 px-padding-lg bg-bg0">
-      <div className="h-header flex items-center">
-        <Logo />
-      </div>
-      <div className="flex-1 flex flex-col">
+    <div className="flex flex-col flex-1 bg-bg1">
+      <Header />
+      <div className="flex-1 flex flex-col px-padding-lg">
         <Section title="Preferiti">
           {Array.from({ length: 10 }).map((_, i) => (
-            <Doc idx={i} isPremium={[1, 7, 9].includes(i)} />
+            <Doc idx={i} isPremium={[1, 7, 9].includes(i)} key={i} />
           ))}
         </Section>
         <Section title="Suggeriti">
           {Array.from({ length: 10 }).map((_, i) => (
-            <Doc isMulti={true} isPremium={[3, 5, 12].includes(i)} idx={i} />
+            <Doc
+              isMulti={true}
+              isPremium={[3, 5, 12].includes(i)}
+              idx={i}
+              key={i}
+            />
           ))}
         </Section>
         <Section title="Bananas">
           {Array.from({ length: 10 }).map((_, i) => (
-            <Doc isMulti={true} isPremium={[2, 4, 10].includes(i)} idx={i} />
+            <Doc
+              isMulti={true}
+              isPremium={[2, 4, 10].includes(i)}
+              idx={i}
+              key={i}
+            />
           ))}
         </Section>
         <Section title="Quello che te pare">
           {Array.from({ length: 10 }).map((_, i) => (
-            <Doc isMulti={true} idx={i} />
+            <Doc isMulti={true} idx={i} key={i} />
           ))}
         </Section>
       </div>

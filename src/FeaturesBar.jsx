@@ -24,8 +24,8 @@ export default function FeaturesBar({ setFeature, feature }) {
               className={`${btn} ${isCur ? active : inactive}`}
             >
               <div className={inner}>
-                <Icon size={16} className="hidden md:flex" />
-                <span>{f.value}</span>
+                <Icon size={16} />
+                <span className="hidden md:flex">{f.value}</span>
               </div>
               {isCur ? (
                 <ChevronDown size={16} className="ml-auto" />
