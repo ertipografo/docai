@@ -31,54 +31,50 @@ export default function BottomBar({ setFeature, feature }) {
   const inactive = "bg-gray-600 text-gray-300";
   const inner = "flex h-btn gap-padding-xs px-padding-sm items-center";
   return (
-    <div className="sticky bottom-0 z-[99] py-padding-lg px-padding-sm">
-      <div className="bg-gray-800 text-white max-w-2xl mx-auto rounded-panel flex flex-col overflow-hidden">
-        <AdditionalComponent open={open} feature={feature} setOpen={setOpen} />
-        <div className="h-header bg-gray-700 gap-padding-md flex items-center px-padding-sm justify-between">
-          <div className="gap-padding-sm flex items-center">
-            {features.map((f, i) => {
-              const { Icon } = f;
-              return (
+    <div className="bg-gray-800 mr-padding-sm text-white rounded-t-panel flex flex-col overflow-hidden">
+      <AdditionalComponent open={open} feature={feature} setOpen={setOpen} />
+      <div className="h-header bg-gray-700 gap-padding-md flex items-center px-padding-sm justify-between">
+        <div className="gap-padding-sm flex items-center">
+          {features.map((f, i) => {
+            const { Icon } = f;
+            return (
+              <div
+                key={i}
+                className={`${btn} ${feature === f.value ? active : inactive}`}
+              >
                 <div
-                  key={i}
-                  className={`${btn} ${
-                    feature === f.value ? active : inactive
-                  }`}
+                  className={inner}
+                  onClick={() => {
+                    setFeature(f.value);
+                    setOpen(null);
+                  }}
                 >
-                  <div
-                    className={inner}
-                    onClick={() => {
-                      setFeature(f.value);
-                      setOpen(null);
-                    }}
-                  >
-                    <Icon size={16} />
-                    <span className="hidden md:flex">{f.value}</span>
-                  </div>
-                  <div
-                    className="group h-btn mr-padding-sm flex items-center"
-                    onClick={() => {
-                      setFeature(f.value);
-                      setOpen((r) => (r === f.value ? null : f.value));
-                    }}
-                  >
-                    <div className="group-hover:bg-gray-300 group-hover:text-gray-800 w-btn-sm h-btn-sm rounded flexer">
-                      <Settings size={16} />
-                    </div>
+                  <Icon size={16} />
+                  <span className="hidden md:flex">{f.value}</span>
+                </div>
+                <div
+                  className="group h-btn mr-padding-sm flex items-center"
+                  onClick={() => {
+                    setFeature(f.value);
+                    setOpen((r) => (r === f.value ? null : f.value));
+                  }}
+                >
+                  <div className="group-hover:bg-gray-300 group-hover:text-gray-800 w-btn-sm h-btn-sm rounded flexer">
+                    <Settings size={16} />
                   </div>
                 </div>
-              );
-            })}
-          </div>
-          {/* <div className="h-btn-sm w-px bg-gray-500" /> */}
-          <div
-            className={`${btn} ${open === "chat" ? activeChat : inactive}`}
-            onClick={() => setOpen((r) => (r === "chat" ? null : "chat"))}
-          >
-            <div className={inner}>
-              <WandSparkles size={16} />
-              <span>Chatta</span>
-            </div>
+              </div>
+            );
+          })}
+        </div>
+        {/* <div className="h-btn-sm w-px bg-gray-500" /> */}
+        <div
+          className={`${btn} ${open === "chat" ? activeChat : inactive}`}
+          onClick={() => setOpen((r) => (r === "chat" ? null : "chat"))}
+        >
+          <div className={inner}>
+            <WandSparkles size={16} />
+            <span>Chatta</span>
           </div>
         </div>
       </div>

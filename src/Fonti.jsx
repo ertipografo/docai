@@ -29,7 +29,7 @@ export default function Fonti({ setShowModal }) {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col text-xs">
       {fonti.map((f) => {
         const { cl, label, Icon } = f;
 

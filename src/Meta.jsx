@@ -17,13 +17,13 @@ const Tags = () => {
           return (
             <div
               key={i}
-              className="rounded flexer bg-bg2 hover:bg-bg3 hover:text-text1 cursor-pointer h-btn-sm px-padding-sm"
+              className="rounded flexer border border-border hover:border-border-hover hover:text-text1 cursor-pointer h-btn-sm px-padding-sm"
             >
               {tag}
             </div>
           );
         })}
-        <div className="bg-bg2 aspect-square hover:bg-bg3 hover:text-text1 cursor-pointer h-btn-sm rounded flexer">
+        <div className="aspect-square border border-border hover:border-border-hover hover:text-text1 cursor-pointer h-btn-sm rounded flexer">
           +
         </div>
       </div>
@@ -47,13 +47,15 @@ export default function Meta({ setShowModal }) {
           return (
             <div
               className={`border border-border ${
-                isOpen ? "" : "border-border hover:border-border-hover"
+                isOpen
+                  ? ""
+                  : "text-text2 hover:text-text1 border-border hover:border-border-hover"
               } rounded pl-padding-sm pr-padding-xs h-btn-md cursor-pointer group items-center flex`}
               key={i}
               onClick={() => setOpen(() => (isOpen ? null : m.label))}
             >
               <span>{m.label}</span>
-              <div className="mx-2 text-text2">{m.value}</div>
+              <div className="mx-2">{m.value}</div>
               {isOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
             </div>
           );

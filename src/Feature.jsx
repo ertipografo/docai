@@ -87,9 +87,7 @@ export default function Feature({ feature, isLoading }) {
   return isLoading ? (
     <div className="bg-bg1 flexer flex-1 p-padding-lg">{loadingContents}</div>
   ) : isMap ? (
-    <div className="bg-bg1 polka flex-1 p-padding-lg">
-      {isMap ? <div>{feature}</div> : loadingContents}
-    </div>
+    <div className="bg-bg1 polka flex-1 p-padding-lg">{feature}</div>
   ) : (
     <div className="flex flex-col gap-padding-lg flex-1">
       {Array.from({ length: 5 }).map((_, i) => (

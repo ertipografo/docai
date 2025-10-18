@@ -62,21 +62,27 @@ export default function App() {
       main={
         <>
           <div className="w-full flex-1 flex-col flex">
-            <FeatureTop
-              feature={feature}
-              setFeature={setFeature}
-              showFeatureBar={showFeatureBar}
-              setShowFeatureBar={setShowFeatureBar}
-              show={show}
-            />
-
+            <div className="h-header flex items-center justify-end gap-padding-sm px-padding-lg">
+              <span>ciao</span>
+              <span>ciao</span>
+            </div>
+            {!isLoading && (
+              <BottomBar feature={feature} setFeature={setFeature} />
+            )}
             <div
-              className={`bg-bg2 ${
+              className={`pt-padding-sm ${
                 isMap
                   ? ""
-                  : "px-padding-sm pt-padding-sm pb-padding-sm rounded-b-ultra"
-              } lg:ml-0 mx-padding-sm rounded-t-ultra`}
+                  : "bg-bg2 px-padding-sm pb-padding-sm rounded-b-ultra"
+              } lg:ml-0 mx-padding-sm`}
             >
+              <FeatureTop
+                feature={feature}
+                setFeature={setFeature}
+                showFeatureBar={showFeatureBar}
+                setShowFeatureBar={setShowFeatureBar}
+                show={show}
+              />
               <div
                 className={`${
                   !isMap ? "max-w-document mx-auto" : ""
@@ -91,9 +97,7 @@ export default function App() {
               </div>
             </div>
           </div>
-          {!isLoading && (
-            <BottomBar feature={feature} setFeature={setFeature} />
-          )}
+
           {!isMap && <div className="flexer min-h-40">Qui footer</div>}
 
           <Modal setShowModal={setShowModal} showModal={showModal} />
