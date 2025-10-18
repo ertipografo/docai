@@ -60,7 +60,7 @@ export default function App() {
       }
       main={
         <>
-          <div className="w-full flex-1 flex-col flex">
+          <div className="w-full flex-1 flex-col flex lg:pt-header">
             {!isLoading && (
               <FeaturesBar feature={feature} setFeature={setFeature} />
             )}
@@ -72,7 +72,7 @@ export default function App() {
               show={show}
             />
             <div
-              className={`pt-padding-sm ${
+              className={`${
                 isMap ? "border" : "bg-bg2 px-padding-sm rounded-b-panel"
               } lg:ml-0 mx-padding-sm`}
             >

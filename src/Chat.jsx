@@ -12,7 +12,7 @@ const Bubble = ({ idx, chatMessage }) => {
       >
         {chatMessage}
       </div>
-      <div className="min-w-20" />
+      <div className="min-w-12" />
     </div>
   );
 };
@@ -35,17 +35,17 @@ export default function Chat() {
   );
 
   return (
-    <div className="flex flex-col overflow-hidden bg-gray-800 rounded-ultra">
+    <div className="flex flex-col overflow-hidden bg-gray-800 rounded-btn">
       <PerfectScrollbar
         options={{ wheelPropagation: false }}
-        className="flex flex-col-reverse gap-padding-sm p-padding-sm max-h-[300px] h-full"
+        className="flex flex-col-reverse gap-padding-sm p-padding-sm max-h-[70vh] h-full"
       >
         {chatMessages.map((chatMessage, i) => (
           <Bubble key={i} chatMessage={chatMessage} idx={i} />
         ))}
       </PerfectScrollbar>
 
-      <div className="h-header rounded-panel bg-bg1 flex items-center px-padding-sm m-padding-sm mt-0">
+      <div className="h-header rounded bg-bg1 flex items-center px-padding-sm m-padding-sm mt-0">
         <input
           value={val}
           placeholder="Chiedi al documento..."
