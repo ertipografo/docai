@@ -13,7 +13,7 @@ export default function Sidebar({ noteType, setShowModal }) {
       <div className="px-padding-lg my-padding-sm py-padding-sm">
         <Meta setShowModal={setShowModal} />
       </div>
-      <div className="hidden lg:flex text-xs font-semibold text-text2 flex-1 mb-padding-lg rounded-panel mx-padding-lg bg-bg4 items-center justify-center">
+      <div className="hidden lg:flex text-xs font-semibold text-text2 flex-1 mb-padding-lg rounded-btn mx-padding-lg border border-border items-center justify-center">
         output?
       </div>
       <SuggestedDocs />

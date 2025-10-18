@@ -27,7 +27,7 @@ export default function Title({ noteType }) {
   ); */
 
   /*   const author = (
-    <div className="flex items-center gap-padding-sm font-semibold bg-bg4 p-padding-sm rounded-btn">
+    <div className="flex items-center gap-padding-sm font-semibold p-padding-sm rounded-btn">
        <div className="bg-bg2 h-btn w-btn rounded-full" />
       <div className="flex flex-col gap-px flex-1">
         <div>Carmela Dangelo 🇰🇲 </div>
@@ -51,9 +51,7 @@ export default function Title({ noteType }) {
         >
           {noteType}
         </div>
-        {/*   <div className="bg-action-tertiary text-text2 px-padding-sm rounded-full font-semibold h-btn-sm flexer">
-              Docsity
-            </div> */}
+
         <div className="flexer ml-auto">
           <Rating />
         </div>

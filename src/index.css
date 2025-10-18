@@ -20,17 +20,15 @@
   --color-text-dark: var(--color-white);
   --color-dark: var(--color-gray-800);
   --color-dark-alt: var(--color-gray-700);
+  --color-bg0: var(--color-gray-50);
   --color-bg1: var(--color-white);
   --color-bg2: var(--color-gray-100);
   --color-bg3: var(--color-gray-200);
-  --color-bg4: var(--color-gray-50);
   --color-border: var(--color-gray-200);
   --color-border-hover: var(--color-gray-300);
   --color-action-primary: var(--color-sky-500);
   --color-action-note: var(--color-violet-500);
   --color-action-secondary: var(--color-gray-100);
-  --color-action-feature: var(--color-gray-900);
-  --color-action-tertiary: var(--color-gray-100);
 
   /* BREAKPOINTS */
   --breakpoint-sm: 934px;

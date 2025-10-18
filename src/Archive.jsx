@@ -3,7 +3,7 @@ import Logo from "./Logo";
 const Section = ({ title, children }) => {
   return (
     <div className="flex flex-col">
-      <div className="bg-bg4 z-50 sticky top-0 h-btn flex items-center text-md font-bold">
+      <div className="bg-bg0 z-50 sticky top-0 h-btn flex items-center text-md font-bold">
         {title}
       </div>
       <div className="flex flex-col sm:flex-row flex-wrap sm:gap-padding-lg">
@@ -49,7 +49,7 @@ const Doc = ({ isMulti, isPremium }) => {
 
 export default function Archive() {
   return (
-    <div className="flex flex-col flex-1 px-padding-lg bg-bg4">
+    <div className="flex flex-col flex-1 px-padding-lg bg-bg0">
       <div className="h-header flex items-center">
         <Logo />
       </div>

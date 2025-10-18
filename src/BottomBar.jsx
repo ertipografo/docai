@@ -4,7 +4,7 @@ import Chat from "./Chat";
 
 export default function BottomBar() {
   return (
-    <div className="p-padding-sm sticky bottom-0">
+    <div className="p-padding-sm sticky bottom-0 z-[999]">
       <div className="h-header max-w-2xl bg-bg1/90 shadow-2xl rounded-panel mx-auto flex px-padding-sm relative">
         <div className="flex-1 flex items-center">
           <div className="h-btn px-padding-sm bg-action-secondary rounded-btn gap-padding-xs flex items-center">

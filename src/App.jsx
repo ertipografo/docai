@@ -8,8 +8,6 @@ import Toolbar from "./Toolbar";
 import Feature from "./Feature";
 import Container from "./Container";
 import Modal from "./Modal";
-import Breacrumbs from "./Breacrumbs";
-import Logo from "./Logo";
 import BottomBar from "./BottomBar";
 
 export default function App() {
@@ -66,18 +64,18 @@ export default function App() {
             {!isLoading && (
               <FeaturesBar feature={feature} setFeature={setFeature} />
             )}
+            <FeatureTop
+              feature={feature}
+              setFeature={setFeature}
+              showFeatureBar={showFeatureBar}
+              setShowFeatureBar={setShowFeatureBar}
+              show={show}
+            />
             <div
               className={`pt-padding-sm ${
-                isMap ? "" : "bg-bg2 px-padding-sm rounded-panel"
+                isMap ? "border" : "bg-bg2 px-padding-sm rounded-b-panel"
               } lg:ml-0 mx-padding-sm`}
             >
-              <FeatureTop
-                feature={feature}
-                setFeature={setFeature}
-                showFeatureBar={showFeatureBar}
-                setShowFeatureBar={setShowFeatureBar}
-                show={show}
-              />
               <div className="flex-1 flex flex-col lg:flex-row min-h-screen">
                 <Toolbar
                   feature={feature}

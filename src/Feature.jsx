@@ -1,7 +1,7 @@
 import { LoaderCircle } from "lucide-react";
 const Page = () => {
   return (
-    <div className="bg-bg1 rounded-panel p-padding-lg pb-24 flex flex-col gap-1">
+    <div className="bg-bg1 rounded p-padding-lg pb-24 flex flex-col gap-1">
       <span className="text-2xl font-bold mb-padding-sm">Titolo pagina</span>
       <span className="text-lg font-semibold">
         Lorem ipsum dolor sit amet consectetur adipisicing elit

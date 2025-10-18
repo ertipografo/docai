@@ -1,11 +1,11 @@
-import { ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronRight } from "lucide-react";
 import { features } from "./utils";
 
 const AdditionalComponent = () => {
   const formats = ["xl", "lg", "md", "sm"];
   return (
-    <div className="h-header rounded-btn bg-violet-50 text-violet-900 flex items-center px-padding-sm gap-padding-sm">
-      <span className="hidden sm:flex text-xs font-semibold">
+    <div className="rounded-btn py-padding-xs border border-border flex items-center px-padding-sm gap-padding-sm">
+      <span className="text-text2 hidden sm:flex text-xs font-semibold">
         Scegli formato:
       </span>
       <div className="flex items-center gap-padding-sm">
@@ -15,13 +15,13 @@ const AdditionalComponent = () => {
             <div
               key={f}
               className={`${
-                isCur ? "bg-violet-200" : "hover:bg-violet-100"
+                isCur ? "bg-action-secondary" : "hover:bg-action-secondary"
               } px-padding-sm gap-2 h-btn flex items-center cursor-pointer rounded-btn`}
             >
               <div
                 className={`${
-                  isCur ? "bg-current" : ""
-                } h-2 w-2 ring-2 ring-violet-200 rounded-full`}
+                  isCur ? "bg-action-note" : ""
+                } h-2 w-2 ring-2 ring-border rounded-full`}
               />
               <span className="uppercase text-xs font-semibold">{f}</span>
             </div>
@@ -44,6 +44,7 @@ export default function FeaturesBar({ setFeature, feature }) {
     <div className="lg:mt-padding-sm mx-padding-sm lg:ml-0 flex flex-col overflow-hidden gap-padding-sm">
       <div className="gap-padding-sm flex items-center">
         {features.map((f, i) => {
+          const isCur = feature === f.value;
           const { Icon } = f;
           return (
             <div
@@ -51,13 +52,17 @@ export default function FeaturesBar({ setFeature, feature }) {
               onClick={() => {
                 setFeature(f.value);
               }}
-              className={`${btn} ${feature === f.value ? active : inactive}`}
+              className={`${btn} ${isCur ? active : inactive}`}
             >
               <div className={inner}>
                 <Icon size={16} className="hidden md:flex" />
                 <span>{f.value}</span>
               </div>
-              <ChevronRight size={16} className="ml-auto" />
+              {isCur ? (
+                <ChevronDown size={16} className="ml-auto" />
+              ) : (
+                <ChevronRight size={16} className="ml-auto" />
+              )}
             </div>
           );
         })}
