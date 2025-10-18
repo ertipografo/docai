@@ -77,8 +77,8 @@ export default function SuggestedDocs() {
               }}
               className={`${
                 show && cur === r.label
-                  ? "bg-bg2"
-                  : "text-text2 hover:text-text1 hover:bg-bg2"
+                  ? "bg-action-secondary"
+                  : "text-text2 hover:text-text1 hover:bg-action-secondary"
               } h-btn w-btn flexer rounded-btn cursor-pointer`}
             >
               <r.Icon size={16} />

@@ -1,16 +1,9 @@
 import Title from "./Title";
 import Header from "./Header";
-import SidebarFeatures from "./SidebarFeatures";
 import SuggestedDocs from "./SuggestedDocs";
-import Chat2 from "./Chat2";
 import Meta from "./Meta";
 
-export default function Sidebar({
-  feature,
-  setFeature,
-  noteType,
-  setShowModal,
-}) {
+export default function Sidebar({ noteType, setShowModal }) {
   return (
     <div className="flex flex-col flex-1 h-full overflow-hidden">
       <Header />

@@ -28,11 +28,9 @@
   --color-border-hover: var(--color-gray-300);
   --color-action-primary: var(--color-sky-500);
   --color-action-note: var(--color-violet-500);
-  --color-action-secondary: var(--color-gray-200);
+  --color-action-secondary: var(--color-gray-100);
   --color-action-feature: var(--color-gray-900);
   --color-action-tertiary: var(--color-gray-100);
-  --color-action-dark: var(--color-gray-600);
-  --color-border-primary: var(--color-purple-500);
 
   /* BREAKPOINTS */
   --breakpoint-sm: 934px;
@@ -53,11 +51,12 @@
   --spacing-padding-md: calc(var(--spacing) * 4.5);
   --spacing-padding-lg: calc(var(--spacing) * 9);
   --spacing-header: calc(var(--spacing-btn) + (var(--spacing-padding-sm) * 2));
-  /*  --spacing-sidebar: calc(320px + (calc(var(--spacing-padding-lg) * 2))); */
   --spacing-sidebar: clamp(360px, 25vw, 520px);
   --spacing-complementary: 320px;
   --spacing-sidebar-height: calc(100vh - var(--spacing-header));
-  --spacing-complementary-t: 0px;
+  --spacing-complementary-t: calc(
+    var(--spacing-header) + var(--spacing-padding-sm)
+  );
   --spacing-complementary-h: calc(100vh - var(--spacing-complementary-t));
   --chat: 360px;
   --spacing-chat-t: 0;

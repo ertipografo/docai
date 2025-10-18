@@ -10,6 +10,7 @@ import Container from "./Container";
 import Modal from "./Modal";
 import Breacrumbs from "./Breacrumbs";
 import Logo from "./Logo";
+import BottomBar from "./BottomBar";
 
 export default function App() {
   const [feature, setFeature] = useState(features[0].value);
@@ -67,7 +68,7 @@ export default function App() {
             )}
             <div
               className={`pt-padding-sm ${
-                isMap ? "" : "bg-bg2 px-padding-sm pb-padding-sm rounded-panel"
+                isMap ? "" : "bg-bg2 px-padding-sm rounded-panel"
               } lg:ml-0 mx-padding-sm`}
             >
               <FeatureTop
@@ -77,18 +78,21 @@ export default function App() {
                 setShowFeatureBar={setShowFeatureBar}
                 show={show}
               />
-              <div
-                className={`${
-                  !isMap ? "max-w-document mx-auto" : ""
-                } flex-1 flex flex-col lg:flex-row`}
-              >
-                <Feature feature={feature} isLoading={isLoading} />
+              <div className="flex-1 flex flex-col lg:flex-row min-h-screen">
                 <Toolbar
                   feature={feature}
                   showFeatureBar={showFeatureBar}
                   setShowFeatureBar={setShowFeatureBar}
                 />
+                <div
+                  className={`${
+                    !isMap ? "max-w-document mx-auto" : ""
+                  } flex-1 flex flex-col`}
+                >
+                  <Feature feature={feature} isLoading={isLoading} />
+                </div>
               </div>
+              <BottomBar />
             </div>
           </div>
 

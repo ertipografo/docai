@@ -1,83 +1,69 @@
-import { Settings, X, WandSparkles, ChevronDown } from "lucide-react";
-
-import { useState } from "react";
+import { ChevronRight } from "lucide-react";
 import { features } from "./utils";
-import Chat from "./Chat";
 
-const AdditionalComponent = ({ feature, setOpen, open }) => {
-  return open ? (
-    <div className="relative min-h-header flex flex-col">
-      <div className="flex justify-end pt-padding-sm pr-padding-sm">
-        <div
-          onClick={() => setOpen(null)}
-          className="z-50 relative cursor-pointer h-btn w-btn hover:bg-gray-700 rounded-btn flexer"
-        >
-          <ChevronDown size={16} />
-        </div>
+const AdditionalComponent = () => {
+  const formats = ["xl", "lg", "md", "sm"];
+  return (
+    <div className="h-header rounded-btn bg-violet-50 text-violet-900 flex items-center px-padding-sm gap-padding-sm">
+      <span className="hidden sm:flex text-xs font-semibold">
+        Scegli formato:
+      </span>
+      <div className="flex items-center gap-padding-sm">
+        {formats.map((f, i) => {
+          const isCur = i === 1;
+          return (
+            <div
+              key={f}
+              className={`${
+                isCur ? "bg-violet-200" : "hover:bg-violet-100"
+              } px-padding-sm gap-2 h-btn flex items-center cursor-pointer rounded-btn`}
+            >
+              <div
+                className={`${
+                  isCur ? "bg-current" : ""
+                } h-2 w-2 ring-2 ring-violet-200 rounded-full`}
+              />
+              <span className="uppercase text-xs font-semibold">{f}</span>
+            </div>
+          );
+        })}
       </div>
-      {open === "chat" ? <Chat /> : <div>{feature}</div>}
     </div>
-  ) : (
-    <></>
   );
 };
 
 export default function FeaturesBar({ setFeature, feature }) {
-  const [open, setOpen] = useState(null);
   const btn =
-    "cursor-pointer capitalize flex h-btn rounded-btn items-center font-semibold overflow-hidden";
+    "cursor-pointer flex-1 max-w-[200px] capitalize flex h-btn-lg rounded-btn items-center font-semibold overflow-hidden pr-padding-sm";
   const active = "bg-violet-200 text-violet-900";
-  const activeChat = "bg-gray-100 text-text1";
   const inactive = "bg-bg2";
-  const inner = "flex h-btn gap-padding-xs px-padding-sm items-center";
+  const inner = "flex h-full gap-padding-xs px-padding-sm items-center";
+  const currentFeature = features.find((f) => f.value === feature);
+  const hasFormats = currentFeature?.hasFormats;
   return (
-    <div className="mr-padding-sm flex flex-col overflow-hidden">
-      <div className="pt-padding-sm gap-padding-md flex items-center justify-between">
-        <div className="gap-padding-sm flex items-center">
-          {features.map((f, i) => {
-            const { Icon } = f;
-            return (
-              <div
-                key={i}
-                className={`${btn} ${feature === f.value ? active : inactive}`}
-              >
-                <div
-                  className={inner}
-                  onClick={() => {
-                    setFeature(f.value);
-                    setOpen(null);
-                  }}
-                >
-                  <Icon size={16} />
-                  <span className="hidden md:flex">{f.value}</span>
-                </div>
-                <div
-                  className="group h-btn mr-padding-sm flex items-center"
-                  onClick={() => {
-                    setFeature(f.value);
-                    setOpen((r) => (r === f.value ? null : f.value));
-                  }}
-                >
-                  <div className="group-hover:bg-gray-300 group-hover:text-gray-800 w-btn-sm h-btn-sm rounded flexer">
-                    <Settings size={16} />
-                  </div>
-                </div>
+    <div className="lg:mt-padding-sm mx-padding-sm lg:ml-0 flex flex-col overflow-hidden gap-padding-sm">
+      <div className="gap-padding-sm flex items-center">
+        {features.map((f, i) => {
+          const { Icon } = f;
+          return (
+            <div
+              key={i}
+              onClick={() => {
+                setFeature(f.value);
+              }}
+              className={`${btn} ${feature === f.value ? active : inactive}`}
+            >
+              <div className={inner}>
+                <Icon size={16} className="hidden md:flex" />
+                <span>{f.value}</span>
               </div>
-            );
-          })}
-        </div>
-        {/* <div className="h-btn-sm w-px bg-gray-500" /> */}
-        <div
-          className={`${btn} ${open === "chat" ? activeChat : inactive}`}
-          onClick={() => setOpen((r) => (r === "chat" ? null : "chat"))}
-        >
-          <div className={inner}>
-            <WandSparkles size={16} />
-            <span>Chatta</span>
-          </div>
-        </div>
+              <ChevronRight size={16} className="ml-auto" />
+            </div>
+          );
+        })}
       </div>
-      <AdditionalComponent open={open} feature={feature} setOpen={setOpen} />
+
+      {hasFormats && <AdditionalComponent />}
     </div>
   );
 }

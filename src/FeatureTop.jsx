@@ -1,12 +1,10 @@
 import { Menu, X, ArrowDownToLine } from "lucide-react";
 import { features } from "./utils";
-import Logo from "./Logo";
 
 export default function FeatureTop({
   feature,
   showFeatureBar,
   setShowFeatureBar,
-  show,
 }) {
   const currentFeature = features.find((f) => f.value === feature);
   const hasComplementary = currentFeature?.hasComplementary;

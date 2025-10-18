@@ -17,7 +17,7 @@ export default function Container({
 }) {
   return (
     <div className="h-screen flex flex-col overflow-hidden">
-      <div className="min-h-header bg-gray-800" />
+      <div className="min-h-header bg-sky-950" />
       <div className="flex flex-1 text-base text-text1 bg-bg1 overflow-auto">
         <div className="flex-1 flex lg:overflow-hidden">
           <Outbar

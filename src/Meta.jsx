@@ -60,7 +60,7 @@ export default function Meta({ setShowModal }) {
             </div>
           );
         })}
-        <div className="h-btn-md cursor-pointer rounded-btn gap-padding-xs ml-auto flexer text-text2 hover:text-text1">
+        <div className="h-btn-md hover:bg-action-secondary px-padding-sm cursor-pointer rounded gap-padding-xs ml-auto flexer text-text2 hover:text-text1">
           <SquarePen size={14} />
           <span>Edit</span>
         </div>
