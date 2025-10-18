@@ -3,7 +3,7 @@ import { features } from "./utils";
 import Sidebar from "./Sidebar";
 import Archive from "./Archive";
 import FeatureTop from "./FeatureTop";
-import BottomBar from "./BottomBar";
+import FeaturesBar from "./FeaturesBar";
 import Toolbar from "./Toolbar";
 import Feature from "./Feature";
 import Container from "./Container";
@@ -62,18 +62,12 @@ export default function App() {
       main={
         <>
           <div className="w-full flex-1 flex-col flex">
-            <div className="h-header flex items-center justify-end gap-padding-sm px-padding-lg">
-              <span>ciao</span>
-              <span>ciao</span>
-            </div>
             {!isLoading && (
-              <BottomBar feature={feature} setFeature={setFeature} />
+              <FeaturesBar feature={feature} setFeature={setFeature} />
             )}
             <div
               className={`pt-padding-sm ${
-                isMap
-                  ? ""
-                  : "bg-bg2 px-padding-sm pb-padding-sm rounded-b-ultra"
+                isMap ? "" : "bg-bg2 px-padding-sm pb-padding-sm rounded-panel"
               } lg:ml-0 mx-padding-sm`}
             >
               <FeatureTop

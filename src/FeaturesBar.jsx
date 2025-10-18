@@ -22,18 +22,17 @@ const AdditionalComponent = ({ feature, setOpen, open }) => {
   );
 };
 
-export default function BottomBar({ setFeature, feature }) {
+export default function FeaturesBar({ setFeature, feature }) {
   const [open, setOpen] = useState(null);
   const btn =
     "cursor-pointer capitalize flex h-btn rounded-btn items-center font-semibold overflow-hidden";
   const active = "bg-violet-200 text-violet-900";
   const activeChat = "bg-gray-100 text-text1";
-  const inactive = "bg-gray-600 text-gray-300";
+  const inactive = "bg-bg2";
   const inner = "flex h-btn gap-padding-xs px-padding-sm items-center";
   return (
-    <div className="bg-gray-800 mr-padding-sm text-white rounded-t-panel flex flex-col overflow-hidden">
-      <AdditionalComponent open={open} feature={feature} setOpen={setOpen} />
-      <div className="h-header bg-gray-700 gap-padding-md flex items-center px-padding-sm justify-between">
+    <div className="mr-padding-sm flex flex-col overflow-hidden">
+      <div className="pt-padding-sm gap-padding-md flex items-center justify-between">
         <div className="gap-padding-sm flex items-center">
           {features.map((f, i) => {
             const { Icon } = f;
@@ -78,6 +77,7 @@ export default function BottomBar({ setFeature, feature }) {
           </div>
         </div>
       </div>
+      <AdditionalComponent open={open} feature={feature} setOpen={setOpen} />
     </div>
   );
 }

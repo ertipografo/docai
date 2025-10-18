@@ -11,25 +11,27 @@ export default function FeatureTop({
   const currentFeature = features.find((f) => f.value === feature);
   const hasComplementary = currentFeature?.hasComplementary;
 
+  const btnClass =
+    "bg-bg1 rounded-btn cursor-pointer h-btn gap-padding-sm flex items-center justify-center px-padding-sm";
+
   return (
-    <div className="sticky top-padding-sm z-50 pb-padding-sm">
+    <div className="sticky bg-bg1 top-0 z-50 -m-padding-sm mb-padding-sm pt-padding-sm">
       <div
-        className={`${
-          feature === "mappa" ? "" : "max-w-document mx-auto"
-        } h-header bg-orange-200 flex items-center gap-padding-sm px-padding-sm`}
+        className={`h-header bg-bg3 rounded-t-panel flex items-center gap-padding-sm px-padding-sm min-w-btn text-xs font-semibold`}
       >
         <div className="justify-between mx-auto w-full flex items-center">
-          <div>{!show && <Logo />}</div>
-          <div className="flex items-center gap-padding-sm">
+          <div>
             {hasComplementary && (
               <div
                 onClick={() => setShowFeatureBar((s) => !s)}
-                className="bg-action-secondary rounded-btn cursor-pointer h-btn aspect-square flexer"
+                className={`${btnClass}`}
               >
                 {showFeatureBar ? <X size={16} /> : <Menu size={16} />}
               </div>
             )}
-            <div className="flexer gap-padding-sm h-btn px-padding-sm text-xs font-semibold bg-action-secondary text-text1 rounded-btn cursor-pointer">
+          </div>
+          <div className="flex items-center gap-padding-sm">
+            <div className={`${btnClass}`}>
               <span className="hidden sm:flex">Download</span>
               <ArrowDownToLine size={16} />
             </div>
