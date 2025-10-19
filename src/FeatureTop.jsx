@@ -9,6 +9,7 @@ export default function FeatureTop({
   const currentFeature = features.find((f) => f.value === feature);
   const hasComplementary = currentFeature?.hasComplementary;
   const hasFormats = currentFeature?.hasFormats;
+  const CurrentFeatureIcon = currentFeature?.Icon;
 
   const btnClass =
     "bg-bg1 border border-gray-300 rounded-btn cursor-pointer h-btn gap-padding-sm flex items-center justify-center px-padding-sm";
@@ -16,10 +17,14 @@ export default function FeatureTop({
   return (
     <div className="sticky bg-bg1 top-0 z-[999] px-padding-sm lg:pl-0">
       <div
-        className={`mt-padding-sm py-padding-sm bg-bg3 rounded-t-panel flex items-center gap-padding-sm px-padding-sm min-w-btn font-semibold`}
+        className={`mt-padding-sm py-padding-sm bg-bg2 border-b border-bg3 rounded-t-panel flex items-center gap-padding-sm px-padding-sm min-w-btn font-semibold`}
       >
         <div className={`flex-1 flex items-center justify-between`}>
           <div className="flex gap-padding-sm items-center">
+            <div className="px-padding-sm flex items-center gap-padding-sm">
+              <CurrentFeatureIcon size={16} />
+              <span>{currentFeature.label}</span>
+            </div>
             {hasComplementary && (
               <div
                 onClick={() => setShowFeatureBar((s) => !s)}
@@ -38,6 +43,7 @@ export default function FeatureTop({
               </div>
             )}
           </div>
+          <div className="flex-1 text-text2 text-xs flexer">1 / 36</div>
           <div className="flex items-center gap-padding-sm">
             <div className="text-xs flex gap-px items-center cursor-pointer hover:bg-bg3 rounded-btn p-padding-sm">
               <span className="text-text2 hidden md:flex mr-padding-xs">
