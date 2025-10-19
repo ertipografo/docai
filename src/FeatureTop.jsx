@@ -14,9 +14,9 @@ export default function FeatureTop({
     "bg-bg1 border border-gray-300 rounded-btn cursor-pointer h-btn gap-padding-sm flex items-center justify-center px-padding-sm";
 
   return (
-    <div className="sticky bg-bg1 top-feature-topbar-top z-[999] px-padding-sm lg:pl-0">
+    <div className="sticky bg-bg1 top-0 z-[999] px-padding-sm lg:pl-0">
       <div
-        className={`py-padding-sm bg-bg3 flex items-center gap-padding-sm px-padding-sm min-w-btn font-semibold`}
+        className={`mt-padding-sm py-padding-sm bg-bg3 rounded-t-panel flex items-center gap-padding-sm px-padding-sm min-w-btn font-semibold`}
       >
         <div className={`flex-1 flex items-center justify-between`}>
           <div className="flex gap-padding-sm items-center">
