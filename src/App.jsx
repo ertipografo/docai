@@ -91,7 +91,7 @@ export default function App() {
                   <Feature feature={feature} isLoading={isLoading} />
                 </div>
               </div>
-              <BottomBar />
+              <BottomBar setIsLoading={setIsLoading} />
             </div>
           </div>
 

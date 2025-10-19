@@ -69,7 +69,7 @@ const Page = () => {
 
 export default function Feature({ feature, isLoading }) {
   const loadingContents = (
-    <div className="w-sm rounded-panel gap-padding-sm flex flex-col bg-bg1 p-padding-sm items-center">
+    <div className="w-sm rounded-panel gap-padding-sm flex flex-col p-padding-sm items-center">
       <div className="animate-spin w-btn h-btn flexer">
         <Loader size={16} />
       </div>
@@ -85,7 +85,7 @@ export default function Feature({ feature, isLoading }) {
   const isMap = feature === "mappa";
 
   return isLoading ? (
-    <div className="bg-bg1 flex justify-center flex-1 p-padding-lg">
+    <div className="flex justify-center flex-1 p-padding-lg">
       {loadingContents}
     </div>
   ) : isMap ? (

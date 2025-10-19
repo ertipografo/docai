@@ -3,7 +3,7 @@ import { Loader, X } from "lucide-react";
 import { useState } from "react";
 import { features } from "./utils";
 
-export default function BottomBar() {
+export default function BottomBar({ setIsLoading }) {
   const [show, setShow] = useState(false);
   const [val, setVal] = useState("");
 
@@ -76,7 +76,10 @@ export default function BottomBar() {
               })}
             </div>
             <div
-              onClick={() => setShow((s) => !s)}
+              onClick={() => {
+                setShow((s) => !s);
+                setIsLoading((s) => !s);
+              }}
               className={`${
                 val
                   ? "bg-violet-500 text-white cursor-pointer"
