@@ -33,9 +33,9 @@ export default function Outbar({ setIsArchive, setShow, show }) {
           {icon}
         </div>
       ))}
-      <div className="flexer aspect-square">
+      {/*  <div className="flexer aspect-square">
         <UploadCta hideLabel={true} />
-      </div>
+      </div> */}
     </div>
   );
 }
