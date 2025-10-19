@@ -1,10 +1,11 @@
-import { Loader, X } from "lucide-react";
+import { ArrowRight, Loader, Plus, X } from "lucide-react";
 
 import { useState } from "react";
 import { features } from "./utils";
 
 export default function BottomBar({ setIsLoading }) {
   const [show, setShow] = useState(false);
+  const [sent, setSent] = useState(false);
   const [val, setVal] = useState("");
 
   const resource = val
@@ -13,6 +14,83 @@ export default function BottomBar({ setIsLoading }) {
   const msg = `p-padding-sm rounded-btn`;
 
   return (
+    <div className="sticky bottom-padding-sm z-[9999999]">
+      <div className="h-header relative max-w-2xl mx-auto">
+        <div className="bg-gray-900/90 h-header relative z-30 text-white rounded-full flex items-center px-padding-sm gap-padding-sm">
+          <div
+            onClick={() => setShow((s) => !s)}
+            className="h-btn cursor-pointer w-btn flexer border border-gray-700 rounded-full flexer"
+          >
+            {show ? <X size={16} /> : <Plus size={16} />}
+          </div>
+          <input
+            value={val}
+            className="flex-1 outline-none h-btn"
+            onChange={(e) => setVal(e.target.value)}
+            placeholder="Come posso aiutarti?"
+          />
+          <div
+            onClick={() => {
+              setSent((s) => !s);
+              setIsLoading((s) => !s);
+            }}
+            className={`${
+              val ? "bg-violet-600 cursor-pointer" : "text-gray-400"
+            } h-btn w-btn flexer rounded-full flexer`}
+          >
+            <ArrowRight size={16} />
+          </div>
+          {show && (
+            <div className="absolute bottom-full left-0 mb-padding-xs bg-gray-900/90 p-padding-sm rounded-panel flex flex-col gap-padding-xs">
+              {resource.map((f) => {
+                const { value, label } = f;
+                const Icon = f.Icon || null;
+                return (
+                  value !== "originale" && (
+                    <div
+                      onClick={() => {
+                        setVal(
+                          !val ? `Genera ${label}` : `${val} formato ${value}`
+                        );
+                        setShow(false);
+                      }}
+                      key={value}
+                      className="flex items-center text-gray-300 hover:text-white hover:bg-gray-700 rounded-btn cursor-pointer whitespace-nowrap h-btn px-padding-sm gap-padding-sm"
+                    >
+                      {!!Icon && <Icon size={16} />}
+                      <span>{label || value}</span>
+                    </div>
+                  )
+                );
+              })}
+            </div>
+          )}
+        </div>
+        {val && sent && (
+          <div className="z-20 absolute -bottom-padding-xs -left-padding-xs -right-padding-xs pb-header bg-white shadow-xl rounded-t-panel overflow-hidden rounded-b-[31px]">
+            <div className="p-padding-sm mb-padding-xs bg-white">
+              <div className="flex flex-col gap-padding-xs">
+                <div className="flex justify-end">
+                  <div className={`${msg} bg-gray-100`}>{val}</div>
+                </div>
+                <div className="flex items-center text-gray-500">
+                  <div className="animate-spin flexer w-btn h-btn">
+                    <Loader size={16} />
+                  </div>
+                  <div className={`${msg} bg-violet-100 text-violet-900`}>
+                    👍 Ok, sto generando la tua richiesta... Dammi qualche
+                    secondo
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+
+  /* return (
     <div className="sticky bottom-padding-sm z-[9999999]">
       <div className="p-padding-sm relative bg-gray-800 max-w-2xl mx-auto rounded-panel flex flex-col gap-padding-sm">
         {val && show && (
@@ -92,5 +170,5 @@ export default function BottomBar({ setIsLoading }) {
         </div>
       </div>
     </div>
-  );
+  ); */
 }
