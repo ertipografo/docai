@@ -21,9 +21,9 @@ export default function Toolbar({
 
   return ComplementaryComponent ? (
     <div
-      className={`${width} ${height} ${top} ${position} ${transform} shadow-lg lg:shadow-none lg:z-[90] z-[9999] overflow-hidden`}
+      className={`${width} ${height} ${top} ${position} ${transform} shadow-lg lg:shadow-none lg:z-[90] z-[99999999999999] overflow-hidden`}
     >
-      <div className="flex flex-col h-full bg-bg2">
+      <div className="flex flex-col h-full bg-bg1 lg:bg-bg2">
         <div className="flex flex-col h-full p-padding-sm rounded-panel">
           <div
             onClick={() => setShowFeatureBar((s) => !s)}

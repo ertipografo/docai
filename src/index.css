@@ -52,17 +52,20 @@
   --spacing-sidebar: clamp(360px, 25vw, 520px);
   --spacing-complementary: 320px;
   --spacing-sidebar-height: calc(100vh - var(--spacing-header));
-  --spacing-complementary-t: calc(
-    var(--spacing-header) + var(--spacing-padding-sm)
-  );
-  --spacing-complementary-h: calc(100vh - var(--spacing-complementary-t));
+
   --chat: 360px;
   --spacing-chat-t: 0;
   --spacing-chat-h: calc(100vh - var(--spacing-chat-t) - var(--spacing-header));
   --spacing-chat: 340px;
   --spacing-document: 1120px;
   --spacing-feature-topbar-top: calc(
-    var(--spacing-btn-lg) + (var(--spacing-padding-sm) * 2)
+    var(--spacing-btn-lg) + (var(--spacing-padding-sm))
+  );
+  --spacing-complementary-t: calc(
+    var(--spacing-header) + var(--spacing-feature-topbar-top)
+  );
+  --spacing-complementary-h: calc(
+    100vh - var(--spacing-header) - var(--spacing-complementary-t)
   );
 }
 

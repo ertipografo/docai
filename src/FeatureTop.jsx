@@ -11,18 +11,14 @@ export default function FeatureTop({
   const hasFormats = currentFeature?.hasFormats;
 
   const btnClass =
-    "bg-bg1 rounded cursor-pointer h-btn gap-padding-sm flex items-center justify-center px-padding-sm";
+    "bg-bg1 border border-gray-300 rounded-btn cursor-pointer h-btn gap-padding-sm flex items-center justify-center px-padding-sm";
 
   return (
     <div className="sticky bg-bg1 top-feature-topbar-top z-[999] px-padding-sm lg:pl-0">
       <div
-        className={`py-padding-sm bg-bg2 rounded-t-panel flex items-center gap-padding-sm px-padding-sm min-w-btn font-semibold`}
+        className={`py-padding-sm bg-bg3 flex items-center gap-padding-sm px-padding-sm min-w-btn font-semibold`}
       >
-        <div
-          className={`${
-            feature === "mappa" ? "" : "max-w-document mx-auto"
-          } flex-1 flex items-center justify-between`}
-        >
+        <div className={`flex-1 flex items-center justify-between`}>
           <div className="flex gap-padding-sm items-center">
             {hasComplementary && (
               <div

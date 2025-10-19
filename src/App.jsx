@@ -81,7 +81,7 @@ export default function App() {
               className={`${
                 isMap
                   ? "border border-bg2"
-                  : "bg-bg2 px-padding-sm rounded-b-panel"
+                  : "bg-bg2 px-padding-sm pt-padding-sm rounded-b-panel"
               } lg:ml-0 mx-padding-sm`}
             >
               <div className="flex-1 flex flex-col lg:flex-row min-h-screen">

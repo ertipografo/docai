@@ -7,7 +7,7 @@ const Bubble = ({ idx, chatMessage }) => {
     <div className={`${isAnswer ? "flex-row" : "flex-row-reverse"} flex`}>
       <div
         className={`leading-relaxed p-3 rounded-panel ${
-          isAnswer ? "bg-violet-300" : "bg-violet-100 text-violet-900"
+          isAnswer ? "bg-violet-300" : "bg-white text-violet-900"
         }`}
       >
         {chatMessage}
@@ -35,17 +35,20 @@ export default function Chat() {
   );
 
   return (
-    <div className="flex flex-col overflow-hidden bg-gray-800 rounded-btn">
+    <div className="flex flex-col overflow-hidden bg-violet-100 rounded-panel">
+      <div className="h-btn bg-violet-100 flexer text-violet-900 font-semibold">
+        Chiedi al documento
+      </div>
       <PerfectScrollbar
         options={{ wheelPropagation: false }}
-        className="flex flex-col-reverse gap-padding-sm p-padding-sm max-h-[70vh] h-full"
+        className="flex flex-col-reverse gap-padding-sm p-padding-sm h-[70vh] max-h-[500px]"
       >
         {chatMessages.map((chatMessage, i) => (
           <Bubble key={i} chatMessage={chatMessage} idx={i} />
         ))}
       </PerfectScrollbar>
 
-      <div className="h-header rounded bg-bg1 flex items-center px-padding-sm m-padding-sm mt-0">
+      <div className="h-header rounded-btn bg-bg1 flex px-padding-sm m-padding-sm mt-0">
         <input
           value={val}
           placeholder="Chiedi al documento..."

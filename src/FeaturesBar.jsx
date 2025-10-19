@@ -8,14 +8,14 @@ export default function FeaturesBar({
   isLoading,
 }) {
   const btn =
-    "cursor-pointer flex-1 max-w-[200px] capitalize flex h-btn-lg rounded-btn items-center font-semibold overflow-hidden pr-padding-sm";
-  const active = "bg-violet-200 text-violet-900";
-  const inactive = "bg-bg2";
+    "cursor-pointer flex-1 max-w-[200px] capitalize flex h-btn-lg rounded-t-btn items-center font-semibold overflow-hidden pr-padding-sm";
+  const active = "bg-bg3";
+  const inactive = "bg-bg2 opacity-70 hover:opacity-100";
   const inner = "flex h-full gap-padding-xs px-padding-sm items-center";
 
   return (
-    <div className="z-[999999] sticky top-0 mx-padding-sm lg:ml-0 flex flex-col overflow-hidden gap-padding-sm bg-bg1 py-padding-sm">
-      <div className="gap-padding-sm flex items-center">
+    <div className="z-[999999] bg-bg1 sticky top-0 mx-padding-sm lg:ml-0 flex flex-col overflow-hidden gap-padding-sm pt-padding-sm">
+      <div className="gap-padding-xs flex items-center">
         {features.map((f, i) => {
           const isCur = feature === f.value;
           const { Icon } = f;
@@ -30,17 +30,17 @@ export default function FeaturesBar({
               className={`${btn} ${isCur ? active : inactive}`}
             >
               <div className={inner}>
-                <Icon size={16} />
-                <span className="hidden md:flex">{f.value}</span>
+                <Icon className="hidden sm:flex" size={16} />
+                <span>{f.value}</span>
               </div>
               {isCur ? (
                 isLoading ? (
                   <Loader size={16} className="ml-auto animate-spin" />
                 ) : (
-                  <ChevronDown size={16} className="ml-auto" />
+                  <ChevronDown size={16} className="hidden sm:flex ml-auto" />
                 )
               ) : (
-                <ChevronRight size={16} className="ml-auto" />
+                <ChevronRight size={16} className="hidden sm:flex ml-auto" />
               )}
             </div>
           );

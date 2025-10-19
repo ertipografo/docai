@@ -72,8 +72,8 @@ function NoteMeta({ setShowModal }) {
 
 const Author = () => {
   return (
-    <div className="flex items-center gap-padding-sm font-semibold">
-      <div className="bg-bg3 h-btn w-btn rounded" />
+    <div className="flex items-center gap-padding-sm font-semibold mt-padding-sm">
+      <div className="bg-bg2 h-btn w-btn rounded" />
       <div className="flex flex-col gap-px flex-1">
         <div>Carmela Dangelo 🇰🇲 </div>
         <div className="flex items-center gap-padding-xs text-xs">
