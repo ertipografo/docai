@@ -6,7 +6,7 @@ export default function Modal({ showModal, setShowModal }) {
         showModal
           ? "pointer-events-auto opacity-100"
           : "opacity-0 pointer-events-none"
-      } transition-all fixed inset-0 z-[90] bg-dark/95 flex flex-col items-center h-screen`}
+      } transition-all fixed inset-0 z-[999999990] bg-dark/95 flex flex-col items-center h-screen`}
     >
       <div className="max-w-3xl p-padding-lg w-full text-text-dark flex-1 flex flex-col justify-center">
         <div className="h-header flexer gap-padding-sm relative">
@@ -19,7 +19,7 @@ export default function Modal({ showModal, setShowModal }) {
             <X size={18} />
           </div>
         </div>
-        <div className="flex-1 bg-white max-h-[900px] rounded-panel">dasda</div>
+        <div className="flex-1 bg-white max-h-[900px] rounded-panel"></div>
         <div className="h-header flexer gap-padding-sm">1 / 4</div>
       </div>
     </div>

@@ -2,6 +2,8 @@ import { documentTitle } from "./utils";
 import Rating from "./Rating";
 
 export default function Title({ noteType }) {
+  const tag = "capitalize h-btn-sm px-padding-xs rounded font-semibold flexer";
+
   return (
     <div className="flex flex-col max-w-document mx-auto w-full">
       <div className="gap-padding-xs flex text-xs items-center">
@@ -10,15 +12,18 @@ export default function Title({ noteType }) {
             noteType === "note"
               ? "bg-action-note/10 text-action-note"
               : "bg-action-primary/10 text-action-primary"
-          } capitalize h-btn-sm px-padding-xs rounded font-semibold flexer`}
+          } ${tag}`}
         >
           {noteType}
         </div>
-
         {noteType !== "note" && (
-          <div className="flexer ml-auto">
-            <Rating />
-          </div>
+          <>
+            <div className={`bg-amber-50 text-amber-900/70 ${tag}`}>Store</div>
+
+            <div className="flexer ml-auto">
+              <Rating />
+            </div>
+          </>
         )}
       </div>
       <div className="flex flex-col pt-padding-sm">

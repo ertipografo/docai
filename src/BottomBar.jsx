@@ -27,14 +27,31 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
           <div
             className={`w-full pointer-events-auto mx-auto px-padding-sm py-padding-sm flex flex-col gap-padding-xs`}
           >
-            <div className="flex justify-end items-center">
-              <div className={`${msg} ${sen}`}>{sent}</div>
+            <div className="h-btn cursor-pointer text-gray-300 pl-padding-xs font-semibold text-xs flex items-center justify-between">
+              <span>Chat</span>
+              <div
+                className="h-btn w-btn hover:bg-gray-800 rounded-btn flexer"
+                onClick={() => {
+                  setFocus(false);
+                  setVal("");
+                  setSent("");
+                }}
+              >
+                <X size={16} />
+              </div>
             </div>
-            <div className="flex items-center gap-padding-sm">
+            <div className="flex justify-end items-center gap-padding-xs">
+              <div className={`${msg} ${sen}`}>{sent}</div>
+              <div className="h-btn-md w-btn-md bg-gray-500 mr-padding-xs rounded-full flexer text-xs font-semibold">
+                AC
+              </div>
+            </div>
+            <div className="flex items-center">
+              <div className="h-btn-md w-btn-md bg-purple-500 mr-padding-xs rounded-full" />
               <div className={`${msg} ${rec}`}>
                 👍 Sto generando la tua richiesta... Qualche secondo
               </div>
-              <div className="w-btn h-btn text-gray-500 mr-padding-lg flex items-center">
+              <div className="w-btn p-padding-sm h-btn text-gray-500 mr-padding-lg flex items-center">
                 <Copy size={16} />
               </div>
             </div>
@@ -55,6 +72,12 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
             className="flex-1 outline-none h-btn"
             onChange={(e) => setVal(e.target.value)}
             placeholder="Come posso aiutarti?"
+            onKeyUp={(e) => {
+              if (e.key === "Enter") {
+                setSent(val);
+                setVal("");
+              }
+            }}
           />
           <div
             onClick={() => {
@@ -85,14 +108,17 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
                         setVal(
                           !val ? `Genera ${label}` : `${val} formato ${value}`
                         );
-                        setShow(false);
+
                         setFocus(true);
+                        val && setShow(false);
                       }}
                       key={value}
                       className="flex items-center text-gray-300 hover:text-white hover:bg-gray-700 rounded-btn cursor-pointer whitespace-nowrap h-btn px-padding-sm gap-padding-sm"
                     >
                       {!!Icon && <Icon size={16} />}
-                      <span>{label || value}</span>
+                      <span>
+                        {label ? `Genera ${label}` : `Formato ${value}`}
+                      </span>
                     </div>
                   )
                 );
