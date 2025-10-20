@@ -1,4 +1,4 @@
-import { ArrowRight, Loader, Plus, X } from "lucide-react";
+import { ArrowRight, Loader, Plus, X, Copy } from "lucide-react";
 
 import { useState } from "react";
 import { features } from "./utils";
@@ -27,25 +27,15 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
           <div
             className={`w-full pointer-events-auto mx-auto px-padding-sm py-padding-sm flex flex-col gap-padding-xs`}
           >
-            <div className="flex justify-end">
-              <div className={`${msg} ${sen}`}>
-                Ma di cosa parla il documento?
-              </div>
-            </div>
-            <div className="flex items-center pr-20">
-              <div className={`${msg} ${rec}`}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Praesentium alias eveniet hic repellat impedit magnam minima
-                voluptatem suscipit modi, eligendi optio atque totam distinctio
-                debitis nihil odit excepturi tenetur aspernatur!
-              </div>
-            </div>
-            <div className="flex justify-end">
+            <div className="flex justify-end items-center">
               <div className={`${msg} ${sen}`}>{sent}</div>
             </div>
-            <div className="flex items-center pr-20">
+            <div className="flex items-center gap-padding-sm">
               <div className={`${msg} ${rec}`}>
                 👍 Ok, sto generando la tua richiesta... Dammi qualche secondo
+              </div>
+              <div className="w-btn h-btn text-gray-500 mr-padding-lg flex items-center">
+                <Copy size={16} />
               </div>
             </div>
           </div>
