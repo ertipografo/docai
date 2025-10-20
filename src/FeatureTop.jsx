@@ -45,7 +45,7 @@ export default function FeatureTop({
           </div>
           <div className="flex-1 text-text2 text-xs flexer">1 / 36</div>
           <div className="flex items-center gap-padding-sm">
-            <div className="text-xs flex gap-px items-center cursor-pointer hover:bg-bg3 rounded-btn p-padding-sm">
+            <div className="text-xs flex gap-px items-center cursor-pointer bg-bg3 rounded-full p-padding-sm">
               <span className="text-text2 hidden md:flex mr-padding-xs">
                 Valuta:
               </span>

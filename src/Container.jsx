@@ -15,6 +15,7 @@ export default function Container({
   feature,
   showChat,
   setShowChat,
+  isArchive,
 }) {
   return (
     <div className="h-screen flex flex-col overflow-hidden">
@@ -36,6 +37,7 @@ export default function Container({
         <div className="flex-1 flex lg:overflow-hidden">
           <Outbar
             setIsArchive={setIsArchive}
+            isArchive={isArchive}
             setShow={setShow}
             setNoteType={setNoteType}
             setFeature={setFeature}

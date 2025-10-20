@@ -4,6 +4,8 @@ import {
   Scissors,
   ShieldQuestionMark,
   MessageSquareText,
+  Star,
+  Calendar,
 } from "lucide-react";
 import Tree from "./Tree";
 
@@ -50,4 +52,10 @@ export const titles = [
   "Distinctio pariatur officia illum voluptatibus ex illo blanditiis neque ab",
   "Nobis in. Lorem ipsum dolor sit amet consectetur adipisicing elit",
   "Consectetur alias voluptates venia",
+];
+
+export const categories = [
+  { label: "preferiti", Icon: Star },
+  { label: "visti di recente", Icon: Calendar },
+  { label: "suggeriti", Icon: FileText },
 ];

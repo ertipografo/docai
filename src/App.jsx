@@ -3,7 +3,6 @@ import { features } from "./utils";
 import Sidebar from "./Sidebar";
 import Archive from "./Archive";
 import FeatureTop from "./FeatureTop";
-import FeaturesBar from "./FeaturesBar";
 import Toolbar from "./Toolbar";
 import Feature from "./Feature";
 import Container from "./Container";
@@ -25,10 +24,11 @@ export default function App() {
   return isArchive ? (
     <Container
       setIsArchive={setIsArchive}
+      isArchive={isArchive}
       setNoteType={setNoteType}
       setFeature={setFeature}
       feature={feature}
-      main={<Archive />}
+      main={<div className="p-padding-lg bg-bg2 h-full" />}
       setShow={setShow}
       show={show}
       showChat={showChat}
@@ -38,6 +38,7 @@ export default function App() {
   ) : (
     <Container
       setIsArchive={setIsArchive}
+      isArchive={isArchive}
       setNoteType={setNoteType}
       setShow={setShow}
       feature={feature}

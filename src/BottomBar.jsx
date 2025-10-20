@@ -16,10 +16,10 @@ export default function BottomBar({ setIsLoading }) {
   return (
     <div className="sticky bottom-padding-sm z-[9999999]">
       <div className="h-header relative max-w-2xl mx-auto">
-        <div className="bg-gray-900/90 h-header relative z-30 text-white rounded-full flex items-center px-padding-sm gap-padding-sm">
+        <div className="bg-gray-900 h-header relative z-30 text-white rounded-full flex items-center px-padding-sm gap-padding-sm">
           <div
             onClick={() => setShow((s) => !s)}
-            className="h-btn cursor-pointer w-btn flexer border border-gray-700 rounded-full flexer"
+            className="h-btn cursor-pointer w-btn flexer bg-white text-text1 rounded-full flexer"
           >
             {show ? <X size={16} /> : <Plus size={16} />}
           </div>
@@ -41,7 +41,7 @@ export default function BottomBar({ setIsLoading }) {
             <ArrowRight size={16} />
           </div>
           {show && (
-            <div className="absolute bottom-full left-0 mb-padding-xs bg-gray-900/90 p-padding-sm rounded-panel flex flex-col gap-padding-xs">
+            <div className="absolute bottom-full left-0 mb-padding-xs bg-gray-900 p-padding-sm rounded-panel flex flex-col gap-padding-xs">
               {resource.map((f) => {
                 const { value, label } = f;
                 const Icon = f.Icon || null;
