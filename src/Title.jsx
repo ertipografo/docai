@@ -15,9 +15,11 @@ export default function Title({ noteType }) {
           {noteType}
         </div>
 
-        <div className="flexer ml-auto">
-          <Rating />
-        </div>
+        {noteType !== "note" && (
+          <div className="flexer ml-auto">
+            <Rating />
+          </div>
+        )}
       </div>
       <div className="flex flex-col pt-padding-sm">
         <h1 className="text-lg leading-tight font-bold mb-padding-sm">
