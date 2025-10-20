@@ -34,6 +34,7 @@ export default function App() {
       showChat={showChat}
       setShowChat={setShowChat}
       setIsLoading={setIsLoading}
+      isLoading={isLoading}
     />
   ) : (
     <Container
@@ -46,6 +47,7 @@ export default function App() {
       showChat={showChat}
       setShowChat={setShowChat}
       setIsLoading={setIsLoading}
+      isLoading={isLoading}
       side={
         <div
           className={`bg-bg1 ${

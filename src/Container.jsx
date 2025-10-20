@@ -15,6 +15,7 @@ export default function Container({
   feature,
   showChat,
   setShowChat,
+  isLoading,
 }) {
   return (
     <div className="h-screen flex flex-col overflow-hidden">
@@ -41,6 +42,7 @@ export default function Container({
             setFeature={setFeature}
             feature={feature}
             show={show}
+            isLoading={isLoading}
           />
           <div className="flex flex-col w-full">
             <div className="flex flex-col lg:flex-row flex-1 lg:overflow-auto">
