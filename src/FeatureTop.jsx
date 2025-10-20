@@ -30,6 +30,14 @@ export default function FeatureTop({
       >
         <div className={`flex-1 flex items-center justify-between`}>
           <div className="flex gap-padding-sm items-center">
+            {hasComplementary && (
+              <div
+                onClick={() => setShowFeatureBar((s) => !s)}
+                className={`${btnClass}`}
+              >
+                {showFeatureBar ? <X size={16} /> : <Menu size={16} />}
+              </div>
+            )}
             <div className="px-padding-sm flex items-center gap-padding-sm">
               {!show && (
                 <div
@@ -42,14 +50,7 @@ export default function FeatureTop({
               <CurrentFeatureIcon size={16} />
               <span>{currentFeature.label}</span>
             </div>
-            {hasComplementary && (
-              <div
-                onClick={() => setShowFeatureBar((s) => !s)}
-                className={`${btnClass}`}
-              >
-                {showFeatureBar ? <X size={16} /> : <Menu size={16} />}
-              </div>
-            )}
+
             {hasFormats && (
               <div className={btnClass}>
                 <span>Formato</span>

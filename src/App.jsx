@@ -10,7 +10,7 @@ import Modal from "./Modal";
 import BottomBar from "./BottomBar";
 
 export default function App() {
-  const [feature, setFeature] = useState(features[0].value);
+  const [feature, setFeature] = useState(features[3].value);
   const [showFeatureBar, setShowFeatureBar] = useState(false);
   const [show, setShow] = useState(true);
   const [showChat, setShowChat] = useState(false);
