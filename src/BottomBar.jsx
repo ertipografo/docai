@@ -11,10 +11,27 @@ export default function BottomBar({ setIsLoading }) {
   const resource = val
     ? [{ value: "SM" }, { value: "MD" }, { value: "LG" }, { value: "XL" }]
     : features;
-  const msg = `p-padding-sm rounded-btn`;
+  const msg = `p-4 rounded-panel`;
 
   return (
-    <div className="sticky bottom-padding-sm z-[9999999]">
+    <div className="sticky bottom-0 z-[9999999] py-padding-sm">
+      {val && sent && (
+        <div className="absolute bottom-0 -left-padding-sm -right-padding-sm h-[50vh] bg-gradient-to-t from-gray-900/50 flex flex-col justify-end pb-header">
+          <div className="w-full max-w-2xl mx-auto p-padding-sm mb-padding-sm flex flex-col gap-padding-xs">
+            <div className="flex justify-end">
+              <div className={`${msg} bg-gray-100`}>{val}</div>
+            </div>
+            <div className="flex items-center text-gray-500">
+              {/* <div className="animate-spin flexer w-btn h-btn">
+              <Loader size={16} />
+            </div> */}
+              <div className={`${msg} bg-violet-100 text-violet-900`}>
+                👍 Ok, sto generando la tua richiesta... Dammi qualche secondo
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="h-header relative max-w-2xl mx-auto">
         <div className="bg-gray-900 h-header relative z-30 text-white rounded-full flex items-center px-padding-sm gap-padding-sm">
           <div
@@ -32,7 +49,7 @@ export default function BottomBar({ setIsLoading }) {
           <div
             onClick={() => {
               setSent((s) => !s);
-              setIsLoading((s) => !s);
+              // setIsLoading((s) => !s);
             }}
             className={`${
               val ? "bg-violet-600 cursor-pointer" : "text-gray-400"
@@ -66,7 +83,7 @@ export default function BottomBar({ setIsLoading }) {
             </div>
           )}
         </div>
-        {val && sent && (
+        {/*  {val && sent && (
           <div className="z-20 absolute -bottom-padding-xs -left-padding-xs -right-padding-xs pb-header bg-white shadow-xl rounded-t-panel overflow-hidden rounded-b-[31px]">
             <div className="p-padding-sm mb-padding-xs bg-white">
               <div className="flex flex-col gap-padding-xs">
@@ -85,90 +102,8 @@ export default function BottomBar({ setIsLoading }) {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
-
-  /* return (
-    <div className="sticky bottom-padding-sm z-[9999999]">
-      <div className="p-padding-sm relative bg-gray-800 max-w-2xl mx-auto rounded-panel flex flex-col gap-padding-sm">
-        {val && show && (
-          <div className="flex flex-col gap-padding-xs">
-            <div className="flex justify-end">
-              <div className={`${msg} bg-gray-600 text-white`}>{val}</div>
-            </div>
-            <div className="flex items-center text-gray-500">
-              <div className="animate-spin flexer w-btn h-btn">
-                <Loader size={16} />
-              </div>
-              <div className={`${msg} bg-white text-gray-600`}>
-                👍 Ok, sto generando la tua richiesta... Dammi qualche secondo
-              </div>
-            </div>
-          </div>
-        )}
-        <div className="flex flex-col overflow-hidden bg-gray-700/30 border border-gray-600 rounded-btn">
-          <div className="flex items-center">
-            <input
-              className="h-btn outline-none flex-1 text-gray-100 placeholder:text-gray-500 px-padding-sm"
-              value={val}
-              onChange={(e) => setVal(e.target.value)}
-              placeholder="Ciao come posso aiutarti?"
-            />
-            {!!val && (
-              <div
-                className="w-btn h-btn cursor-pointer flexer text-gray-500"
-                onClick={() => {
-                  setVal("");
-                  setShow(false);
-                }}
-              >
-                <X size={16} />
-              </div>
-            )}
-          </div>
-          <div className="pr-1 pl-padding-sm h-btn flex items-center justify-between">
-            <div className="flex gap-padding-xs items-center">
-              {val && (
-                <span className="text-gray-400 text-xs font-semibold">
-                  Formato:
-                </span>
-              )}
-              {resource.map(({ value }) => {
-                return (
-                  value !== "originale" && (
-                    <div
-                      className="hover:bg-gray-300 cursor-pointer hover:text-gray-900 bg-gray-600 text-xs text-gray-300 h-btn-sm flexer rounded-full px-padding-sm"
-                      key={value}
-                      onClick={() =>
-                        setVal(
-                          !val ? `Genera ${value}` : val + " formato " + value
-                        )
-                      }
-                    >
-                      {`${!val ? "Genera" : ""} ${value}`}
-                    </div>
-                  )
-                );
-              })}
-            </div>
-            <div
-              onClick={() => {
-                setShow((s) => !s);
-                setIsLoading((s) => !s);
-              }}
-              className={`${
-                val
-                  ? "bg-violet-500 text-white cursor-pointer"
-                  : "bg-gray-700 text-gray-400"
-              } h-btn-md text-xs font-semibold rounded px-padding-lg flex items-center`}
-            >
-              Invia
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  ); */
 }

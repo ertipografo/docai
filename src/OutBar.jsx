@@ -1,6 +1,6 @@
 import { ChevronLeft, PanelRightClose, PanelRightOpen } from "lucide-react";
 import UploadCta from "./UploadCta";
-import { categories, titles } from "./utils";
+import { categories } from "./utils";
 const cl = "hover:bg-bg2 cursor-pointer w-btn h-btn flexer rounded-btn";
 export default function Outbar({ setIsArchive, setShow, show, isArchive }) {
   const actions = [
