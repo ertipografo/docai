@@ -71,6 +71,8 @@ export default function App() {
               feature={feature}
               setFeature={setFeature}
               isLoading={isLoading}
+              show={show}
+              setShow={setShow}
             />
 
             <FeatureTop

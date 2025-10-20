@@ -1,4 +1,9 @@
-import { ChevronDown, ChevronRight, Loader } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronRight,
+  Loader,
+  PanelRightClose,
+} from "lucide-react";
 import { features } from "./utils";
 
 export default function FeaturesBar({
@@ -6,6 +11,8 @@ export default function FeaturesBar({
   feature,
   noteType,
   isLoading,
+  show,
+  setShow,
 }) {
   const btn =
     "cursor-pointer flex-1 max-w-[200px] capitalize flex h-btn-lg rounded-t-btn items-center font-semibold overflow-hidden pr-padding-sm";
@@ -16,6 +23,14 @@ export default function FeaturesBar({
   return (
     <div className="z-[999999] bg-bg1 sticky top-0 mx-padding-sm lg:ml-0 flex flex-col overflow-hidden gap-padding-sm pt-padding-sm">
       <div className="gap-padding-xs flex items-center">
+        {!show && (
+          <div
+            className="h-btn w-btn flexer cursor-pointer rounded-btn bg-bg1 hover:bg-bg3"
+            onClick={() => setShow((s) => !s)}
+          >
+            <PanelRightClose size={16} />
+          </div>
+        )}
         {features.map((f, i) => {
           const isCur = feature === f.value;
           const { Icon } = f;
