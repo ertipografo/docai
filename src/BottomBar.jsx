@@ -32,7 +32,7 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
             </div>
             <div className="flex items-center gap-padding-sm">
               <div className={`${msg} ${rec}`}>
-                👍 Ok, sto generando la tua richiesta... Dammi qualche secondo
+                👍 Sto generando la tua richiesta... Qualche secondo
               </div>
               <div className="w-btn h-btn text-gray-500 mr-padding-lg flex items-center">
                 <Copy size={16} />
