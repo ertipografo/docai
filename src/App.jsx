@@ -64,7 +64,7 @@ export default function App() {
       }
       main={
         <>
-          <div className="w-full flex-1 flex-col flex lg:mt-header">
+          <div className="w-full flex-1 flex-col flex">
             <FeaturesBar
               noteType={noteType}
               feature={feature}
