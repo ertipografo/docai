@@ -1,3 +1,4 @@
+import { Star } from "lucide-react";
 import { categories, getRandomArbitrary, titles, features } from "./utils";
 import { useState } from "react";
 import PerfectScrollbar from "react-perfect-scrollbar";
@@ -10,7 +11,7 @@ export default function SuggestedDocs() {
     <div className="flex-1 hidden lg:flex flex-col overflow-hidden mt-auto max-h-[500px]">
       <div className="flex-1 overflow-auto">
         <PerfectScrollbar>
-          <div className="flex flex-col px-padding-lg">
+          <div className="flex flex-col px-padding-md">
             <span className="z-30 bg-bg1 sticky top-0 h-btn flex items-center font-semibold text-xs text-text2">{`Documenti ${cur}`}</span>
             {Array.from({ length: 10 }).map((_, i) => {
               return (
@@ -20,8 +21,25 @@ export default function SuggestedDocs() {
                 >
                   <div>{titles[getRandomArbitrary(0, titles.length - 1)]}</div>
                   <div className="flex items-center gap-padding-sm justify-between">
-                    <div className="flex leading-1 text-text2 items-center gap-padding-sm">
-                      23/5/2025
+                    <div className="flex gap-padding-xs items-center">
+                      {cur === "preferiti" && (
+                        <Star
+                          size={14}
+                          className="fill-text2/50 text-transparent"
+                        />
+                      )}
+                      <div
+                        className={`${
+                          i % 3 === 0
+                            ? "bg-action-note/10 text-action-note"
+                            : "bg-action-primary/10 text-action-primary"
+                        } h-btn-sm px-padding-xs rounded flexer`}
+                      >
+                        {i % 3 === 0 ? "Note" : "Doc"}
+                      </div>
+                      <div className="flex leading-1 text-text2 items-center gap-padding-sm">
+                        23/5/2025
+                      </div>
                     </div>
                     <div className="flex items-center gap-padding-sm">
                       {features.map((f, i) => {
