@@ -6,20 +6,20 @@ export default function Outbar({ setIsArchive, setShow, show, isArchive }) {
   const actions = [
     {
       icon: (
-        <div className={cl + " bg-bg2"}>
+        <div className={cl}>
           <ChevronLeft size={16} />
         </div>
       ),
       action: () => setIsArchive((s) => !s),
     },
-    {
+    /* {
       icon: (
         <div className={cl}>
           {show ? <PanelRightOpen size={16} /> : <PanelRightClose size={16} />}
         </div>
       ),
       action: () => setShow((s) => !s),
-    },
+    }, */
   ];
   return (
     <div
@@ -46,9 +46,7 @@ export default function Outbar({ setIsArchive, setShow, show, isArchive }) {
       ) : (
         actions.map(({ icon, action }, r) => (
           <div
-            className={`${
-              r === 0 ? "border-b border-border" : ""
-            } py-padding-sm w-header flexer`}
+            className={`py-padding-sm w-header flexer`}
             onClick={action}
             key={r}
           >

@@ -1,10 +1,19 @@
-import { Menu, X, ArrowDownToLine, ChevronDown, Star } from "lucide-react";
+import {
+  Menu,
+  X,
+  ArrowDownToLine,
+  ChevronDown,
+  Star,
+  PanelRightClose,
+} from "lucide-react";
 import { features } from "./utils";
 
 export default function FeatureTop({
   feature,
   showFeatureBar,
   setShowFeatureBar,
+  show,
+  setShow,
 }) {
   const currentFeature = features.find((f) => f.value === feature);
   const hasComplementary = currentFeature?.hasComplementary;
@@ -22,6 +31,14 @@ export default function FeatureTop({
         <div className={`flex-1 flex items-center justify-between`}>
           <div className="flex gap-padding-sm items-center">
             <div className="px-padding-sm flex items-center gap-padding-sm">
+              {!show && (
+                <div
+                  className="h-btn w-btn flexer cursor-pointer rounded-btn bg-bg1 hover:bg-bg3 -ml-padding-sm mr-padding-sm"
+                  onClick={() => setShow((s) => !s)}
+                >
+                  <PanelRightClose size={16} />
+                </div>
+              )}
               <CurrentFeatureIcon size={16} />
               <span>{currentFeature.label}</span>
             </div>

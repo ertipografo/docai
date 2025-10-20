@@ -58,6 +58,7 @@ export default function App() {
             setFeature={setFeature}
             setShowModal={setShowModal}
             noteType={noteType}
+            setShow={setShow}
           />
         </div>
       }
@@ -70,6 +71,7 @@ export default function App() {
               showFeatureBar={showFeatureBar}
               setShowFeatureBar={setShowFeatureBar}
               show={show}
+              setShow={setShow}
             />
             <div
               className={`${
@@ -92,7 +94,7 @@ export default function App() {
                   <Feature feature={feature} isLoading={isLoading} />
                 </div>
               </div>
-              <BottomBar setIsLoading={setIsLoading} />
+              <BottomBar setIsLoading={setIsLoading} isLoading={isLoading} />
             </div>
           </div>
 
