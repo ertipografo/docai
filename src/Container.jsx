@@ -19,15 +19,15 @@ export default function Container({
 }) {
   return (
     <div className="h-screen flex flex-col overflow-hidden">
-      <div className="min-h-header bg-sky-950 flex items-center">
+      <div className="min-h-header bg-gray-800 flex items-center">
         <div
-          className="text-xs text-sky-800 px-10"
+          className="text-xs text-gray-500 px-10"
           onClick={() => setNoteType((t) => (t === "note" ? "doc" : "note"))}
         >
           note
         </div>
         <div
-          className="text-xs text-sky-800 px-10"
+          className="text-xs text-gray-500 px-10"
           onClick={() => setIsLoading((t) => !t)}
         >
           load
