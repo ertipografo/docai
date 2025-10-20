@@ -7,24 +7,33 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
   const [show, setShow] = useState(false);
   const [sent, setSent] = useState(false);
   const [val, setVal] = useState("");
+  const [focus, setFocus] = useState(false);
 
   const resource = val
     ? [{ value: "SM" }, { value: "MD" }, { value: "LG" }, { value: "XL" }]
     : features;
   const msg = `p-4 rounded-ultra leading-relaxed`;
+  const maxW = `transition-all ${focus ? "max-w-lg" : "max-w-xs"}`;
+
+  const sen = "bg-gray-800 text-gray-200";
+  const rec = "bg-violet-300/20 text-violet-300";
 
   return (
     <div className="sticky bottom-0 z-[9999999] py-padding-sm ">
       {sent && (
-        <div className="absolute bottom-0 -left-padding-sm -right-padding-sm h-[90vh] bg-gradient-to-t from-bg1/90 flex flex-col justify-end pb-header">
-          <div className="w-full max-w-2xl mx-auto px-padding-lg py-padding-sm mb-padding-sm flex flex-col gap-padding-xs">
+        <div
+          className={`${maxW} absolute bottom-padding-sm rounded-b-[40px] rounded-t-ultra -left-padding-sm -right-padding-sm pointer-events-none bg-gray-900 flex flex-col justify-end pb-header mx-auto`}
+        >
+          <div
+            className={`w-full pointer-events-auto mx-auto px-padding-sm py-padding-sm flex flex-col gap-padding-xs`}
+          >
             <div className="flex justify-end">
-              <div className={`${msg} bg-gray-100`}>
+              <div className={`${msg} ${sen}`}>
                 Ma di cosa parla il documento?
               </div>
             </div>
             <div className="flex items-center pr-20">
-              <div className={`${msg} bg-violet-300 text-violet-950`}>
+              <div className={`${msg} ${rec}`}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Praesentium alias eveniet hic repellat impedit magnam minima
                 voluptatem suscipit modi, eligendi optio atque totam distinctio
@@ -32,17 +41,17 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
               </div>
             </div>
             <div className="flex justify-end">
-              <div className={`${msg} bg-gray-100`}>{sent}</div>
+              <div className={`${msg} ${sen}`}>{sent}</div>
             </div>
             <div className="flex items-center pr-20">
-              <div className={`${msg} bg-violet-300 text-violet-950`}>
+              <div className={`${msg} ${rec}`}>
                 👍 Ok, sto generando la tua richiesta... Dammi qualche secondo
               </div>
             </div>
           </div>
         </div>
       )}
-      <div className="h-header relative max-w-2xl mx-auto">
+      <div className={`${maxW} h-header relative mx-auto`}>
         <div className="bg-gray-900 h-header relative z-30 text-white rounded-full flex items-center px-padding-sm gap-padding-sm">
           <div
             onClick={() => setShow((s) => !s)}
@@ -51,6 +60,7 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
             {show ? <X size={16} /> : <Plus size={16} />}
           </div>
           <input
+            onFocus={() => setFocus(true)}
             value={val}
             className="flex-1 outline-none h-btn"
             onChange={(e) => setVal(e.target.value)}
@@ -86,6 +96,7 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
                           !val ? `Genera ${label}` : `${val} formato ${value}`
                         );
                         setShow(false);
+                        setFocus(true);
                       }}
                       key={value}
                       className="flex items-center text-gray-300 hover:text-white hover:bg-gray-700 rounded-btn cursor-pointer whitespace-nowrap h-btn px-padding-sm gap-padding-sm"

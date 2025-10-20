@@ -24,8 +24,8 @@ export default function Outbar({ setIsArchive, setShow, show, isArchive }) {
   return (
     <div
       className={`${
-        isArchive ? "w-xs" : "w-header"
-      } hidden lg:flex border-r border-border flex-col bg-bg1`}
+        isArchive ? "w-xs border-r border-border" : "w-0 overflow-hidden"
+      } hidden lg:flex flex-col bg-bg1`}
     >
       {isArchive ? (
         <div onClick={() => setIsArchive(false)}>
