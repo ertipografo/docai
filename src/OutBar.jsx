@@ -23,7 +23,7 @@ export default function Outbar({ setIsArchive, setShow, show, isArchive }) {
   return (
     <div
       className={`${
-        isArchive ? "w-xs" : "w-header"
+        isArchive ? "w-xs" : "w-0 overflow-hidden"
       } hidden lg:flex border-r border-border flex-col bg-bg1`}
     >
       {isArchive ? (

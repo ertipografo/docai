@@ -59,6 +59,7 @@ export default function App() {
             setFeature={setFeature}
             setShowModal={setShowModal}
             noteType={noteType}
+            setShow={setShow}
           />
         </div>
       }
