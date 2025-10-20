@@ -7,7 +7,7 @@ export default function SuggestedDocs() {
   const [show, setShow] = useState(true);
 
   return (
-    <div className="flex-1 hidden lg:flex flex-col overflow-hidden mt-auto">
+    <div className="flex-1 hidden lg:flex flex-col overflow-hidden mt-auto max-h-[500px]">
       <div className="flex-1 overflow-auto">
         <PerfectScrollbar>
           <div className="flex flex-col px-padding-lg">
