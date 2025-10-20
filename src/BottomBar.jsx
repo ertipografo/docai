@@ -3,7 +3,7 @@ import { ArrowRight, Loader, Plus, X, Copy } from "lucide-react";
 import { useState } from "react";
 import { features } from "./utils";
 
-export default function BottomBar(/* { setIsLoading, isLoading } */) {
+export default function BottomBar({ setIsLoading }) {
   const [show, setShow] = useState(false);
   const [sent, setSent] = useState(false);
   const [val, setVal] = useState("");
@@ -16,7 +16,7 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
   const maxW = `transition-all ${focus ? "max-w-lg" : "max-w-xs"}`;
 
   const sen = "bg-gray-800 text-gray-200";
-  const rec = "bg-violet-300/20 text-violet-300";
+  const rec = "bg-purple-300/20 text-purple-300";
 
   return (
     <div className="sticky bottom-0 z-[9999999] py-padding-sm ">
@@ -35,6 +35,7 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
                   setFocus(false);
                   setVal("");
                   setSent("");
+                  setIsLoading(false);
                 }}
               >
                 <X size={16} />
@@ -59,7 +60,11 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
         </div>
       )}
       <div className={`${maxW} h-header relative mx-auto`}>
-        <div className="bg-gray-900 h-header relative z-30 text-white rounded-full flex items-center px-padding-sm gap-padding-sm">
+        <div
+          className={`${
+            !sent && focus ? "shadow-[0_0_20px] shadow-purple-400" : ""
+          } bg-gray-900 h-header relative z-30 text-white rounded-full flex items-center px-padding-sm gap-padding-sm`}
+        >
           <div
             onClick={() => setShow((s) => !s)}
             className="h-btn cursor-pointer w-btn flexer bg-white text-text1 rounded-full flexer"
@@ -76,6 +81,7 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
               if (e.key === "Enter") {
                 setSent(val);
                 setVal("");
+                setIsLoading((s) => !s);
               }
             }}
           />
@@ -83,9 +89,10 @@ export default function BottomBar(/* { setIsLoading, isLoading } */) {
             onClick={() => {
               setSent(val);
               setVal("");
+              setIsLoading((s) => !s);
             }}
             className={`${
-              val ? "bg-violet-600 cursor-pointer" : "text-gray-400"
+              val ? "bg-purple-600 cursor-pointer" : "text-gray-400"
             } h-btn w-btn flexer rounded-full flexer`}
           >
             {sent ? (
