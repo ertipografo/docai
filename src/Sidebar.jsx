@@ -11,7 +11,7 @@ export default function Sidebar({ noteType, setShowModal, setShow }) {
         <Header />
         <div
           onClick={() => setShow((s) => !s)}
-          className="h-btn w-btn flexer rounded-btn hover:bg-bg2 cursor-pointer -mr-padding-sm"
+          className="h-btn w-btn hidden lg:flex items-center justify-center rounded-btn hover:bg-bg2 cursor-pointer -mr-padding-sm"
         >
           <PanelRightOpen size={16} />
         </div>
