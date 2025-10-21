@@ -1,5 +1,12 @@
 import { Star } from "lucide-react";
-import MiniLabel from "./Minilabel";
+function MiniLabel({ iconClassName = "", children }) {
+  return (
+    <div className="flex gap-padding-xs items-center text-xs font-semibold">
+      <Icon className={iconClassName} size={16} />
+      {children}
+    </div>
+  );
+}
 export default function Rating() {
   return (
     <MiniLabel iconClassName="text-transparent fill-amber-400" Icon={Star}>
