@@ -34,31 +34,30 @@ export default function FeaturesBar({
         {features.map((f, i) => {
           const isCur = feature === f.value;
           const { Icon } = f;
-          return (
-            noteType === "note" &&
-            i !== 0 && (
-              <div
-                key={i}
-                onClick={() => {
-                  setFeature(f.value);
-                }}
-                className={`${btn} ${isCur ? active : inactive}`}
-              >
-                <div className={inner}>
-                  <Icon className="hidden sm:flex" size={16} />
-                  <span>{f.value}</span>
-                </div>
-                {isCur ? (
-                  isLoading ? (
-                    <Loader size={16} className="ml-auto animate-spin" />
-                  ) : (
-                    <ChevronDown size={16} className="hidden sm:flex ml-auto" />
-                  )
-                ) : (
-                  <ChevronRight size={16} className="hidden sm:flex ml-auto" />
-                )}
+          return noteType === "note" && i === 0 ? (
+            <></>
+          ) : (
+            <div
+              key={i}
+              onClick={() => {
+                setFeature(f.value);
+              }}
+              className={`${btn} ${isCur ? active : inactive}`}
+            >
+              <div className={inner}>
+                <Icon className="hidden sm:flex" size={16} />
+                <span>{f.value}</span>
               </div>
-            )
+              {isCur ? (
+                isLoading ? (
+                  <Loader size={16} className="ml-auto animate-spin" />
+                ) : (
+                  <ChevronDown size={16} className="hidden sm:flex ml-auto" />
+                )
+              ) : (
+                <ChevronRight size={16} className="hidden sm:flex ml-auto" />
+              )}
+            </div>
           );
         })}
       </div>
