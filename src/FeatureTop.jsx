@@ -30,6 +30,11 @@ export default function FeatureTop({
       >
         <div className={`flex-1 flex items-center justify-between`}>
           <div className="flex gap-padding-sm items-center">
+            {!show && (
+              <div className={btnClass} onClick={() => setShow((s) => !s)}>
+                <PanelRightClose size={16} />
+              </div>
+            )}
             {hasComplementary && (
               <div
                 onClick={() => setShowFeatureBar((s) => !s)}
@@ -39,14 +44,6 @@ export default function FeatureTop({
               </div>
             )}
             <div className="px-padding-sm flex items-center gap-padding-sm">
-              {!show && (
-                <div
-                  className="h-btn w-btn flexer cursor-pointer rounded-btn bg-bg1 hover:bg-bg3 -ml-padding-sm mr-padding-sm"
-                  onClick={() => setShow((s) => !s)}
-                >
-                  <PanelRightClose size={16} />
-                </div>
-              )}
               <CurrentFeatureIcon size={16} />
               <span>{currentFeature.label}</span>
             </div>
